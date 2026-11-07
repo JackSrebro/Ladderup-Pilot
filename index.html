@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='6' fill='%23fff'/%3E%3Cpath d='M8 27V11M20 27V11' stroke='%23111' stroke-width='3.2' fill='none'/%3E%3Cpath d='M8 22.5h12M8 16.5h12' stroke='%23111' stroke-width='2.6' fill='none'/%3E%3Cpath d='M4.5 11.5L14 3l9.5 8.5' stroke='%23d7261e' stroke-width='3.2' fill='none'/%3E%3C/svg%3E">
+<meta property="og:title" content="Ladder Up Pilot">
+<meta property="og:description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for Will County and the southwest suburbs.">
+<title>Ladder Up Pilot</title>
+<meta name="description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for Will County and the southwest suburbs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
+<style>
+/* Layout: sticky header, one-column hero with search, then a tabbed working app; the ladder stripe is the brand mark. */
+:root{
+  --paper:#F1F3F4;--paper-2:#E7EBEE;--surface:#FFFFFF;--sunk:#EEF1F4;
+  --ink:#121B2B;--ink-2:#465264;--ink-3:#6E7888;--line:#D2D9E0;--line-2:#E4E9ED;
+  --red:#C4291D;--red-hover:#A62014;--red-ink:#B02418;--on-red:#FFFFFF;--red-wash:#FBE8E5;
+  --brass:#8C6010;--brass-fill:#D2A445;--brass-wash:#F7EDD6;--lime:#D3EE3A;
+  --good:#1D7446;--good-wash:#E2F2E8;--warn:#955300;--warn-wash:#FBEFD8;
+  --inv-bg:#121B2B;--inv-ink:#F1F3F4;--inv-ink-2:#AEB8C6;--inv-line:#33405A;--inv-field:#1B263A;
+  --shadow:0 1px 0 rgba(18,27,43,.04),0 18px 40px -18px rgba(18,27,43,.28);
+  --rung:#9AA3B0;--glow-a:rgba(196,41,29,.16);--glow-b:rgba(210,164,69,.22);--spot:rgba(196,41,29,.06);
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Public Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#0C121C;--paper-2:#111926;--surface:#141D2B;--sunk:#0F1722;
+  --ink:#E8ECF1;--ink-2:#AAB4C3;--ink-3:#7F8A9B;--line:#29354A;--line-2:#1E2838;
+  --red:#D23B2F;--red-hover:#E4493C;--red-ink:#FF7466;--red-wash:#3A1A18;
+  --brass:#E2B65C;--brass-fill:#C99A3B;--brass-wash:#2E2512;--lime:#C6E233;
+  --good:#52C48A;--good-wash:#12301F;--warn:#F1A948;--warn-wash:#33250F;
+  --inv-bg:#172238;--inv-ink:#E8ECF1;--inv-ink-2:#A6B1C2;--inv-line:#33415C;--inv-field:#0F1828;
+  --rung:#56627A;--glow-a:rgba(210,59,47,.22);--glow-b:rgba(201,154,59,.16);--spot:rgba(255,116,102,.08);
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 18px 44px -18px rgba(0,0,0,.75);color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#0C121C;--paper-2:#111926;--surface:#141D2B;--sunk:#0F1722;
+  --ink:#E8ECF1;--ink-2:#AAB4C3;--ink-3:#7F8A9B;--line:#29354A;--line-2:#1E2838;
+  --red:#D23B2F;--red-hover:#E4493C;--red-ink:#FF7466;--red-wash:#3A1A18;
+  --brass:#E2B65C;--brass-fill:#C99A3B;--brass-wash:#2E2512;--lime:#C6E233;
+  --good:#52C48A;--good-wash:#12301F;--warn:#F1A948;--warn-wash:#33250F;
+  --inv-bg:#172238;--inv-ink:#E8ECF1;--inv-ink-2:#A6B1C2;--inv-line:#33415C;--inv-field:#0F1828;
+  --rung:#56627A;--glow-a:rgba(210,59,47,.22);--glow-b:rgba(201,154,59,.16);--spot:rgba(255,116,102,.08);
+  --shadow:0 1px 0 rgba(0,0,0,.3),0 18px 44px -18px rgba(0,0,0,.75);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.55;margin:0}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:50;background:var(--paper)}
+[id]{scroll-margin-top:84px}
+a{color:inherit}
+p,h1,h2,h3,h4{margin:0}
+h1,h2,h3{text-wrap:balance}
+button,input,select{font:inherit;color:inherit}
+:focus-visible{outline:3px solid var(--brass-fill);outline-offset:2px;border-radius:3px}
+.wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.eyebrow{font-family:var(--f-mono);font-weight:500;font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-2)}
+.h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(38px,5vw,58px);line-height:.92}
+.h2 em{font-style:normal;color:var(--red-ink)}
+.lede{font-size:18px;color:var(--ink-2);max-width:40em}
+.section{padding-block:clamp(56px,8vw,96px)}
+.sec-head{display:grid;gap:14px;max-width:780px;margin-bottom:36px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font:600 15px/1.1 var(--f-body);padding:13px 18px;border-radius:6px;border:1.5px solid transparent;cursor:pointer;text-decoration:none;white-space:nowrap}
+.btn-red{background:var(--red);color:var(--on-red)}.btn-red:hover{background:var(--red-hover)}
+.btn-line{border-color:var(--ink);background:transparent}.btn-line:hover{background:var(--ink);color:var(--paper)}
+.btn-quiet{background:var(--sunk);border-color:var(--line)}.btn-quiet:hover{border-color:var(--ink-3)}
+.btn-sm{padding:8px 12px;font-size:13.5px}
+.btn[disabled]{opacity:.45;cursor:not-allowed}
+.chip{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f-body);padding:5px 8px;border-radius:999px;white-space:nowrap;background:var(--sunk);color:var(--ink-2);border:1px solid var(--line)}
+.chip-good{background:var(--good-wash);color:var(--good);border-color:transparent}
+.chip-warn{background:var(--warn-wash);color:var(--warn);border-color:transparent}
+.chip-red{background:var(--red-wash);color:var(--red-ink);border-color:transparent}
+.dist{font-family:var(--f-mono);font-weight:600;font-size:12.5px}
+.stripe{height:6px;background:repeating-linear-gradient(-45deg,var(--red) 0 11px,var(--lime) 11px 22px)}
+.site-head{position:sticky;top:env(safe-area-inset-top,0px);z-index:40;background:var(--paper);border-bottom:1px solid var(--line)}
+.head-row{display:flex;align-items:center;gap:20px;height:62px}
+.brand{display:inline-flex;align-items:center;gap:10px;text-decoration:none}
+.brand-word{font-family:var(--f-display);font-weight:900;font-size:25px;letter-spacing:.02em;text-transform:uppercase;line-height:1}
+.nav{display:flex;gap:2px;margin-left:auto;list-style:none;padding:0}
+.nav a{display:block;text-decoration:none;font-weight:500;font-size:15px;color:var(--ink-2);padding:8px 11px;border-radius:6px}
+.nav a:hover{color:var(--ink);background:var(--paper-2)}
+@media (max-width:820px){.nav{display:none}.head-cta{margin-left:8px}}
+/* hero */
+.hero{padding-block:clamp(40px,6vw,72px) clamp(36px,5vw,56px)}
+.hero h1{font-family:var(--f-display);font-weight:900;text-transform:uppercase;font-size:clamp(52px,7.6vw,100px);line-height:.86;margin-block:16px 22px;max-width:12ch}
+.hero h1 em{font-style:normal;color:var(--red-ink)}
+.zsearch{margin-top:26px;padding:16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;box-shadow:var(--shadow);display:grid;gap:10px;max-width:640px}
+.zs-row{display:flex;flex-wrap:wrap;gap:8px}
+.zs-row .select{flex:1 1 200px}
+.hint{font-size:13px;color:var(--ink-3)}
+.linkish{background:none;border:0;padding:0;font-weight:600;font-size:inherit;color:var(--ink);text-decoration:underline;text-underline-offset:3px;cursor:pointer}
+.facts{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:14px;color:var(--ink-2)}
+.facts b{font-family:var(--f-mono);color:var(--ink);font-weight:600}
+/* controls */
+.lbl{font-family:var(--f-mono);font-size:11.5px;font-weight:500;letter-spacing:.07em;text-transform:uppercase;color:var(--ink-2)}
+.field{display:grid;gap:6px;min-width:0;align-content:start}
+.select,.tinput{background:var(--surface);border:1.5px solid var(--line);border-radius:6px;padding:9px 12px;font-size:15px;height:42px;min-width:0;max-width:100%}
+.select{appearance:none;-webkit-appearance:none;padding-right:34px;cursor:pointer;background-image:linear-gradient(45deg,transparent 50%,var(--ink-3) 50%),linear-gradient(135deg,var(--ink-3) 50%,transparent 50%);background-position:calc(100% - 18px) 18px,calc(100% - 13px) 18px;background-size:5px 5px;background-repeat:no-repeat}
+.tinput.zip{font-family:var(--f-mono);font-weight:600;letter-spacing:.06em;width:9ch}
+.zip-note{font-size:12.5px;color:var(--ink-3);min-height:1.2em}
+.seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--line);border-radius:8px;padding:3px;background:var(--sunk);gap:2px}
+.seg button{border:0;background:transparent;padding:7px 12px;border-radius:5px;font-weight:600;font-size:14px;color:var(--ink-2);cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.controls{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:flex-end;margin-bottom:18px}
+input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;flex:none;cursor:pointer}
+/* app */
+.app{background:var(--surface);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);overflow:hidden}
+.app-bar{display:flex;align-items:center;gap:12px;padding:12px 18px;border-bottom:1px solid var(--line);background:var(--sunk);flex-wrap:wrap;font-size:13.5px;color:var(--ink-2)}
+.app-bar b{color:var(--ink);font-size:15px}
+.app-bar .upd{margin-left:auto;font-family:var(--f-mono);font-size:12px}
+.tabs{display:flex;gap:2px;overflow-x:auto;padding-inline:10px;border-bottom:1px solid var(--line)}
+.tab{flex:none;background:none;border:0;border-bottom:3px solid transparent;padding:14px 13px 11px;font-weight:500;font-size:15px;color:var(--ink-2);cursor:pointer}
+.tab:hover{color:var(--ink)}
+.tab[aria-selected="true"]{color:var(--ink);font-weight:700;border-bottom-color:var(--red)}
+.tab .n{font-family:var(--f-mono);font-size:11px;color:var(--red-ink);margin-left:6px}
+.panel{padding:clamp(16px,3vw,28px)}
+.pintro{margin-bottom:20px;display:grid;gap:4px}
+.pintro h3{font-size:22px}
+.pintro p{color:var(--ink-2);font-size:15px;max-width:48em}
+.fine{font-size:12.5px;color:var(--ink-3);margin-top:16px;max-width:60em}
+/* list cards */
+.list{display:grid;gap:10px}
+.card{border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;align-items:start}
+.card h4{font-size:16.5px;line-height:1.3}
+.card .who{font-size:14px;color:var(--ink-2);margin-top:2px}
+.meta{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center;margin-top:10px;font-size:13.5px;color:var(--ink-2)}
+.kv{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px 20px;grid-column:1/-1;padding-top:12px;border-top:1px solid var(--line-2)}
+.kv div{display:grid;gap:2px;min-width:0}
+.kv span{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.kv p{font-size:14px}
+.money{font-family:var(--f-mono);font-weight:600;font-variant-numeric:tabular-nums}
+.right{display:grid;justify-items:end;gap:8px;text-align:right}
+.right .money{font-size:18px}
+.right small{font-size:12px;color:var(--ink-3)}
+.acts{display:flex;flex-wrap:wrap;gap:8px;grid-column:1/-1}
+.reqs{margin:0;padding-left:18px;font-size:14px;display:grid;gap:3px}
+.card.dim{opacity:.72}
+.empty{padding:28px 18px;text-align:center;color:var(--ink-2);border:1px dashed var(--line);border-radius:8px}
+@media (max-width:600px){.card{grid-template-columns:minmax(0,1fr)}.right{justify-items:start;text-align:left}}
+/* roadmap */
+.rm{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:clamp(20px,4vw,44px)}
+@media (max-width:820px){.rm{grid-template-columns:minmax(0,1fr)}}
+.rm-list{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+.rm-step{display:grid;grid-template-columns:30px minmax(0,1fr) auto;gap:10px;align-items:center;width:100%;background:none;border:0;padding:8px;text-align:left;cursor:pointer;border-radius:6px}
+.rm-step:hover{background:var(--sunk)}
+.rm-step[aria-current="step"]{background:var(--red-wash)}
+.rm-num{font-family:var(--f-display);font-weight:800;font-size:22px;color:var(--ink-3);text-align:center}
+.rm-step.done .rm-num{color:var(--good)}
+.rm-step[aria-current="step"] .rm-num{color:var(--red-ink)}
+.rm-t{font-weight:600;font-size:15px}
+.rm-big{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:34px;line-height:.95}
+.checks{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:2px}
+.check{display:flex;gap:12px;align-items:flex-start;padding:9px 10px;border-radius:6px;cursor:pointer;font-size:15px;line-height:1.4}
+.check:hover{background:var(--sunk)}
+.check input:checked + span{color:var(--ink-3);text-decoration:line-through}
+.kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px 28px}
+.kit-group h4{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:22px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
+.bar{height:10px;background:var(--line-2);border-radius:99px;overflow:hidden;flex:1 1 200px}
+.bar i{display:block;height:100%;background:var(--good);border-radius:99px}
+.kit-top{display:flex;flex-wrap:wrap;gap:12px 20px;align-items:center;margin-bottom:22px;padding:14px 16px;border:1px solid var(--line);border-radius:8px}
+.kit-count{font-family:var(--f-display);font-weight:800;font-size:30px}
+/* funding */
+.fund{display:grid;grid-template-columns:minmax(0,290px) minmax(0,1fr);gap:clamp(20px,4vw,40px)}
+@media (max-width:820px){.fund{grid-template-columns:minmax(0,1fr)}}
+.fund-side{display:grid;gap:18px;align-content:start}
+.elig{display:grid;gap:2px;margin:0;padding:0;border:0}
+.elig legend{margin-bottom:6px;padding:0}
+.elig label{display:flex;gap:10px;align-items:flex-start;font-size:14.5px;line-height:1.4;padding:7px 8px;border-radius:6px;cursor:pointer}
+.elig label:hover{background:var(--sunk)}
+/* join */
+.join{background:var(--inv-bg);color:var(--inv-ink);position:relative}
+.join .stripe{position:absolute;inset:0 0 auto 0}
+.join-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,480px);gap:clamp(32px,6vw,80px);align-items:start}
+@media (max-width:880px){.join-grid{grid-template-columns:minmax(0,1fr)}}
+.join .h2 em{color:var(--lime)}
+.join .lede{color:var(--inv-ink-2);margin-top:16px}
+.form{display:grid;gap:14px;padding:24px;border:1px solid var(--inv-line);border-radius:12px;background:var(--inv-field)}
+.form .lbl{color:var(--inv-ink-2)}
+.input,.form .select{width:100%;height:auto;background-color:var(--inv-bg);border:1.5px solid var(--inv-line);border-radius:6px;padding:11px 13px;color:var(--inv-ink);font-size:16px}
+.input[aria-invalid="true"]{border-color:var(--red-ink)}
+.err{font-size:13.5px;color:var(--red-ink)}
+.form-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
+@media (max-width:480px){.form-2{grid-template-columns:minmax(0,1fr)}}
+.form .btn{width:100%;padding-block:15px}
+.form-note{font-size:13px;color:var(--inv-ink-2)}
+.done{display:grid;gap:10px;padding:24px;border:1px solid var(--inv-line);border-radius:12px}
+.done h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:32px}
+.done p{color:var(--inv-ink-2)}
+.admin{margin-top:28px;padding:20px;border:1px solid var(--inv-line);border-radius:12px;display:grid;gap:12px}
+.admin table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+.admin th,.admin td{text-align:left;padding:8px 10px;border-top:1px solid var(--inv-line)}
+.admin th{font-family:var(--f-mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--inv-ink-2)}
+.tscroll{overflow-x:auto}
+/* save star */
+.save{display:inline-flex;align-items:center;gap:6px;background:transparent;border:1.5px solid var(--line);border-radius:6px;padding:7px 10px;font-weight:600;font-size:13px;color:var(--ink-2);cursor:pointer;white-space:nowrap}
+.save:hover{border-color:var(--ink-3);color:var(--ink)}
+.save svg{fill:none;stroke:currentColor;stroke-width:1.7}
+.save[aria-pressed="true"]{border-color:var(--brass-fill);background:var(--brass-wash);color:var(--brass)}
+.save[aria-pressed="true"] svg{fill:currentColor}
+/* profile + dashboard */
+.prof{display:grid;gap:16px;padding:20px;border:1px solid var(--line);border-radius:10px;background:var(--sunk)}
+.prof h4{font-size:19px}
+.prof > p{color:var(--ink-2);font-size:15px;max-width:46em}
+.prof-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.prof-grid .tinput,.prof-grid .select{width:100%}
+@media (max-width:760px){.prof-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:460px){.prof-grid{grid-template-columns:minmax(0,1fr)}}
+.certs{display:flex;flex-wrap:wrap;gap:4px 22px;border:0;margin:0;padding:0}
+.certs legend{padding:0;margin-bottom:6px}
+.certs label{display:inline-flex;gap:9px;align-items:center;font-size:14.5px;cursor:pointer;padding-block:4px}
+.prof-foot{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.prof-foot .err{margin:0}
+[hidden]{display:none!important}
+.prof-grid .span2{grid-column:span 2}
+@media (max-width:460px){.prof-grid .span2{grid-column:auto}}
+.join-opt input:checked + span{color:inherit;text-decoration:none}
+.join-opt{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);max-width:46em}
+.joined-note{font-size:14px;color:var(--good);font-weight:600}
+.dash-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line-2)}
+.avatar{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:var(--ink);color:var(--paper);font-family:var(--f-display);font-weight:800;font-size:26px;flex:none}
+.dash-who{display:grid;gap:3px;min-width:0;flex:1 1 260px}
+.dash-who h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,38px);line-height:.95}
+.dash-who p{font-size:14px;color:var(--ink-2)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border:1px solid var(--line);border-radius:8px;margin-bottom:24px}
+.kpi{padding:14px 16px;display:grid;gap:4px;align-content:start;border-left:1px solid var(--line);min-width:0}
+.kpi:first-child{border-left:0}
+.kpi b{font-family:var(--f-display);font-weight:800;font-size:30px;line-height:1;text-transform:uppercase}
+.kpi small{font-size:13px;color:var(--ink-2);line-height:1.35}
+@media (max-width:760px){.kpis{grid-template-columns:repeat(2,minmax(0,1fr))}.kpi:nth-child(3){border-left:0}.kpi:nth-child(n+3){border-top:1px solid var(--line)}}
+.dash-cols{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+@media (max-width:820px){.dash-cols{grid-template-columns:minmax(0,1fr)}}
+.dcard{border:1px solid var(--line);border-radius:8px;padding:18px;display:grid;gap:8px;align-content:start;min-width:0}
+.dcard.wide{grid-column:1/-1}
+.dcard-h{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.dcard-h h4{font-size:16.5px}
+.mini{list-style:none;margin:0;padding:0}
+.mini li{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:4px 14px;align-items:center;padding:11px 0;border-top:1px solid var(--line-2)}
+.mini li:first-child{border-top:0}
+.mini .t{font-weight:600;font-size:14.5px;line-height:1.3}
+.mini .m{font-size:13px;color:var(--ink-2);margin-top:3px;display:flex;flex-wrap:wrap;gap:4px 10px;align-items:center}
+.mini .r{display:flex;align-items:center;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.dempty{font-size:14px;color:var(--ink-2);padding:6px 0}
+.hello{margin-top:14px;margin-bottom:0;font-size:16px;color:var(--ink);display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center}
+/* hero layout + ladder */
+.hero{position:relative;overflow:hidden}
+.hero-grid{position:relative;display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);gap:clamp(32px,5vw,72px);align-items:center}
+.hero-main{min-width:0}
+@media (max-width:860px){.hero-grid{grid-template-columns:minmax(0,1fr)}.ladder-wrap{display:none}}
+.hero-glow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.hero-glow i{position:absolute;width:60vmax;height:60vmax;border-radius:50%;filter:blur(10px);opacity:.55}
+.hero-glow .g1{left:-18vmax;top:-30vmax;background:radial-gradient(closest-side,var(--glow-a),transparent)}
+.hero-glow .g2{right:-22vmax;bottom:-36vmax;background:radial-gradient(closest-side,var(--glow-b),transparent)}
+.ladder-wrap{--rail:7px;--span:64px;justify-self:end;width:min(380px,100%)}
+.ladder-cap{display:flex;align-items:baseline;gap:12px;margin-bottom:6px}
+.ladder-cap .top{font-family:var(--f-display);font-weight:800;font-size:30px;text-transform:uppercase;letter-spacing:.04em;line-height:1}
+.ladder{position:relative;list-style:none;margin:0;padding:10px 0}
+.ladder::before,.ladder::after{content:"";position:absolute;top:-10px;bottom:-6px;width:var(--rail);background:var(--ink);border-radius:2px;transform-origin:50% 100%;transform:scaleY(var(--rs,1))}
+.ladder::before{left:0}
+.ladder::after{left:calc(var(--span) - var(--rail))}
+.rung{display:grid;grid-template-columns:var(--span) 34px minmax(0,1fr);align-items:center;width:100%;min-height:44px;padding:0;background:none;border:0;text-align:left;cursor:pointer;color:var(--ink);font:inherit}
+.rung-bar{height:8px;width:var(--span);background:var(--rung);transform-origin:0 50%;transition:background-color .2s}
+.rung-num{font-family:var(--f-display);font-weight:800;font-size:20px;color:var(--ink-3);text-align:right;padding-right:10px}
+.rung-t{font-weight:600;font-size:15px;padding-block:10px;border-bottom:1px solid var(--line-2)}
+.rung:hover .rung-bar,.rung:focus-visible .rung-bar{background:var(--brass-fill)}
+.rung.done .rung-bar{background:var(--ink-2)}
+.rung.done .rung-num{color:var(--good)}
+.rung.cur .rung-bar{background:var(--red)}
+.rung.cur .rung-num,.rung.cur .rung-t{color:var(--red-ink)}
+.ladder-base{margin-top:8px;padding-left:calc(var(--span) + 34px);font-size:14px;color:var(--ink-2);font-style:italic}
+/* sliding tab indicator */
+.tabs{position:relative}
+.tab-ink{position:absolute;left:0;bottom:0;height:3px;width:0;background:var(--red);border-radius:2px;pointer-events:none}
+.fx .tab[aria-selected="true"]{border-bottom-color:transparent}
+.fx .hero h1{text-wrap:wrap}
+/* spotlight cards (pointer devices only) */
+@media (hover:hover) and (pointer:fine){
+  .card,.dcard{background-image:radial-gradient(420px circle at var(--mx,-999px) var(--my,-999px),var(--spot),transparent 60%)}
+}
+/* header elevation once scrolled */
+.site-head.scrolled{box-shadow:0 8px 24px -18px rgba(18,27,43,.45)}
+/* join stripe drift */
+@keyframes stripe-drift{to{background-position:44px 0}}
+.join .stripe{animation:stripe-drift 2.4s linear infinite}
+/* Lenis recommended CSS */
+html.lenis,html.lenis body{height:auto}
+.lenis:not(.lenis-autoToggle).lenis-stopped{overflow:clip}
+.lenis [data-lenis-prevent],.lenis [data-lenis-prevent-horizontal]{overscroll-behavior:contain}
+.lenis.lenis-smooth iframe{pointer-events:none}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+@media (prefers-reduced-motion:reduce){.join .stripe{animation:none}.hero-glow{display:none}}
+/* gate: resources stay hidden until a dashboard exists */
+.no-profile .tab:not(#tab-dash),.no-profile .nav,.no-profile #hs-form,.no-profile .tab-ink{display:none!important}
+.has-profile #hero-start{display:none}
+.start{margin-top:26px;padding:20px;background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--red);border-radius:10px;box-shadow:var(--shadow);display:grid;gap:10px;max-width:620px}
+.start h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:clamp(28px,3.4vw,38px);line-height:.95}
+.start p{color:var(--ink-2);font-size:15.5px}
+.start-row{display:flex;flex-wrap:wrap;gap:10px 16px;align-items:center}
+.start-row .btn{padding:15px 22px;font-size:16px}
+.head-dash{margin-left:auto;white-space:nowrap}
+.has-profile .head-dash{margin-left:8px}
+.brand{flex:none}
+@media (max-width:820px){.has-profile .head-dash{margin-left:auto}}
+@media (max-width:420px){.head-row{gap:10px}.head-dash{padding:8px 10px;font-size:13px}.brand-word{font-size:22px}}
+.has-profile .head-dash{border-color:var(--red);color:var(--red-ink)}
+.has-profile .head-dash:hover{background:var(--red);color:var(--on-red)}
+.unlock{display:flex;flex-wrap:wrap;gap:6px}
+@media (max-width:560px){.head-cta{display:none}}
+.foot{padding-block:36px 44px;border-top:1px solid var(--line)}
+.foot p{font-size:13px;color:var(--ink-3);max-width:70em}
+.demo-bar{background:var(--surface);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-2);text-align:center;padding:7px 16px;line-height:1.4}
+.demo-bar a,.foot a.mail{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+
+<div class="stripe" aria-hidden="true"></div>
+<div class="demo-bar">This is a demo. Email <a href="mailto:jsrebro43@gmail.com?subject=Ladder%20Up%20Pilot" target="_blank" rel="noopener">jsrebro43@gmail.com</a> with any problems.</div>
+<header class="site-head">
+  <div class="wrap head-row">
+    <a class="brand" href="#top" aria-label="Ladder Up home">
+      <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M8 27V11M20 27V11" style="stroke:currentColor" stroke-width="3.2" fill="none"/><path d="M8 22.5h12M8 16.5h12" style="stroke:currentColor" stroke-width="2.6" fill="none"/><path d="M4.5 11.5L14 3l9.5 8.5" style="stroke:var(--red)" stroke-width="3.2" fill="none"/></svg>
+      <span class="brand-word">Ladder Up</span>
+    </a>
+    <ul class="nav">
+      <li><a href="#tools" data-go="classes">Classes</a></li>
+      <li><a href="#tools" data-go="jobs">Jobs</a></li>
+      <li><a href="#tools" data-go="ce">Continuing Ed</a></li>
+      <li><a href="#tools" data-go="depts">Departments</a></li>
+      <li><a href="#tools" data-go="funding">Funding</a></li>
+    </ul>
+    <a class="btn btn-line btn-sm head-dash" href="#tools" data-go="dash" id="nav-dash">My Dashboard</a>
+    <a class="btn btn-red btn-sm head-cta" href="#join">Join the Pilot</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"><i class="g1"></i><i class="g2"></i></div>
+    <div class="wrap hero-grid">
+    <div class="hero-main">
+      <p class="eyebrow">Will County + southwest suburbs pilot</p>
+      <h1 id="hero-h">From Your First EMT Class <em>to Chief.</em></h1>
+      <p class="lede">Real classes, real departments and real open jobs near you, with a link to every source and application.</p>
+      <p class="hello" id="hello" hidden></p>
+      <div class="start" id="hero-start">
+        <p class="eyebrow">Start here</p>
+        <h2>Build Your Free Dashboard</h2>
+        <p>Answer a few quick questions and Ladder Up shows the jobs you qualify for, the classes for your next step, continuing education, your deadlines and funding. No account needed.</p>
+        <div class="start-row"><button type="button" class="btn btn-red" id="start-btn">Build My Dashboard</button><span class="hint">Takes about a minute. No account or password.</span></div>
+      </div>
+      <form class="zsearch" id="hs-form" novalidate>
+        <label class="lbl" for="hs-zip">Find what's near you</label>
+        <div class="zs-row">
+          <input class="tinput zip" id="hs-zip" inputmode="numeric" autocomplete="postal-code" maxlength="5" placeholder="ZIP" aria-describedby="hs-hint">
+          <label class="vh" for="hs-what">What to look for</label>
+          <select class="select" id="hs-what">
+            <option value="classes:emt">EMT Classes</option>
+            <option value="classes:medic">Paramedic Classes</option>
+            <option value="classes:academy">Fire Academies</option>
+            <option value="jobs">Departments Hiring Now</option>
+            <option value="ce">Continuing Education (Already Hired)</option>
+          </select>
+          <button class="btn btn-red" type="submit">Search</button>
+        </div>
+        <p class="hint" id="hs-hint">Try <button type="button" class="linkish" data-try="60441">60441</button> (Lockport), <button type="button" class="linkish" data-try="60451">60451</button> (New Lenox) or <button type="button" class="linkish" data-try="60544">60544</button> (Plainfield).</p>
+      </form>
+      <div class="facts" id="facts"></div>
+    </div>
+    <div class="ladder-wrap" aria-labelledby="ladder-cap">
+      <p class="ladder-cap" id="ladder-cap"><span class="top">Chief</span><span class="eyebrow">The seven rungs. Tap one.</span></p>
+      <ol class="ladder" id="hero-ladder" reversed></ol>
+      <p class="ladder-base">"I want to do this job."</p>
+    </div>
+    </div>
+  </section>
+
+  <section class="section" id="tools" aria-labelledby="tools-h" style="padding-top:0">
+    <div class="wrap">
+      <div class="app">
+        <div class="app-bar"><b>Ladder Up</b><span id="area-note">Showing all listings</span><span class="upd" id="upd"></span></div>
+        <div class="tabs" role="tablist" aria-label="Ladder Up tools" id="tabs" data-lenis-prevent-horizontal>
+          <button class="tab" role="tab" id="tab-dash" aria-controls="p-dash" data-tab="dash">My Dashboard</button>
+          <button class="tab" role="tab" id="tab-classes" aria-controls="p-classes" data-tab="classes">Class Finder</button>
+          <button class="tab" role="tab" id="tab-jobs" aria-controls="p-jobs" data-tab="jobs">Job Board<span class="n" id="jobs-n"></span></button>
+          <button class="tab" role="tab" id="tab-ce" aria-controls="p-ce" data-tab="ce">Continuing Ed</button>
+          <button class="tab" role="tab" id="tab-depts" aria-controls="p-depts" data-tab="depts">Departments</button>
+          <button class="tab" role="tab" id="tab-funding" aria-controls="p-funding" data-tab="funding">Funding</button>
+          <button class="tab" role="tab" id="tab-roadmap" aria-controls="p-roadmap" data-tab="roadmap">My Roadmap</button>
+          <button class="tab" role="tab" id="tab-kit" aria-controls="p-kit" data-tab="kit">First Shift Kit</button>
+        </div>
+        <h2 class="vh" id="tools-h">Tools</h2>
+
+        <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="tab-dash" hidden>
+          <form class="prof" id="prof-form" novalidate hidden>
+            <h4 id="prof-h">Set Up Your Dashboard</h4>
+            <p>Tell us where you are and where you're headed, and we'll show the jobs you qualify for, the classes for your next step and your deadlines. No account needed. Your dashboard is saved on this device. If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
+            <div class="unlock" id="unlock"></div>
+            <div class="prof-grid">
+              <div class="field"><label class="lbl" for="pf-name">First and last name</label><input class="tinput" id="pf-name" autocomplete="name" maxlength="60"></div>
+              <div class="field"><label class="lbl" for="pf-email">Email</label><input class="tinput" id="pf-email" type="email" autocomplete="email" maxlength="120"></div>
+              <div class="field"><label class="lbl" for="pf-zip">Home ZIP</label><input class="tinput zip" id="pf-zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" style="width:100%"><span class="zip-note" id="pf-zip-note"></span></div>
+              <div class="field"><label class="lbl" for="pf-radius">How far will you travel?</label><select class="select" id="pf-radius"><option value="15">Within 15 miles</option><option value="30" selected>Within 30 miles</option><option value="50">Within 50 miles</option><option value="0">Any distance</option></select></div>
+              <div class="field"><label class="lbl" for="pf-goal">Career goal</label><select class="select" id="pf-goal"><option value="ffpm">Firefighter/Paramedic</option><option value="ffemt">Firefighter/EMT</option><option value="medic">Paramedic</option><option value="emt">EMT</option></select></div>
+              <div class="field span2" style="min-width:0"><label class="lbl" for="pf-rung">Where are you now?</label><select class="select" id="pf-rung" style="width:100%"></select></div>
+            </div>
+            <fieldset class="certs"><legend class="lbl">What you already have</legend>
+              <label><input type="checkbox" data-cert="emt"><span>EMT license</span></label>
+              <label><input type="checkbox" data-cert="medic"><span>Paramedic license</span></label>
+              <label><input type="checkbox" data-cert="cpat"><span>CPAT card</span></label>
+              <label><input type="checkbox" data-cert="ffii"><span>Firefighter II / Basic Operations</span></label>
+            </fieldset>
+            <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you.</span></label>
+            <div class="prof-foot">
+              <a class="btn btn-red" id="pf-save" href="#" target="_blank" rel="noopener" role="button">Build My Dashboard</a>
+              <button class="btn btn-quiet" type="button" id="pf-cancel" hidden>Cancel</button>
+              <p class="err" id="pf-err" hidden></p>
+            </div>
+          </form>
+          <div id="dash" hidden></div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-classes" aria-labelledby="tab-classes">
+          <div class="pintro"><h3>Class Finder</h3><p>EMT, Paramedic and fire academy programs, sorted by distance from your ZIP. Costs are the program's own published numbers. Where a program doesn't publish one, we say so.</p></div>
+          <div class="controls">
+            <div class="field"><span class="lbl">Program</span><div class="seg" id="cl-type">
+              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="emt" aria-pressed="false">EMT</button><button type="button" data-v="medic" aria-pressed="false">Paramedic</button><button type="button" data-v="academy" aria-pressed="false">Fire Academy</button></div></div>
+            <div class="field"><label class="lbl" for="cl-zip">ZIP</label><input class="tinput zip" id="cl-zip" inputmode="numeric" maxlength="5" data-zip></div>
+            <div class="field"><label class="lbl" for="cl-sort">Sort by</label><select class="select" id="cl-sort"><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
+            <label class="check" style="padding-block:10px"><input type="checkbox" id="cl-open"><span>Hide full classes</span></label>
+            <label class="check" style="padding-block:10px"><input type="checkbox" id="cl-anyone"><span>Academies I can join without a department</span></label>
+          </div>
+          <div class="list" id="cl-list"></div>
+          <p class="fine">Pass rates: none of these programs publish NREMT first-attempt pass rates on their program pages, so Ladder Up doesn't rank by them yet. Always confirm cost and dates with the program before you enroll.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-jobs" aria-labelledby="tab-jobs" hidden>
+          <div class="pintro"><h3>Job Board</h3><p>Open full-time firefighter postings, soonest deadline first. Every listing links straight to its application and to the posting we pulled it from.</p></div>
+          <div class="controls">
+            <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
+            <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
+            <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-dated"><span>Only postings with a deadline</span></label>
+          </div>
+          <div class="list" id="jb-list"></div>
+          <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Expected to Test Within a Year</h4><button type="button" class="linkish" data-go2b="depts">All departments</button></div><p class="sub">These departments aren't testing yet, but they usually test every two years and are due within the next year. Expected dates are estimates.</p><div id="jb-soon"></div></div>
+          <p class="fine">Sources: The Blue Line, Public Safety Testing and department announcements. Requirements are summarized. Read the full posting before you apply.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-ce" aria-labelledby="tab-ce" hidden>
+          <div class="pintro"><h3>Continuing Education</h3><p>For firefighters already on a department: OSFM certification courses and specialty training near you, from advanced firefighter and engineer to technical rescue, water rescue, hazmat and officer classes. Upcoming sessions are listed first.</p></div>
+          <div class="controls">
+            <div class="field"><label class="lbl" for="ce-q">Search</label><input class="tinput" id="ce-q" type="search" placeholder="Try rope, VMO, FAE or officer" style="width:min(280px,100%)"></div>
+            <div class="field"><label class="lbl" for="ce-cat">Type</label><select class="select" id="ce-cat"><option value="all">All types</option></select></div>
+            <div class="field"><label class="lbl" for="ce-zip">ZIP</label><input class="tinput zip" id="ce-zip" inputmode="numeric" maxlength="5" data-zip></div>
+            <div class="field"><label class="lbl" for="ce-sort">Sort by</label><select class="select" id="ce-sort"><option value="date">Next session</option><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
+            <label class="check" style="padding-block:10px"><input type="checkbox" id="ce-dated"><span>Only courses with dates</span></label>
+          </div>
+          <p class="who" id="ce-count" style="margin-bottom:12px"></p>
+          <div class="list" id="ce-list"></div>
+          <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Dive Rescue</h4></div><p class="sub" id="ce-dive"></p></div>
+          <div class="dcard" style="margin-top:12px"><div class="dcard-h"><h4>More Places to Find Courses</h4></div><ul class="mini" id="ce-prov"></ul></div>
+          <p class="fine">Dates and prices come from each provider's 2027 catalog or course page. Many courses are open to members of any department, but some require your chief's approval or department sponsorship. Check with the provider before you register.</p>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-depts" aria-labelledby="tab-depts" hidden>
+          <div class="pintro"><h3>Department Directory</h3><p>Fire departments in the pilot area, their hiring status and where they post testing.</p></div>
+          <div class="controls">
+            <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
+            <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
+              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
+            <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option></select></div>
+          </div>
+          <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
+          <div class="list" id="dp-list"></div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-funding" aria-labelledby="tab-funding" hidden>
+          <div class="pintro"><h3>Funding Matcher</h3><p>Tell us what you're training for and your situation. We'll show the grants and scholarships you can apply to.</p></div>
+          <div class="fund">
+            <div class="fund-side">
+              <div class="field"><label class="lbl" for="fd-for">Training for</label><select class="select" id="fd-for"><option value="emt">EMT</option><option value="medic">Paramedic</option><option value="fire">Fire academy</option></select></div>
+              <fieldset class="elig"><legend class="lbl">My situation</legend>
+                <label><input type="checkbox" data-need="college"><span>Enrolled (or enrolling) at a community college</span></label>
+                <label><input type="checkbox" data-need="fafsa"><span>I filed, or will file, the FAFSA</span></label>
+                <label><input type="checkbox" data-need="workforce"><span>Unemployed, underemployed or laid off</span></label>
+                <label><input type="checkbox" data-need="firefighter"><span>Already on a fire department</span></label>
+                <label><input type="checkbox" data-need="hired"><span>Open to getting hired as an EMT first</span></label>
+              </fieldset>
+            </div>
+            <div><div class="list" id="fd-list"></div></div>
+          </div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-roadmap" aria-labelledby="tab-roadmap" hidden>
+          <div class="pintro"><h3>My Roadmap</h3><p>Pick the rung you're on and check off steps. Progress saves in this browser.</p></div>
+          <div class="rm"><ol class="rm-list" id="rm-list"></ol><div id="rm-detail"></div></div>
+        </div>
+
+        <div class="panel" role="tabpanel" id="p-kit" aria-labelledby="tab-kit" hidden>
+          <div class="pintro"><h3>First Shift Kit</h3><p>What to pack for a first 24-hour shift. Ask your officer what your department issues before you buy anything.</p></div>
+          <div class="kit-top"><span class="kit-count" id="kit-count"></span><div class="bar"><i id="kit-bar"></i></div><button class="btn btn-quiet btn-sm" type="button" id="kit-reset">Clear checks</button></div>
+          <div class="kit-grid" id="kit-grid"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="join section" id="join" aria-labelledby="join-h">
+    <div class="stripe" aria-hidden="true"></div>
+    <div class="wrap join-grid">
+      <div>
+        <p class="eyebrow" style="color:var(--inv-ink-2)">Illinois pilot · Free during the demo</p>
+        <h2 class="h2" id="join-h">Get on the <em>List.</em></h2>
+        <p class="lede">Sign up for the Ladder Up pilot. It's free while we test it in Will County and the southwest suburbs. We'll tell you when new classes, testing dates and scholarships open near you.</p>
+      </div>
+      <div>
+        <div class="done" id="join-ext" hidden>
+          <h3 id="join-ext-h">Join the Free Pilot</h3>
+          <p id="join-ext-p">Joining is part of building your dashboard. It takes about a minute.</p>
+          <button type="button" class="btn btn-red" id="join-ext-btn" style="justify-self:start">Build My Dashboard and Join</button>
+          <p id="join-ext-resend-p" class="small" hidden>Didn't see a Google Forms confirmation page? <a id="join-ext-resend" href="#" target="_blank" rel="noopener">Send my sign-up again</a>.</p>
+        </div>
+        <form class="form" id="join-form" novalidate>
+          <div class="form-2">
+            <div class="field"><label class="lbl" for="j-name">First name</label><input class="input" id="j-name" autocomplete="given-name" maxlength="40" required></div>
+            <div class="field"><label class="lbl" for="j-zip">ZIP</label><input class="input" id="j-zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" required></div>
+          </div>
+          <div class="field"><label class="lbl" for="j-email">Email</label><input class="input" id="j-email" type="email" autocomplete="email" maxlength="120" required></div>
+          <div class="field"><label class="lbl" for="j-stage">Where are you now?</label><select class="select" id="j-stage"></select></div>
+          <p class="err" id="j-err" hidden></p>
+          <button class="btn btn-red" type="submit" id="j-submit">Join the waitlist</button>
+          <p class="form-note">We use your email only for Ladder Up pilot updates.</p>
+        </form>
+        <div class="done" id="join-done" hidden><h3>You're on the List.</h3><p id="done-msg"></p></div>
+        <div class="admin" id="admin" hidden>
+          <div style="display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:space-between"><b id="admin-count">Sign-ups</b><button class="btn btn-quiet btn-sm" type="button" id="admin-csv" style="color:var(--ink)">Download CSV</button></div>
+          <div class="tscroll" data-lenis-prevent-horizontal><table><thead><tr><th>Name</th><th>Email</th><th>ZIP</th><th>Stage</th><th>Joined</th></tr></thead><tbody id="admin-rows"></tbody></table></div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="foot"><div class="wrap" style="display:grid;gap:10px">
+  <span class="brand-word" style="font-size:22px">Ladder Up</span>
+  <p>Listings come from public program pages, department sites, The Blue Line and Public Safety Testing. Each one shows the date we last checked it. Ladder Up is not affiliated with any department or school listed. Confirm requirements, dates and costs with them before acting.</p>
+  <p>This site is a demo. Found a problem or a wrong listing? Email <a class="mail" href="mailto:jsrebro43@gmail.com?subject=Ladder%20Up%20Pilot" target="_blank" rel="noopener">jsrebro43@gmail.com</a>.</p>
+</div></footer>
+
+<script src="data.js"></script>
+<script>
+(function(){
+const D = window.LADDER_DATA || {programs:[],departments:[],jobs:[],funding:[],zips:{}};
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const store = { get(k,d){ try{ const v = localStorage.getItem("lu:"+k); return v==null?d:JSON.parse(v) }catch(e){ return d } },
+                set(k,v){ try{ localStorage.setItem("lu:"+k, JSON.stringify(v)) }catch(e){} } };
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const fmt$ = n => n==null ? null : "$" + Math.round(n).toLocaleString("en-US");
+const TODAY = new Date(); TODAY.setHours(0,0,0,0);
+const parseDate = s => { const [y,m,d] = s.split("-").map(Number); return new Date(y, m-1, d) };
+const fmtDate = s => parseDate(s).toLocaleDateString("en-US",{month:"short",day:"numeric",year:"numeric"});
+const daysTo = s => Math.round((parseDate(s) - TODAY)/86400000);
+const LABEL = {emt:"EMT", medic:"Paramedic", academy:"Fire Academy"};
+
+/* ZIP state shared by every tab */
+let zip = store.get("zip", "");
+function origin(){ return D.zips[zip] || null }
+function miles(lat,lng){ const o = origin(); if(!o || lat==null) return null;
+  const R=3958.8, r=x=>x*Math.PI/180, dLa=r(lat-o[0]), dLo=r(lng-o[1]);
+  const a=Math.sin(dLa/2)**2+Math.cos(r(o[0]))*Math.cos(r(lat))*Math.sin(dLo/2)**2;
+  return 2*R*Math.asin(Math.sqrt(a)); }
+const distTxt = m => m==null ? "" : `<span class="dist">${m<1?"<1":Math.round(m)} mi</span>`;
+function setZip(z){
+  zip = (z||"").replace(/\D/g,"").slice(0,5); store.set("zip", zip);
+  $$("[data-zip]").forEach(i => { if(i.value !== zip) i.value = zip });
+  const o = origin();
+  $("#area-note").textContent = o ? `Distances from ${o[2]} (${zip})` : zip.length===5 ? `${zip} is outside the pilot area. Showing everything.` : "Enter a ZIP to sort by distance";
+  renderAll();
+}
+
+/* In-page jumps: smooth with Lenis when it is running, native otherwise */
+function goTo(el){ if(window.__lenis) window.__lenis.scrollTo(el, { offset: -72 }); else el.scrollIntoView(); }
+
+/* Tabs */
+const TABS = ["dash","classes","jobs","ce","depts","funding","roadmap","kit"];
+function showTab(t, focus){
+  if(!TABS.includes(t)) t = "dash";
+  if(!profile && t !== "dash"){ t = "dash"; if(typeof openProfileForm === "function") setTimeout(() => { if($("#prof-form").hidden) openProfileForm() }, 0) }
+  TABS.forEach(x => { const b = $("#tab-"+x), p = $("#p-"+x), on = x===t;
+    b.setAttribute("aria-selected", on); b.tabIndex = on?0:-1; p.hidden = !on; });
+  store.set("tab", t); if(focus) $("#tab-"+t).focus();
+}
+$("#tabs").addEventListener("click", e => { const b = e.target.closest("[data-tab]"); if(b) showTab(b.dataset.tab) });
+$("#tabs").addEventListener("keydown", e => { if(!["ArrowLeft","ArrowRight"].includes(e.key)) return;
+  const i = TABS.indexOf(store.get("tab","classes")), n = (i + (e.key==="ArrowRight"?1:-1) + TABS.length) % TABS.length; showTab(TABS[n], true) });
+$$("[data-go]").forEach(a => a.addEventListener("click", () => showTab(a.dataset.go)));
+
+function seg(id, onChange){ const el = $(id); el.addEventListener("click", e => { const b = e.target.closest("button"); if(!b) return;
+  el.querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x===b)); onChange(b.dataset.v) }); }
+function segSet(id, v){ $(id).querySelectorAll("button").forEach(x => x.setAttribute("aria-pressed", x.dataset.v===v)) }
+
+/* Classes */
+let clType = "all";
+seg("#cl-type", v => { clType = v; renderClasses() });
+["#cl-sort","#cl-open","#cl-anyone"].forEach(s => $(s).addEventListener("change", renderClasses));
+function statusChip(s, note){ const cls = s==="full"?"chip-red":s==="open"?"chip-good":"chip-warn";
+  const txt = s==="full"?"Class full":s==="open"?"Offered":"Not yet verified"; return `<span class="chip ${cls}">${txt}</span>` }
+function sponsorChip(p){ return p.sponsor==="open" ? `<span class="chip chip-good">Open to anyone</span>` : p.sponsor==="sponsored" ? `<span class="chip chip-warn">Department-sponsored only</span>` : "" }
+function renderClasses(){
+  let rows = D.programs.filter(p => clType==="all" || p.type===clType).filter(p => !$("#cl-open").checked || p.status!=="full")
+    .filter(p => !$("#cl-anyone").checked || p.type!=="academy" || p.sponsor==="open")
+    .map(p => ({...p, mi: miles(p.lat,p.lng)}));
+  const s = $("#cl-sort").value;
+  rows.sort((a,b) => s==="cost" ? ((a.cost??1e9)-(b.cost??1e9)) : ((a.mi??1e9)-(b.mi??1e9)) || a.provider.localeCompare(b.provider));
+  $("#cl-list").innerHTML = rows.length ? rows.map(p => `
+    <article class="card">
+      <div><h4>${esc(p.name)}</h4><p class="who">${esc(p.provider)} · ${esc(p.city)}</p>
+        <div class="meta"><span class="chip">${LABEL[p.type]}</span>${statusChip(p.status)}${sponsorChip(p)}${distTxt(p.mi)}</div>
+        ${p.statusNote?`<p class="who" style="margin-top:8px">${esc(p.statusNote)}</p>`:""}</div>
+      <div class="right">${p.cost!=null?`<span class="money">${fmt$(p.cost)}</span><small>${p.costEst?"Estimate, in-district":p.costOut?`In-district · ${fmt$(p.costOut)} out-of-district`:"Published price"}</small>`:`<small>Cost not published</small>`}</div>
+      <div class="kv">
+        <div><span>Dates / length</span><p>${esc(p.length)}</p></div>
+        <div><span>Schedule</span><p>${esc(p.schedule)}</p></div>
+        <div><span>Requirements</span><p>${esc(p.reqs)}</p></div>
+        <div><span>Cost details</span><p>${esc(p.costNote)}</p></div>
+      </div>
+      ${p.applyNote?`<p class="who" style="grid-column:1/-1"><b style="color:var(--ink)">How to apply:</b> ${esc(p.applyNote)}</p>`:""}
+      <div class="acts">${p.apply?`<a class="btn btn-red btn-sm" href="${esc(p.apply)}" target="_blank" rel="noopener">${p.sponsor==="sponsored"?"Enrollment page":"Apply"}</a>`:`<span class="chip">No online application right now</span>`}<a class="btn btn-quiet btn-sm" href="${esc(p.url)}" target="_blank" rel="noopener">Program page</a>${starBtn(p.id)}${p.contact?`<span class="chip" style="user-select:all">${esc(p.contact)}</span>`:""}<span class="chip">Checked ${fmtDate(p.checked)}</span></div>
+    </article>`).join("") : `<p class="empty">No programs match. Try "All" or show full classes.</p>`;
+}
+
+/* Jobs */
+["#jb-sort","#jb-dated"].forEach(s => $(s).addEventListener("change", renderJobs));
+function liveJobs(){ return D.jobs.filter(j => !j.deadline || daysTo(j.deadline) >= 0) }
+function renderJobs(){
+  let rows = liveJobs().filter(j => !$("#jb-dated").checked || j.deadline).map(j => ({...j, mi: miles(j.lat,j.lng)}));
+  const s = $("#jb-sort").value;
+  rows.sort((a,b) => s==="pay" ? ((b.pay??0)-(a.pay??0)) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
+    : ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6)));
+  $("#jobs-n").textContent = liveJobs().length;
+  $("#jb-list").innerHTML = rows.length ? rows.map(j => { const d = j.deadline ? daysTo(j.deadline) : null;
+    const chip = d==null ? `<span class="chip">No deadline posted</span>` : `<span class="chip ${d<=14?"chip-red":"chip-warn"}">${d===0?"Due today":d===1?"1 day left":d+" days left"}</span>`;
+    return `<article class="card">
+      <div><h4>${esc(j.title)}</h4><p class="who">${esc(j.dept)} · ${esc(j.city)}</p>
+        <div class="meta">${chip}${qualChip(j)}${j.fee===0?`<span class="chip chip-good">Free test</span>`:""}${distTxt(j.mi)}</div></div>
+      <div class="right">${j.pay?`<span class="money">${fmt$(j.pay)}</span><small>Starting pay</small>`:`<small>Pay not posted</small>`}</div>
+      <div class="kv">
+        <div><span>Deadline</span><p>${j.deadline?fmtDate(j.deadline)+". ":""}${esc(j.deadlineNote||"")}</p></div>
+        ${j.payNote?`<div><span>Pay details</span><p>${esc(j.payNote)}</p></div>`:""}
+        <div style="grid-column:1/-1"><span>Key requirements</span><ul class="reqs">${j.reqs.map(r=>`<li>${esc(r)}</li>`).join("")}</ul></div>
+        ${j.applyTip?`<div style="grid-column:1/-1"><span>How to apply</span><p>${esc(j.applyTip)}</p></div>`:""}
+      </div>
+      <div class="acts"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a><a class="btn btn-quiet btn-sm" href="${esc(j.source)}" target="_blank" rel="noopener">View posting · ${esc(j.sourceName)}</a>${starBtn(j.id)}</div>
+    </article>` }).join("") : `<p class="empty">No open postings match right now.</p>`;
+}
+
+/* Continuing education */
+const CE = D.ce || {courses:[], categories:{}, providers:[]};
+$("#ce-cat").innerHTML += Object.entries(CE.categories).map(([k,v]) => `<option value="${k}">${esc(v)}</option>`).join("");
+$("#ce-dive").textContent = CE.dive || "";
+$("#ce-prov").innerHTML = (CE.providers||[]).map(p => `<li><div><p class="t">${esc(p.name)}</p><p class="m">${esc(p.note)}</p></div><div class="r"><a class="linkish" href="${esc(p.url)}" target="_blank" rel="noopener">Open</a></div></li>`).join("");
+["#ce-cat","#ce-sort","#ce-dated"].forEach(s => $(s).addEventListener("change", renderCE));
+$("#ce-q").addEventListener("input", renderCE);
+function upcoming(c){ return (c.sessions||[]).filter(x => daysTo(x.s) >= -6) }
+function nextSession(c){ return upcoming(c)[0] || null }
+function renderCE(){
+  const q = $("#ce-q").value.trim().toLowerCase(), cat = $("#ce-cat").value;
+  let rows = CE.courses.filter(c => cat==="all" || c.cat===cat)
+    .filter(c => !q || [c.name,c.cert,c.aka,c.provider,c.location,CE.categories[c.cat]].join(" ").toLowerCase().includes(q))
+    .filter(c => !$("#ce-dated").checked || nextSession(c))
+    .map(c => ({...c, mi: miles(c.lat,c.lng), nx: nextSession(c)}));
+  const s = $("#ce-sort").value;
+  rows.sort((a,b) => s==="cost" ? ((a.cost??1e9)-(b.cost??1e9)) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
+    : ((a.nx?daysTo(a.nx.s):1e6)-(b.nx?daysTo(b.nx.s):1e6)) || a.name.localeCompare(b.name));
+  $("#ce-count").textContent = `${rows.length} course${rows.length===1?"":"s"}${cat!=="all"?" in "+CE.categories[cat]:""}${q?` matching "${$("#ce-q").value.trim()}"`:""}`;
+  $("#ce-list").innerHTML = rows.length ? rows.map(c => { const up = upcoming(c);
+    return `<article class="card">
+      <div><h4>${esc(c.name)}</h4><p class="who">${esc(c.provider)} · ${esc(c.location)}</p>
+        <div class="meta"><span class="chip">${esc(CE.categories[c.cat]||"")}</span>${c.cert?`<span class="chip chip-good">OSFM: ${esc(c.cert)}</span>`:""}${c.nx?`<span class="chip chip-warn">Next: ${esc(c.nx.t)}</span>`:`<span class="chip">Dates not posted</span>`}${distTxt(c.mi)}</div>
+        ${c.note?`<p class="who" style="margin-top:8px">${esc(c.note)}</p>`:""}</div>
+      <div class="right">${c.cost!=null?`<span class="money">${fmt$(c.cost)}</span><small>${c.costNote?"See cost details":"Published price"}</small>`:`<small>Cost not published</small>`}</div>
+      <div class="kv">
+        <div style="grid-column:1/-1"><span>${up.length>1?"All upcoming sessions":"Sessions"}</span>${up.length?`<ul class="reqs">${up.map(x=>`<li>${esc(x.t)}</li>`).join("")}</ul>`:`<p>${esc(c.note||"No dates posted yet.")}</p>`}</div>
+        ${c.length?`<div><span>Length</span><p>${esc(c.length)}</p></div>`:""}
+        ${c.costNote?`<div><span>Cost details</span><p>${esc(c.costNote)}</p></div>`:""}
+      </div>
+      <div class="acts"><a class="btn btn-red btn-sm" href="${esc(c.register)}" target="_blank" rel="noopener">Register</a><a class="btn btn-quiet btn-sm" href="${esc(c.page)}" target="_blank" rel="noopener">Course details</a>${starBtn(c.id)}${c.contact?`<span class="chip" style="user-select:all">${esc(c.contact)}</span>`:""}</div>
+    </article>` }).join("") : `<p class="empty">${/div/.test(q) ? esc(CE.dive) : 'No courses match. Clear the search or pick "All types".'}</p>`;
+}
+
+/* Departments */
+let dpStatus = "all";
+seg("#dp-status", v => { dpStatus = v; renderDepts() });
+const ST = {open:["chip-good","Hiring now"], rolling:["chip-good","Ongoing testing"], closed:["chip-red","Testing closed"], unknown:["","No posting found"]};
+/* Next testing round: announced date, or a projection two years after the last round */
+const SEASON = m => m<=1||m===11 ? "Winter" : m<=4 ? "Spring" : m<=7 ? "Summer" : "Fall";
+function seasonLabel(d){ const y = d.getFullYear() + (d.getMonth()===11 ? 1 : 0); return SEASON(d.getMonth()) + " " + y }
+function nextTest(d){
+  if(d.status==="open" || d.status==="rolling") return null;
+  if(d.nextTest) return { when: parseDate(d.nextTest.date), label: d.nextTest.label, kind: "announced" };
+  if(!d.lastTest) return null;
+  const last = parseDate(d.lastTest.date); let n = new Date(last); n.setFullYear(n.getFullYear()+2);
+  const ago = (TODAY - n) / 86400000;
+  if(ago > 0 && ago <= 183) return { when: TODAY, label: "Due now", kind: "due" };
+  while((TODAY - n) / 86400000 > 183) n.setFullYear(n.getFullYear()+2);
+  return { when: n, label: seasonLabel(n), kind: "projected" };
+}
+function monthsAway(dt){ return (dt - TODAY) / (86400000*30.4) }
+const fmtMonth = s => parseDate(s).toLocaleDateString("en-US",{month:"short",year:"numeric"});
+const fmtMonthLong = s => parseDate(s).toLocaleDateString("en-US",{month:"long",year:"numeric"});
+$("#dp-sort").addEventListener("change", renderDepts);
+function renderDepts(){
+  let rows = D.departments.map(d => ({...d, mi: miles(d.lat,d.lng), nt: nextTest(d)}))
+    .filter(d => dpStatus==="all" || (dpStatus==="open" ? (d.status==="open"||d.status==="rolling") : dpStatus==="soon" ? (d.nt && monthsAway(d.nt.when) <= 12) : d.status==="closed"));
+  const s = $("#dp-sort").value;
+  rows.sort((a,b) => s==="next" ? ((a.status==="open"||a.status==="rolling"?-1:a.nt?+a.nt.when:9e15) - (b.status==="open"||b.status==="rolling"?-1:b.nt?+b.nt.when:9e15)) || ((a.mi??1e9)-(b.mi??1e9))
+    : ((a.mi??1e9)-(b.mi??1e9)) || a.name.localeCompare(b.name));
+  const ntChip = nt => !nt ? "" : nt.kind==="announced" ? `<span class="chip chip-good">Next test: ${esc(nt.label)}</span>`
+    : nt.kind==="due" ? `<span class="chip chip-warn">Next test expected any time</span>` : `<span class="chip chip-warn">Next test expected: ${esc(nt.label)}</span>`;
+  const ntLine = nt => !nt ? "" : nt.kind==="announced" ? `<b style="color:var(--ink)">Next test:</b> ${esc(nt.label)}, announced by the department.`
+    : nt.kind==="due" ? `<b style="color:var(--ink)">Next test:</b> It has been about two years since the last one, so a new test could be announced any time.`
+    : `<b style="color:var(--ink)">Next test:</b> Expected around ${esc(nt.label.replace(/^(\w+)/, m => m.toLowerCase()))}, about two years after the last one. This is an estimate.`;
+  $("#dp-list").innerHTML = rows.length ? rows.map(d => `
+    <article class="card">
+      <div><h4>${esc(d.name)}</h4><p class="who">${esc(d.address || d.city)}</p>
+        <div class="meta"><span class="chip ${ST[d.status][0]}">${ST[d.status][1]}</span>${ntChip(d.nt)}${distTxt(d.mi)}</div>
+        ${d.note?`<p class="who" style="margin-top:10px">${esc(d.note)}</p>`:""}
+        ${d.lastTest?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> ${fmtMonthLong(d.lastTest.date)}. ${esc(d.lastTest.label)} <a class="linkish" style="font-size:13px" href="${esc(d.lastTest.source)}" target="_blank" rel="noopener">Source</a></p>`:(d.status==="unknown"?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> Not found.</p>`:"")}
+        ${d.nt?`<p class="who" style="margin-top:4px">${ntLine(d.nt)}</p>`:""}</div>
+      <div class="acts">${d.jobs?`<a class="btn btn-red btn-sm" href="${esc(d.jobs)}" target="_blank" rel="noopener">Hiring / testing page</a>`:""}${d.site?`<a class="btn btn-quiet btn-sm" href="${esc(d.site)}" target="_blank" rel="noopener">Website</a>`:`<a class="btn btn-quiet btn-sm" href="https://www.google.com/search?q=${encodeURIComponent(d.name+" Illinois")}" target="_blank" rel="noopener">Search the web</a>`}</div>
+    </article>`).join("") : `<p class="empty">No departments match.</p>`;
+  renderSoon();
+}
+/* Job Board: departments expected to test within a year */
+function renderSoon(){
+  const el = $("#jb-soon"); if(!el) return;
+  const rows = D.departments.map(d => ({...d, mi: miles(d.lat,d.lng), nt: nextTest(d)})).filter(d => d.nt && monthsAway(d.nt.when) <= 12)
+    .sort((a,b) => (a.nt.when - b.nt.when) || ((a.mi??1e9)-(b.mi??1e9)));
+  el.innerHTML = rows.length ? `<ul class="mini">${rows.map(d => `<li><div><p class="t">${esc(d.name)}</p><p class="m">${d.nt.kind==="due"?"Expected any time":d.nt.kind==="announced"?`Announced for ${esc(d.nt.label)}`:`Expected ${esc(d.nt.label)}`}${d.lastTest?` · Last tested ${fmtMonth(d.lastTest.date)}`:""}${distTxt(d.mi)}</p></div><div class="r">${d.jobs?`<a class="linkish" href="${esc(d.jobs)}" target="_blank" rel="noopener">Testing page</a>`:""}</div></li>`).join("")}</ul>` : `<p class="dempty">None expected in the next 12 months.</p>`;
+}
+
+document.addEventListener("click", e => { const b = e.target.closest("[data-go2b]"); if(b){ showTab(b.dataset.go2b); dpStatus = "soon"; segSet("#dp-status","soon"); renderDepts() } });
+
+/* Funding */
+$("#fd-for").addEventListener("change", renderFunding);
+$$("[data-need]").forEach(c => c.addEventListener("change", renderFunding));
+function renderFunding(){
+  const f = $("#fd-for").value, have = new Set($$("[data-need]:checked").map(c => c.dataset.need));
+  const rows = D.funding.filter(x => x.for.includes(f)).map(x => ({...x, ok: x.needs.every(n => have.has(n)), miss: x.needs.filter(n => !have.has(n))}))
+    .sort((a,b) => (b.ok-a.ok) || a.miss.length-b.miss.length);
+  const NEED = {college:"community college enrollment", fafsa:"a FAFSA", workforce:"workforce program eligibility", firefighter:"fire department membership", hired:"an EMT job first"};
+  $("#fd-list").innerHTML = rows.map(x => { const dl = /^\d{4}-\d\d-\d\d$/.test(x.deadline) ? fmtDate(x.deadline) : x.deadline;
+    return `<article class="card ${x.ok?"":"dim"}">
+      <div><h4>${esc(x.name)}</h4><p class="who">${esc(x.provider)}</p>
+        <div class="meta">${x.ok?`<span class="chip chip-good">You may qualify</span>`:`<span class="chip">Requires ${x.miss.map(n=>NEED[n]).join(" and ")}</span>`}</div></div>
+      <div class="right"><span class="money" style="font-size:15px">${esc(x.amount)}</span></div>
+      <div class="kv"><div><span>Who it's for</span><p>${esc(x.who)}</p></div><div><span>Deadline</span><p>${esc(dl)}</p></div></div>
+      <div class="acts"><a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">How to apply</a></div>
+    </article>` }).join("");
+}
+
+/* Roadmap */
+const RUNGS = [
+  {t:"Decide on the Job", steps:["Ride along or visit a local station","Look at starting pay on the Job Board","Pick EMT, Paramedic or Firefighter/Paramedic as your goal"]},
+  {t:"EMT Class + NREMT", steps:["Compare EMT classes in Class Finder","Check Funding for grants","Finish clinical hours","Schedule the NREMT cognitive exam","Pass the psychomotor exam","Apply for your Illinois EMT license"]},
+  {t:"Fire Academy + CPAT", steps:["Pass the CPAT and ladder climb","Complete Basic Operations Firefighter","Earn OSFM certification"]},
+  {t:"Paramedic School", steps:["Get into a paramedic program (often after EMT work experience)","Pass the paramedic NREMT","Get your Illinois Paramedic license"]},
+  {t:"Test and Get Hired", steps:["Register for department testing","Prepare for the oral board","Pass background, medical and psych"]},
+  {t:"Probation Year", steps:["Pack your First Shift Kit","Finish your probation task book","Learn your district's streets"]},
+  {t:"Promotion", steps:["Engineer, then Lieutenant study materials","Take advanced training (hazmat, tech rescue)","Captain and Chief exams"]}
+];
+/* One-time move from the old eight-rung ladder (EMT and NREMT were separate; academy came after paramedic) */
+(function migrateLadder(){
+  if(store.get("ladderVer", 1) >= 2) return;
+  const RUNG = {1:1, 2:2, 3:2, 4:4, 5:3, 6:5, 7:6, 8:7};
+  const old = store.get("rmDone", {}), done = {};
+  Object.keys(old).forEach(k => { const [r, i] = k.split("-").map(Number); const nr = RUNG[r]; if(!nr) return;
+    done[nr + "-" + (r === 3 ? i + 3 : i)] = old[k]; });
+  store.set("rmDone", done);
+  const rg = store.get("rung", null); if(rg) store.set("rung", RUNG[rg] || 1);
+  const pf = store.get("profile", null); if(pf && pf.rung) { pf.rung = RUNG[pf.rung] || 1; store.set("profile", pf) }
+  store.set("ladderVer", 2);
+})();
+let rmCur = store.get("rung", 1), rmDone = store.get("rmDone", {});
+function renderRoadmap(){
+  $("#rm-list").innerHTML = RUNGS.map((r,i) => { const n=i+1, done = r.steps.every((_,k)=>rmDone[n+"-"+k]);
+    return `<li><button type="button" class="rm-step ${done?"done":""}" data-r="${n}" ${n===rmCur?'aria-current="step"':""}><span class="rm-num">${n}</span><span class="rm-t">${esc(r.t)}</span>${done?'<span class="chip chip-good">Done</span>':""}</button></li>` }).join("");
+  const r = RUNGS[rmCur-1];
+  $("#rm-detail").innerHTML = `<p class="eyebrow">Rung ${rmCur} of ${RUNGS.length}</p><h4 class="rm-big" style="margin-top:6px">${esc(r.t)}</h4>
+    <ul class="checks">${r.steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-k="${rmCur}-${k}" ${rmDone[rmCur+"-"+k]?"checked":""}><span>${esc(s)}</span></label></li>`).join("")}</ul>`;
+  renderLadder();
+}
+/* Hero ladder: same rungs as the roadmap, marks progress, opens the roadmap at a rung */
+function renderLadder(){
+  const cur = profile ? profile.rung : rmCur;
+  $("#hero-ladder").innerHTML = RUNGS.map((r,i) => { const n = i+1, done = r.steps.every((_,k)=>rmDone[n+"-"+k]);
+    return `<li><button type="button" class="rung ${n===cur?"cur":""} ${done?"done":""}" data-lr="${n}" aria-label="Rung ${n}: ${esc(r.t)}${n===cur?" (you are here)":""}"><span class="rung-bar"></span><span class="rung-num">${n}</span><span class="rung-t">${esc(r.t)}</span></button></li>` }).reverse().join("");
+}
+$("#hero-ladder").addEventListener("click", e => { const b = e.target.closest("[data-lr]"); if(!b) return;
+  if(!profile){ openProfileForm(); $("#pf-rung").value = b.dataset.lr; goTo($("#tools")); return }
+  rmCur = +b.dataset.lr; store.set("rung", rmCur); renderRoadmap(); showTab("roadmap"); goTo($("#tools")) });
+$("#rm-list").addEventListener("click", e => { const b = e.target.closest("[data-r]"); if(!b) return; rmCur = +b.dataset.r; store.set("rung", rmCur);
+  if(profile){ profile.rung = rmCur; store.set("profile", profile); renderDash() } renderRoadmap() });
+$("#rm-detail").addEventListener("change", e => { const k = e.target.dataset.k; if(!k) return; rmDone[k] = e.target.checked; store.set("rmDone", rmDone); renderRoadmap(); renderDash() });
+
+/* First Shift Kit */
+const KIT = {
+  "Uniform":["Two sets of station uniforms","Belt and boots (broken in)","Job shirt or jacket for the weather","Undershirts, socks and underwear for 24+ hours"],
+  "On the rig":["Watch with a second hand","Trauma shears and penlight","Pocket notebook and pens","Personal stethoscope","Gloves and safety glasses"],
+  "Bunk room":["Sheets, pillow and blanket","Shower kit and flip-flops","Phone charger"],
+  "Kitchen & paperwork":["Food money for house meals","Your share for the coffee fund","Copies of licenses and ID","Department SOP book or app"]
+};
+let kit = store.get("kit", {});
+function renderKit(){
+  const all = Object.entries(KIT).flatMap(([g,items]) => items.map((it,i)=>g+"|"+i)), n = all.filter(k=>kit[k]).length;
+  $("#kit-count").textContent = `${n} / ${all.length} packed`; $("#kit-bar").style.width = (100*n/all.length)+"%";
+  $("#kit-grid").innerHTML = Object.entries(KIT).map(([g,items]) => `<div class="kit-group"><h4>${esc(g)}</h4><ul class="checks">${items.map((it,i)=>`<li><label class="check"><input type="checkbox" data-kit="${esc(g)}|${i}" ${kit[g+"|"+i]?"checked":""}><span>${esc(it)}</span></label></li>`).join("")}</ul></div>`).join("");
+}
+$("#kit-grid").addEventListener("change", e => { const k = e.target.dataset.kit; if(!k) return; kit[k] = e.target.checked; store.set("kit", kit); renderKit() });
+$("#kit-reset").addEventListener("click", () => { kit = {}; store.set("kit", kit); renderKit() });
+
+/* ---------- Personal profile (this browser only) ---------- */
+let profile = store.get("profile", null);
+let saved = store.get("saved", {});
+const CERT = {emt:"EMT license", medic:"Paramedic license", cpat:"CPAT card", ffii:"Firefighter II / BOF"};
+const GOAL = {ffpm:"Firefighter/Paramedic", ffemt:"Firefighter/EMT", medic:"Paramedic", emt:"EMT"};
+const STAR = '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>';
+function starBtn(id){ const on = !!saved[id]; return `<button type="button" class="save" data-save="${esc(id)}" aria-pressed="${on}">${STAR}<span>${on?"Saved":"Save"}</span></button>` }
+document.addEventListener("click", e => { const b = e.target.closest("[data-save]"); if(!b) return;
+  const id = b.dataset.save; if(saved[id]) delete saved[id]; else saved[id] = true; store.set("saved", saved);
+  renderAll(); renderDash(); });
+function has(c){ return !!(profile && profile.certs && profile.certs.includes(c)) }
+function missingFor(j){ return j.needs ? j.needs.filter(c => !has(c)) : null }
+function qualChip(j){
+  if(!profile) return "";
+  const m = missingFor(j);
+  if(m === null) return `<span class="chip">Check requirements</span>`;
+  return m.length ? `<span class="chip chip-warn">You need: ${m.map(c=>CERT[c]).join(", ")}</span>` : `<span class="chip chip-good">You meet the listed requirements</span>`;
+}
+/* What to train for next, from goal + what they hold */
+function nextType(p){
+  if(!p) return null;
+  const c = p.certs || [];
+  if(!c.includes("emt") && !c.includes("medic")) return "emt";
+  if((p.goal==="ffpm"||p.goal==="ffemt") && !c.includes("ffii")) return "academy";
+  if((p.goal==="ffpm"||p.goal==="medic") && !c.includes("medic")) return "medic";
+  return null;
+}
+function inRange(mi){ const r = profile ? +profile.radius : 0; return !r || mi==null || mi <= r }
+
+function fillProfileForm(){
+  const p = profile || {name:"", fullName:"", email:"", zip: zip || "", radius:"30", goal:"ffpm", rung:1, certs:[]};
+  $("#pf-name").value = p.fullName || p.name; $("#pf-email").value = p.email || "";
+  $("#pf-join-row").hidden = !!(profile && profile.joined); $("#pf-join").checked = !(profile && profile.joined); $("#pf-zip").value = p.zip; $("#pf-radius").value = String(p.radius);
+  $("#pf-goal").value = p.goal; $("#pf-rung").value = String(p.rung);
+  $$("[data-cert]").forEach(c => c.checked = p.certs.includes(c.dataset.cert));
+  $("#prof-h").textContent = profile ? "Edit Your Profile" : "Set Up Your Dashboard";
+  updateSaveLabel();
+  $("#pf-cancel").hidden = !profile; zipNote();
+}
+function zipNote(){ const z = $("#pf-zip").value.trim(); const o = D.zips[z];
+  $("#pf-zip-note").textContent = z.length<5 ? "" : o ? o[2] : "Outside the pilot area. We'll show everything." }
+$("#pf-zip").addEventListener("input", zipNote);
+function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); $("#pf-name").focus() }
+$("#pf-cancel").addEventListener("click", () => { $("#prof-form").hidden = true; $("#dash").hidden = false });
+/* One step: build the dashboard and, if they opt in, send their answers to the Ladder Up Google Form.
+   Google's form needs a real link click (a page can't post to it), so the button is a link that opens
+   Google's "response recorded" page in a new tab while the dashboard opens here. */
+const SF = D.signupFields || null;
+function updateSaveLabel(){
+  const join = !$("#pf-join-row").hidden && $("#pf-join").checked;
+  $("#pf-save").textContent = profile ? (join ? "Save and Join the Pilot" : "Save Changes") : (join ? "Build My Dashboard and Join" : "Build My Dashboard");
+}
+$("#pf-join").addEventListener("change", updateSaveLabel);
+function stagesFor(p){
+  const c = p.certs, out = [];
+  if(p.rung === 1 && !c.length) out.push("Brand new");
+  if(c.includes("emt") || p.rung === 2) out.push("EMT or in EMT class");
+  if(c.includes("ffii") || p.rung === 3 || p.rung === 7) out.push("Firefighter or in Fire academy");
+  if(c.includes("medic") || p.rung === 4) out.push("Paramedic or in Paramedic school");
+  if(p.rung === 6) out.push("Hired and on Probation");
+  return out.length ? out : ["None of the above"];
+}
+function signupURL(p){
+  if(!SF || !D.signupForm) return null;
+  const q = new URLSearchParams();
+  q.append("entry." + SF.name, p.fullName); q.append("entry." + SF.email, p.email); q.append("entry." + SF.zip, p.zip);
+  stagesFor(p).forEach(v => q.append("entry." + SF.stage, v));
+  q.append("submit", "Submit");
+  return D.signupForm.replace(/viewform.*$/, "formResponse") + "?" + q.toString();
+}
+function saveProfile(e){
+  const fullName = $("#pf-name").value.trim().replace(/\s+/g," "), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim(), err = $("#pf-err");
+  const join = !$("#pf-join-row").hidden && $("#pf-join").checked && !!SF;
+  const badEmail = (join || email) && !/^\S+@\S+\.\S+$/.test(email);
+  $("#pf-name").setAttribute("aria-invalid", !fullName); $("#pf-zip").setAttribute("aria-invalid", !/^\d{5}$/.test(z)); $("#pf-email").setAttribute("aria-invalid", !!badEmail);
+  if(!fullName || !/^\d{5}$/.test(z) || badEmail){
+    e.preventDefault();
+    err.textContent = join ? "Add your name, a valid email and a 5-digit ZIP." : "Add your name and a 5-digit ZIP."; err.hidden = false; return;
+  }
+  err.hidden = true;
+  const prev = profile || {};
+  profile = { name: fullName.split(" ")[0], fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
+              certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined };
+  if(join){ $("#pf-save").href = signupURL(profile); profile.joined = true; profile.joinedAt = new Date().toISOString() }
+  else e.preventDefault();
+  store.set("profile", profile);
+  rmCur = profile.rung; store.set("rung", rmCur);
+  $("#prof-form").hidden = true; $("#dash").hidden = false;
+  applyProfile(); setZip(z); showTab("dash"); goTo($("#tools"));
+}
+/* Keep the sign-up link ready before the tap, so the page host opens the right address */
+function presetSaveHref(){
+  const btn = $("#pf-save"); if(!btn) return;
+  const join = !$("#pf-join-row").hidden && $("#pf-join").checked && !!SF;
+  const fullName = $("#pf-name").value.trim().replace(/\s+/g," "), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim();
+  const ok = fullName && /^\d{5}$/.test(z) && /^\S+@\S+\.\S+$/.test(email);
+  if(join && ok){
+    const tmp = { fullName, email, zip: z, rung: +$("#pf-rung").value, certs: $$("[data-cert]:checked").map(c => c.dataset.cert) };
+    btn.href = signupURL(tmp); btn.target = "_blank";
+  } else { btn.href = "#"; btn.removeAttribute("target") }
+}
+["input","change"].forEach(ev => $("#prof-form").addEventListener(ev, presetSaveHref));
+$("#pf-save").addEventListener("pointerdown", presetSaveHref);
+$("#pf-save").addEventListener("click", saveProfile);
+$("#prof-form").addEventListener("submit", e => { e.preventDefault(); $("#pf-save").click() });
+
+function renderJoin(){
+  if(!$("#join-ext")) return;
+  const j = profile && profile.joined;
+  $("#join-ext-h").textContent = j ? "You're on the List." : "Join the Free Pilot";
+  $("#join-ext-p").textContent = j ? `Thanks, ${profile.name}. We'll email ${profile.email} with pilot updates.` : (profile ? "Add your email in your profile to join. It takes a few seconds." : "Joining is part of building your dashboard. It takes about a minute.");
+  $("#join-ext-btn").hidden = !!j;
+  const rp = $("#join-ext-resend-p");
+  if(rp){ rp.hidden = !(j && SF && profile.email); if(!rp.hidden) $("#join-ext-resend").href = signupURL(profile) }
+  $("#join-ext-btn").textContent = profile ? "Join the Pilot" : "Build My Dashboard and Join";
+}
+function applyProfile(){
+  renderJoin();
+  document.documentElement.classList.toggle("no-profile", !profile); document.documentElement.classList.toggle("has-profile", !!profile);
+  $("#nav-dash").textContent = profile ? "My Dashboard" : "Build My Dashboard";
+  const t = nextType(profile);
+  if(t){ clType = t; segSet("#cl-type", t) }
+  if(profile){
+    $("#fd-for").value = t==="academy" ? "fire" : t==="medic" ? "medic" : t==="emt" ? "emt" : (profile.goal==="emt"?"emt":"medic");
+    const ff = $('[data-need="firefighter"]'); if(ff) ff.checked = profile.rung >= 6 || has("ffii") && profile.rung >= 5;
+  }
+  renderRoadmap(); renderHello();
+}
+function renderHello(){
+  const h = $("#hello");
+  if(!profile){ h.hidden = true; return }
+  const n = myJobs().filter(j => missingFor(j) && !missingFor(j).length).length;
+  h.hidden = false;
+  h.innerHTML = `<span>Welcome back, <b>${esc(profile.name)}</b>.${n ? ` ${n} open job${n===1?"":"s"} match${n===1?"es":""} your certifications.` : ""}</span><button type="button" class="btn btn-red btn-sm" id="hello-go">Open My Dashboard</button>`;
+  $("#hello-go").onclick = () => { showTab("dash"); goTo($("#tools")) };
+}
+function myJobs(){ return liveJobs().map(j => ({...j, mi: miles(j.lat,j.lng)})).filter(j => inRange(j.mi)) }
+
+function renderDash(){
+  const el = $("#dash");
+  if(!profile){ el.hidden = true; if($("#prof-form").hidden){ fillProfileForm(); $("#prof-form").hidden = false } return }
+  if(!$("#prof-form").hidden) return;
+  el.hidden = false;
+  const o = D.zips[profile.zip], r = RUNGS[profile.rung-1] || RUNGS[0];
+  const steps = r.steps.map((s,k) => ({s, done: !!rmDone[profile.rung+"-"+k]}));
+  const jobs = myJobs().sort((a,b) => ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6)));
+  const ready = jobs.filter(j => { const m = missingFor(j); return m && !m.length });
+  const t = nextType(profile);
+  const onDept = profile.rung >= 6;
+  const classes = t ? D.programs.filter(p => p.type===t && (onDept || p.sponsor!=="sponsored"))
+    .map(p => ({...p, mi: miles(p.lat,p.lng)})).sort((a,b)=>(a.status==="full")-(b.status==="full") || (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9)).slice(0,3) : [];
+  const forType = t==="academy" ? "fire" : t || (profile.goal==="emt"?"emt":"medic");
+  const have = new Set(); if(profile.rung>=6) have.add("firefighter");
+  const funds = D.funding.filter(f => f.for.includes(forType) && !(f.needs.includes("firefighter") && profile.rung < 6))
+    .sort((a,b) => a.needs.length - b.needs.length).slice(0,4);
+  const dl = [
+    ...jobs.filter(j=>j.deadline).map(j => ({d:j.deadline, t:`${j.dept} application deadline`, url:j.apply})),
+    ...D.funding.filter(f => /^\d{4}-\d\d-\d\d$/.test(f.deadline) && daysTo(f.deadline)>=0 && f.for.includes(forType)).map(f => ({d:f.deadline, t:`${f.name} deadline`, url:f.url}))
+  ].sort((a,b) => daysTo(a.d)-daysTo(b.d)).slice(0,5);
+  const ceNext = (D.ce ? D.ce.courses : []).map(c => ({...c, mi: miles(c.lat,c.lng), nx: nextSession(c)})).filter(c => c.nx && inRange(c.mi))
+    .sort((a,b) => daysTo(a.nx.s)-daysTo(b.nx.s)).slice(0,5);
+  const savedRows = [...D.jobs.map(j=>({id:j.id,t:j.title+" · "+j.dept,url:j.apply,k:"Job"})), ...D.programs.map(p=>({id:p.id,t:p.name+" · "+p.provider,url:p.apply||p.url,k:LABEL[p.type]})), ...CE.courses.map(c=>({id:c.id,t:c.name+" · "+c.provider,url:c.register,k:"Continuing Education"}))].filter(x => saved[x.id]);
+  const oc = origin();
+  const radiusTxt = +profile.radius && oc ? `within ${profile.radius} miles of ${oc[2]}` : "at any distance";
+  const typeName = {emt:"EMT Classes", medic:"Paramedic Programs", academy:"Fire Academies"};
+  el.innerHTML = `
+    <div class="dash-head">
+      <div class="avatar" aria-hidden="true">${esc(profile.name[0].toUpperCase())}</div>
+      <div class="dash-who"><h3>${esc(profile.name)}'s Climb</h3>
+        <p>${GOAL[profile.goal]} · ${esc(o?o[2]+" "+profile.zip:profile.zip)} · Rung ${profile.rung}: ${esc(r.t)}</p>
+        <p>${profile.certs.length ? "Has: "+profile.certs.map(c=>CERT[c]).join(", ") : "No licenses or certifications yet"}</p></div>
+      <button type="button" class="btn btn-quiet btn-sm" id="d-edit">Edit profile</button>
+    </div>
+    <div class="kpis">
+      <div class="kpi"><b>${profile.rung}<span style="font-size:18px;color:var(--ink-3)"> / ${RUNGS.length}</span></b><small>${esc(r.t)}</small></div>
+      <div class="kpi"><b>${steps.filter(s=>s.done).length} / ${steps.length}</b><small>Steps done on this rung</small></div>
+      <div class="kpi"><b style="color:var(--red-ink)">${ready.length}</b><small>Open jobs you meet the listed requirements for</small></div>
+      <div class="kpi"><b>${dl.length ? (daysTo(dl[0].d)===0?"Today":daysTo(dl[0].d)+" days") : "None"}</b><small>${dl.length ? "Until the "+esc(dl[0].t) : "No dated deadlines coming up"}</small></div>
+    </div>
+    <div class="dash-cols">
+      <div class="dcard"><div class="dcard-h"><h4>Your Next Steps</h4><button type="button" class="linkish" data-go2="roadmap">Open roadmap</button></div>
+        <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label></li>`).join("")}</ul>
+        ${steps.every(s=>s.done) && profile.rung<RUNGS.length ? `<button type="button" class="btn btn-red btn-sm" id="d-next" style="justify-self:start">Move up to rung ${profile.rung+1}</button>` : ""}</div>
+      <div class="dcard"><div class="dcard-h"><h4>Upcoming Deadlines</h4></div>
+        ${dl.length ? `<ul class="mini">${dl.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${fmtDate(x.d)}</p></div><div class="r"><span class="chip ${daysTo(x.d)<=14?"chip-red":"chip-warn"}">${daysTo(x.d)} days</span><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a></div></li>`).join("")}</ul>` : `<p class="dempty">Nothing with a date in your area right now.</p>`}</div>
+      <div class="dcard wide"><div class="dcard-h"><h4>Jobs for You</h4><span class="hint">${jobs.length} open ${radiusTxt}</span></div>
+        ${jobs.length ? `<ul class="mini">${jobs.map(j=>{ const m = missingFor(j);
+          return `<li><div><p class="t">${esc(j.title)} · ${esc(j.dept)}</p><p class="m">${j.deadline?`Due ${fmtDate(j.deadline)}`:esc((j.deadlineNote||"").replace(/\.$/,""))}${j.pay?` · <span class="money">${fmt$(j.pay)}</span> starting pay`:""}${distTxt(j.mi)}${m===null?`<span class="chip">Check requirements</span>`:m.length?`<span class="chip chip-warn">You need: ${m.map(c=>CERT[c]).join(", ")}</span>`:`<span class="chip chip-good">You meet the listed requirements</span>`}</p>${j.needsNote&&m&&m.length?`<p class="m">${esc(j.needsNote)}</p>`:""}</div>
+          <div class="r"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a></div></li>` }).join("")}</ul>` : `<p class="dempty">No open postings ${radiusTxt}. Try a wider distance in your profile, or check the Departments tab for upcoming testing.</p>`}</div>
+      <div class="dcard"><div class="dcard-h"><h4>${t ? typeName[t]+" for Your Next Step" : "Training"}</h4>${t?`<button type="button" class="linkish" data-go2="classes">See all</button>`:""}</div>
+        ${t ? `<ul class="mini">${classes.map(p=>`<li><div><p class="t">${esc(p.name)}</p><p class="m">${esc(p.provider)}${distTxt(p.mi)}${p.status==="full"?'<span class="chip chip-red">Full</span>':""}${p.status==="check"?'<span class="chip chip-warn">Not yet verified</span>':""}${p.sponsor==="open"?'<span class="chip chip-good">Open to anyone</span>':""}</p></div><div class="r">${p.cost!=null?`<span class="money">${fmt$(p.cost)}</span>`:""}${p.apply?`<a class="btn btn-red btn-sm" href="${esc(p.apply)}" target="_blank" rel="noopener">Apply</a>`:`<a class="linkish" href="${esc(p.url)}" target="_blank" rel="noopener">Details</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">You have the licenses your goal needs. Look at Advanced Training and promotion prep on your roadmap.</p>`}</div>
+      <div class="dcard"><div class="dcard-h"><h4>Funding for You</h4><button type="button" class="linkish" data-go2="funding">Match more</button></div>
+        <ul class="mini">${funds.map(f=>`<li><div><p class="t">${esc(f.name)}</p><p class="m">${esc(f.amount)}</p></div><div class="r"><a class="linkish" href="${esc(f.url)}" target="_blank" rel="noopener">Details</a></div></li>`).join("")}</ul></div>
+      ${profile.rung >= 6 ? `<div class="dcard wide"><div class="dcard-h"><h4>Continuing Education Near You</h4><button type="button" class="linkish" data-go2="ce">See all courses</button></div>
+        ${ceNext.length ? `<ul class="mini">${ceNext.map(c=>`<li><div><p class="t">${esc(c.name)}</p><p class="m">${esc(c.nx.t)} · ${esc(c.provider)}${distTxt(c.mi)}</p></div><div class="r">${c.cost!=null?`<span class="money">${fmt$(c.cost)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(c.register)}" target="_blank" rel="noopener">Register</a></div></li>`).join("")}</ul>` : `<p class="dempty">No dated courses within your travel distance. Try a wider distance in your profile.</p>`}</div>` : ""}
+      <div class="dcard wide"><div class="dcard-h"><h4>Saved</h4></div>
+        ${savedRows.length ? `<ul class="mini">${savedRows.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.k)}</p></div><div class="r"><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a><button type="button" class="save" data-save="${esc(x.id)}" aria-pressed="true">${STAR}<span>Remove</span></button></div></li>`).join("")}</ul>` : `<p class="dempty">Tap Save on any class or job and it shows up here.</p>`}</div>
+    </div>
+    <p class="fine">Your profile is saved in this browser on this device only. Clearing your browser data removes it. <button type="button" class="linkish" id="d-reset">Start over</button></p>
+    <p class="err" id="d-confirm" hidden>Erase your profile, roadmap progress and saved items from this browser? <button type="button" class="linkish" id="d-yes">Yes, erase</button> · <button type="button" class="linkish" id="d-no">Keep them</button></p>`;
+  $("#d-edit").onclick = openProfileForm;
+  el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
+  el.querySelectorAll("[data-dstep]").forEach(c => c.onchange = () => { rmDone[c.dataset.dstep] = c.checked; store.set("rmDone", rmDone); renderRoadmap(); renderDash() });
+  const nx = $("#d-next"); if(nx) nx.onclick = () => { profile.rung++; store.set("profile", profile); rmCur = profile.rung; store.set("rung", rmCur); applyProfile(); renderDash() };
+  $("#d-reset").onclick = () => { $("#d-confirm").hidden = false };
+  $("#d-no").onclick = () => { $("#d-confirm").hidden = true };
+  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} });
+    profile = null; saved = {}; rmDone = {}; rmCur = 1; kit = {}; applyProfile(); showTab("dash");
+    renderKit(); renderRoadmap(); renderHello(); setZip(""); };
+}
+
+/* Hero search + ZIP inputs */
+$$("[data-zip]").forEach(i => i.addEventListener("input", () => { if(i.value.replace(/\D/g,"").length===5 || i.value==="") setZip(i.value) }));
+$$("[data-try]").forEach(b => b.addEventListener("click", () => { $("#hs-zip").value = b.dataset.try }));
+$("#hs-form").addEventListener("submit", e => { e.preventDefault(); if(!profile){ openProfileForm(); goTo($("#tools")); return } setZip($("#hs-zip").value);
+  const [tab, type] = $("#hs-what").value.split(":");
+  if(type){ clType = type; segSet("#cl-type", type); renderClasses() }
+  showTab(tab); goTo($("#tools")) });
+
+function renderAll(){ renderClasses(); renderJobs(); renderCE(); renderDepts(); renderFunding(); renderDash(); renderHello() }
+$("#upd").textContent = "Listings checked " + fmtDate(D.updated);
+const open = liveJobs().filter(j=>j.deadline).length;
+$("#facts").innerHTML = `<span><b>${D.programs.length}</b> training programs</span><span><b>${D.departments.length}</b> departments</span><span><b>${liveJobs().length}</b> open postings (${open} with deadlines)</span><span><b>${D.funding.length}</b> funding sources</span><span><b>${(D.ce?D.ce.courses.length:0)}</b> continuing-ed courses</span>`;
+$("#j-stage").innerHTML = RUNGS.map((r,i)=>`<option value="${i+1}">${i+1}. ${esc(r.t)}</option>`).join("");
+$("#pf-rung").innerHTML = $("#j-stage").innerHTML;
+if(profile){ zip = profile.zip; rmCur = profile.rung }
+$("#hs-zip").value = zip;
+$("#start-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) });
+$("#unlock").innerHTML = `<span class="chip chip-good">${liveJobs().length} open jobs</span><span class="chip chip-good">${D.programs.length} training programs</span><span class="chip chip-good">${(D.ce?D.ce.courses.length:0)} continuing-ed courses</span><span class="chip chip-good">${D.departments.length} departments</span><span class="chip chip-good">${D.funding.length} funding sources</span>`;
+applyProfile(); renderKit(); showTab(profile ? store.get("tab","dash") : "dash"); setZip(zip);
+
+/* Waitlist: each person writes signups/<their id>; only editors and the owner read the list. */
+let db = null, user = null, me = null;
+const form = $("#join-form"), err = $("#j-err");
+function showErr(m){ err.textContent = m; err.hidden = !m }
+form.addEventListener("submit", async e => {
+  e.preventDefault(); showErr("");
+  const name = $("#j-name").value.trim(), z = $("#j-zip").value.trim(), email = $("#j-email").value.trim();
+  $("#j-name").setAttribute("aria-invalid", !name); $("#j-zip").setAttribute("aria-invalid", !/^\d{5}$/.test(z)); $("#j-email").setAttribute("aria-invalid", !/^\S+@\S+\.\S+$/.test(email));
+  if(!name || !/^\d{5}$/.test(z) || !/^\S+@\S+\.\S+$/.test(email)) return showErr("Add your first name, a 5-digit ZIP and a valid email.");
+  if(!db || !me) return showErr("Sign-ups aren't open on this link yet. Ask the person who shared it how to join.");
+  const btn = $("#j-submit"); btn.disabled = true; btn.textContent = "Saving…";
+  try {
+    await db.doc("signups/" + me).set({ name, zip: z, email, stage: +$("#j-stage").value, joined: new Date().toISOString() });
+    form.hidden = true; $("#join-done").hidden = false;
+    $("#done-msg").textContent = `Thanks, ${name}. We'll email ${email} when the Illinois pilot opens.`;
+  } catch(ex) { showErr("Sign-ups aren't open on this link yet. Ask the person who shared it how to join."); }
+  btn.disabled = false; btn.textContent = "Join the waitlist";
+});
+let rowsCache = [];
+async function initData(){
+  if(!window.claude || !window.claude.use) return;
+  [db, user] = await Promise.all([claude.use("db"), claude.use("user")]);
+  if(user) { try { me = await user.id() } catch(e) {} }
+  if(db && me){ try { const s = await db.doc("signups/"+me).get(); const v = s && s.exists ? s.data() : null;
+      if(v && v.email){ form.hidden = true; $("#join-done").hidden = false; $("#done-msg").textContent = `You joined as ${v.name} (${v.email}).` } } catch(e) {} }
+  let editor = false; if(user){ try { editor = await user.canEdit() } catch(e) {} }
+  if(db && editor){
+    $("#admin").hidden = false;
+    db.collection("signups").onSnapshot(snap => {
+      const docs = snap.docs || snap || [];
+      rowsCache = docs.map(d => d.data ? d.data() : d).filter(Boolean).sort((a,b) => String(b.joined).localeCompare(String(a.joined)));
+      $("#admin-count").textContent = `${rowsCache.length} sign-up${rowsCache.length===1?"":"s"} · visible to you only`;
+      $("#admin-rows").innerHTML = rowsCache.length ? rowsCache.map(r => `<tr><td>${esc(r.name)}</td><td>${esc(r.email)}</td><td>${esc(r.zip)}</td><td>${esc((RUNGS[r.stage-1]||{}).t||"")}</td><td>${r.joined?esc(new Date(r.joined).toLocaleDateString()):""}</td></tr>`).join("") : `<tr><td colspan="5">No sign-ups yet. Share the link to start the list.</td></tr>`;
+    }, () => { $("#admin-count").textContent = "Couldn't load sign-ups." });
+    const dl = await claude.use("downloads");
+    if(!dl) $("#admin-csv").hidden = true;
+    else $("#admin-csv").addEventListener("click", async () => {
+      const q = v => `"${String(v==null?"":v).replace(/"/g,'""')}"`;
+      const csv = ["name,email,zip,stage,joined", ...rowsCache.map(r => [r.name,r.email,r.zip,(RUNGS[r.stage-1]||{}).t,r.joined].map(q).join(","))].join("\n");
+      try { await dl.save({ filename: "ladder-up-signups.csv", data: csv }) } catch(e) {}
+    });
+  }
+}
+/* When a sign-up form link is set in data.js, everyone uses it (it emails the owner and keeps the list). */
+if(D.signupForm){ form.hidden = true; $("#join-ext").hidden = false; renderJoin();
+  $("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) }); }
+else initData();
+})();
+</script>
+
+<!-- Motion layer: GSAP + ScrollTrigger + SplitText + Lenis. The page works fully without it. -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/SplitText.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.20/dist/lenis.min.js"></script>
+<script>
+(function(){
+  if(!window.gsap) return;
+  const hasST = !!window.ScrollTrigger, hasSplit = !!window.SplitText;
+  gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+  document.documentElement.classList.add("fx");
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const fine = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+  /* Smooth scrolling (wheel and trackpad only; touch stays native). Off for reduced motion. */
+  if(window.Lenis && hasST && !reduce.matches){
+    const lenis = new Lenis({ lerp: 0.12, allowNestedScroll: true });
+    window.__lenis = lenis;
+    lenis.on("scroll", ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000));
+    gsap.ticker.lagSmoothing(0);
+  }
+  document.addEventListener("click", e => {
+    const a = e.target.closest('a[href^="#"]'); if(!a) return;
+    const id = a.getAttribute("href").slice(1), el = id && document.getElementById(id);
+    if(!el || !window.__lenis) return;
+    e.preventDefault(); window.__lenis.scrollTo(el, { offset: -72 });
+  });
+
+  /* Tab underline that slides to the selected tab */
+  const tabs = document.getElementById("tabs");
+  const ink = document.createElement("span"); ink.className = "tab-ink"; ink.setAttribute("aria-hidden","true"); tabs.appendChild(ink);
+  let lastTab = null;
+  function moveInk(instant){
+    const t = tabs.querySelector('[aria-selected="true"]'); if(!t) return;
+    gsap.to(ink, { x: t.offsetLeft, width: t.offsetWidth, duration: instant || reduce.matches ? 0 : 0.35, ease: "power3.out", overwrite: "auto" });
+  }
+  function enterPanel(){
+    const t = tabs.querySelector('[aria-selected="true"]'); if(!t || t === lastTab) return;
+    const first = lastTab === null; lastTab = t; moveInk(first);
+    if(first || reduce.matches) return;
+    const panel = document.getElementById(t.getAttribute("aria-controls"));
+    const items = panel.querySelectorAll(".pintro, .controls, .card, .dcard, .kpi, .dash-head, .prof, .rm-step, .kit-group, .kit-top");
+    gsap.fromTo([...items].slice(0, 14), { y: 14, autoAlpha: 0 }, { y: 0, autoAlpha: 1, duration: 0.35, ease: "power2.out", stagger: 0.035, overwrite: "auto", clearProps: "transform,opacity,visibility" });
+  }
+  new MutationObserver(enterPanel).observe(tabs, { subtree: true, attributes: true, attributeFilter: ["aria-selected"] });
+  window.addEventListener("resize", () => moveInk(true));
+  if(document.fonts) document.fonts.ready.then(() => moveInk(true));
+  enterPanel();
+
+  /* Spotlight that follows the pointer across cards (mouse and trackpad only) */
+  if(fine.matches) document.addEventListener("pointermove", e => {
+    const c = e.target.closest(".card, .dcard"); if(!c) return;
+    const r = c.getBoundingClientRect();
+    c.style.setProperty("--mx", (e.clientX - r.left) + "px"); c.style.setProperty("--my", (e.clientY - r.top) + "px");
+  }, { passive: true });
+
+  /* Header gets a soft shadow once the page scrolls */
+  if(hasST) ScrollTrigger.create({ start: 8, end: "max", toggleClass: { targets: ".site-head", className: "scrolled" } });
+
+  const mm = gsap.matchMedia();
+  mm.add({ motion: "(prefers-reduced-motion: no-preference)", wide: "(min-width: 861px)" }, ctx => {
+    const { motion, wide } = ctx.conditions;
+    if(!motion) return;
+
+    /* Headline letters rise into place */
+    if(hasSplit){
+      const split = SplitText.create("#hero-h", { type: "words,chars" });
+      gsap.from(split.chars, { yPercent: 70, autoAlpha: 0, duration: 0.7, ease: "power3.out", stagger: 0.016 });
+    }
+    gsap.from(".hero-main > :not(h1):not([hidden])", { y: 16, autoAlpha: 0, duration: 0.6, ease: "power2.out", stagger: 0.07, delay: 0.3, clearProps: "transform,opacity,visibility" });
+
+    /* Fact numbers count up */
+    document.querySelectorAll("#facts b").forEach(b => {
+      const end = parseInt(b.textContent, 10); if(!end) return;
+      const o = { v: 0 };
+      gsap.to(o, { v: end, duration: 1.2, delay: 0.5, ease: "power2.out", onUpdate: () => { b.textContent = Math.round(o.v) } });
+    });
+
+    /* The ladder builds from the ground up */
+    if(wide){
+      const tl = gsap.timeline({ delay: 0.25, defaults: { ease: "power3.out" } });
+      tl.fromTo(".ladder", { "--rs": 0 }, { "--rs": 1, duration: 0.8 })
+        .from(".rung-bar", { scaleX: 0, duration: 0.45, stagger: { each: 0.07, from: "end" } }, "-=0.45")
+        .from(".rung-num, .rung-t", { autoAlpha: 0, x: -8, duration: 0.4, stagger: { each: 0.035, from: "end" }, clearProps: "transform,opacity,visibility" }, "<0.1");
+    }
+
+    /* Slow drifting glow behind the hero */
+    gsap.to(".hero-glow .g1", { xPercent: 14, yPercent: 10, duration: 9, ease: "sine.inOut", yoyo: true, repeat: -1 });
+    gsap.to(".hero-glow .g2", { xPercent: -12, yPercent: -8, duration: 11, ease: "sine.inOut", yoyo: true, repeat: -1 });
+
+    /* Sections ease up as they arrive (movement only, never hidden) */
+    if(hasST){
+      gsap.from(".app", { y: 48, duration: 0.9, ease: "power3.out", scrollTrigger: { trigger: ".app", start: "top 95%", once: true } });
+      gsap.from("#join .join-grid > *", { y: 36, duration: 0.8, ease: "power3.out", stagger: 0.12, scrollTrigger: { trigger: "#join", start: "top 85%", once: true } });
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
