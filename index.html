@@ -181,6 +181,31 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .input,.form .select{width:100%;height:auto;background-color:var(--inv-bg);border:1.5px solid var(--inv-line);border-radius:6px;padding:11px 13px;color:var(--inv-ink);font-size:16px}
 .input[aria-invalid="true"]{border-color:var(--red-ink)}
 .err{font-size:13.5px;color:var(--red-ink)}
+.acct-link{background:none;border:0;padding:6px 2px;margin-left:4px;font:inherit;font-weight:600;font-size:14.5px;color:var(--ink-2);cursor:pointer;white-space:nowrap;text-decoration:underline;text-underline-offset:3px}
+.acct-link:hover{color:var(--ink)}
+@media (max-width:420px){.acct-link{display:none!important}}
+.start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+dialog.auth{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:26px 24px 22px;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+dialog.auth::backdrop{background:rgba(8,12,18,.55)}
+.auth h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;margin:0 0 8px;padding-right:32px}
+.auth-sub{font-size:14.5px;color:var(--ink-2);margin:0 0 16px}
+.auth-x{position:absolute;top:10px;right:10px;margin:0}
+.auth-x button{background:none;border:0;font-size:26px;line-height:1;color:var(--ink-2);cursor:pointer;padding:6px 10px;border-radius:6px}
+.auth-x button:hover{background:var(--sunk);color:var(--ink)}
+.auth .seg{display:flex;margin-bottom:16px}
+.auth .seg button{flex:1}
+.auth-google{width:100%;justify-content:center;gap:10px}
+.auth-or{display:flex;align-items:center;gap:12px;margin:14px 0;color:var(--ink-3);font-size:13px}
+.auth-or::before,.auth-or::after{content:"";flex:1;height:1px;background:var(--line)}
+.auth form{display:grid;gap:6px}
+.auth .tinput{width:100%;height:44px}
+.auth .lbl{margin-top:6px}
+.auth .btn-red{width:100%;justify-content:center;margin-top:12px}
+.auth-links{display:flex;justify-content:space-between;gap:12px;margin-top:10px;font-size:14px}
+.auth .ok{font-size:14px;color:var(--ink);background:var(--sunk);border-radius:8px;padding:10px 12px;margin:6px 0 0}
+.auth .err{margin:6px 0 0}
+.auth-acct p{font-size:15px;margin:0 0 12px}
+.lu-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-size:14.5px;font-weight:600;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:calc(100vw - 32px)}
 .form-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 @media (max-width:480px){.form-2{grid-template-columns:minmax(0,1fr)}}
 .form .btn{width:100%;padding-block:15px}
@@ -334,6 +359,7 @@ html.lenis,html.lenis body{height:auto}
     </ul>
     <a class="btn btn-line btn-sm head-dash" href="#tools" data-go="dash" id="nav-dash">My Dashboard</a>
     <a class="btn btn-red btn-sm head-cta" href="#join">Join the Pilot</a>
+    <button type="button" class="acct-link" id="acct-btn" hidden>Log In</button>
   </div>
 </header>
 
@@ -350,7 +376,8 @@ html.lenis,html.lenis body{height:auto}
         <p class="eyebrow">Start here</p>
         <h2>Build Your Free Dashboard</h2>
         <p>Answer a few quick questions and Ladder Up shows the jobs you qualify for, the classes for your next step, continuing education, your deadlines and funding. No account needed.</p>
-        <div class="start-row"><button type="button" class="btn btn-red" id="start-btn">Build My Dashboard</button><span class="hint">Takes about a minute. No account or password.</span></div>
+        <div class="start-row"><button type="button" class="btn btn-red" id="start-btn">Build My Dashboard</button><span class="hint">Takes about a minute. No account needed.</span></div>
+        <p class="start-login" id="start-login" hidden>Already have an account? <button type="button" class="linkish" data-auth="login">Log in</button></p>
       </div>
       <form class="zsearch" id="hs-form" novalidate>
         <label class="lbl" for="hs-zip">Find what's near you</label>
@@ -556,7 +583,7 @@ html.lenis,html.lenis body{height:auto}
 const D = window.LADDER_DATA || {programs:[],departments:[],jobs:[],funding:[],zips:{}};
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const store = { get(k,d){ try{ const v = localStorage.getItem("lu:"+k); return v==null?d:JSON.parse(v) }catch(e){ return d } },
-                set(k,v){ try{ localStorage.setItem("lu:"+k, JSON.stringify(v)) }catch(e){} } };
+                set(k,v){ try{ localStorage.setItem("lu:"+k, JSON.stringify(v)) }catch(e){} if(window.LU && window.LU.onSet) window.LU.onSet(k) } };
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const fmt$ = n => n==null ? null : "$" + Math.round(n).toLocaleString("en-US");
 const TODAY = new Date(); TODAY.setHours(0,0,0,0);
@@ -1020,7 +1047,7 @@ function renderDash(){
       <div class="dcard wide"><div class="dcard-h"><h4>Saved</h4></div>
         ${savedRows.length ? `<ul class="mini">${savedRows.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.k)}</p></div><div class="r"><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a><button type="button" class="save" data-save="${esc(x.id)}" aria-pressed="true">${STAR}<span>Remove</span></button></div></li>`).join("")}</ul>` : `<p class="dempty">Tap Save on any class or job and it shows up here.</p>`}</div>
     </div>
-    <p class="fine">Your profile is saved in this browser on this device only. Clearing your browser data removes it. <button type="button" class="linkish" id="d-reset">Start over</button></p>
+    <p class="fine"><span id="acct-note">${(window.LU && window.LU.acctNote) ? window.LU.acctNote() : "Your profile is saved in this browser on this device only. Clearing your browser data removes it."}</span> <button type="button" class="linkish" id="d-reset">Start over</button></p>
     <p class="err" id="d-confirm" hidden>Erase your profile, roadmap progress and saved items from this browser? <button type="button" class="linkish" id="d-yes">Yes, erase</button> · <button type="button" class="linkish" id="d-no">Keep them</button></p>`;
   $("#d-edit").onclick = openProfileForm;
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
@@ -1100,7 +1127,190 @@ async function initData(){
 if(D.signupForm){ form.hidden = true; $("#join-ext").hidden = false; renderJoin();
   $("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) }); }
 else initData();
+window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo });
 })();
+</script>
+
+<dialog class="auth" id="auth-dlg" aria-labelledby="auth-h" data-lenis-prevent>
+  <form method="dialog" class="auth-x"><button aria-label="Close">&times;</button></form>
+  <h3 id="auth-h">Log In</h3>
+  <p class="auth-sub" id="auth-sub">Save your dashboard to a free account so it follows you to any phone or computer.</p>
+  <div class="seg" id="auth-tabs" data-show="login signup"><button type="button" data-mode="login" aria-pressed="true">Log In</button><button type="button" data-mode="signup" aria-pressed="false">Create Account</button></div>
+  <div data-show="login signup" id="auth-google-wrap" hidden>
+    <button type="button" class="btn btn-line auth-google" id="auth-google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue With Google</button>
+    <div class="auth-or"><span>or</span></div>
+  </div>
+  <form id="auth-form" novalidate>
+    <label class="lbl" for="au-name" data-show="signup">Name</label>
+    <input class="tinput" id="au-name" autocomplete="name" maxlength="80" data-show="signup">
+    <label class="lbl" for="au-email" data-show="login signup forgot">Email</label>
+    <input class="tinput" id="au-email" type="email" autocomplete="email" maxlength="120" data-show="login signup forgot">
+    <label class="lbl" for="au-pw" data-show="login signup reset" id="au-pw-l">Password</label>
+    <input class="tinput" id="au-pw" type="password" autocomplete="current-password" maxlength="100" data-show="login signup reset">
+    <p class="err" id="au-err" role="alert" hidden></p>
+    <p class="ok" id="au-ok" role="status" hidden></p>
+    <button class="btn btn-red" id="au-submit" data-show="login signup forgot reset">Log In</button>
+    <div class="auth-links" data-show="login forgot">
+      <button type="button" class="linkish" id="au-forgot" data-show="login">Forgot password?</button>
+      <button type="button" class="linkish" id="au-back" data-show="forgot">Back to log in</button>
+    </div>
+  </form>
+  <div class="auth-acct" data-show="account">
+    <p id="au-who"></p>
+    <p class="auth-sub">Your dashboard, roadmap progress and saved items are stored in your account. Logging out removes them from this browser, but they stay in your account.</p>
+    <button type="button" class="btn btn-line" id="au-logout" style="width:100%;justify-content:center">Log Out</button>
+  </div>
+</dialog>
+
+<!-- Accounts: optional login with Netlify Identity. Syncs the dashboard (stored in this browser) to the user's account. -->
+<script type="module">
+const LU = window.LU || (window.LU = {});
+const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer"];
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const ls = { get(k){ try{ return localStorage.getItem("lu:"+k) }catch(e){ return null } }, set(k,v){ try{ localStorage.setItem("lu:"+k,v) }catch(e){} }, del(k){ try{ localStorage.removeItem("lu:"+k) }catch(e){} } };
+const ss = { get(k){ try{ return sessionStorage.getItem(k) }catch(e){ return null } }, set(k,v){ try{ sessionStorage.setItem(k,v) }catch(e){} } };
+
+function toast(msg){ const t = document.createElement("div"); t.className = "lu-toast"; t.setAttribute("role","status"); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200) }
+function niceErr(e){
+  const m = String((e && e.message) || "").trim();
+  if(/invalid.*(password|grant|login)|no user found|invalid_grant/i.test(m)) return "That email and password don't match an account. Check them and try again.";
+  if(/already.*registered|already exists/i.test(m)) return "An account with this email already exists. Log in instead.";
+  if(/not confirmed|confirm/i.test(m)) return "Confirm your email first. Check your inbox for the link from Netlify.";
+  if(/network|fetch/i.test(m)) return "Couldn't reach the server. Check your connection and try again.";
+  return m ? (m.charAt(0).toUpperCase() + m.slice(1)).replace(/([^.!?])$/, "$1.") : "Something went wrong. Please try again.";
+}
+
+async function main(){
+  let I, settings;
+  try { I = await import("https://cdn.jsdelivr.net/npm/@netlify/identity@2.0.0/+esm") } catch(e){ return }
+  try { settings = await I.getSettings() } catch(e){ return }   // Identity is off: keep the site exactly as it was.
+
+  let user = null, pushT = null, mode = "login";
+  const dlg = $("#auth-dlg"), btn = $("#acct-btn");
+
+  const snapshot = () => { const d = {}; SYNC.forEach(k => { const v = ls.get(k); if(v != null) d[k] = v }); return d };
+  const applyRemote = d => SYNC.forEach(k => (d && k in d) ? ls.set(k, d[k]) : ls.del(k));
+  const same = (a,b) => JSON.stringify(a) === JSON.stringify(b);
+  const remoteOf = u => { const r = u && (u.userMetadata || u.user_metadata); return r && r.ladderup };
+
+  async function push(){
+    clearTimeout(pushT); pushT = null;
+    if(!user) return;
+    try { const u = await I.updateUser({ data: { ladderup: { v: 1, at: new Date().toISOString(), d: snapshot() } } }); if(u) user = u }
+    catch(e){ toast("Couldn't save to your account. Your changes are still saved in this browser.") }
+  }
+  const queue = (ms) => { if(!user) return; clearTimeout(pushT); pushT = setTimeout(push, ms || 900) };
+  LU.onSet = k => { if(SYNC.includes(k)) queue() };
+  document.addEventListener("click", e => { if(e.target.closest("#d-yes")) queue(300) }, true);
+  addEventListener("pagehide", () => { if(pushT) push() });
+  document.addEventListener("visibilitychange", () => { if(document.visibilityState === "hidden" && pushT) push() });
+
+  // Returns true when the page is reloading to show the account's saved dashboard.
+  async function syncOnLogin(u){
+    user = u;
+    const remote = remoteOf(u), local = snapshot();
+    if(remote && remote.d && Object.keys(remote.d).length){
+      if(!same(remote.d, local)){
+        if(ss.get("lu:pulled") === remote.at){ await push(); return false }   // already loaded this version once (e.g. after an upgrade); keep this browser's copy
+        ss.set("lu:pulled", remote.at); applyRemote(remote.d); location.reload(); return true;
+      }
+    } else if(local.profile) { await push() }
+    return false;
+  }
+
+  LU.acctNote = () => user
+    ? `Your dashboard is saved to your account (${esc(user.email)}), so it shows up on any device you log into. <button type="button" class="linkish" data-auth="account">Account</button> ·`
+    : `Your profile is saved in this browser on this device only. <button type="button" class="linkish" data-auth="signup">Create a free account</button> to use it on any phone or computer.`;
+
+  function refresh(){
+    btn.hidden = false; btn.textContent = user ? "Account" : "Log In";
+    const sl = $("#start-login"); if(sl) sl.hidden = !!user;
+    if(LU.rerender) LU.rerender();
+  }
+
+  function setMode(m){
+    mode = m;
+    $$("#auth-dlg [data-show]").forEach(el => { el.hidden = !el.dataset.show.split(" ").includes(m) });
+    $("#auth-google-wrap").hidden = !(settings.providers && settings.providers.google) || !["login","signup"].includes(m);
+    $$("#auth-tabs [data-mode]").forEach(b => b.setAttribute("aria-pressed", String(b.dataset.mode === m)));
+    if(settings.disableSignup) $("#auth-tabs").hidden = true;
+    const T = { login:["Log In","Save your dashboard to a free account so it follows you to any phone or computer.","Log In"],
+                signup:["Create Account","Create a free account so your dashboard follows you to any phone or computer.","Create Account"],
+                forgot:["Reset Password","Enter your email and we'll send you a link to choose a new password.","Send Reset Link"],
+                reset:["Choose a New Password","Pick a new password with at least 8 characters.","Save New Password"],
+                account:["Your Account","",""] }[m];
+    $("#auth-h").textContent = T[0]; $("#auth-sub").textContent = T[1]; $("#auth-sub").hidden = !T[1]; $("#au-submit").textContent = T[2];
+    $("#au-pw").autocomplete = m === "login" ? "current-password" : "new-password";
+    $("#au-pw-l").textContent = m === "reset" ? "New password" : "Password";
+    if(m === "account") $("#au-who").innerHTML = `Logged in as <b>${esc(user && user.email)}</b>.`;
+    $("#au-err").hidden = true; $("#au-ok").hidden = true;
+  }
+  function openDlg(m){
+    setMode(user && m !== "reset" ? "account" : m);
+    if(!dlg.open) dlg.showModal();
+    const f = mode === "signup" ? $("#au-name") : (mode === "reset" ? $("#au-pw") : (mode === "account" ? $("#au-logout") : $("#au-email")));
+    setTimeout(() => f && f.focus(), 30);
+  }
+  const fail = msg => { const e = $("#au-err"); e.textContent = msg; e.hidden = false; $("#au-ok").hidden = true };
+  const okMsg = msg => { const o = $("#au-ok"); o.textContent = msg; o.hidden = false; $("#au-err").hidden = true };
+
+  btn.addEventListener("click", () => openDlg("login"));
+  document.addEventListener("click", e => { const a = e.target.closest("[data-auth]"); if(a){ e.preventDefault(); openDlg(a.dataset.auth) } });
+  $$("#auth-tabs [data-mode]").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
+  $("#au-forgot").addEventListener("click", () => setMode("forgot"));
+  $("#au-back").addEventListener("click", () => setMode("login"));
+  $("#auth-google").addEventListener("click", () => { try { I.oauthLogin("google") } catch(e){ fail(niceErr(e)) } });
+  dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close() });
+
+  $("#auth-form").addEventListener("submit", async e => {
+    e.preventDefault();
+    const name = $("#au-name").value.trim(), email = $("#au-email").value.trim(), pw = $("#au-pw").value;
+    const sb = $("#au-submit"), label = sb.textContent;
+    if(mode !== "reset" && !/^\S+@\S+\.\S+$/.test(email)) return fail("Enter a valid email address.");
+    if((mode === "signup" || mode === "reset") && pw.length < 8) return fail("Use a password with at least 8 characters.");
+    if(mode === "login" && !pw) return fail("Enter your password.");
+    if(mode === "signup" && !name) return fail("Enter your name.");
+    sb.disabled = true; sb.textContent = "One moment…";
+    try {
+      if(mode === "login"){
+        const u = await I.login(email, pw);
+        if(await syncOnLogin(u)) return;
+        dlg.close(); refresh(); toast("You're logged in. Your dashboard now saves to your account.");
+      } else if(mode === "signup"){
+        const u = await I.signup(email, pw, { full_name: name });
+        if(settings.autoconfirm && u){ if(await syncOnLogin(u)) return; dlg.close(); refresh(); toast("Account created. Your dashboard now saves to your account.") }
+        else okMsg("Almost done. We sent a confirmation link to " + email + ". Open it on this device to finish. It comes from Netlify, so check your spam folder if you don't see it.");
+      } else if(mode === "forgot"){
+        await I.requestPasswordRecovery(email);
+        okMsg("If an account exists for " + email + ", a reset link is on its way. Check your spam folder too.");
+      } else if(mode === "reset"){
+        await I.updateUser({ password: pw });
+        dlg.close(); refresh(); toast("Your new password is saved.");
+      }
+    } catch(err){ fail(niceErr(err)) }
+    finally { sb.disabled = false; sb.textContent = label }
+  });
+
+  $("#au-logout").addEventListener("click", async () => {
+    if(pushT) await push();
+    try { await I.logout() } catch(e){}
+    SYNC.concat(["tab"]).forEach(k => ls.del(k));
+    try { sessionStorage.removeItem("lu:pulled") } catch(e){}
+    location.reload();
+  });
+
+  // Links from emails (confirm, reset) and the return from Google land here.
+  try {
+    const r = await I.handleAuthCallback();
+    if(r && r.type === "recovery"){ user = r.user; refresh(); openDlg("reset"); return }
+    if(r && r.user){ if(await syncOnLogin(r.user)) return; refresh(); toast(r.type === "confirmation" ? "Your email is confirmed and you're logged in." : "You're logged in."); return }
+  } catch(e){ toast("That link didn't work. It may have expired, so try again.") }
+
+  try { const u = await I.getUser(); if(u && await syncOnLogin(u)) return } catch(e){}
+  refresh();
+}
+main();
 </script>
 
 <!-- Motion layer: GSAP + ScrollTrigger + SplitText + Lenis. The page works fully without it. -->
