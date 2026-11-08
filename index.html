@@ -185,6 +185,13 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .acct-link:hover{color:var(--ink)}
 @media (max-width:420px){.acct-link{display:none!important}}
 .start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.pf-quick{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 18px;padding:14px;border:1px dashed var(--line);border-radius:10px}
+.pf-quick .auth-google{width:auto;flex:none}
+.pf-quick span{font-size:14px;color:var(--ink-2);flex:1;min-width:200px}
+.acct-opt{margin-top:10px}
+.acct-opt .field{margin-top:10px;max-width:360px}
+.acct-opt .tinput{width:100%}
+.acct-in{font-size:14px;color:var(--ink-2);margin:8px 0 0}
 dialog.auth{border:1px solid var(--line);border-radius:12px;background:var(--surface);color:var(--ink);padding:26px 24px 22px;width:min(420px,calc(100vw - 32px));max-height:calc(100dvh - 32px);overflow:auto;box-shadow:0 24px 60px rgba(0,0,0,.35)}
 dialog.auth::backdrop{background:rgba(8,12,18,.55)}
 .auth h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:30px;line-height:1;margin:0 0 8px;padding-right:32px}
@@ -424,7 +431,8 @@ html.lenis,html.lenis body{height:auto}
         <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="tab-dash" hidden>
           <form class="prof" id="prof-form" novalidate hidden>
             <h4 id="prof-h">Set Up Your Dashboard</h4>
-            <p>Tell us where you are and where you're headed, and we'll show the jobs you qualify for, the classes for your next step and your deadlines. No account needed. Your dashboard is saved on this device. If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
+            <p>Tell us where you are and where you're headed, and we'll show the jobs you qualify for, the classes for your next step and your deadlines. If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
+            <div class="pf-quick" id="pf-quick" hidden><button type="button" class="btn btn-line auth-google" id="pf-google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue With Google</button><span>Fills in your name and email and creates your free account. Already have one? <button type="button" class="linkish" data-auth="login">Log in</button>.</span></div>
             <div class="unlock" id="unlock"></div>
             <div class="prof-grid">
               <div class="field"><label class="lbl" for="pf-name">First and last name</label><input class="tinput" id="pf-name" autocomplete="name" maxlength="60"></div>
@@ -441,6 +449,11 @@ html.lenis,html.lenis body{height:auto}
               <label><input type="checkbox" data-cert="ffii"><span>Firefighter II / Basic Operations</span></label>
             </fieldset>
             <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you.</span></label>
+            <div class="acct-opt" id="pf-acct" hidden>
+              <label class="check join-opt" id="pf-acct-row"><input type="checkbox" id="pf-acct-on"><span><b>Save my dashboard to a free account.</b> Log in on any phone or computer and pick up where you left off.</span></label>
+              <div class="field" id="pf-pw-wrap" hidden><label class="lbl" for="pf-pw">Choose a password (at least 8 characters)</label><input class="tinput" id="pf-pw" type="password" autocomplete="new-password" maxlength="100"></div>
+              <p class="acct-in" id="pf-acct-in" hidden></p>
+            </div>
             <div class="prof-foot">
               <a class="btn btn-red" id="pf-save" href="#" target="_blank" rel="noopener" role="button">Build My Dashboard</a>
               <button class="btn btn-quiet" type="button" id="pf-cancel" hidden>Cancel</button>
@@ -879,7 +892,8 @@ function nextType(p){
 function inRange(mi){ const r = profile ? +profile.radius : 0; return !r || mi==null || mi <= r }
 
 function fillProfileForm(){
-  const p = profile || {name:"", fullName:"", email:"", zip: zip || "", radius:"30", goal:"ffpm", rung:1, certs:[]};
+  const acct = (!profile && window.LU && window.LU.account) ? window.LU.account() : null;
+  const p = profile || {name:"", fullName: acct ? acct.name : "", email: acct ? acct.email : "", zip: zip || "", radius:"30", goal:"ffpm", rung:1, certs:[]};
   $("#pf-name").value = p.fullName || p.name; $("#pf-email").value = p.email || "";
   $("#pf-join-row").hidden = !!(profile && profile.joined); $("#pf-join").checked = !(profile && profile.joined); $("#pf-zip").value = p.zip; $("#pf-radius").value = String(p.radius);
   $("#pf-goal").value = p.goal; $("#pf-rung").value = String(p.rung);
@@ -891,7 +905,7 @@ function fillProfileForm(){
 function zipNote(){ const z = $("#pf-zip").value.trim(); const o = D.zips[z];
   $("#pf-zip-note").textContent = z.length<5 ? "" : o ? o[2] : "Outside the pilot area. We'll show everything." }
 $("#pf-zip").addEventListener("input", zipNote);
-function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); $("#pf-name").focus() }
+function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); $("#pf-name").focus() }
 $("#pf-cancel").addEventListener("click", () => { $("#prof-form").hidden = true; $("#dash").hidden = false });
 /* One step: build the dashboard and, if they opt in, send their answers to the Ladder Up Google Form.
    Google's form needs a real link click (a page can't post to it), so the button is a link that opens
@@ -928,6 +942,8 @@ function saveProfile(e){
     e.preventDefault();
     err.textContent = join ? "Add your name, a valid email and a 5-digit ZIP." : "Add your name and a 5-digit ZIP."; err.hidden = false; return;
   }
+  const acctErr = (window.LU && window.LU.validateForm) ? window.LU.validateForm() : null;
+  if(acctErr){ e.preventDefault(); err.textContent = acctErr; err.hidden = false; return }
   err.hidden = true;
   const prev = profile || {};
   profile = { name: fullName.split(" ")[0], fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
@@ -938,6 +954,7 @@ function saveProfile(e){
   rmCur = profile.rung; store.set("rung", rmCur);
   $("#prof-form").hidden = true; $("#dash").hidden = false;
   applyProfile(); setZip(z); showTab("dash"); goTo($("#tools"));
+  if(window.LU && window.LU.afterProfileSave) window.LU.afterProfileSave(profile);
 }
 /* Keep the sign-up link ready before the tap, so the page host opens the right address */
 function presetSaveHref(){
@@ -1127,7 +1144,7 @@ async function initData(){
 if(D.signupForm){ form.hidden = true; $("#join-ext").hidden = false; renderJoin();
   $("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) }); }
 else initData();
-window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo });
+window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo, openProfileForm, hasProfile: () => !!profile });
 })();
 </script>
 
@@ -1219,12 +1236,51 @@ async function main(){
     return false;
   }
 
-  LU.acctNote = () => user
+  LU.acctNote = () => (!user && ls.get("pendingAcct"))
+    ? `Almost done: open the confirmation link we sent to ${esc(ls.get("pendingAcct"))} to finish your account. Until then, your dashboard is saved in this browser.`
+    : user
     ? `Your dashboard is saved to your account (${esc(user.email)}), so it shows up on any device you log into. <button type="button" class="linkish" data-auth="account">Account</button> ·`
     : `Your profile is saved in this browser on this device only. <button type="button" class="linkish" data-auth="signup">Create a free account</button> to use it on any phone or computer.`;
 
+  // The dashboard form doubles as account signup, so nobody types their name and email twice.
+  const pfOn = $("#pf-acct-on"), pfPw = $("#pf-pw");
+  function formAcctUI(){
+    $("#pf-acct").hidden = false;
+    const hasP = !!ls.get("profile");
+    if(user){ $("#pf-acct-row").hidden = true; $("#pf-pw-wrap").hidden = true; $("#pf-quick").hidden = true;
+      $("#pf-acct-in").hidden = false; $("#pf-acct-in").innerHTML = `Saving to your account (<b>${esc(user.email)}</b>).` }
+    else { $("#pf-acct-row").hidden = false; $("#pf-acct-in").hidden = true; $("#pf-pw-wrap").hidden = !pfOn.checked;
+      $("#pf-quick").hidden = hasP || !(settings.providers && settings.providers.google) }
+  }
+  pfOn.addEventListener("change", () => { $("#pf-pw-wrap").hidden = !pfOn.checked; if(pfOn.checked) pfPw.focus() });
+  $("#pf-google").addEventListener("click", () => { try { I.oauthLogin("google") } catch(e){ toast(niceErr(e)) } });
+  LU.onFormOpen = formAcctUI;
+  LU.account = () => user ? { name: user.name || ((user.userMetadata || {}).full_name) || "", email: user.email || "" } : null;
+  LU.validateForm = () => {
+    if(user || !pfOn.checked) return null;
+    if(!/^\S+@\S+\.\S+$/.test($("#pf-email").value.trim())) return "Add your email to create your account.";
+    if(pfPw.value.length < 8) return "Choose a password with at least 8 characters.";
+    return null;
+  };
+  LU.afterProfileSave = async p => {
+    if(user || !pfOn.checked) return;
+    const email = $("#pf-email").value.trim(), pw = pfPw.value; pfPw.value = ""; pfOn.checked = false;
+    try {
+      const u = await I.signup(email, pw, { full_name: p.fullName });
+      if(settings.autoconfirm && u){ await syncOnLogin(u); refresh(); toast("Account created. Your dashboard now saves to your account.") }
+      else { ls.set("pendingAcct", email); refresh(); toast("Almost done. Open the confirmation link we emailed you to finish your account.") }
+    } catch(e){
+      const m = niceErr(e); toast(m);
+      if(/already exists/.test(m)){ openDlg("login"); $("#au-email").value = email; $("#au-pw").focus() }
+    }
+  };
+  // Right after logging in with no dashboard yet, open the form already filled in.
+  const startIfNew = () => { if(user && !ls.get("profile") && LU.openProfileForm){ LU.openProfileForm(); if(LU.goTo) LU.goTo($("#tools")) } };
+
   function refresh(){
     btn.hidden = false; btn.textContent = user ? "Account" : "Log In";
+    if(user) ls.del("pendingAcct");
+    if(!$("#prof-form").hidden) formAcctUI();
     const sl = $("#start-login"); if(sl) sl.hidden = !!user;
     if(LU.rerender) LU.rerender();
   }
@@ -1248,6 +1304,7 @@ async function main(){
   }
   function openDlg(m){
     setMode(user && m !== "reset" ? "account" : m);
+    try { const p = JSON.parse(ls.get("profile") || "null"); if(p){ if(!$("#au-name").value) $("#au-name").value = p.fullName || p.name || ""; if(!$("#au-email").value) $("#au-email").value = p.email || "" } } catch(e){}
     if(!dlg.open) dlg.showModal();
     const f = mode === "signup" ? $("#au-name") : (mode === "reset" ? $("#au-pw") : (mode === "account" ? $("#au-logout") : $("#au-email")));
     setTimeout(() => f && f.focus(), 30);
@@ -1276,10 +1333,10 @@ async function main(){
       if(mode === "login"){
         const u = await I.login(email, pw);
         if(await syncOnLogin(u)) return;
-        dlg.close(); refresh(); toast("You're logged in. Your dashboard now saves to your account.");
+        dlg.close(); refresh(); toast("You're logged in. Your dashboard now saves to your account."); startIfNew();
       } else if(mode === "signup"){
         const u = await I.signup(email, pw, { full_name: name });
-        if(settings.autoconfirm && u){ if(await syncOnLogin(u)) return; dlg.close(); refresh(); toast("Account created. Your dashboard now saves to your account.") }
+        if(settings.autoconfirm && u){ if(await syncOnLogin(u)) return; dlg.close(); refresh(); toast("Account created. Your dashboard now saves to your account."); startIfNew() }
         else okMsg("Almost done. We sent a confirmation link to " + email + ". Open it on this device to finish. It comes from Netlify, so check your spam folder if you don't see it.");
       } else if(mode === "forgot"){
         await I.requestPasswordRecovery(email);
@@ -1304,7 +1361,7 @@ async function main(){
   try {
     const r = await I.handleAuthCallback();
     if(r && r.type === "recovery"){ user = r.user; refresh(); openDlg("reset"); return }
-    if(r && r.user){ if(await syncOnLogin(r.user)) return; refresh(); toast(r.type === "confirmation" ? "Your email is confirmed and you're logged in." : "You're logged in."); return }
+    if(r && r.user){ if(await syncOnLogin(r.user)) return; refresh(); toast(r.type === "confirmation" ? "Your email is confirmed and you're logged in." : "You're logged in."); startIfNew(); return }
   } catch(e){ toast("That link didn't work. It may have expired, so try again.") }
 
   try { const u = await I.getUser(); if(u && await syncOnLogin(u)) return } catch(e){}
