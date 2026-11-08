@@ -1465,6 +1465,44 @@ window.LADDER_DATA = {
  ]
 },
 
+  /* CPAT test sites. The CPAT card and the Illinois ladder climb certificate are separate; most
+     departments want a CPAT card from the last 12 months. sessions: upcoming dates (YYYY-MM-DD) with a short label. */
+  cpat: {
+    note: "Most departments want a CPAT card issued within the last 12 months, and some job postings set their own window, so check each posting. Illinois departments also require a ladder climb certificate, which is separate from the CPAT card.",
+    sites: [
+      { id:"cpat-mabas24", name:"MABAS 24 CPAT Center", provider:"MABAS Division 24", city:"Homewood",
+        address:"17555 Ashland Ave., Homewood, IL 60430", lat:41.5703, lng:-87.6557,
+        cost:null, costNote:"The price is shown when you book through National Testing Network.",
+        ladder:"The Illinois ladder climb is offered on site on testing days for $10.",
+        schedule:"Book a test date through National Testing Network. You need a free account to see dates and register.",
+        sessions:[], register:"https://candidates.nationaltestingnetwork.com/#/cpat-info", url:"http://cpat.mabas24.org/",
+        contact:"info@mabas24cpat.org · 708-607-2728", checked:"2026-11-07" },
+      { id:"cpat-naperville", name:"Naperville Fire Department CPAT", provider:"Naperville Fire Department", city:"Naperville",
+        address:"1200 W. Ogden Ave., Naperville, IL 60563", lat:41.7816, lng:-88.1725,
+        cost:165, costNote:"The registration calendar lists $165; the department's CPAT page says $160. The fee covers the orientation, up to two practice tests and the final test. A one-time challenge (test only) costs the same. Non-refundable.",
+        ladder:"The state ladder climb is included in the fee.",
+        schedule:"Full session: orientation Dec. 4, 2026, practices Jan. 2 and Jan. 15, 2027, final test Jan. 30, 2027. One-time challenges are offered on each of those dates and on Nov. 14, 2026.",
+        sessions:[{d:"2026-11-14",t:"One-time challenge"},{d:"2026-12-04",t:"Orientation and one-time challenge"},{d:"2027-01-02",t:"Practice 1 and one-time challenge"},{d:"2027-01-15",t:"Practice 2 and one-time challenge"},{d:"2027-01-30",t:"Final test and one-time challenge"}],
+        register:"https://www.trumba.com/calendars/fire-department-cpat", url:"https://www.naperville.il.us/cpat",
+        contact:"cpat@naperville.il.us", checked:"2026-11-07" },
+      { id:"cpat-nipsta", name:"NIPSTA CPAT", provider:"Northeastern Illinois Public Safety Training Academy", city:"Glenview",
+        address:"2300 Patriot Blvd., Glenview, IL 60026", lat:42.0969, lng:-87.8257,
+        cost:170, costNote:"$170 per candidate, non-refundable.",
+        ladder:"NIPSTA doesn't say whether the ladder climb is included, so ask when you register.",
+        schedule:"One test date a month. Orientation and practice begin eight weeks before each test.",
+        sessions:[{d:"2026-12-05",t:"Test date"},{d:"2027-01-09",t:"Test date"},{d:"2027-02-06",t:"Test date"},{d:"2027-03-06",t:"Test date"},{d:"2027-04-03",t:"Test date"},{d:"2027-05-01",t:"Test date"},{d:"2027-06-05",t:"Test date"},{d:"2027-07-10",t:"Test date"},{d:"2027-08-07",t:"Test date"},{d:"2027-09-11",t:"Test date"},{d:"2027-10-02",t:"Test date"},{d:"2027-11-06",t:"Test date"},{d:"2027-12-04",t:"Test date"}],
+        register:"https://secure.rec1.com/IL/nipsta-il/catalog", url:"https://www.nipsta.org/240/CPAT-Schedule",
+        contact:"CanTest@nipsta.org · 847-998-8090", checked:"2026-11-07" },
+      { id:"cpat-huntley", name:"Huntley Fire Protection District CPAT", provider:"Huntley Fire Protection District", city:"Huntley",
+        address:"Station 1, 11118 Main St., Huntley, IL 60142", lat:42.1684, lng:-88.4179,
+        cost:150, costNote:"$150 by check or $155 by credit card. No cash. Payment is due at the first practice and is non-refundable.",
+        ladder:"The ladder climb is offered with the test.",
+        schedule:"Tests are on the Wednesday and Saturday of the first full week and the third week of each month. Practices are the two Wednesdays before your test, starting at 5 p.m. at Station 1.",
+        sessions:[], register:"https://www.signupgenius.com/go/10C0544AAAC2AAAF5C34-59669015-cpat", url:"https://www.huntleyfpd.org/cpat-testing",
+        contact:"See the Huntley FPD CPAT page.", checked:"2026-11-07" }
+    ]
+  },
+
   /* Approximate ZIP centroids for distance sorting in the pilot area. */
   zips: {
     "60441":[41.59,-88.06,"Lockport"],"60491":[41.6,-87.94,"Homer Glen"],"60451":[41.51,-87.97,"New Lenox"],"60448":[41.53,-87.88,"Mokena"],
