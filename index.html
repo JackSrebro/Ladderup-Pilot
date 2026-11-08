@@ -185,6 +185,13 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .acct-link:hover{color:var(--ink)}
 @media (max-width:420px){.acct-link{display:none!important}}
 .start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.cert-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
+.cert-form{border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px;background:var(--surface)}
+.cert-form h4{margin:0 0 12px;font-size:18px}
+.cert-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 16px}
+.cert-grid .span2{grid-column:1/-1}
+.cert-grid .tinput,.cert-grid .select{width:100%}
+@media (max-width:560px){.cert-grid{grid-template-columns:minmax(0,1fr)}}
 .cpat-mode .cl-prog-only{display:none!important}
 .step-link{margin:0 0 6px 30px;font-size:14px}
 .cpat-note{grid-column:1/-1;margin:0 0 4px;padding:12px 14px;border-radius:8px;background:var(--sunk);font-size:14.5px;color:var(--ink-2)}
@@ -428,6 +435,7 @@ html.lenis,html.lenis body{height:auto}
           <button class="tab" role="tab" id="tab-depts" aria-controls="p-depts" data-tab="depts">Departments</button>
           <button class="tab" role="tab" id="tab-funding" aria-controls="p-funding" data-tab="funding">Funding</button>
           <button class="tab" role="tab" id="tab-roadmap" aria-controls="p-roadmap" data-tab="roadmap">My Roadmap</button>
+          <button class="tab" role="tab" id="tab-certs" aria-controls="p-certs" data-tab="certs">My Certifications</button>
           <button class="tab" role="tab" id="tab-kit" aria-controls="p-kit" data-tab="kit">First Shift Kit</button>
         </div>
         <h2 class="vh" id="tools-h">Tools</h2>
@@ -543,6 +551,26 @@ html.lenis,html.lenis body{height:auto}
           <div class="rm"><ol class="rm-list" id="rm-list"></ol><div id="rm-detail"></div></div>
         </div>
 
+        <div class="panel" role="tabpanel" id="p-certs" aria-labelledby="tab-certs" hidden>
+          <div class="pintro"><h3>My Certifications</h3><p>Keep your licenses and cards in one place and see what's expiring. Saved in this browser, and in your account if you're logged in. Don't enter your Social Security number.</p></div>
+          <div class="cert-top"><button type="button" class="btn btn-red btn-sm" id="ct-add">Add a Certification</button><span class="hint" id="ct-sum"></span></div>
+          <form class="cert-form" id="ct-form" novalidate hidden>
+            <h4 id="ct-h">Add a Certification</h4>
+            <div class="cert-grid">
+              <div class="field span2"><label class="lbl" for="ct-type">Type</label><select class="select" id="ct-type"></select></div>
+              <div class="field span2"><label class="lbl" for="ct-name">Name</label><input class="tinput" id="ct-name" maxlength="80"></div>
+              <div class="field"><label class="lbl" for="ct-issuer">Issued by</label><input class="tinput" id="ct-issuer" maxlength="80" placeholder="Optional"></div>
+              <div class="field"><label class="lbl" for="ct-num">License or card number</label><input class="tinput" id="ct-num" maxlength="40" placeholder="Optional" autocomplete="off"></div>
+              <div class="field"><label class="lbl" for="ct-issued">Issue date</label><input class="tinput" id="ct-issued" type="date"></div>
+              <div class="field"><label class="lbl" for="ct-exp">Expiration date</label><input class="tinput" id="ct-exp" type="date"><span class="zip-note" id="ct-exp-hint"></span></div>
+              <div class="field span2"><label class="lbl" for="ct-notes">Notes</label><input class="tinput" id="ct-notes" maxlength="200" placeholder="Optional, e.g. CE hours still needed"></div>
+            </div>
+            <p class="err" id="ct-err" hidden></p>
+            <div class="prof-foot"><button class="btn btn-red" id="ct-save">Save</button><button class="btn btn-quiet" type="button" id="ct-cancel">Cancel</button></div>
+          </form>
+          <div class="list" id="ct-list"></div>
+        </div>
+
         <div class="panel" role="tabpanel" id="p-kit" aria-labelledby="tab-kit" hidden>
           <div class="pintro"><h3>First Shift Kit</h3><p>What to pack for a first 24-hour shift. Ask your officer what your department issues before you buy anything.</p></div>
           <div class="kit-top"><span class="kit-count" id="kit-count"></span><div class="bar"><i id="kit-bar"></i></div><button class="btn btn-quiet btn-sm" type="button" id="kit-reset">Clear checks</button></div>
@@ -629,7 +657,7 @@ function setZip(z){
 function goTo(el){ if(window.__lenis) window.__lenis.scrollTo(el, { offset: -72 }); else el.scrollIntoView(); }
 
 /* Tabs */
-const TABS = ["dash","classes","jobs","ce","depts","funding","roadmap","kit"];
+const TABS = ["dash","classes","jobs","ce","depts","funding","roadmap","certs","kit"];
 function showTab(t, focus){
   if(!TABS.includes(t)) t = "dash";
   if(!profile && t !== "dash"){ t = "dash"; if(typeof openProfileForm === "function") setTimeout(() => { if($("#prof-form").hidden) openProfileForm() }, 0) }
@@ -1061,7 +1089,8 @@ function renderDash(){
     .sort((a,b) => a.needs.length - b.needs.length).slice(0,4);
   const dl = [
     ...jobs.filter(j=>j.deadline).map(j => ({d:j.deadline, t:`${j.dept} application deadline`, url:j.apply})),
-    ...D.funding.filter(f => /^\d{4}-\d\d-\d\d$/.test(f.deadline) && daysTo(f.deadline)>=0 && f.for.includes(forType)).map(f => ({d:f.deadline, t:`${f.name} deadline`, url:f.url}))
+    ...D.funding.filter(f => /^\d{4}-\d\d-\d\d$/.test(f.deadline) && daysTo(f.deadline)>=0 && f.for.includes(forType)).map(f => ({d:f.deadline, t:`${f.name} deadline`, url:f.url})),
+    ...certList.filter(c => c.exp && daysTo(c.exp)>=0 && daysTo(c.exp)<=180).map(c => ({d:c.exp, t:`${c.name} expires`, go:"certs"}))
   ].sort((a,b) => daysTo(a.d)-daysTo(b.d)).slice(0,5);
   const ceNext = (D.ce ? D.ce.courses : []).map(c => ({...c, mi: miles(c.lat,c.lng), nx: nextSession(c)})).filter(c => c.nx && inRange(c.mi))
     .sort((a,b) => daysTo(a.nx.s)-daysTo(b.nx.s)).slice(0,5);
@@ -1088,7 +1117,7 @@ function renderDash(){
         <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label>${s.done?"":cpatStepLink(s.s)}</li>`).join("")}</ul>
         ${steps.every(s=>s.done) && profile.rung<RUNGS.length ? `<button type="button" class="btn btn-red btn-sm" id="d-next" style="justify-self:start">Move up to rung ${profile.rung+1}</button>` : ""}</div>
       <div class="dcard"><div class="dcard-h"><h4>Upcoming Deadlines</h4></div>
-        ${dl.length ? `<ul class="mini">${dl.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${fmtDate(x.d)}</p></div><div class="r"><span class="chip ${daysTo(x.d)<=14?"chip-red":"chip-warn"}">${daysTo(x.d)} days</span><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a></div></li>`).join("")}</ul>` : `<p class="dempty">Nothing with a date in your area right now.</p>`}</div>
+        ${dl.length ? `<ul class="mini">${dl.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${fmtDate(x.d)}</p></div><div class="r"><span class="chip ${daysTo(x.d)<=14?"chip-red":"chip-warn"}">${daysTo(x.d)} days</span>${x.go?`<button type="button" class="linkish" data-go2="${x.go}">Open</button>`:`<a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">Nothing with a date in your area right now.</p>`}</div>
       <div class="dcard wide"><div class="dcard-h"><h4>Jobs for You</h4><span class="hint">${jobs.length} open ${radiusTxt}</span></div>
         ${jobs.length ? `<ul class="mini">${jobs.map(j=>{ const m = missingFor(j);
           return `<li><div><p class="t">${esc(j.title)} · ${esc(j.dept)}</p><p class="m">${j.deadline?`Due ${fmtDate(j.deadline)}`:esc((j.deadlineNote||"").replace(/\.$/,""))}${j.pay?` · <span class="money">${fmt$(j.pay)}</span> starting pay`:""}${distTxt(j.mi)}${m===null?`<span class="chip">Check requirements</span>`:m.length?`<span class="chip chip-warn">You need: ${m.map(c=>CERT[c]).join(", ")}</span>`:`<span class="chip chip-good">You meet the listed requirements</span>`}</p>${j.needsNote&&m&&m.length?`<p class="m">${esc(j.needsNote)}</p>`:""}</div>
@@ -1097,6 +1126,8 @@ function renderDash(){
         ${t ? `<ul class="mini">${classes.map(p=>`<li><div><p class="t">${esc(p.name)}</p><p class="m">${esc(p.provider)}${distTxt(p.mi)}${p.status==="full"?'<span class="chip chip-red">Full</span>':""}${p.status==="check"?'<span class="chip chip-warn">Not yet verified</span>':""}${p.sponsor==="open"?'<span class="chip chip-good">Open to anyone</span>':""}</p></div><div class="r">${p.cost!=null?`<span class="money">${fmt$(p.cost)}</span>`:""}${p.apply?`<a class="btn btn-red btn-sm" href="${esc(p.apply)}" target="_blank" rel="noopener">Apply</a>`:`<a class="linkish" href="${esc(p.url)}" target="_blank" rel="noopener">Details</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">You have the licenses your goal needs. Look at Advanced Training and promotion prep on your roadmap.</p>`}</div>
       ${(!profile.certs.includes("cpat") && profile.rung >= 3 && profile.rung <= 5 && CP.sites.length) ? `<div class="dcard"><div class="dcard-h"><h4>CPAT Test Sites Near You</h4><button type="button" class="linkish" data-cpat>See all</button></div>
         <ul class="mini">${cpatSites().sort((a,b)=>(a.mi??1e9)-(b.mi??1e9)).slice(0,3).map(c=>`<li><div><p class="t">${esc(c.name)}</p><p class="m">${c.nx?`Next: ${fmtDate(c.nx.d)}`:"Dates on the booking page"}${c.cost!=null?` · <span class="money">${fmt$(c.cost)}</span>`:""}${distTxt(c.mi)}</p></div><div class="r"><a class="btn btn-red btn-sm" href="${esc(c.register)}" target="_blank" rel="noopener">Register</a></div></li>`).join("")}</ul></div>` : ""}
+      <div class="dcard"><div class="dcard-h"><h4>Your Certifications</h4><button type="button" class="linkish" data-go2="certs">${certList.length?"Manage":"Add"}</button></div>
+        ${certList.length ? `<ul class="mini">${certsSorted().slice(0,4).map(c=>`<li><div><p class="t">${esc(c.name)}</p><p class="m">${c.exp?(daysTo(c.exp)<0?"Expired ":"Expires ")+fmtDate(c.exp):"No expiration date"}</p></div><div class="r">${certChip(c)}</div></li>`).join("")}</ul>` : `<p class="dempty">Add your licenses and cards to keep track of when they expire.</p>`}</div>
       <div class="dcard"><div class="dcard-h"><h4>Funding for You</h4><button type="button" class="linkish" data-go2="funding">Match more</button></div>
         <ul class="mini">${funds.map(f=>`<li><div><p class="t">${esc(f.name)}</p><p class="m">${esc(f.amount)}</p></div><div class="r"><a class="linkish" href="${esc(f.url)}" target="_blank" rel="noopener">Details</a></div></li>`).join("")}</ul></div>
       ${profile.rung >= 6 ? `<div class="dcard wide"><div class="dcard-h"><h4>Continuing Education Near You</h4><button type="button" class="linkish" data-go2="ce">See all courses</button></div>
@@ -1105,14 +1136,14 @@ function renderDash(){
         ${savedRows.length ? `<ul class="mini">${savedRows.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.k)}</p></div><div class="r"><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a><button type="button" class="save" data-save="${esc(x.id)}" aria-pressed="true">${STAR}<span>Remove</span></button></div></li>`).join("")}</ul>` : `<p class="dempty">Tap Save on any class or job and it shows up here.</p>`}</div>
     </div>
     <p class="fine"><span id="acct-note">${(window.LU && window.LU.acctNote) ? window.LU.acctNote() : "Your profile is saved in this browser on this device only. Clearing your browser data removes it."}</span> <button type="button" class="linkish" id="d-reset">Start over</button></p>
-    <p class="err" id="d-confirm" hidden>Erase your profile, roadmap progress and saved items from this browser? <button type="button" class="linkish" id="d-yes">Yes, erase</button> · <button type="button" class="linkish" id="d-no">Keep them</button></p>`;
+    <p class="err" id="d-confirm" hidden>Erase your profile, roadmap progress, saved items and certifications from this browser? <button type="button" class="linkish" id="d-yes">Yes, erase</button> · <button type="button" class="linkish" id="d-no">Keep them</button></p>`;
   $("#d-edit").onclick = openProfileForm;
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
   el.querySelectorAll("[data-dstep]").forEach(c => c.onchange = () => { rmDone[c.dataset.dstep] = c.checked; store.set("rmDone", rmDone); renderRoadmap(); renderDash() });
   const nx = $("#d-next"); if(nx) nx.onclick = () => { profile.rung++; store.set("profile", profile); rmCur = profile.rung; store.set("rung", rmCur); applyProfile(); renderDash() };
   $("#d-reset").onclick = () => { $("#d-confirm").hidden = false };
   $("#d-no").onclick = () => { $("#d-confirm").hidden = true };
-  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} });
+  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip","certList"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} }); certList = []; renderCerts();
     profile = null; saved = {}; rmDone = {}; rmCur = 1; kit = {}; applyProfile(); showTab("dash");
     renderKit(); renderRoadmap(); renderHello(); setZip(""); };
 }
@@ -1124,6 +1155,102 @@ $("#hs-form").addEventListener("submit", e => { e.preventDefault(); if(!profile)
   const [tab, type] = $("#hs-what").value.split(":");
   if(type){ clType = type; segSet("#cl-type", type); renderClasses() }
   showTab(tab); goTo($("#tools")) });
+
+/* My Certifications: a personal list of licenses and cards with expiration tracking */
+const CERT_TYPES = [
+  {v:"emt-il", name:"Illinois EMT License", issuer:"Illinois Department of Public Health", years:4, key:"emt"},
+  {v:"nremt-emt", name:"NREMT EMT Certification", issuer:"National Registry of EMTs", years:2, key:"emt"},
+  {v:"medic-il", name:"Illinois Paramedic License", issuer:"Illinois Department of Public Health", years:4, key:"medic"},
+  {v:"nremt-p", name:"NREMT Paramedic Certification", issuer:"National Registry of EMTs", years:2, key:"medic"},
+  {v:"cpat", name:"CPAT Card", issuer:"", years:1, key:"cpat", hint:"Many departments want a CPAT card from the last 12 months. Some accept two years."},
+  {v:"ladder", name:"Illinois Ladder Climb Certificate", issuer:"", years:5},
+  {v:"bof", name:"Basic Operations Firefighter / Firefighter II", issuer:"Office of the Illinois State Fire Marshal", years:null, key:"ffii"},
+  {v:"bls", name:"CPR / BLS Provider", issuer:"American Heart Association", years:2},
+  {v:"acls", name:"ACLS Provider", issuer:"American Heart Association", years:2},
+  {v:"pals", name:"PALS Provider", issuer:"American Heart Association", years:2},
+  {v:"hazops", name:"Hazardous Materials Operations", issuer:"", years:null},
+  {v:"other", name:"", issuer:"", years:null}
+];
+let certList = store.get("certList", []), ctEdit = null, ctAutoExp = false;
+const certType = v => CERT_TYPES.find(t => t.v===v) || CERT_TYPES[CERT_TYPES.length-1];
+const addYears = (iso, y) => { const d = parseDate(iso); d.setFullYear(d.getFullYear()+y); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}` };
+function certChip(c){
+  if(!c.exp) return `<span class="chip">No expiration</span>`;
+  const d = daysTo(c.exp);
+  if(d < 0) return `<span class="chip chip-red">Expired</span>`;
+  if(d <= 90) return `<span class="chip ${d<=30?"chip-red":"chip-warn"}">${d===0?"Expires today":d===1?"1 day left":d+" days left"}</span>`;
+  return `<span class="chip chip-good">Valid</span>`;
+}
+function certsSorted(){ return [...certList].sort((a,b) => (a.exp?daysTo(a.exp):1e6) - (b.exp?daysTo(b.exp):1e6) || a.name.localeCompare(b.name)) }
+$("#ct-type").innerHTML = CERT_TYPES.map(t => `<option value="${t.v}">${t.v==="other"?"Other":esc(t.name)}</option>`).join("");
+function ctHint(){
+  const t = certType($("#ct-type").value);
+  $("#ct-exp-hint").textContent = t.hint ? t.hint : t.years ? `Suggested from the usual ${t.years}-year renewal period. Check the date on your card.` : "";
+}
+function ctSuggest(){
+  const t = certType($("#ct-type").value), iss = $("#ct-issued").value;
+  if(t.years && iss && (ctAutoExp || !$("#ct-exp").value)){ $("#ct-exp").value = addYears(iss, t.years); ctAutoExp = true }
+  ctHint();
+}
+$("#ct-type").addEventListener("change", () => { const t = certType($("#ct-type").value);
+  if(!ctEdit || !$("#ct-name").value){ $("#ct-name").value = t.name; $("#ct-issuer").value = t.issuer }
+  if(ctAutoExp) $("#ct-exp").value = ""; ctSuggest() });
+$("#ct-issued").addEventListener("change", ctSuggest);
+$("#ct-exp").addEventListener("input", () => { ctAutoExp = false });
+function openCertForm(c){
+  ctEdit = c ? c.id : null; ctAutoExp = false;
+  $("#ct-h").textContent = c ? "Edit Certification" : "Add a Certification";
+  $("#ct-type").value = c ? c.type : "emt-il";
+  const t = certType($("#ct-type").value);
+  $("#ct-name").value = c ? c.name : t.name; $("#ct-issuer").value = c ? (c.issuer||"") : t.issuer;
+  $("#ct-num").value = c ? (c.num||"") : ""; $("#ct-issued").value = c ? (c.issued||"") : ""; $("#ct-exp").value = c ? (c.exp||"") : "";
+  $("#ct-notes").value = c ? (c.notes||"") : ""; $("#ct-err").hidden = true; ctHint();
+  $("#ct-form").hidden = false; $("#ct-add").hidden = true; $("#ct-name").focus();
+}
+function closeCertForm(){ $("#ct-form").hidden = true; $("#ct-add").hidden = false; ctEdit = null }
+$("#ct-add").addEventListener("click", () => openCertForm(null));
+$("#ct-cancel").addEventListener("click", closeCertForm);
+$("#ct-form").addEventListener("submit", e => {
+  e.preventDefault();
+  const name = $("#ct-name").value.trim().replace(/\s+/g," "), issued = $("#ct-issued").value, exp = $("#ct-exp").value, err = $("#ct-err");
+  if(!name){ err.textContent = "Give this certification a name."; err.hidden = false; return }
+  if(issued && exp && exp < issued){ err.textContent = "The expiration date is before the issue date."; err.hidden = false; return }
+  const rec = { id: ctEdit || ("c" + Date.now().toString(36)), type: $("#ct-type").value, name, issuer: $("#ct-issuer").value.trim(),
+    num: $("#ct-num").value.trim(), issued: issued || null, exp: exp || null, notes: $("#ct-notes").value.trim() };
+  certList = ctEdit ? certList.map(c => c.id===ctEdit ? rec : c) : [...certList, rec];
+  store.set("certList", certList);
+  // Keep job matching in sync: a current license or card counts as "has it" in the profile.
+  const key = certType(rec.type).key;
+  if(profile && key && !profile.certs.includes(key) && (!rec.exp || daysTo(rec.exp) >= 0)){
+    profile.certs = [...profile.certs, key]; store.set("profile", profile); applyProfile(); renderJobs();
+  }
+  closeCertForm(); renderCerts(); renderDash();
+});
+function renderCerts(){
+  const rows = certsSorted();
+  const soon = rows.filter(c => c.exp && daysTo(c.exp) >= 0 && daysTo(c.exp) <= 90).length, gone = rows.filter(c => c.exp && daysTo(c.exp) < 0).length;
+  $("#ct-sum").textContent = rows.length ? `${rows.length} saved${soon?` · ${soon} expiring within 90 days`:""}${gone?` · ${gone} expired`:""}` : "";
+  $("#ct-list").innerHTML = rows.length ? rows.map(c => `
+    <article class="card">
+      <div><h4>${esc(c.name)}</h4>${c.issuer||c.num?`<p class="who">${esc([c.issuer, c.num?"No. "+c.num:""].filter(Boolean).join(" · "))}</p>`:""}
+        <div class="meta">${certChip(c)}</div></div>
+      <div class="right">${c.exp?`<span class="money" style="font-size:18px">${fmtDate(c.exp)}</span><small>${daysTo(c.exp)<0?"Expired":"Expires"}</small>`:`<small>No expiration date</small>`}</div>
+      <div class="kv">
+        <div><span>Issued</span><p>${c.issued?fmtDate(c.issued):"Not entered"}</p></div>
+        ${c.notes?`<div><span>Notes</span><p>${esc(c.notes)}</p></div>`:""}
+      </div>
+      <div class="acts"><button type="button" class="btn btn-quiet btn-sm" data-ct-edit="${esc(c.id)}">Edit</button><button type="button" class="btn btn-quiet btn-sm" data-ct-del="${esc(c.id)}">Remove</button>
+        <span class="err" data-ct-confirm="${esc(c.id)}" hidden>Remove it? <button type="button" class="linkish" data-ct-yes="${esc(c.id)}">Yes, remove</button> · <button type="button" class="linkish" data-ct-no>Keep it</button></span></div>
+    </article>`).join("") : `<p class="empty">Nothing saved yet. Add your EMT or Paramedic license, CPAT card, ladder climb certificate, CPR card and anything else you need to keep current.</p>`;
+}
+$("#ct-list").addEventListener("click", e => {
+  const ed = e.target.closest("[data-ct-edit]"), del = e.target.closest("[data-ct-del]"), yes = e.target.closest("[data-ct-yes]"), no = e.target.closest("[data-ct-no]");
+  if(ed){ openCertForm(certList.find(c => c.id===ed.dataset.ctEdit)); goTo($("#ct-form")) }
+  if(del){ const c = $(`[data-ct-confirm="${del.dataset.ctDel}"]`); if(c) c.hidden = false }
+  if(no){ no.closest("[data-ct-confirm]").hidden = true }
+  if(yes){ certList = certList.filter(c => c.id !== yes.dataset.ctYes); store.set("certList", certList); renderCerts(); renderDash() }
+});
+renderCerts();
 
 function renderAll(){ renderClasses(); renderJobs(); renderCE(); renderDepts(); renderFunding(); renderDash(); renderHello() }
 $("#upd").textContent = "Listings checked " + fmtDate(D.updated);
@@ -1222,7 +1349,7 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
 <!-- Accounts: optional login with Netlify Identity. Syncs the dashboard (stored in this browser) to the user's account. -->
 <script type="module">
 const LU = window.LU || (window.LU = {});
-const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer"];
+const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer","certList"];
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ls = { get(k){ try{ return localStorage.getItem("lu:"+k) }catch(e){ return null } }, set(k,v){ try{ localStorage.setItem("lu:"+k,v) }catch(e){} }, del(k){ try{ localStorage.removeItem("lu:"+k) }catch(e){} } };
