@@ -552,7 +552,7 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-certs" aria-labelledby="tab-certs" hidden>
-          <div class="pintro"><h3>My Certifications</h3><p>Keep your licenses and cards in one place and see what's expiring. Saved in this browser, and in your account if you're logged in. Don't enter your Social Security number.</p></div>
+          <div class="pintro"><h3>My Certifications</h3><p>Keep your licenses, cards and OSFM certifications in one place and see what's expiring. Saved in this browser, and in your account if you're logged in. Don't enter your Social Security number.</p></div>
           <div class="cert-top"><button type="button" class="btn btn-red btn-sm" id="ct-add">Add a Certification</button><span class="hint" id="ct-sum"></span></div>
           <form class="cert-form" id="ct-form" novalidate hidden>
             <h4 id="ct-h">Add a Certification</h4>
@@ -1157,39 +1157,60 @@ $("#hs-form").addEventListener("submit", e => { e.preventDefault(); if(!profile)
   showTab(tab); goTo($("#tools")) });
 
 /* My Certifications: a personal list of licenses and cards with expiration tracking */
-const CERT_TYPES = [
-  {v:"emt-il", name:"Illinois EMT License", issuer:"Illinois Department of Public Health", years:4, key:"emt"},
-  {v:"nremt-emt", name:"NREMT EMT Certification", issuer:"National Registry of EMTs", years:2, key:"emt"},
-  {v:"medic-il", name:"Illinois Paramedic License", issuer:"Illinois Department of Public Health", years:4, key:"medic"},
-  {v:"nremt-p", name:"NREMT Paramedic Certification", issuer:"National Registry of EMTs", years:2, key:"medic"},
-  {v:"cpat", name:"CPAT Card", issuer:"", years:1, key:"cpat", hint:"Many departments want a CPAT card from the last 12 months. Some accept two years."},
-  {v:"ladder", name:"Illinois Ladder Climb Certificate", issuer:"", years:5},
-  {v:"bof", name:"Basic Operations Firefighter / Firefighter II", issuer:"Office of the Illinois State Fire Marshal", years:null, key:"ffii"},
-  {v:"bls", name:"CPR / BLS Provider", issuer:"American Heart Association", years:2},
-  {v:"acls", name:"ACLS Provider", issuer:"American Heart Association", years:2},
-  {v:"pals", name:"PALS Provider", issuer:"American Heart Association", years:2},
-  {v:"hazops", name:"Hazardous Materials Operations", issuer:"", years:null},
-  {v:"other", name:"", issuer:"", years:null}
+/* OSFM's current certifications (sfm.illinois.gov "Current List of Certifications", 41 Ill. Adm. Code 141 Subpart D).
+   r: true when Section 141.390 requires recertification (current for 4 years from issue). */
+const OSFM = [
+  ["141.301","Basic Operations Firefighter",0,"ffii"],["141.302","Airport Firefighter",0],["141.303","Advanced Technician Firefighter",0,"ffii"],
+  ["141.306","Fire Apparatus Engineer",1],["141.309","Company Fire Officer",1],["141.310","Fire Service Executive Support",0],
+  ["141.312","Fire Department Incident Safety Officer",1],["141.313","Fire Department Health and Safety Officer",1],["141.315","Advanced Fire Officer",1],
+  ["141.316","Chief Fire Officer",1],["141.317","Fire Department Safety Officer",1],["141.318","Fire Service Instructor I",1],
+  ["141.320","Fire Service Instructor II",1],["141.322","Fire Service Instructor III",1],["141.324","Training Program Manager",1],
+  ["141.326","Basic Fire Prevention Officer",0],["141.327","Fire Inspector I",1],["141.328","Youth Firesetter Intervention Specialist",0],
+  ["141.329","Fire Inspector II",1],["141.330","Public Fire and Life Safety Educator I",1],["141.331","Advanced Fire Prevention Officer",0],
+  ["141.334","Fire Investigator",1],["141.344","Hazardous Materials Operations",1],["141.346","Hazardous Materials Technician",1],
+  ["141.352","Confined Space Operations",1],["141.353","Confined Space Technician",1],["141.354","Trench Operations",1],
+  ["141.356","Trench Technician",1],["141.360","Structural Collapse Operations",1],["141.362","Structural Collapse Technician",1],
+  ["141.364","Common Passenger Vehicle Rescue",1],["141.366","Heavy Vehicle Rescue",1],["141.367","Rope Operations",1],
+  ["141.370","Fire Service Vehicle Operator",1],["141.371","Rope Technician",1],["141.372","Surface Water Operations",0],["141.375","Watercraft Technician",0]
 ];
+const OSFM_ISSUER = "Office of the Illinois State Fire Marshal";
+const CERT_TYPES = [
+  {g:"EMS", v:"emt-il", name:"Illinois EMT License", issuer:"Illinois Department of Public Health", years:4, key:"emt"},
+  {g:"EMS", v:"nremt-emt", name:"NREMT EMT Certification", issuer:"National Registry of EMTs", years:2, key:"emt"},
+  {g:"EMS", v:"medic-il", name:"Illinois Paramedic License", issuer:"Illinois Department of Public Health", years:4, key:"medic"},
+  {g:"EMS", v:"nremt-p", name:"NREMT Paramedic Certification", issuer:"National Registry of EMTs", years:2, key:"medic"},
+  {g:"Hiring Tests", v:"cpat", name:"CPAT Card", issuer:"", years:1, key:"cpat", hint:"Many departments want a CPAT card from the last 12 months. Some accept two years."},
+  {g:"Hiring Tests", v:"ladder", name:"Illinois Ladder Climb Certificate", issuer:"", years:5},
+  ...OSFM.map(([sec,name,r,key]) => ({g:"OSFM Certifications", v:"osfm-"+sec, name, issuer:OSFM_ISSUER, years:r?4:null, key, osfm:true, recert:!!r})),
+  {g:"CPR and Life Support", v:"bls", name:"CPR / BLS Provider", issuer:"American Heart Association", years:2},
+  {g:"CPR and Life Support", v:"acls", name:"ACLS Provider", issuer:"American Heart Association", years:2},
+  {g:"CPR and Life Support", v:"pals", name:"PALS Provider", issuer:"American Heart Association", years:2},
+  {g:"Other", v:"other", name:"", issuer:"", years:null}
+];
+const CERT_ALIAS = { bof:"osfm-141.301", hazops:"osfm-141.344" };   // older saved types
 let certList = store.get("certList", []), ctEdit = null, ctAutoExp = false;
-const certType = v => CERT_TYPES.find(t => t.v===v) || CERT_TYPES[CERT_TYPES.length-1];
+const certType = v => CERT_TYPES.find(t => t.v===(CERT_ALIAS[v]||v)) || CERT_TYPES[CERT_TYPES.length-1];
 const addYears = (iso, y) => { const d = parseDate(iso); d.setFullYear(d.getFullYear()+y); return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}` };
 function certChip(c){
   if(!c.exp) return `<span class="chip">No expiration</span>`;
   const d = daysTo(c.exp);
-  if(d < 0) return `<span class="chip chip-red">Expired</span>`;
+  if(d < 0) return `<span class="chip chip-red">${certType(c.type).osfm ? "Not current: recertify" : "Expired"}</span>`;
   if(d <= 90) return `<span class="chip ${d<=30?"chip-red":"chip-warn"}">${d===0?"Expires today":d===1?"1 day left":d+" days left"}</span>`;
   return `<span class="chip chip-good">Valid</span>`;
 }
 function certsSorted(){ return [...certList].sort((a,b) => (a.exp?daysTo(a.exp):1e6) - (b.exp?daysTo(b.exp):1e6) || a.name.localeCompare(b.name)) }
-$("#ct-type").innerHTML = CERT_TYPES.map(t => `<option value="${t.v}">${t.v==="other"?"Other":esc(t.name)}</option>`).join("");
+$("#ct-type").innerHTML = [...new Set(CERT_TYPES.map(t => t.g))].map(g => `<optgroup label="${esc(g)}">${CERT_TYPES.filter(t => t.g===g).map(t => `<option value="${t.v}">${t.v==="other"?"Something else":esc(t.name)}</option>`).join("")}</optgroup>`).join("");
 function ctHint(){
   const t = certType($("#ct-type").value);
-  $("#ct-exp-hint").textContent = t.hint ? t.hint : t.years ? `Suggested from the usual ${t.years}-year renewal period. Check the date on your card.` : "";
+  $("#ct-exp-hint").textContent = t.hint ? t.hint
+    : t.osfm && t.recert ? "OSFM: stays current for 4 years from the issue date unless you recertify (90-day grace period). Ones issued before 2022 stopped being current Dec. 31, 2025."
+    : t.osfm ? "OSFM doesn't require recertification for this one, so leave the expiration blank."
+    : t.years ? `Suggested from the usual ${t.years}-year renewal period. Check the date on your card.` : "";
 }
 function ctSuggest(){
   const t = certType($("#ct-type").value), iss = $("#ct-issued").value;
-  if(t.years && iss && (ctAutoExp || !$("#ct-exp").value)){ $("#ct-exp").value = addYears(iss, t.years); ctAutoExp = true }
+  if(t.years && iss && (ctAutoExp || !$("#ct-exp").value)){
+    $("#ct-exp").value = (t.osfm && iss < "2022-01-01" && t.v !== "osfm-141.334") ? "2025-12-31" : addYears(iss, t.years); ctAutoExp = true }
   ctHint();
 }
 $("#ct-type").addEventListener("change", () => { const t = certType($("#ct-type").value);
@@ -1200,7 +1221,7 @@ $("#ct-exp").addEventListener("input", () => { ctAutoExp = false });
 function openCertForm(c){
   ctEdit = c ? c.id : null; ctAutoExp = false;
   $("#ct-h").textContent = c ? "Edit Certification" : "Add a Certification";
-  $("#ct-type").value = c ? c.type : "emt-il";
+  $("#ct-type").value = c ? (CERT_ALIAS[c.type] || c.type) : "emt-il";
   const t = certType($("#ct-type").value);
   $("#ct-name").value = c ? c.name : t.name; $("#ct-issuer").value = c ? (c.issuer||"") : t.issuer;
   $("#ct-num").value = c ? (c.num||"") : ""; $("#ct-issued").value = c ? (c.issued||"") : ""; $("#ct-exp").value = c ? (c.exp||"") : "";
@@ -1234,7 +1255,7 @@ function renderCerts(){
     <article class="card">
       <div><h4>${esc(c.name)}</h4>${c.issuer||c.num?`<p class="who">${esc([c.issuer, c.num?"No. "+c.num:""].filter(Boolean).join(" · "))}</p>`:""}
         <div class="meta">${certChip(c)}</div></div>
-      <div class="right">${c.exp?`<span class="money" style="font-size:18px">${fmtDate(c.exp)}</span><small>${daysTo(c.exp)<0?"Expired":"Expires"}</small>`:`<small>No expiration date</small>`}</div>
+      <div class="right">${c.exp?`<span class="money" style="font-size:18px">${fmtDate(c.exp)}</span><small>${daysTo(c.exp)<0?(certType(c.type).osfm?"No longer current":"Expired"):(certType(c.type).osfm?"Current until":"Expires")}</small>`:`<small>No expiration date</small>`}</div>
       <div class="kv">
         <div><span>Issued</span><p>${c.issued?fmtDate(c.issued):"Not entered"}</p></div>
         ${c.notes?`<div><span>Notes</span><p>${esc(c.notes)}</p></div>`:""}
