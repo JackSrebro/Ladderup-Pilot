@@ -1468,7 +1468,7 @@ window.LADDER_DATA = {
   /* CPAT test sites. The CPAT card and the Illinois ladder climb certificate are separate; most
      departments want a CPAT card from the last 12 months. sessions: upcoming dates (YYYY-MM-DD) with a short label. */
   cpat: {
-    note: "Most departments want a CPAT card issued within the last 12 months, and some job postings set their own window, so check each posting. Illinois departments also require a ladder climb certificate, which is separate from the CPAT card.",
+    note: "Each department sets its own rules. Most want a CPAT card from the last 12 months (some allow two years), and some accept only certain test sites, so check the job posting before you book, especially at a site far away. Illinois departments also require a ladder climb certificate, which is separate from the CPAT card.",
     sites: [
       { id:"cpat-mabas24", name:"MABAS 24 CPAT Center", provider:"MABAS Division 24", city:"Homewood",
         address:"17555 Ashland Ave., Homewood, IL 60430", lat:41.5703, lng:-87.6557,
@@ -1499,7 +1499,22 @@ window.LADDER_DATA = {
         ladder:"The ladder climb is offered with the test.",
         schedule:"Tests are on the Wednesday and Saturday of the first full week and the third week of each month. Practices are the two Wednesdays before your test, starting at 5 p.m. at Station 1.",
         sessions:[], register:"https://www.signupgenius.com/go/10C0544AAAC2AAAF5C34-59669015-cpat", url:"https://www.huntleyfpd.org/cpat-testing",
-        contact:"See the Huntley FPD CPAT page.", checked:"2026-11-07" }
+        contact:"See the Huntley FPD CPAT page.", checked:"2026-11-07" },
+      { id:"cpat-cifca", name:"Central Illinois Fire Chiefs CPAT", provider:"Central Illinois Fire Chiefs Association", city:"Decatur",
+        address:"2121 S. Imboden Ct., Decatur, IL 62521", lat:39.8175, lng:-88.9666,
+        cost:165, costNote:"$35 registration paid online, plus $130 due at check-in. The CPAT card is valid for two years from its issue date, though hiring departments may set their own rules.",
+        ladder:"The required Illinois ladder climb is included.",
+        schedule:"Two options: an open test challenge (one official attempt, 8 a.m. start, no practice), or a full session with orientation, station practice and up to three official attempts. Session 1 of 2027 starts with orientation Jan. 5 or Jan. 19 (registration closes Jan. 19), with attempts Feb. 2, Feb. 16 and Mar. 2. Session 2 starts with orientation Mar. 16 or Mar. 30.",
+        sessions:[{d:"2026-11-17",t:"Open test challenge"},{d:"2026-12-01",t:"Open test challenge"},{d:"2026-12-15",t:"Open test challenge"},{d:"2027-01-05",t:"Session 1 orientation"},{d:"2027-01-12",t:"Open test challenge"},{d:"2027-01-19",t:"Session 1 orientation"},{d:"2027-01-26",t:"Open test challenge"},{d:"2027-02-09",t:"Open test challenge"},{d:"2027-02-23",t:"Open test challenge"},{d:"2027-03-09",t:"Open test challenge"},{d:"2027-03-16",t:"Session 2 orientation"},{d:"2027-03-23",t:"Open test challenge"},{d:"2027-03-30",t:"Session 2 orientation"},{d:"2027-04-06",t:"Open test challenge"}],
+        register:"https://cpat.centralillinoisfirechiefs.com/", url:"https://cpat.centralillinoisfirechiefs.com/candidate-guide",
+        contact:"IllinoisCPAT@gmail.com", checked:"2026-11-07" },
+      { id:"cpat-maac", name:"MAAC Foundation CPAT", provider:"MAAC Foundation First Responder Training Campus", city:"Valparaiso, Ind.", outOfState:true,
+        address:"4203 Montdale Park Dr., Valparaiso, IN 46383", lat:41.4451, lng:-87.0111,
+        cost:null, costNote:"The price is shown when you book through National Testing Network.",
+        ladder:"An optional 24-foot ladder climb is offered separately. Check that your Illinois department accepts it.",
+        schedule:"Test days start with a 9 a.m. orientation, followed by practices and tests at 9:45, 10:30 and 11:15 a.m. Book through National Testing Network and choose the MAAC location to see open dates.",
+        sessions:[], register:"https://candidates.nationaltestingnetwork.com/#/cpat-info", url:"https://maacfoundation.org/cpat/",
+        contact:"Mike Wirtes, CPAT manager · 219-508-7579", checked:"2026-11-07" }
     ]
   },
 
