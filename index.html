@@ -185,6 +185,9 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .acct-link:hover{color:var(--ink)}
 @media (max-width:420px){.acct-link{display:none!important}}
 .start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.cpat-mode .cl-prog-only{display:none!important}
+.step-link{margin:0 0 6px 30px;font-size:14px}
+.cpat-note{grid-column:1/-1;margin:0 0 4px;padding:12px 14px;border-radius:8px;background:var(--sunk);font-size:14.5px;color:var(--ink-2)}
 .pf-quick{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin:4px 0 18px;padding:14px;border:1px dashed var(--line);border-radius:10px}
 .pf-quick .auth-google{width:auto;flex:none}
 .pf-quick span{font-size:14px;color:var(--ink-2);flex:1;min-width:200px}
@@ -395,6 +398,7 @@ html.lenis,html.lenis body{height:auto}
             <option value="classes:emt">EMT Classes</option>
             <option value="classes:medic">Paramedic Classes</option>
             <option value="classes:academy">Fire Academies</option>
+            <option value="classes:cpat">CPAT Test Sites</option>
             <option value="jobs">Departments Hiring Now</option>
             <option value="ce">Continuing Education (Already Hired)</option>
           </select>
@@ -464,17 +468,17 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-classes" aria-labelledby="tab-classes">
-          <div class="pintro"><h3>Class Finder</h3><p>EMT, Paramedic and fire academy programs, sorted by distance from your ZIP. Costs are the program's own published numbers. Where a program doesn't publish one, we say so.</p></div>
+          <div class="pintro"><h3>Class Finder</h3><p>EMT, Paramedic and fire academy programs, plus CPAT test sites, sorted by distance from your ZIP. Costs are the program's own published numbers. Where a program doesn't publish one, we say so.</p></div>
           <div class="controls">
             <div class="field"><span class="lbl">Program</span><div class="seg" id="cl-type">
-              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="emt" aria-pressed="false">EMT</button><button type="button" data-v="medic" aria-pressed="false">Paramedic</button><button type="button" data-v="academy" aria-pressed="false">Fire Academy</button></div></div>
+              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="emt" aria-pressed="false">EMT</button><button type="button" data-v="medic" aria-pressed="false">Paramedic</button><button type="button" data-v="academy" aria-pressed="false">Fire Academy</button><button type="button" data-v="cpat" aria-pressed="false">CPAT Testing</button></div></div>
             <div class="field"><label class="lbl" for="cl-zip">ZIP</label><input class="tinput zip" id="cl-zip" inputmode="numeric" maxlength="5" data-zip></div>
             <div class="field"><label class="lbl" for="cl-sort">Sort by</label><select class="select" id="cl-sort"><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
-            <label class="check" style="padding-block:10px"><input type="checkbox" id="cl-open"><span>Hide full classes</span></label>
-            <label class="check" style="padding-block:10px"><input type="checkbox" id="cl-anyone"><span>Academies I can join without a department</span></label>
+            <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-open"><span>Hide full classes</span></label>
+            <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-anyone"><span>Academies I can join without a department</span></label>
           </div>
           <div class="list" id="cl-list"></div>
-          <p class="fine">Pass rates: none of these programs publish NREMT first-attempt pass rates on their program pages, so Ladder Up doesn't rank by them yet. Always confirm cost and dates with the program before you enroll.</p>
+          <p class="fine" id="cl-fine">Pass rates: none of these programs publish NREMT first-attempt pass rates on their program pages, so Ladder Up doesn't rank by them yet. Always confirm cost and dates with the program before you enroll.</p>
         </div>
 
         <div class="panel" role="tabpanel" id="p-jobs" aria-labelledby="tab-jobs" hidden>
@@ -649,7 +653,37 @@ seg("#cl-type", v => { clType = v; renderClasses() });
 function statusChip(s, note){ const cls = s==="full"?"chip-red":s==="open"?"chip-good":"chip-warn";
   const txt = s==="full"?"Class full":s==="open"?"Offered":"Not yet verified"; return `<span class="chip ${cls}">${txt}</span>` }
 function sponsorChip(p){ return p.sponsor==="open" ? `<span class="chip chip-good">Open to anyone</span>` : p.sponsor==="sponsored" ? `<span class="chip chip-warn">Department-sponsored only</span>` : "" }
+/* CPAT test sites live in the Class Finder under "CPAT Testing" */
+const CP = D.cpat || {note:"", sites:[]};
+function cpatNext(c){ return (c.sessions||[]).find(x => daysTo(x.d) >= 0) || null }
+function cpatSites(){ return CP.sites.map(c => ({...c, mi: miles(c.lat,c.lng), nx: cpatNext(c)})) }
+function showCpat(){ clType = "cpat"; segSet("#cl-type", "cpat"); renderClasses(); showTab("classes"); goTo($("#tools")) }
+document.addEventListener("click", e => { if(e.target.closest("[data-cpat]")){ e.preventDefault(); showCpat() } });
+const cpatStepLink = s => /CPAT/.test(s) && CP.sites.length ? `<p class="step-link"><button type="button" class="linkish" data-cpat>Find a CPAT test site near you</button></p>` : "";
+function renderCpat(){
+  const rows = cpatSites();
+  const s = $("#cl-sort").value;
+  rows.sort((a,b) => s==="cost" ? ((a.cost??1e9)-(b.cost??1e9)) : ((a.mi??1e9)-(b.mi??1e9)) || a.city.localeCompare(b.city));
+  $("#cl-list").innerHTML = (CP.note ? `<p class="cpat-note">${esc(CP.note)}</p>` : "") + rows.map(c => `
+    <article class="card">
+      <div><h4>${esc(c.name)}</h4><p class="who">${esc(c.provider)} · ${esc(c.city)}</p>
+        <div class="meta"><span class="chip">CPAT</span>${c.nx ? `<span class="chip chip-good">Next: ${fmtDate(c.nx.d)}</span>` : `<span class="chip">Dates on the booking page</span>`}${distTxt(c.mi)}</div></div>
+      <div class="right">${c.cost!=null?`<span class="money">${fmt$(c.cost)}</span><small>Published price</small>`:`<small>Price shown at booking</small>`}</div>
+      <div class="kv">
+        <div><span>Location</span><p>${esc(c.address)}</p></div>
+        <div><span>Schedule</span><p>${esc(c.schedule)}</p></div>
+        <div><span>Cost details</span><p>${esc(c.costNote)}</p></div>
+        <div><span>Ladder climb</span><p>${esc(c.ladder)}</p></div>
+        ${c.sessions && c.sessions.filter(x=>daysTo(x.d)>=0).length ? `<div style="grid-column:1/-1"><span>Upcoming dates</span><p>${c.sessions.filter(x=>daysTo(x.d)>=0).slice(0,6).map(x=>`${fmtDate(x.d)} (${esc(x.t.toLowerCase())})`).join(" · ")}</p></div>` : ""}
+        <div style="grid-column:1/-1"><span>Contact</span><p>${esc(c.contact)}</p></div>
+      </div>
+      <div class="acts"><a class="btn btn-red btn-sm" href="${esc(c.register)}" target="_blank" rel="noopener">Register</a><a class="btn btn-quiet btn-sm" href="${esc(c.url)}" target="_blank" rel="noopener">Site info</a></div>
+    </article>`).join("");
+}
 function renderClasses(){
+  document.querySelector("#p-classes").classList.toggle("cpat-mode", clType==="cpat");
+  $("#cl-fine").hidden = clType==="cpat";
+  if(clType==="cpat") return renderCpat();
   let rows = D.programs.filter(p => clType==="all" || p.type===clType).filter(p => !$("#cl-open").checked || p.status!=="full")
     .filter(p => !$("#cl-anyone").checked || p.type!=="academy" || p.sponsor==="open")
     .map(p => ({...p, mi: miles(p.lat,p.lng)}));
@@ -830,7 +864,7 @@ function renderRoadmap(){
     return `<li><button type="button" class="rm-step ${done?"done":""}" data-r="${n}" ${n===rmCur?'aria-current="step"':""}><span class="rm-num">${n}</span><span class="rm-t">${esc(r.t)}</span>${done?'<span class="chip chip-good">Done</span>':""}</button></li>` }).join("");
   const r = RUNGS[rmCur-1];
   $("#rm-detail").innerHTML = `<p class="eyebrow">Rung ${rmCur} of ${RUNGS.length}</p><h4 class="rm-big" style="margin-top:6px">${esc(r.t)}</h4>
-    <ul class="checks">${r.steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-k="${rmCur}-${k}" ${rmDone[rmCur+"-"+k]?"checked":""}><span>${esc(s)}</span></label></li>`).join("")}</ul>`;
+    <ul class="checks">${r.steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-k="${rmCur}-${k}" ${rmDone[rmCur+"-"+k]?"checked":""}><span>${esc(s)}</span></label>${cpatStepLink(s)}</li>`).join("")}</ul>`;
   renderLadder();
 }
 /* Hero ladder: same rungs as the roadmap, marks progress, opens the roadmap at a rung */
@@ -1047,7 +1081,7 @@ function renderDash(){
     </div>
     <div class="dash-cols">
       <div class="dcard"><div class="dcard-h"><h4>Your Next Steps</h4><button type="button" class="linkish" data-go2="roadmap">Open roadmap</button></div>
-        <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label></li>`).join("")}</ul>
+        <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label>${s.done?"":cpatStepLink(s.s)}</li>`).join("")}</ul>
         ${steps.every(s=>s.done) && profile.rung<RUNGS.length ? `<button type="button" class="btn btn-red btn-sm" id="d-next" style="justify-self:start">Move up to rung ${profile.rung+1}</button>` : ""}</div>
       <div class="dcard"><div class="dcard-h"><h4>Upcoming Deadlines</h4></div>
         ${dl.length ? `<ul class="mini">${dl.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${fmtDate(x.d)}</p></div><div class="r"><span class="chip ${daysTo(x.d)<=14?"chip-red":"chip-warn"}">${daysTo(x.d)} days</span><a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a></div></li>`).join("")}</ul>` : `<p class="dempty">Nothing with a date in your area right now.</p>`}</div>
@@ -1057,6 +1091,8 @@ function renderDash(){
           <div class="r"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a></div></li>` }).join("")}</ul>` : `<p class="dempty">No open postings ${radiusTxt}. Try a wider distance in your profile, or check the Departments tab for upcoming testing.</p>`}</div>
       <div class="dcard"><div class="dcard-h"><h4>${t ? typeName[t]+" for Your Next Step" : "Training"}</h4>${t?`<button type="button" class="linkish" data-go2="classes">See all</button>`:""}</div>
         ${t ? `<ul class="mini">${classes.map(p=>`<li><div><p class="t">${esc(p.name)}</p><p class="m">${esc(p.provider)}${distTxt(p.mi)}${p.status==="full"?'<span class="chip chip-red">Full</span>':""}${p.status==="check"?'<span class="chip chip-warn">Not yet verified</span>':""}${p.sponsor==="open"?'<span class="chip chip-good">Open to anyone</span>':""}</p></div><div class="r">${p.cost!=null?`<span class="money">${fmt$(p.cost)}</span>`:""}${p.apply?`<a class="btn btn-red btn-sm" href="${esc(p.apply)}" target="_blank" rel="noopener">Apply</a>`:`<a class="linkish" href="${esc(p.url)}" target="_blank" rel="noopener">Details</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">You have the licenses your goal needs. Look at Advanced Training and promotion prep on your roadmap.</p>`}</div>
+      ${(!profile.certs.includes("cpat") && profile.rung >= 3 && profile.rung <= 5 && CP.sites.length) ? `<div class="dcard"><div class="dcard-h"><h4>CPAT Test Sites Near You</h4><button type="button" class="linkish" data-cpat>See all</button></div>
+        <ul class="mini">${cpatSites().sort((a,b)=>(a.mi??1e9)-(b.mi??1e9)).slice(0,3).map(c=>`<li><div><p class="t">${esc(c.name)}</p><p class="m">${c.nx?`Next: ${fmtDate(c.nx.d)}`:"Dates on the booking page"}${c.cost!=null?` · <span class="money">${fmt$(c.cost)}</span>`:""}${distTxt(c.mi)}</p></div><div class="r"><a class="btn btn-red btn-sm" href="${esc(c.register)}" target="_blank" rel="noopener">Register</a></div></li>`).join("")}</ul></div>` : ""}
       <div class="dcard"><div class="dcard-h"><h4>Funding for You</h4><button type="button" class="linkish" data-go2="funding">Match more</button></div>
         <ul class="mini">${funds.map(f=>`<li><div><p class="t">${esc(f.name)}</p><p class="m">${esc(f.amount)}</p></div><div class="r"><a class="linkish" href="${esc(f.url)}" target="_blank" rel="noopener">Details</a></div></li>`).join("")}</ul></div>
       ${profile.rung >= 6 ? `<div class="dcard wide"><div class="dcard-h"><h4>Continuing Education Near You</h4><button type="button" class="linkish" data-go2="ce">See all courses</button></div>
