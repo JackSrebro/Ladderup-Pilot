@@ -663,11 +663,12 @@ const cpatStepLink = s => /CPAT/.test(s) && CP.sites.length ? `<p class="step-li
 function renderCpat(){
   const rows = cpatSites();
   const s = $("#cl-sort").value;
-  rows.sort((a,b) => s==="cost" ? ((a.cost??1e9)-(b.cost??1e9)) : ((a.mi??1e9)-(b.mi??1e9)) || a.city.localeCompare(b.city));
+  const soon = c => c.nx ? daysTo(c.nx.d) : 1e6;
+  rows.sort((a,b) => s==="cost" ? ((a.cost??1e9)-(b.cost??1e9)) : s==="soon" ? (soon(a)-soon(b) || (a.mi??1e9)-(b.mi??1e9)) : ((a.mi??1e9)-(b.mi??1e9)) || a.city.localeCompare(b.city));
   $("#cl-list").innerHTML = (CP.note ? `<p class="cpat-note">${esc(CP.note)}</p>` : "") + rows.map(c => `
     <article class="card">
       <div><h4>${esc(c.name)}</h4><p class="who">${esc(c.provider)} · ${esc(c.city)}</p>
-        <div class="meta"><span class="chip">CPAT</span>${c.nx ? `<span class="chip chip-good">Next: ${fmtDate(c.nx.d)}</span>` : `<span class="chip">Dates on the booking page</span>`}${distTxt(c.mi)}</div></div>
+        <div class="meta"><span class="chip">CPAT</span>${c.outOfState ? `<span class="chip chip-warn">Out of state: confirm your department accepts it</span>` : ""}${c.nx ? `<span class="chip chip-good">Next: ${fmtDate(c.nx.d)}</span>` : `<span class="chip">Dates on the booking page</span>`}${distTxt(c.mi)}</div></div>
       <div class="right">${c.cost!=null?`<span class="money">${fmt$(c.cost)}</span><small>Published price</small>`:`<small>Price shown at booking</small>`}</div>
       <div class="kv">
         <div><span>Location</span><p>${esc(c.address)}</p></div>
@@ -682,6 +683,9 @@ function renderCpat(){
 }
 function renderClasses(){
   document.querySelector("#p-classes").classList.toggle("cpat-mode", clType==="cpat");
+  const so = $("#cl-sort"), hasSoon = !!so.querySelector('option[value="soon"]');
+  if(clType==="cpat" && !hasSoon) so.insertAdjacentHTML("beforeend", '<option value="soon">Soonest date</option>');
+  if(clType!=="cpat" && hasSoon){ if(so.value==="soon") so.value = "dist"; so.querySelector('option[value="soon"]').remove() }
   $("#cl-fine").hidden = clType==="cpat";
   if(clType==="cpat") return renderCpat();
   let rows = D.programs.filter(p => clType==="all" || p.type===clType).filter(p => !$("#cl-open").checked || p.status!=="full")
