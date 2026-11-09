@@ -1057,7 +1057,7 @@ const moreBtn = `<button type="button" class="btn btn-quiet btn-sm" data-flip>Le
 function flipCard(front, info){
   const a = info.about, runs = info.runs, NA = `<span class="dm-na">Not published yet. Ask the department.</span>`;
   const calls = runs ? Object.entries(runs.calls).map(([y,n]) => `${y}: ${n==null?"Not reported":n.toLocaleString()}`).join(" · ") : null;
-  const rows = [["Calls Ran", calls], ["Shift and Time Off", a.timeOff], ["Union", a.union], ["Stations", runs ? String(runs.stations) : null], ["Area Covered", a.area], ["Employees", a.staff]];
+  const rows = [["Calls Ran", calls], ["Shift and Time Off", a.timeOff], ["Union", a.union], ["Stations", runs ? String(runs.stations) : null], ["Area Covered", a.area], ["Residents", a.residents], ["Employees", a.staff]];
   const src = (a.sources||[]).map((u,i) => `<a class="linkish" href="${esc(u)}" target="_blank" rel="noopener">${i+1}</a>`).join(" ");
   const back = `<div class="card face back" inert><div><h4>${esc(info.name)}</h4><p class="who">About This Job</p>
     <dl class="dm">${rows.map(([k,v]) => `<div><dt>${k}</dt><dd>${v?esc(v):NA}</dd></div>`).join("")}</dl>
