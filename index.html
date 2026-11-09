@@ -240,7 +240,7 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 @keyframes pn-pop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
 .path-step{padding:12px;margin:-12px;border-radius:12px;transition:background .4s}
 .path-step.cur{background:color-mix(in srgb,var(--red-wash) 55%,transparent)}
-.path-step.done{background:color-mix(in srgb,var(--good-wash) 60%,transparent)}
+.path-step.done{background:color-mix(in srgb,var(--good-wash) 60%,transparent);border:0;padding:12px;gap:12px}
 .path-step.done h5{color:var(--good)}
 .ps-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
 .ps-count{font-size:12.5px;font-family:var(--f-mono);color:var(--ink-3);white-space:nowrap}
@@ -261,12 +261,47 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 @keyframes pt-flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent);transform:scale(1.02)}100%{box-shadow:0 0 0 10px transparent;transform:scale(1)}}
 .path-next{display:grid;gap:8px;padding:14px 16px;border-radius:12px;border:2px solid var(--red);background:var(--surface);box-shadow:var(--shadow)}
 .path-next h6{font-size:16px;margin:0}
-.path-note{margin:0;font-size:14px;color:var(--ink-2);padding:10px 12px;border-left:3px solid #f5b301;background:color-mix(in srgb,#f5b301 10%,transparent);border-radius:0 8px 8px 0}
-.ps-order{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--ink-3)}
-.ps-order button{font:inherit;font-size:13px;padding:5px 10px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
-.ps-order button:hover{border-color:var(--ink-3)}
-.ps-order button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
-.ps-order button small{font-size:11px;opacity:.75}
+.route{display:block;border-radius:12px;border:1px solid color-mix(in srgb,#f5b301 45%,var(--line));background:color-mix(in srgb,#f5b301 7%,var(--surface))}
+.route h5{margin:0;font-size:17px}
+.route p{margin:0;font-size:14.5px;color:var(--ink-2);line-height:1.55}
+.route p b{color:var(--ink)}
+.route-about summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink-2)}
+.route-about[open]{display:grid;gap:8px}
+.route .route-pick-h{font-weight:700;color:var(--ink)}
+.route-pick-h span{display:block;font-weight:400;color:var(--ink-2);font-size:13.5px}
+.route-opts{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px}
+.route-opt{font:inherit;text-align:left;display:grid;gap:6px;align-content:start;padding:12px 14px;border-radius:12px;border:2px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .2s,box-shadow .2s,transform .15s}
+.route-opt:hover{border-color:var(--ink-3)}
+.route-opt:active{transform:scale(.99)}
+.route-opt[aria-checked="true"]{border-color:var(--red);box-shadow:0 0 0 3px color-mix(in srgb,var(--red) 18%,transparent)}
+.ro-tag{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3)}
+.route-opt:first-child .ro-tag{color:#b07d00}
+.ro-seq{font-weight:700;font-size:15.5px;line-height:1.35}
+.ro-seq i{font-style:normal;color:var(--red);margin:0 2px}
+.ro-sel{font-size:13px;color:var(--ink-2)}
+.route-opt[aria-checked="true"] .ro-sel{color:var(--red-ink);font-weight:700}
+.route-opt[aria-checked="true"] .ro-sel::before{content:"\2713  "}
+.route .route-ok{color:var(--good);font-weight:600;animation:nx-in .45s ease-out}
+.ps-route{justify-self:start;font-size:13.5px}
+.route{padding:0}
+.route-sum{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:14px 16px;cursor:pointer}
+.route-sum::-webkit-details-marker{display:none}
+.rs-t{display:grid;gap:2px}
+.rs-t b{font-size:16.5px}
+.rs-cur{font-size:13.5px;color:var(--ink-2)}
+.route-body{display:grid;gap:10px;padding:0 16px 16px}
+.chev{width:20px;height:20px;flex:none;fill:none;stroke:var(--ink-3);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;transition:transform .25s}
+details[open] > summary .chev{transform:rotate(180deg)}
+.ps-det > summary{list-style:none;cursor:pointer}
+.ps-det > summary::-webkit-details-marker{display:none}
+.ps-det > summary.ps-h{flex-wrap:nowrap;align-items:center}
+.ps-det > summary.ps-h h5{flex:1;min-width:0}
+.ps-det > summary:focus:not(:focus-visible),.route-sum:focus:not(:focus-visible){outline:none}
+.ps-meta{display:flex;align-items:center;gap:8px}
+.ps-body{display:grid;gap:8px;margin-top:6px}
+.ps-det:not([open]) .ps-h h5{margin-top:4px}
+.ps-det[open] > .ps-body{animation:nx-in .3s ease-out}
+.ps-all{margin:0;font-size:13.5px;color:var(--ink-3)}
 .path-step.moved{animation:ps-moved 1.2s ease-out}
 @keyframes ps-moved{0%{box-shadow:0 0 0 3px #f5b301;transform:translateY(-6px)}40%{transform:none}100%{box-shadow:0 0 0 0 transparent}}
 .nx-then{padding-bottom:8px;border-bottom:1px dashed var(--line)}
@@ -1408,6 +1443,7 @@ function buildPath(p){
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
    recommends what to do next, with the classes, funding, test sites or jobs for it right there. */
+let stepOpen = {}, routeOpen = null;
 let pathDone = store.get("pathDone", {}), pathOrder = store.get("pathOrder", null), pathFlash = null;
 /* The fire academy can come before EMT, between EMT and paramedic (most common), or after paramedic.
    Paramedic always stays after EMT. The order follows the student: an explicit choice, or the step they start first. */
@@ -1537,6 +1573,26 @@ function nextBox(m){
   return `<div class="path-next${pathFlash?" pop":""}" id="path-next"><p class="eyebrow">Up next</p>${head?`<p class="nx-msg">${esc(head)}</p>`:""}${then}
     <h6>${esc(nx.t.t)}</h6>${actHTML(nx.t.do, nx.st)}</div>`;
 }
+/* Route picker: explains that the order is flexible and lets the student choose. It can always be changed,
+   and the roadmap only changes order when the student picks a route here. */
+const ROUTE_NAME = {emt:"EMT", academy:"Fire Academy", medic:"Paramedic"};
+const ROUTE_TAG = {mid:"Most common", first:"Academy first", last:"Academy last"};
+function routeSeq(ord){ return applyOrder(buildPath(profile), ord).filter(x => ROUTE_NAME[x.id]).map(x => ROUTE_NAME[x.id]) }
+function routePicker(m){
+  const opts = ["mid", m.canFirst ? "first" : null, m.canLast ? "last" : null].filter(Boolean), chosen = !!(pathOrder && pathOrder.v);
+  const text = `<p>There's more than one way up the ladder. EMT, fire academy and paramedic training can be completed in different orders depending on your schedule, your finances and the departments you're targeting.</p>
+    <p>Most students in our area complete EMT and the fire academy first. With both, you can be hired by part-time departments, and even some full-time departments, before you have a paramedic license. Other students start with the fire academy, or go straight from EMT into paramedic school and finish with the academy.</p>
+    <p><b>The one rule:</b> paramedic school always comes after your EMT license.</p>`;
+  const open = routeOpen === null ? !chosen : routeOpen;
+  return `<details class="route" id="route"${open?" open":""}><summary class="route-sum"><span class="rs-t"><b>Your Path, Your Order</b><span class="rs-cur">${chosen?"Your route: ":"Suggested: "}${routeSeq(m.ord).map(esc).join(" &rarr; ")}</span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></summary><div class="route-body">
+    ${text}
+    <p class="route-pick-h">${chosen ? "Your route" : "Choose the route that fits you."} <span>You can change it anytime, and your roadmap and progress will update to match.</span></p>
+    <div class="route-opts" role="radiogroup" aria-label="Your training route">${opts.map(o => `<button type="button" class="route-opt" role="radio" data-route="${o}" aria-checked="${m.ord===o}">
+      <span class="ro-tag">${o==="mid"?"&#9733; ":""}${ROUTE_TAG[o]}</span><span class="ro-seq">${routeSeq(o).map(esc).join(' <i aria-hidden="true">&rarr;</i> ')}</span>
+      <span class="ro-sel">${m.ord===o?"Your route":"Choose this route"}</span></button>`).join("")}</div>
+    ${pathFlash && pathFlash.route ? `<p class="route-ok" role="status">Route updated. Your steps below now go ${routeSeq(pathFlash.route).join(", then ")}.</p>` : ""}
+  </div></details>`;
+}
 function renderPath(rid = "rm-retake"){
   if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="${rid}" style="justify-self:start">Answer the Questions</button></div>`;
   const m = pathModel(), have = (profile.certs||[]).filter(k => CERT[k]), pct = m.total ? Math.round(m.done / m.total * 100) : 0;
@@ -1546,16 +1602,16 @@ function renderPath(rid = "rm-retake"){
   return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="${rid}">Retake Questions</button></div>
     <p class="path-sum">${esc(sum)}</p>
     ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
-    ${m.canFirst || m.canLast ? `<p class="path-note">Most people go EMT, then Fire Academy, then Paramedic. You can also do the academy first or last, and your roadmap will follow your lead. Paramedic always comes after EMT.</p>` : ""}
-    ${m.total ? `<div class="path-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Path progress"><div class="pp-bar"><i style="--p:${pct}%"></i></div><span><b>${m.done}</b> of ${m.total} tasks done</span></div>` : ""}
-    ${m.steps.length ? `<ol class="path-list">${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}${pathFlash&&pathFlash.moved===st.id?" moved":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b">
-      <div class="ps-h"><h5>${esc(st.t)}</h5>${st.tasks.length?`<span class="ps-count">${st.done?"Done":`${st.n} of ${st.tasks.length}`}</span>`:""}</div>${st.why?`<p class="why">${esc(st.why)}</p>`:""}
-      ${st.id==="academy" && (m.canFirst || m.canLast) ? `<div class="ps-order" role="group" aria-label="When you'll do the fire academy"><span>When:</span>${[["first","Before EMT",m.canFirst],["mid","After EMT",true],["last","After paramedic",m.canLast]].filter(o => o[2]).map(o => `<button type="button" data-order="${o[0]}" aria-pressed="${m.ord===o[0]}">${o[1]}${o[0]==="mid"?" <small>(most common)</small>":""}</button>`).join("")}</div>` : ""}
+    ${m.canFirst || m.canLast ? routePicker(m) : ""}
+    ${m.total ? `<div class="path-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Path progress"><div class="pp-bar"><i style="--p:${pct}%"></i></div><span><b>${m.done}</b> of ${m.total} tasks done</span></div><p class="ps-all"><button type="button" class="linkish" data-sall="1">Expand all steps</button> · <button type="button" class="linkish" data-sall="0">Collapse all</button></p>` : ""}
+    ${m.steps.length ? `<ol class="path-list">${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}${pathFlash&&pathFlash.moved===st.id?" moved":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b"><details class="ps-det" data-sd="${st.id}"${(stepOpen[st.id] ?? (n===m.cur || st.id===nxStep)) ? " open" : ""}>
+      <summary class="ps-h"><h5>${esc(st.t)}</h5><span class="ps-meta">${st.tasks.length?`<span class="ps-count">${st.done?"Done":`${st.n} of ${st.tasks.length}`}</span>`:""}<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="ps-body">${st.why?`<p class="why">${esc(st.why)}</p>`:""}
+      ${st.id==="academy" && (m.canFirst || m.canLast) ? `<button type="button" class="linkish ps-route" data-goroute>Change your route</button>` : ""}
       ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
       ${st.id === nxStep ? nb : ""}
       ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
       ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":`data-go2="${st.go}"`}>See more</button>`:""}
-    </div></li>`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+    </div></details></div></li>`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
 }
 /* Dashboard shows a short preview; the full recommended path lives on the My Roadmap tab */
@@ -1594,25 +1650,22 @@ function renderRmPath(){
   el.querySelectorAll("[data-more]").forEach(b => b.onclick = () => { el.querySelectorAll(`[data-more-of="${b.dataset.more}"]`).forEach(x => x.hidden = false); b.remove() });
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
   el.querySelectorAll("[data-act]").forEach(b => b.onclick = () => pathAct(b));
-  el.querySelectorAll("[data-order]").forEach(b => b.onclick = () => {
-    pathOrder = {v: b.dataset.order, auto: false}; store.set("pathOrder", pathOrder);
-    pathFlash = {moved: "academy"}; renderRmPath(); renderDash(); pathFlash = null;
-    const st = el.querySelector('.path-step[data-step="academy"]'); if(st){ const r = st.getBoundingClientRect(); if(r.top < 70 || r.bottom > innerHeight) (window.__lenis ? window.__lenis.scrollTo(st, {offset:-90}) : st.scrollIntoView({block:"start", behavior:"smooth"})) }
-    const again = el.querySelector(`[data-order="${b.dataset.order}"]`); if(again) again.focus({preventScroll:true});
+  el.querySelectorAll("[data-route]").forEach(b => b.onclick = () => {
+    const v = b.dataset.route, same = pathOrder && pathOrder.v === v; routeOpen = true;
+    pathOrder = {v, auto: false}; store.set("pathOrder", pathOrder);
+    pathFlash = same ? null : {moved: "academy", route: v}; renderRmPath(); renderDash(); pathFlash = null;
+    const again = el.querySelector(`[data-route="${v}"]`); if(again) again.focus({preventScroll:true});
   });
+  const rt2 = $("#route"); if(rt2) rt2.addEventListener("toggle", () => { routeOpen = rt2.open });
+  el.querySelectorAll(".ps-det").forEach(d => d.addEventListener("toggle", () => { stepOpen[d.dataset.sd] = d.open }));
+  el.querySelectorAll("[data-sall]").forEach(b => b.onclick = () => { const o = b.dataset.sall === "1"; el.querySelectorAll(".ps-det").forEach(d => { d.open = o; stepOpen[d.dataset.sd] = o }) });
+  el.querySelectorAll("[data-goroute]").forEach(b => b.onclick = () => { const r = $("#route"); if(r){ r.open = true; routeOpen = true } if(r) (window.__lenis ? window.__lenis.scrollTo(r, {offset:-90}) : r.scrollIntoView({block:"start", behavior:"smooth"})) });
   el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
     const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
     store.set("pathDone", pathDone);
     pathFlash = c.checked ? {key:k, step:c.dataset.step} : null;
-    /* Follow the student's lead: starting the academy before finishing EMT, or paramedic before the academy, reorders the path */
-    if(c.checked && !(pathOrder && pathOrder.auto === false)){
-      const mm = pathModel(), sd = id => { const x = mm.steps.find(y => y.id === id); return x ? x.done : true };
-      let v = null;
-      if(c.dataset.step === "academy" && mm.canFirst && !sd("emt") && mm.ord !== "first") v = "first";
-      if(c.dataset.step === "medic" && mm.canLast && !sd("academy") && mm.ord !== "last") v = "last";
-      if(v){ pathOrder = {v, auto: true}; store.set("pathOrder", pathOrder); pathFlash.moved = "academy";
-        pathFlash.note = v === "first" ? "Since you started the fire academy first, we moved it ahead of EMT." : "Since you started paramedic school first, we moved the fire academy to after it." }
-    }
+    { const m2 = pathModel(), st2 = m2.steps.find(x => x.id === c.dataset.step);
+      if(c.checked && st2 && st2.done){ const nxt = m2.steps[m2.cur]; stepOpen[c.dataset.step] = false; if(nxt) delete stepOpen[nxt.id] } }
     renderRmPath(); renderDash();
     const stepEl = el.querySelector(`.path-step[data-step="${c.dataset.step}"]`);
     if(c.checked && stepEl && stepEl.classList.contains("just-done")) pathBurst(stepEl.querySelector(".path-n"));
