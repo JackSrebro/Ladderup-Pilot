@@ -261,6 +261,14 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 @keyframes pt-flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent);transform:scale(1.02)}100%{box-shadow:0 0 0 10px transparent;transform:scale(1)}}
 .path-next{display:grid;gap:8px;padding:14px 16px;border-radius:12px;border:2px solid var(--red);background:var(--surface);box-shadow:var(--shadow)}
 .path-next h6{font-size:16px;margin:0}
+.path-note{margin:0;font-size:14px;color:var(--ink-2);padding:10px 12px;border-left:3px solid #f5b301;background:color-mix(in srgb,#f5b301 10%,transparent);border-radius:0 8px 8px 0}
+.ps-order{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:13px;color:var(--ink-3)}
+.ps-order button{font:inherit;font-size:13px;padding:5px 10px;border-radius:99px;border:1px solid var(--line);background:var(--surface);color:var(--ink-2);cursor:pointer;transition:background .2s,color .2s,border-color .2s}
+.ps-order button:hover{border-color:var(--ink-3)}
+.ps-order button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.ps-order button small{font-size:11px;opacity:.75}
+.path-step.moved{animation:ps-moved 1.2s ease-out}
+@keyframes ps-moved{0%{box-shadow:0 0 0 3px #f5b301;transform:translateY(-6px)}40%{transform:none}100%{box-shadow:0 0 0 0 transparent}}
 .nx-then{padding-bottom:8px;border-bottom:1px dashed var(--line)}
 .path-next .nx-msg{margin:0;font-weight:600;color:var(--good)}
 .path-next .eyebrow{margin:0;color:var(--red-ink)}
@@ -275,7 +283,7 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .path-peek li.done span:last-child{color:var(--good);text-decoration:line-through}
 .pburst{position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;z-index:9999;animation:pburst .75s cubic-bezier(.2,.7,.3,1) forwards}
 @keyframes pburst{0%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.3);opacity:0}}
-@media (prefers-reduced-motion: reduce){.path-step.cur .path-n,.path-step.just-done .path-n,.ptasks li.flash label,.path-next.pop{animation:none}.pp-bar i,.pt-box svg,.path-n .pn-check{transition:none}}
+@media (prefers-reduced-motion: reduce){.path-step.moved,.path-step.cur .path-n,.path-step.just-done .path-n,.ptasks li.flash label,.path-next.pop{animation:none}.pp-bar i,.pt-box svg,.path-n .pn-check{transition:none}}
 
 #rm-path .path{display:grid;gap:12px}
 .rm-h{font-size:18px;margin:0 0 12px}
@@ -1319,7 +1327,8 @@ function pathPrograms(type, p){
   return D.programs.filter(x => x.type===type && (type!=="academy" || x.sponsor!=="sponsored"))
     .map(x => ({...x, mi: miles(x.lat,x.lng), night: NIGHT.test(x.schedule||"")}))
     .sort((a,b) => (a.status==="full")-(b.status==="full") || (p.schedule==="nights" ? (b.night-a.night) : 0) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3)
-    .map(x => ({t:x.name, m:`${x.provider}${x.night?" · Night or weekend option":""}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.apply||x.url, b:x.apply?"Apply":"Details", chip: x.status==="full"?"Full":""}));
+    .map(x => ({t:x.name, m:`${x.provider}${x.night?" · Night or weekend option":""}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.apply||x.url, b:x.apply?"Apply":"Details",
+      chip: x.status==="full" ? "Full" : (type==="academy" && /\bEMT\b/.test(x.reqs||"") && !(p.certs||[]).includes("emt") && !(p.certs||[]).includes("medic")) ? "Needs EMT first" : ""}));
 }
 const CE_FOCUS = {
   engineer:{t:"Become an Engineer or Driver", cats:["app"], certs:"Fire Apparatus Engineer and Fire Service Vehicle Operator"},
@@ -1399,7 +1408,24 @@ function buildPath(p){
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
    recommends what to do next, with the classes, funding, test sites or jobs for it right there. */
-let pathDone = store.get("pathDone", {}), pathFlash = null;
+let pathDone = store.get("pathDone", {}), pathOrder = store.get("pathOrder", null), pathFlash = null;
+/* The fire academy can come before EMT, between EMT and paramedic (most common), or after paramedic.
+   Paramedic always stays after EMT. The order follows the student: an explicit choice, or the step they start first. */
+function academyOrder(){
+  if(pathOrder && pathOrder.v) return pathOrder.v;
+  const c = profile.certs || [];
+  if(profile.stage === "academy" && !c.includes("emt") && !c.includes("medic")) return "first";
+  return "mid";
+}
+function applyOrder(steps, ord){
+  const ix = id => steps.findIndex(x => x.id === id), a = ix("academy");
+  if(a < 0 || ord === "mid") return steps;
+  if(ord === "first"){ const e = ix("emt"); if(e < 0 || e > a) return steps; const out = steps.filter(x => x.id !== "academy"); out.splice(out.findIndex(x => x.id === "emt"), 0, steps[a]); return out }
+  if(ord === "last"){ const m = ix("medic"); if(m < 0) return steps;
+    const out = steps.filter(x => x.id !== "academy" && x.id !== "medic"), e = out.findIndex(x => x.id === "emt");
+    out.splice(e >= 0 ? e + 1 : Math.min(a, m), 0, steps[m], steps[a]); return out }
+  return steps;
+}
 const NREMT = {kind:"link", url:"https://www.nremt.org", label:"Go to NREMT.org"};
 const PTASKS = {
   emt: [
@@ -1459,9 +1485,10 @@ function stepTasks(st){
   return ts.map(t => ({...t, key: st.id + "." + t.k, done: !!pathDone[st.id + "." + t.k]}));
 }
 function pathModel(){
-  const steps = buildPath(profile).map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
+  const ord = academyOrder(), raw = buildPath(profile), has = id => raw.some(x => x.id === id);
+  const steps = applyOrder(raw, ord).map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
   const all = steps.flatMap(st => st.tasks), cur = steps.findIndex(st => !st.done);
-  return { steps, total: all.length, done: all.filter(t => t.done).length, cur };
+  return { steps, total: all.length, done: all.filter(t => t.done).length, cur, ord, canFirst: has("academy") && has("emt"), canLast: has("academy") && has("medic") };
 }
 /* What to show in the "Up Next" box: the next unchecked task and the resources for doing it */
 function upNext(m){
@@ -1474,7 +1501,7 @@ function upNext(m){
 }
 function actHTML(a, st){
   if(!a) return "";
-  const li = x => `<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p></div><div class="r">${x.url?`<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a>`:""}</div></li>`;
+  const li = x => `<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p></div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}${x.url?`<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a>`:""}</div></li>`;
   const list = xs => xs.length ? `<ul class="mini">${xs.map(li).join("")}</ul>` : "";
   if(a.kind === "funding"){
     const f = a.f || st.fundFor || "emt";
@@ -1498,7 +1525,7 @@ function actHTML(a, st){
   if(a.kind === "tab") return `<button type="button" class="btn btn-quiet btn-sm" data-act="tab" data-tab="${a.tab}">${esc(a.label)}</button>`;
   if(a.kind === "link") return `<a class="btn btn-quiet btn-sm" href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.label)}</a>`;
   if(a.kind === "retake") return `<button type="button" class="btn btn-red btn-sm" data-act="retake">Update My Answers</button>`;
-  if(a.kind === "path") return `<p class="m">Use the programs listed in this step.</p>`;
+  if(a.kind === "path") return `<p class="m">Pick from the programs listed below.</p>`;
   return "";
 }
 function nextBox(m){
@@ -1506,7 +1533,7 @@ function nextBox(m){
   const then = after && after.t.then ? `<div class="nx-then">${actHTML(after.t.then, after.st)}</div>` : "";
   if(!nx) return `<div class="path-next all-done${pathFlash?" pop":""}" id="path-next"><p class="eyebrow">All done</p>${after?`<p class="nx-msg">${esc(after.t.msg)}</p>`:""}${then}<h6>Every step is checked off.</h6><p class="why">Update your answers to move to your next stage and get a new path.</p>${after&&after.t.then&&after.t.then.kind==="retake"?"":actHTML({kind:"retake"})}</div>`;
   const stepDoneNow = after && after.st.done;
-  const head = after ? `${after.t.msg}${stepDoneNow && nx.st !== after.st ? ` On to the next step: ${nx.st.t}.` : ""}` : "";
+  const head = (pathFlash && pathFlash.note ? pathFlash.note + " " : "") + (after ? `${after.t.msg}${stepDoneNow && nx.st !== after.st ? ` On to the next step: ${nx.st.t}.` : ""}` : "");
   return `<div class="path-next${pathFlash?" pop":""}" id="path-next"><p class="eyebrow">Up next</p>${head?`<p class="nx-msg">${esc(head)}</p>`:""}${then}
     <h6>${esc(nx.t.t)}</h6>${actHTML(nx.t.do, nx.st)}</div>`;
 }
@@ -1515,16 +1542,18 @@ function renderPath(rid = "rm-retake"){
   const m = pathModel(), have = (profile.certs||[]).filter(k => CERT[k]), pct = m.total ? Math.round(m.done / m.total * 100) : 0;
   const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : "", profile.schedule==="nights"?"Nights and Weekends":"", profile.age==="u18"?"Under 18":""].filter(Boolean).join(" · ");
   const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a></div></li>`;
-  const nb = nextBox(m), nxStep = upNext(m).nx ? upNext(m).nx.st.id : null;
+  const nb = nextBox(m), un = upNext(m), nxStep = un.nx ? un.nx.st.id : null, dup = un.nx && un.nx.t.do && ["classes","cpat","jobs","ce","funding"].includes(un.nx.t.do.kind);
   return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="${rid}">Retake Questions</button></div>
     <p class="path-sum">${esc(sum)}</p>
     ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
+    ${m.canFirst || m.canLast ? `<p class="path-note">Most people go EMT, then Fire Academy, then Paramedic. You can also do the academy first or last, and your roadmap will follow your lead. Paramedic always comes after EMT.</p>` : ""}
     ${m.total ? `<div class="path-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Path progress"><div class="pp-bar"><i style="--p:${pct}%"></i></div><span><b>${m.done}</b> of ${m.total} tasks done</span></div>` : ""}
-    ${m.steps.length ? `<ol class="path-list">${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b">
+    ${m.steps.length ? `<ol class="path-list">${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}${pathFlash&&pathFlash.moved===st.id?" moved":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b">
       <div class="ps-h"><h5>${esc(st.t)}</h5>${st.tasks.length?`<span class="ps-count">${st.done?"Done":`${st.n} of ${st.tasks.length}`}</span>`:""}</div>${st.why?`<p class="why">${esc(st.why)}</p>`:""}
+      ${st.id==="academy" && (m.canFirst || m.canLast) ? `<div class="ps-order" role="group" aria-label="When you'll do the fire academy"><span>When:</span>${[["first","Before EMT",m.canFirst],["mid","After EMT",true],["last","After paramedic",m.canLast]].filter(o => o[2]).map(o => `<button type="button" data-order="${o[0]}" aria-pressed="${m.ord===o[0]}">${o[1]}${o[0]==="mid"?" <small>(most common)</small>":""}</button>`).join("")}</div>` : ""}
       ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
       ${st.id === nxStep ? nb : ""}
-      ${st.items && st.items.length ? `<details class="ps-more"${st.done?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
+      ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
       ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":`data-go2="${st.go}"`}>See more</button>`:""}
     </div></li>`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
@@ -1565,10 +1594,25 @@ function renderRmPath(){
   el.querySelectorAll("[data-more]").forEach(b => b.onclick = () => { el.querySelectorAll(`[data-more-of="${b.dataset.more}"]`).forEach(x => x.hidden = false); b.remove() });
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
   el.querySelectorAll("[data-act]").forEach(b => b.onclick = () => pathAct(b));
+  el.querySelectorAll("[data-order]").forEach(b => b.onclick = () => {
+    pathOrder = {v: b.dataset.order, auto: false}; store.set("pathOrder", pathOrder);
+    pathFlash = {moved: "academy"}; renderRmPath(); renderDash(); pathFlash = null;
+    const st = el.querySelector('.path-step[data-step="academy"]'); if(st){ const r = st.getBoundingClientRect(); if(r.top < 70 || r.bottom > innerHeight) (window.__lenis ? window.__lenis.scrollTo(st, {offset:-90}) : st.scrollIntoView({block:"start", behavior:"smooth"})) }
+    const again = el.querySelector(`[data-order="${b.dataset.order}"]`); if(again) again.focus({preventScroll:true});
+  });
   el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
     const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
     store.set("pathDone", pathDone);
     pathFlash = c.checked ? {key:k, step:c.dataset.step} : null;
+    /* Follow the student's lead: starting the academy before finishing EMT, or paramedic before the academy, reorders the path */
+    if(c.checked && !(pathOrder && pathOrder.auto === false)){
+      const mm = pathModel(), sd = id => { const x = mm.steps.find(y => y.id === id); return x ? x.done : true };
+      let v = null;
+      if(c.dataset.step === "academy" && mm.canFirst && !sd("emt") && mm.ord !== "first") v = "first";
+      if(c.dataset.step === "medic" && mm.canLast && !sd("academy") && mm.ord !== "last") v = "last";
+      if(v){ pathOrder = {v, auto: true}; store.set("pathOrder", pathOrder); pathFlash.moved = "academy";
+        pathFlash.note = v === "first" ? "Since you started the fire academy first, we moved it ahead of EMT." : "Since you started paramedic school first, we moved the fire academy to after it." }
+    }
     renderRmPath(); renderDash();
     const stepEl = el.querySelector(`.path-step[data-step="${c.dataset.step}"]`);
     if(c.checked && stepEl && stepEl.classList.contains("just-done")) pathBurst(stepEl.querySelector(".path-n"));
@@ -1654,7 +1698,7 @@ function renderDash(){
   const nx = $("#d-next"); if(nx) nx.onclick = () => { profile.rung++; store.set("profile", profile); rmCur = profile.rung; store.set("rung", rmCur); applyProfile(); renderDash() };
   $("#d-reset").onclick = () => { $("#d-confirm").hidden = false };
   $("#d-no").onclick = () => { $("#d-confirm").hidden = true };
-  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip","certList","pathDone"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} }); certList = []; pathDone = {}; renderCerts();
+  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip","certList","pathDone","pathOrder"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} }); certList = []; pathDone = {}; pathOrder = null; renderCerts();
     profile = null; saved = {}; rmDone = {}; rmCur = 1; kit = {}; applyProfile(); showTab("dash");
     renderKit(); renderRoadmap(); renderHello(); setZip(""); };
 }
@@ -1892,7 +1936,7 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
 <!-- Accounts: optional login with Netlify Identity. Syncs the dashboard (stored in this browser) to the user's account. -->
 <script type="module">
 const LU = window.LU || (window.LU = {});
-const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer","certList","pathDone"];
+const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer","certList","pathDone","pathOrder"];
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ls = { get(k){ try{ return localStorage.getItem("lu:"+k) }catch(e){ return null } }, set(k,v){ try{ localStorage.setItem("lu:"+k,v) }catch(e){} }, del(k){ try{ localStorage.removeItem("lu:"+k) }catch(e){} } };
