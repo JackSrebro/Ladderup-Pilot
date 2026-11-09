@@ -95,7 +95,7 @@ window.LADDER_DATA = {
       contact:"rtwobulls@elgin.edu", url:"https://elgin.edu/areas-of-study/basic-operations-firefighter/", checked:"2026-11-06" },
     { id:"ifsi-bof", apply:"https://www.fsi.illinois.edu/academy/enrollment.cfm", applyNote:"Your department enrolls you (Chief's PIN required).", type:"academy", sponsor:"sponsored", name:"Firefighter Academy (7-Week Residential)", provider:"Illinois Fire Service Institute", city:"Champaign", lat:40.09, lng:-88.24,
       cost:null, costNote:"Tuition covers 13 courses, a helmet, textbooks and certification fees. Ask your department for the cost.", length:"7 weeks", schedule:"Residential academy",
-      status:"open", statusNote:"Your fire chief must approve enrollment.", reqs:"Department sponsorship and OSFM number",
+      status:"open", statusNote:"Your Fire Chief must approve enrollment.", reqs:"Department sponsorship and OSFM number",
       contact:null, url:"https://www.fsi.illinois.edu/academy/enrollment.cfm", checked:"2026-11-06" }
   ],
 
@@ -1453,7 +1453,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700048&session=132772",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=951",
    "contact": "(217) 333-3800",
@@ -1520,7 +1520,7 @@ window.LADDER_DATA = {
      "seats": "11 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700026&session=132684",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(217) 333-3800",
@@ -1550,7 +1550,7 @@ window.LADDER_DATA = {
      "seats": "5 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700147&session=133736",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(815) 463-4500",
@@ -1638,7 +1638,7 @@ window.LADDER_DATA = {
      "seats": "10 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700011&session=132568",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
    "contact": "(217) 333-3800",
@@ -1675,7 +1675,7 @@ window.LADDER_DATA = {
      "seats": "10 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700010&session=132567",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
    "contact": "(217) 333-3800",
@@ -1712,7 +1712,7 @@ window.LADDER_DATA = {
      "seats": "16 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700009&session=132566",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
    "contact": "(217) 333-3800",
@@ -1772,7 +1772,7 @@ window.LADDER_DATA = {
      "seats": "18 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700055&session=132784",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
    "contact": "(708) 349-0074",
@@ -1860,7 +1860,7 @@ window.LADDER_DATA = {
      "seats": "29 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1427",
    "contact": "(708) 385-8940",
@@ -2144,7 +2144,7 @@ window.LADDER_DATA = {
      "seats": "11 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(618) 654-3827",
@@ -2225,7 +2225,7 @@ window.LADDER_DATA = {
      "seats": "60 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=691",
    "contact": "(217) 333-3800",
@@ -2285,7 +2285,7 @@ window.LADDER_DATA = {
      "seats": "8 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(217) 851-6073",
@@ -2380,7 +2380,7 @@ window.LADDER_DATA = {
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
    "contact": "(217) 333-3800",
@@ -2417,7 +2417,7 @@ window.LADDER_DATA = {
      "seats": "36 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
    "contact": "(217) 333-3800",
@@ -2447,7 +2447,7 @@ window.LADDER_DATA = {
      "seats": "1 seat left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(815) 724-3500",
@@ -2477,7 +2477,7 @@ window.LADDER_DATA = {
      "seats": "36 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
    "contact": "(618) 234-7373",
@@ -2514,7 +2514,7 @@ window.LADDER_DATA = {
      "seats": "10 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
    "contact": "(217) 333-3800",
@@ -2781,7 +2781,7 @@ window.LADDER_DATA = {
      "seats": "29 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700059&session=132788",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=238",
    "contact": "(217) 333-3800",
@@ -2871,7 +2871,7 @@ window.LADDER_DATA = {
      "seats": "74 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1648",
    "contact": "(217) 333-3800",
@@ -3055,7 +3055,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(217) 333-3800",
@@ -3233,7 +3233,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700207&session=133890",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(815) 332-5382",
@@ -3263,7 +3263,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700208&session=133892",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(309) 434-2500",
@@ -3293,7 +3293,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700209&session=133894",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(618) 234-3291",
@@ -3323,7 +3323,7 @@ window.LADDER_DATA = {
      "seats": "17 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 467-6181",
@@ -3383,7 +3383,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700732&session=134634",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1353",
    "contact": "(618) 526-4721",
@@ -3547,7 +3547,7 @@ window.LADDER_DATA = {
      "seats": "8 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(815) 332-5382",
@@ -3577,7 +3577,7 @@ window.LADDER_DATA = {
      "seats": "39 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(319) 572-3289",
@@ -3607,7 +3607,7 @@ window.LADDER_DATA = {
      "seats": "18 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(618) 234-3291",
@@ -3667,7 +3667,7 @@ window.LADDER_DATA = {
      "seats": "25 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(630) 231-2123",
@@ -3727,7 +3727,7 @@ window.LADDER_DATA = {
      "seats": "29 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(630) 231-2123",
@@ -3787,7 +3787,7 @@ window.LADDER_DATA = {
      "seats": "24 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(217) 784-5533",
@@ -3861,7 +3861,7 @@ window.LADDER_DATA = {
      "seats": "24 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(815) 568-8912",
@@ -3891,7 +3891,7 @@ window.LADDER_DATA = {
      "seats": "22 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=5",
    "contact": "(630) 231-2123",
@@ -3921,7 +3921,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700527&session=134373",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1171",
    "contact": "(815) 356-3643",
@@ -3951,7 +3951,7 @@ window.LADDER_DATA = {
      "seats": "4 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1090",
    "contact": "(630) 628-3100",
@@ -3981,7 +3981,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700845&session=134796",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
    "contact": "(217) 333-3800",
@@ -4011,7 +4011,7 @@ window.LADDER_DATA = {
      "seats": "15 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=917",
    "contact": "(618) 262-4311",
@@ -4041,7 +4041,7 @@ window.LADDER_DATA = {
      "seats": "6 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(815) 732-7214",
@@ -4071,7 +4071,7 @@ window.LADDER_DATA = {
      "seats": "22 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(708) 349-0074",
@@ -4159,7 +4159,7 @@ window.LADDER_DATA = {
      "seats": "34 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1607",
    "contact": "(217) 333-3800",
@@ -4189,7 +4189,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
    "contact": "(217) 333-3800",
@@ -4224,7 +4224,7 @@ window.LADDER_DATA = {
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800033&session=134764"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700827&session=134760",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
    "contact": "(815) 436-5335",
@@ -4261,7 +4261,7 @@ window.LADDER_DATA = {
      "seats": "23 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700826&session=134759",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
    "contact": "(815) 436-5335",
@@ -4305,7 +4305,7 @@ window.LADDER_DATA = {
      "seats": "4 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700860&session=134820",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1100",
    "contact": "(217) 333-3800",
@@ -4335,7 +4335,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(708) 349-0074",
@@ -4402,7 +4402,7 @@ window.LADDER_DATA = {
      "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=41",
    "contact": "(217) 333-3800",
@@ -4432,7 +4432,7 @@ window.LADDER_DATA = {
      "seats": "6 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
    "contact": "(217) 333-3800",
@@ -4462,7 +4462,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700794&session=134705",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
    "contact": "(217) 333-3800",
@@ -4492,7 +4492,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700793&session=134704",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
    "contact": "(217) 333-3800",
@@ -4522,7 +4522,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700819&session=134740",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(217) 333-3800",
@@ -4582,7 +4582,7 @@ window.LADDER_DATA = {
      "seats": "26 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700718&session=134617",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1317",
    "contact": "(847) 734-8000",
@@ -4612,7 +4612,7 @@ window.LADDER_DATA = {
      "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1533",
    "contact": "(217) 333-3800",
@@ -4642,7 +4642,7 @@ window.LADDER_DATA = {
      "seats": "21 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
    "contact": "(708) 349-0074",
@@ -4672,7 +4672,7 @@ window.LADDER_DATA = {
      "seats": "33 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700908&session=134882",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=692",
    "contact": "(815) 332-5382",
@@ -4702,7 +4702,7 @@ window.LADDER_DATA = {
      "seats": "14 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(217) 333-3800",
@@ -4739,7 +4739,7 @@ window.LADDER_DATA = {
      "seats": "26 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700830&session=134767",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=133",
    "contact": "(217) 333-3800",
@@ -4769,7 +4769,7 @@ window.LADDER_DATA = {
      "seats": "26 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700719&session=134618",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1673",
    "contact": "(847) 734-8000",
@@ -4799,7 +4799,7 @@ window.LADDER_DATA = {
      "seats": "10 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700526&session=134372",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1660",
    "contact": "(847) 741-3151",
@@ -4829,7 +4829,7 @@ window.LADDER_DATA = {
      "seats": "33 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(708) 349-0074",
@@ -4866,7 +4866,7 @@ window.LADDER_DATA = {
      "seats": "31 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1017",
    "contact": "(217) 333-3800",
@@ -4896,7 +4896,7 @@ window.LADDER_DATA = {
      "seats": "26 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 647-0040",
@@ -4926,7 +4926,7 @@ window.LADDER_DATA = {
      "seats": "23 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
    "contact": "(708) 349-0074",
@@ -4956,7 +4956,7 @@ window.LADDER_DATA = {
      "seats": "29 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800044&session=134798",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(217) 333-3800",
@@ -4986,7 +4986,7 @@ window.LADDER_DATA = {
      "seats": "24 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800029&session=134755",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1324",
    "contact": "(708) 349-0074",
@@ -5016,7 +5016,7 @@ window.LADDER_DATA = {
      "seats": "24 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800031&session=134758",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(708) 349-0074",
@@ -5053,7 +5053,7 @@ window.LADDER_DATA = {
      "seats": "36 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=420",
    "contact": "(217) 333-3800",
@@ -5083,7 +5083,7 @@ window.LADDER_DATA = {
      "seats": "13 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(217) 333-3800",
@@ -5113,7 +5113,7 @@ window.LADDER_DATA = {
      "seats": "29 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(815) 469-1700",
@@ -5143,7 +5143,7 @@ window.LADDER_DATA = {
      "seats": "32 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1509",
    "contact": "(217) 333-3800",
@@ -5173,7 +5173,7 @@ window.LADDER_DATA = {
      "seats": "27 seats left"
     }
    ],
-   "note": "Online registration asks for your fire chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1441",
    "contact": "(217) 333-3800",
@@ -5240,7 +5240,7 @@ window.LADDER_DATA = {
   {
    "name": "Illinois Fire Service Institute (IFSI)",
    "url": "https://www.fsi.illinois.edu/content/courses/schedule/schedule.cfm",
-   "note": "Every scheduled IFSI class is listed above and refreshed weekly. Most are tuition-free for Illinois fire department members, and many need your chief's PIN to register."
+   "note": "Every scheduled IFSI class is listed above and refreshed weekly. Most are tuition-free for Illinois fire department members, and many need your Fire Chief's PIN to register."
   },
   {
    "name": "OSFM Certification List",
