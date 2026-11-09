@@ -223,6 +223,60 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .path-b .mini{margin-top:2px}
 .path-go{justify-self:start;font-size:14px}
 #rm-path{margin-bottom:22px}
+/* Interactive roadmap */
+.path-prog{display:flex;align-items:center;gap:12px;font-size:14px;color:var(--ink-2)}
+.path-prog b{color:var(--ink);font-family:var(--f-mono)}
+.pp-bar{flex:1;height:10px;border-radius:99px;background:var(--sunk);overflow:hidden;border:1px solid var(--line)}
+.pp-bar i{display:block;height:100%;width:var(--p);border-radius:inherit;background:linear-gradient(90deg,var(--red),#f5b301 55%,var(--good));background-size:300% 100%;background-position:calc(100% - var(--p)) 0;transition:width .7s cubic-bezier(.2,.8,.2,1)}
+.path-n{position:relative}
+.path-step .path-n{transition:background .35s,transform .35s}
+.path-n .pn-check{position:absolute;inset:6px;pointer-events:none;width:auto;height:auto;fill:none;stroke:currentColor;stroke-width:3;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;opacity:0}
+.path-step.done .path-n,.path-peek li.done .path-n{background:var(--good)}
+.path-step.done .pn-num,.path-peek li.done .pn-num{opacity:0}
+.path-step.done .pn-check,.path-peek li.done .pn-check{opacity:1;stroke-dashoffset:0;transition:stroke-dashoffset .45s .1s ease-out}
+.path-step.cur .path-n{box-shadow:0 0 0 0 color-mix(in srgb,var(--red) 55%,transparent);animation:pn-pulse 2.2s ease-out infinite}
+@keyframes pn-pulse{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--red) 50%,transparent)}70%{box-shadow:0 0 0 12px transparent}100%{box-shadow:0 0 0 0 transparent}}
+.path-step.just-done .path-n{animation:pn-pop .55s cubic-bezier(.3,1.6,.5,1)}
+@keyframes pn-pop{0%{transform:scale(.6)}60%{transform:scale(1.18)}100%{transform:scale(1)}}
+.path-step{padding:12px;margin:-12px;border-radius:12px;transition:background .4s}
+.path-step.cur{background:color-mix(in srgb,var(--red-wash) 55%,transparent)}
+.path-step.done{background:color-mix(in srgb,var(--good-wash) 60%,transparent)}
+.path-step.done h5{color:var(--good)}
+.ps-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.ps-count{font-size:12.5px;font-family:var(--f-mono);color:var(--ink-3);white-space:nowrap}
+.path-step.done .ps-count{color:var(--good);font-weight:700}
+.ptasks{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px}
+.ptasks label{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;transition:background .3s,border-color .3s,transform .15s}
+.ptasks label:hover{border-color:var(--ink-3)}
+.ptasks label:active{transform:scale(.99)}
+.ptasks input{position:absolute;opacity:0;width:1px;height:1px}
+.pt-box{width:22px;height:22px;flex:none;border-radius:6px;border:2px solid var(--ink-3);display:grid;place-items:center;transition:background .25s,border-color .25s}
+.pt-box svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .3s ease-out}
+.ptasks input:focus-visible + .pt-box{outline:3px solid var(--focus,#2f80ed);outline-offset:2px}
+.ptasks li.on label{background:var(--good-wash);border-color:color-mix(in srgb,var(--good) 45%,transparent)}
+.ptasks li.on .pt-box{background:var(--good);border-color:var(--good)}
+.ptasks li.on .pt-box svg{stroke-dashoffset:0}
+.ptasks li.on .pt-t{color:var(--good);text-decoration:line-through;text-decoration-thickness:1.5px}
+.ptasks li.flash label{animation:pt-flash .7s ease-out}
+@keyframes pt-flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent);transform:scale(1.02)}100%{box-shadow:0 0 0 10px transparent;transform:scale(1)}}
+.path-next{display:grid;gap:8px;padding:14px 16px;border-radius:12px;border:2px solid var(--red);background:var(--surface);box-shadow:var(--shadow)}
+.path-next h6{font-size:16px;margin:0}
+.nx-then{padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.path-next .nx-msg{margin:0;font-weight:600;color:var(--good)}
+.path-next .eyebrow{margin:0;color:var(--red-ink)}
+.path-next > .btn,.path-next > a.btn{justify-self:start}
+.path-next.pop{animation:nx-in .5s cubic-bezier(.2,.9,.3,1.2)}
+@keyframes nx-in{0%{opacity:0;transform:translateY(10px) scale(.98)}100%{opacity:1;transform:none}}
+.path-next.all-done{border-color:var(--good)}
+.path-next.all-done .eyebrow{color:var(--good)}
+.ps-more summary{cursor:pointer;font-size:14px;font-weight:600;color:var(--ink-2);margin:4px 0}
+.peek-next{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:0;font-size:14.5px}
+.path-peek li.cur{font-weight:700}
+.path-peek li.done span:last-child{color:var(--good);text-decoration:line-through}
+.pburst{position:fixed;width:8px;height:8px;border-radius:50%;pointer-events:none;z-index:9999;animation:pburst .75s cubic-bezier(.2,.7,.3,1) forwards}
+@keyframes pburst{0%{transform:translate(-50%,-50%) scale(1);opacity:1}100%{transform:translate(calc(-50% + var(--dx)),calc(-50% + var(--dy))) scale(.3);opacity:0}}
+@media (prefers-reduced-motion: reduce){.path-step.cur .path-n,.path-step.just-done .path-n,.ptasks li.flash label,.path-next.pop{animation:none}.pp-bar i,.pt-box svg,.path-n .pn-check{transition:none}}
+
 #rm-path .path{display:grid;gap:12px}
 .rm-h{font-size:18px;margin:0 0 12px}
 .path-peek{list-style:none;margin:0;padding:0;display:grid;gap:8px}
@@ -649,7 +703,7 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-roadmap" aria-labelledby="tab-roadmap" hidden>
-          <div class="pintro"><h3>My Roadmap</h3><p>Your recommended path, built from your answers, followed by every rung of the ladder. Pick the rung you're on and check off steps as you go.</p></div>
+          <div class="pintro"><h3>My Roadmap</h3><p>Your step-by-step guide, built from your answers. Check off each task as you finish it. We'll track your progress and show you exactly what to do next, with the classes, funding, test sites and jobs for it. The full ladder is below.</p></div>
           <div id="rm-path"></div>
           <h4 class="rm-h">The Full Ladder</h4>
           <div class="rm"><ol class="rm-list" id="rm-list"></ol><div id="rm-detail"></div></div>
@@ -1206,7 +1260,7 @@ function saveProfile(e){
   store.set("profile", profile);
   rmCur = profile.rung; store.set("rung", rmCur);
   $("#prof-form").hidden = true; $("#dash").hidden = false;
-  applyProfile(); setZip(z); showTab("dash"); goTo($("#tools"));
+  applyProfile(); setZip(z); showTab(profile.stage ? "roadmap" : "dash"); goTo($("#tools"));
   if(window.LU && window.LU.afterProfileSave) window.LU.afterProfileSave(profile);
 }
 /* Keep the sign-up link ready before the tap, so the page host opens the right address */
@@ -1254,8 +1308,8 @@ function renderHello(){
   if(!profile){ h.hidden = true; return }
   const n = myJobs().filter(j => missingFor(j) && !missingFor(j).length).length;
   h.hidden = false;
-  h.innerHTML = `<span>Welcome back, <b>${esc(profile.name)}</b>.${n ? ` ${n} open job${n===1?"":"s"} match${n===1?"es":""} your certifications.` : ""}</span><button type="button" class="btn btn-red btn-sm" id="hello-go">Open My Dashboard</button>`;
-  $("#hello-go").onclick = () => { showTab("dash"); goTo($("#tools")) };
+  h.innerHTML = `<span>Welcome back, <b>${esc(profile.name)}</b>.${n ? ` ${n} open job${n===1?"":"s"} match${n===1?"es":""} your certifications.` : ""}</span><button type="button" class="btn btn-red btn-sm" id="hello-go">${profile.stage ? "Continue My Roadmap" : "Open My Dashboard"}</button>`;
+  $("#hello-go").onclick = () => { showTab(profile.stage ? "roadmap" : "dash"); goTo($("#tools")) };
 }
 function myJobs(){ return liveJobs().map(j => ({...j, mi: miles(j.lat,j.lng)})).filter(j => inRange(j.mi)) }
 
@@ -1287,39 +1341,39 @@ function buildPath(p){
   const known = liveJobs().filter(j => j.needs), kn = known.length, need = k => known.filter(j => j.needs.includes(k)).length;
   const reqLine = (n, what) => kn ? `${n} of the ${kn} open postings in the area that list requirements need ${what}.` : "";
   if(STAGES[p.stage] && STAGES[p.stage].hired){
-    if(p.stage==="probation") steps.push({t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
+    if(p.stage==="probation") steps.push({id:"probation", t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
     (p.focus && p.focus.length ? p.focus : ["unsure"]).forEach(f => {
-      if(f==="medic"){ if(!c.has("medic")) steps.push({t:"Earn Your Paramedic License", why:"Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)}); return }
-      const F = CE_FOCUS[f]; if(F) steps.push({t:F.t, why:`OSFM certifications to aim for: ${F.certs}. Most OSFM certifications need recertification every 4 years.`, items:pathCE(F), go:"ce"});
+      if(f==="medic"){ if(!c.has("medic")) steps.push({id:"medic", t:"Earn Your Paramedic License", why:"Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)}); return }
+      const F = CE_FOCUS[f]; if(F) steps.push({id:"ce-"+f, ce:f, t:F.t, why:`OSFM certifications to aim for: ${F.certs}. Most OSFM certifications need recertification every 4 years.`, items:pathCE(F), go:"ce"});
     });
-    if(!certList.length) steps.push({t:"Track Your Certifications", why:"Add your licenses and OSFM certifications so you can see what's due for renewal.", items:[], go:"certs"});
+    if(!certList.length) steps.push({id:"certs", t:"Track Your Certifications", why:"Add your licenses and OSFM certifications so you can see what's due for renewal.", items:[], go:"certs"});
     return steps;
   }
   if(p.age==="u18"){
     const ys = (D.youth ? D.youth.programs : []).map(y => ({...y, mi: miles(y.lat,y.lng)}))
       .sort((a,b) => (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9));
-    steps.push({t:"Join a Fire Cadet Program", why:(D.youth ? D.youth.note : "") + " Several programs below only take people who live in their district, so check the requirements.",
+    steps.push({id:"youth", t:"Join a Fire Cadet Program", why:(D.youth ? D.youth.note : "") + " Several programs below only take people who live in their district, so check the requirements.",
       items: ys.map(y => ({t: y.type==="school" ? `${y.org} ${y.name}` : y.name, m:`${y.org} · ${y.ages}${y.cost===0?" · Free":""}${y.status==="check"?" · Not yet verified":""}`, sub:y.residency, mi:y.mi, url:y.apply, b:y.type==="school"?"Enroll":"Apply"})), limit:3, key:"youth"});
   }
-  if(p.age==="35+" && ff) steps.push({t:"Check the Age Rule First", warn:true, why:"Illinois law bars people 35 and older from most firefighter entrance exams. The exceptions are current or former Illinois firefighters (including volunteer, paid-on-call and part-time) and veterans who turned 35 while serving and are under 40. A paid-on-call or part-time spot, or a paramedic career, may be your best route.", items:[]});
+  if(p.age==="35+" && ff) steps.push({id:"age", t:"Check the Age Rule First", warn:true, why:"Illinois law bars people 35 and older from most firefighter entrance exams. The exceptions are current or former Illinois firefighters (including volunteer, paid-on-call and part-time) and veterans who turned 35 while serving and are under 40. A paid-on-call or part-time spot, or a paramedic career, may be your best route.", items:[]});
   if(!c.has("emt") && !c.has("medic")){
     const inClass = p.stage==="emtclass";
-    steps.push({t: inClass ? "Finish EMT Class and Pass the NREMT" : "Get Your EMT License",
+    steps.push({id:"emt", inClass, t: inClass ? "Finish EMT Class and Pass the NREMT" : "Get Your EMT License",
       why: `${p.age==="u18"?"You can start an EMT class once you're 18, and you can take the NREMT exam at 17. ":""}${reqLine(known.filter(j=>j.needs.includes("emt")||j.needs.includes("medic")).length, "an EMT or paramedic license")} After the class, pass the NREMT exam and apply for your Illinois license.${p.schedule==="nights"&&!inClass?" Classes with night or weekend options are listed first.":""}`,
       items: inClass ? [] : pathPrograms("emt", p)});
   }
   const medicFirst = g==="medic" || (g==="ffpm" && kn && need("medic")/kn >= 0.5);
   const medicStep = () => {
     const later = known.find(j => /paramedic within/i.test(j.needsNote||""));
-    steps.push({t:"Earn Your Paramedic License", why: medicFirst
+    steps.push({id:"medic", t:"Earn Your Paramedic License", why: medicFirst
       ? `${reqLine(need("medic"), "a paramedic license")} Paramedics can also earn up to 5 preference points on Illinois hiring lists.`
       : `${reqLine(need("medic"), "a paramedic license")}${later?` Some departments hire EMTs who earn it after hire (${later.dept}: ${later.needsNote.replace(/\.$/,"").toLowerCase()}).`:""} Many departments also sponsor paramedic school for their firefighters.`,
       items: pathPrograms("medic", p)});
   };
-  if(ff && !c.has("ffii")) steps.push({t:"Complete a Fire Academy", why:`${reqLine(need("ffii"), "Basic Operations Firefighter (Firefighter II) certification")} ${p.pay==="free"?"Department-sponsored academies are free, but only for people a department has hired or enrolled. These are open to anyone.":"These academies are open to anyone. Others only take department-sponsored students."}`, items: pathPrograms("academy", p)});
+  if(ff && !c.has("ffii")) steps.push({id:"academy", t:"Complete a Fire Academy", why:`${reqLine(need("ffii"), "Basic Operations Firefighter (Firefighter II) certification")} ${p.pay==="free"?"Department-sponsored academies are free, but only for people a department has hired or enrolled. These are open to anyone.":"These academies are open to anyone. Others only take department-sponsored students."}`, items: pathPrograms("academy", p)});
   if(ff && !c.has("cpat")){
     const cp = cpatSites().filter(x => inRange(x.mi)).sort((a,b) => (a.nx?daysTo(a.nx.d):1e6)-(b.nx?daysTo(b.nx.d):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3);
-    steps.push({t:"Pass the CPAT"+(c.has("ladder")?"":" and Ladder Climb"), why:`Most departments want a CPAT card from the last 12 months, so time it close to when you'll apply.${c.has("ladder")?"":" Illinois also requires a ladder climb certificate, which some CPAT sites include."}`,
+    steps.push({id:"cpat", ladder:!c.has("ladder"), t:"Pass the CPAT"+(c.has("ladder")?"":" and Ladder Climb"), why:`Most departments want a CPAT card from the last 12 months, so time it close to when you'll apply.${c.has("ladder")?"":" Illinois also requires a ladder climb certificate, which some CPAT sites include."}`,
       items: cp.map(x => ({t:x.name, m:`${x.nx?`Next: ${fmtDate(x.nx.d)}`:"Dates on the booking page"}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.register, b:"Register"})), go:"cpat"});
   }
   if((g==="ffpm" || g==="medic") && !c.has("medic") && medicFirst) medicStep();
@@ -1330,7 +1384,7 @@ function buildPath(p){
     if(p.age==="u18" || p.age==="18-20") notes.push("You must be 21 to be hired. Some departments let you apply if you'll be 21 by the hire date, so check each posting.");
     if(p.veteran==="yes") notes.push("Veterans get 5 preference points on Illinois firefighter hiring lists.");
     if(soon.length) notes.push(`Expected to test within a year: ${soon.map(d=>d.name).join(", ")}.`);
-    steps.push({t:"Test and Apply", why: notes.join(" ") || "Apply to every department you'd work for. Most test only every two years.",
+    steps.push({id:"apply", t:"Test and Apply", why: notes.join(" ") || "Apply to every department you'd work for. Most test only every two years.",
       items: jobs.map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted"}${j.miss&&j.miss.length?` · You need: ${j.miss.map(k=>CERT[k]).join(", ")}`:j.miss?" · You meet the listed requirements":""}`, mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"})), go:"jobs"});
   }
   if((g==="ffpm") && !c.has("medic") && !medicFirst) medicStep();
@@ -1338,35 +1392,169 @@ function buildPath(p){
     const forType = !c.has("emt")&&!c.has("medic") ? "emt" : (ff && !c.has("ffii")) ? "fire" : "medic";
     const f = D.funding.filter(x => x.for.includes(forType) && !x.needs.includes("firefighter") && (p.veteran==="yes" || !x.needs.includes("veteran")))
       .sort((a,b) => (b.needs.includes("veteran")&&p.veteran==="yes") - (a.needs.includes("veteran")&&p.veteran==="yes") || a.needs.length-b.needs.length).slice(0,3);
-    steps.push({t:"Line Up Funding", why: p.veteran==="yes" ? "As a veteran, you may be able to use the GI Bill or the Illinois Veteran Grant for training." : "These programs can cover some or all of your training costs.",
+    steps.push({id:"funding", fundFor:forType, t:"Line Up Funding", why: p.veteran==="yes" ? "As a veteran, you may be able to use the GI Bill or the Illinois Veteran Grant for training." : "These programs can cover some or all of your training costs.",
       items: f.map(x => ({t:x.name, m:x.amount, url:x.url, b:"Details"})), go:"funding"});
   }
   return steps;
 }
+/* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
+   recommends what to do next, with the classes, funding, test sites or jobs for it right there. */
+let pathDone = store.get("pathDone", {}), pathFlash = null;
+const NREMT = {kind:"link", url:"https://www.nremt.org", label:"Go to NREMT.org"};
+const PTASKS = {
+  emt: [
+    {k:"pick", t:"Pick an EMT class", do:{kind:"classes", type:"emt"}, msg:"Good pick. Apply soon, since classes fill up."},
+    {k:"apply", t:"Apply for an EMT class", do:{kind:"classes", type:"emt"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"emt"}, msg:"You're set. Show up, study and finish the class."},
+    {k:"finish", t:"Finish the EMT class", msg:"Class done! Next, schedule your NREMT exam."},
+    {k:"nremt", t:"Pass the NREMT exam", do:NREMT, msg:"You passed! Apply for your Illinois EMT license through IDPH."},
+    {k:"license", t:"Get your Illinois EMT license", then:{kind:"certs", v:"emt-il"}, msg:"Licensed EMT! Add it to My Certifications so you can track renewal."}],
+  academy: [
+    {k:"pick", t:"Pick a fire academy", do:{kind:"classes", type:"academy"}, msg:"Good pick. Check the start date and apply."},
+    {k:"apply", t:"Apply to the academy", do:{kind:"classes", type:"academy"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"fire"}, msg:"You're set. Time to train."},
+    {k:"finish", t:"Finish the academy", msg:"Academy done! Your certification comes next."},
+    {k:"cert", t:"Earn your Basic Operations Firefighter certification", then:{kind:"certs", v:"osfm-141.301"}, msg:"Certified! Add it to My Certifications."}],
+  cpat: [
+    {k:"pick", t:"Pick a CPAT test site", do:{kind:"cpat"}, msg:"Good pick. Book a test date before spots fill."},
+    {k:"book", t:"Book a test date", do:{kind:"cpat"}, msg:"Booked! Start training. The CPAT is timed, so practice stair climbs and carries with weight."},
+    {k:"pass", t:"Pass the CPAT", then:{kind:"certs", v:"cpat"}, msg:"You passed! Add your CPAT card so you know when it expires."},
+    {k:"ladder", t:"Pass the ladder climb", only:"ladder", then:{kind:"certs", v:"ladder"}, msg:"Ladder climb done! Add the certificate to My Certifications."}],
+  medic: [
+    {k:"pick", t:"Pick a paramedic program", do:{kind:"classes", type:"medic"}, msg:"Good pick. Programs fill early, so apply soon."},
+    {k:"apply", t:"Apply to the program", do:{kind:"classes", type:"medic"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"medic"}, msg:"You're set. Paramedic school is a big commitment, so plan your schedule."},
+    {k:"finish", t:"Finish paramedic school", msg:"School done! Next, schedule your NREMT paramedic exam."},
+    {k:"nremt", t:"Pass the NREMT paramedic exam", do:NREMT, msg:"You passed! Apply for your Illinois paramedic license through IDPH."},
+    {k:"license", t:"Get your Illinois paramedic license", then:{kind:"certs", v:"medic-il"}, msg:"Licensed paramedic! Add it to My Certifications."}],
+  apply: [
+    {k:"pick", t:"Pick the departments you'd work for", do:{kind:"tab", tab:"depts", label:"Open Departments"}, msg:"Good list. Watch for their testing dates."},
+    {k:"apply", t:"Apply to an open posting", do:{kind:"jobs"}, msg:"Applied! Most departments test in stages, starting with a written exam."},
+    {k:"written", t:"Take the written exam", msg:"Written exam done! The physical test and interview come next."},
+    {k:"oral", t:"Pass the physical test and interview", msg:"Great work. Now it's the hiring list and background check."},
+    {k:"hired", t:"Get hired", then:{kind:"retake"}, msg:"Congratulations! Update your answers to \"Hired, on Probation\" to get your next path."}],
+  funding: [
+    {k:"apply", t:"Apply for at least one grant or scholarship", do:{kind:"funding"}, msg:"Applied! Keep an eye on your email for a decision."},
+    {k:"fafsa", t:"File the FAFSA if your program is at a college", do:{kind:"link", url:"https://studentaid.gov/h/apply-for-aid/fafsa", label:"Go to the FAFSA"}, msg:"FAFSA filed! That opens more grants at community colleges."}],
+  youth: [
+    {k:"pick", t:"Pick a cadet program", do:{kind:"path"}, msg:"Good pick. Check the age and residency rules."},
+    {k:"apply", t:"Apply", do:{kind:"path"}, msg:"Applied! Ask the program when new cadets start."},
+    {k:"join", t:"Join and start going to meetings", msg:"You're a cadet! Once you turn 18, you can start an EMT class."}],
+  age: [{k:"check", t:"Check whether an exception applies to you", msg:"Good. Now you know which paths are open to you."}],
+  probation: [
+    {k:"license", t:"Keep your EMT or paramedic license current", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Good. Your license is current."},
+    {k:"log", t:"Log your training hours", msg:"Logged! Keep it up through probation."},
+    {k:"pass", t:"Finish probation", then:{kind:"retake"}, msg:"Off probation! Update your answers to \"Career Firefighter\" for your next path."}],
+  ce: [
+    {k:"pick", t:"Pick a course", do:{kind:"ce"}, msg:"Good pick. Many departments pay for training, so ask your training officer before you pay."},
+    {k:"reg", t:"Register for the course", do:{kind:"ce"}, msg:"Registered! Mark it on your calendar."},
+    {k:"finish", t:"Finish the course", msg:"Course done! Apply for the OSFM certification next."},
+    {k:"cert", t:"Earn the OSFM certification", then:{kind:"tab", tab:"certs", label:"Add It to My Certifications"}, msg:"Certified! Add it to My Certifications so you can track recertification."}],
+  certs: [{k:"add", t:"Add your first certification", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
+};
+function stepTasks(st){
+  let ts = PTASKS[st.id && st.id.startsWith("ce-") ? "ce" : st.id] || [];
+  if(st.id === "emt" && st.inClass) ts = ts.filter(t => !["pick","apply","fund"].includes(t.k));
+  if(st.id === "cpat" && !st.ladder) ts = ts.filter(t => t.only !== "ladder");
+  return ts.map(t => ({...t, key: st.id + "." + t.k, done: !!pathDone[st.id + "." + t.k]}));
+}
+function pathModel(){
+  const steps = buildPath(profile).map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
+  const all = steps.flatMap(st => st.tasks), cur = steps.findIndex(st => !st.done);
+  return { steps, total: all.length, done: all.filter(t => t.done).length, cur };
+}
+/* What to show in the "Up Next" box: the next unchecked task and the resources for doing it */
+function upNext(m){
+  let after = null;
+  if(pathFlash){ m.steps.forEach(st => st.tasks.forEach(t => { if(t.key === pathFlash.key && t.done) after = {t, st} })) }
+  const order = m.steps.flatMap(st => st.tasks.map(t => ({t, st})));
+  const from = after ? order.findIndex(x => x.t.key === after.t.key) : -1;
+  const nx = order.slice(from + 1).find(x => !x.t.done) || order.find(x => !x.t.done);
+  return { after, nx };
+}
+function actHTML(a, st){
+  if(!a) return "";
+  const li = x => `<li><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p></div><div class="r">${x.url?`<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a>`:""}</div></li>`;
+  const list = xs => xs.length ? `<ul class="mini">${xs.map(li).join("")}</ul>` : "";
+  if(a.kind === "funding"){
+    const f = a.f || st.fundFor || "emt";
+    const xs = D.funding.filter(x => x.for.includes(f) && !x.needs.includes("firefighter") && (profile.veteran==="yes" || !x.needs.includes("veteran")))
+      .sort((x,y) => x.needs.length - y.needs.length).slice(0,3).map(x => ({t:x.name, m:x.amount, url:x.url, b:"Details"}));
+    return list(xs) + `<button type="button" class="btn btn-quiet btn-sm" data-act="funding" data-f="${f}">See All Funding</button>`;
+  }
+  if(a.kind === "classes") return list(pathPrograms(a.type, profile)) + `<button type="button" class="btn btn-quiet btn-sm" data-act="classes" data-type="${a.type}">Open Class Finder</button>`;
+  if(a.kind === "cpat"){
+    const xs = cpatSites().filter(x => inRange(x.mi)).sort((x,y) => (x.nx?daysTo(x.nx.d):1e6)-(y.nx?daysTo(y.nx.d):1e6) || (x.mi??1e9)-(y.mi??1e9)).slice(0,3)
+      .map(x => ({t:x.name, m:`${x.nx?`Next: ${fmtDate(x.nx.d)}`:"Dates on the booking page"}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.register, b:"Register"}));
+    return list(xs) + `<button type="button" class="btn btn-quiet btn-sm" data-cpat>All CPAT Sites</button>`;
+  }
+  if(a.kind === "jobs"){
+    const xs = myJobs().sort((x,y) => (x.deadline?daysTo(x.deadline):1e6)-(y.deadline?daysTo(y.deadline):1e6)).slice(0,3)
+      .map(j => ({t:`${j.title} · ${j.dept}`, m:j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted", mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"}));
+    return list(xs) + `<button type="button" class="btn btn-quiet btn-sm" data-act="tab" data-tab="jobs">Open Job Board</button>`;
+  }
+  if(a.kind === "ce"){ const F = CE_FOCUS[st.ce]; return (F ? list(pathCE(F)) : "") + `<button type="button" class="btn btn-quiet btn-sm" data-act="tab" data-tab="ce">Open Continuing Ed</button>` }
+  if(a.kind === "certs") return `<button type="button" class="btn btn-red btn-sm" data-act="certs" data-v="${a.v}">Add It to My Certifications</button>`;
+  if(a.kind === "tab") return `<button type="button" class="btn btn-quiet btn-sm" data-act="tab" data-tab="${a.tab}">${esc(a.label)}</button>`;
+  if(a.kind === "link") return `<a class="btn btn-quiet btn-sm" href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.label)}</a>`;
+  if(a.kind === "retake") return `<button type="button" class="btn btn-red btn-sm" data-act="retake">Update My Answers</button>`;
+  if(a.kind === "path") return `<p class="m">Use the programs listed in this step.</p>`;
+  return "";
+}
+function nextBox(m){
+  const {after, nx} = upNext(m);
+  const then = after && after.t.then ? `<div class="nx-then">${actHTML(after.t.then, after.st)}</div>` : "";
+  if(!nx) return `<div class="path-next all-done${pathFlash?" pop":""}" id="path-next"><p class="eyebrow">All done</p>${after?`<p class="nx-msg">${esc(after.t.msg)}</p>`:""}${then}<h6>Every step is checked off.</h6><p class="why">Update your answers to move to your next stage and get a new path.</p>${after&&after.t.then&&after.t.then.kind==="retake"?"":actHTML({kind:"retake"})}</div>`;
+  const stepDoneNow = after && after.st.done;
+  const head = after ? `${after.t.msg}${stepDoneNow && nx.st !== after.st ? ` On to the next step: ${nx.st.t}.` : ""}` : "";
+  return `<div class="path-next${pathFlash?" pop":""}" id="path-next"><p class="eyebrow">Up next</p>${head?`<p class="nx-msg">${esc(head)}</p>`:""}${then}
+    <h6>${esc(nx.t.t)}</h6>${actHTML(nx.t.do, nx.st)}</div>`;
+}
 function renderPath(rid = "rm-retake"){
   if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="${rid}" style="justify-self:start">Answer the Questions</button></div>`;
-  const steps = buildPath(profile), have = (profile.certs||[]).filter(k => CERT[k]);
+  const m = pathModel(), have = (profile.certs||[]).filter(k => CERT[k]), pct = m.total ? Math.round(m.done / m.total * 100) : 0;
   const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : "", profile.schedule==="nights"?"Nights and Weekends":"", profile.age==="u18"?"Under 18":""].filter(Boolean).join(" · ");
-  const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b)}</a></div></li>`;
+  const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a></div></li>`;
+  const nb = nextBox(m), nxStep = upNext(m).nx ? upNext(m).nx.st.id : null;
   return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="${rid}">Retake Questions</button></div>
     <p class="path-sum">${esc(sum)}</p>
     ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
-    ${steps.length ? `<ol class="path-list">${steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}"><span class="path-n">${n+1}</span><div class="path-b">
-      <h5>${esc(st.t)}</h5>${st.why?`<p class="why">${esc(st.why)}</p>`:""}
-      ${st.items && st.items.length ? `<ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}` : ""}
+    ${m.total ? `<div class="path-prog" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="${pct}" aria-label="Path progress"><div class="pp-bar"><i style="--p:${pct}%"></i></div><span><b>${m.done}</b> of ${m.total} tasks done</span></div>` : ""}
+    ${m.steps.length ? `<ol class="path-list">${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b">
+      <div class="ps-h"><h5>${esc(st.t)}</h5>${st.tasks.length?`<span class="ps-count">${st.done?"Done":`${st.n} of ${st.tasks.length}`}</span>`:""}</div>${st.why?`<p class="why">${esc(st.why)}</p>`:""}
+      ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
+      ${st.id === nxStep ? nb : ""}
+      ${st.items && st.items.length ? `<details class="ps-more"${st.done?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
       ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":`data-go2="${st.go}"`}>See more</button>`:""}
-    </div></li>`).join("")}</ol>` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+    </div></li>`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
 }
 /* Dashboard shows a short preview; the full recommended path lives on the My Roadmap tab */
 function renderPathPeek(){
   if(!profile.stage) return renderPath("d-retake");
-  const steps = buildPath(profile);
+  const m = pathModel(), nx = upNext(m).nx, pct = m.total ? Math.round(m.done / m.total * 100) : 0;
   const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : ""].filter(Boolean).join(" · ");
   return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" data-go2="roadmap">See your full roadmap</button></div>
     <p class="path-sum">${esc(sum)}</p>
-    ${steps.length ? `<ol class="path-peek">${steps.slice(0,3).map((st,n)=>`<li><span class="path-n">${n+1}</span><span>${esc(st.t)}</span></li>`).join("")}</ol>${steps.length>3?`<p class="path-sum">Plus ${steps.length-3} more step${steps.length-3===1?"":"s"} on your roadmap.</p>`:""}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+    ${m.total ? `<div class="path-prog"><div class="pp-bar"><i style="--p:${pct}%"></i></div><span><b>${m.done}</b> of ${m.total} tasks done</span></div>` : ""}
+    ${m.steps.length ? `<ol class="path-peek">${m.steps.slice(0,4).map((st,n)=>`<li class="${st.done?"done":""}${n===m.cur?" cur":""}"><span class="path-n"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span>${esc(st.t)}</span></li>`).join("")}</ol>${m.steps.length>4?`<p class="path-sum">Plus ${m.steps.length-4} more step${m.steps.length-4===1?"":"s"} on your roadmap.</p>`:""}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+    ${nx ? `<p class="peek-next"><span class="chip chip-warn">Up next</span> ${esc(nx.t.t)} <button type="button" class="linkish" data-go2="roadmap">Go</button></p>` : ""}
   </div>`;
+}
+function pathBurst(el){
+  if(!el || matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  const r = el.getBoundingClientRect(), colors = ["var(--good)","var(--red)","#f5b301","#2f80ed"];
+  for(let i = 0; i < 14; i++){ const d = document.createElement("i"); d.className = "pburst"; const a = (i / 14) * Math.PI * 2, dist = 34 + Math.random() * 26;
+    d.style.cssText = `left:${r.left + r.width/2}px;top:${r.top + r.height/2}px;background:${colors[i%4]};--dx:${Math.cos(a)*dist}px;--dy:${Math.sin(a)*dist}px`;
+    document.body.appendChild(d); setTimeout(() => d.remove(), 800) }
+}
+function pathAct(b){
+  const a = b.dataset.act;
+  if(a === "funding"){ $("#fd-for").value = b.dataset.f; renderFunding(); showTab("funding"); goTo($("#tools")) }
+  else if(a === "classes"){ clType = b.dataset.type; segSet("#cl-type", clType); renderClasses(); showTab("classes"); goTo($("#tools")) }
+  else if(a === "tab"){ showTab(b.dataset.tab); goTo($("#tools")) }
+  else if(a === "certs"){ showTab("certs"); openCertForm(null); const s = $("#ct-type"); s.value = b.dataset.v; s.dispatchEvent(new Event("change")); goTo($("#tools")) }
+  else if(a === "retake"){ openProfileForm(); goTo($("#tools")) }
 }
 function renderRmPath(){
   const el = $("#rm-path"); if(!el) return;
@@ -1376,6 +1564,18 @@ function renderRmPath(){
   const rt = $("#rm-retake"); if(rt) rt.onclick = () => { openProfileForm(); goTo($("#tools")) };
   el.querySelectorAll("[data-more]").forEach(b => b.onclick = () => { el.querySelectorAll(`[data-more-of="${b.dataset.more}"]`).forEach(x => x.hidden = false); b.remove() });
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
+  el.querySelectorAll("[data-act]").forEach(b => b.onclick = () => pathAct(b));
+  el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
+    const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
+    store.set("pathDone", pathDone);
+    pathFlash = c.checked ? {key:k, step:c.dataset.step} : null;
+    renderRmPath(); renderDash();
+    const stepEl = el.querySelector(`.path-step[data-step="${c.dataset.step}"]`);
+    if(c.checked && stepEl && stepEl.classList.contains("just-done")) pathBurst(stepEl.querySelector(".path-n"));
+    const nb = $("#path-next"); if(c.checked && nb){ const r = nb.getBoundingClientRect(); if(r.top < 70 || r.bottom > innerHeight) (window.__lenis ? window.__lenis.scrollTo(nb, {offset:-110}) : nb.scrollIntoView({block:"center", behavior:"smooth"})) }
+    const again = el.querySelector(`[data-ptask="${k}"]`); if(again) again.focus({preventScroll:true});
+    pathFlash = null;
+  });
 }
 function renderDash(){
   const el = $("#dash");
@@ -1454,7 +1654,7 @@ function renderDash(){
   const nx = $("#d-next"); if(nx) nx.onclick = () => { profile.rung++; store.set("profile", profile); rmCur = profile.rung; store.set("rung", rmCur); applyProfile(); renderDash() };
   $("#d-reset").onclick = () => { $("#d-confirm").hidden = false };
   $("#d-no").onclick = () => { $("#d-confirm").hidden = true };
-  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip","certList"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} }); certList = []; renderCerts();
+  $("#d-yes").onclick = () => { ["profile","saved","rmDone","rung","kit","zip","certList","pathDone"].forEach(k => { try{ localStorage.removeItem("lu:"+k) }catch(e){} }); certList = []; pathDone = {}; renderCerts();
     profile = null; saved = {}; rmDone = {}; rmCur = 1; kit = {}; applyProfile(); showTab("dash");
     renderKit(); renderRoadmap(); renderHello(); setZip(""); };
 }
@@ -1692,7 +1892,7 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
 <!-- Accounts: optional login with Netlify Identity. Syncs the dashboard (stored in this browser) to the user's account. -->
 <script type="module">
 const LU = window.LU || (window.LU = {});
-const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer","certList"];
+const SYNC = ["profile","saved","rmDone","rung","kit","zip","ladderVer","certList","pathDone"];
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
 const ls = { get(k){ try{ return localStorage.getItem("lu:"+k) }catch(e){ return null } }, set(k,v){ try{ localStorage.setItem("lu:"+k,v) }catch(e){} }, del(k){ try{ localStorage.removeItem("lu:"+k) }catch(e){} } };
