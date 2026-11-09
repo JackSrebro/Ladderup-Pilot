@@ -1459,13 +1459,6 @@ function buildPath(p){
       items: jobs.map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted"}${j.miss&&j.miss.length?` · You need: ${j.miss.map(k=>CERT[k]).join(", ")}`:j.miss?" · You meet the listed requirements":""}`, mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"})), go:"jobs"});
   }
   if((g==="ffpm") && !c.has("medic") && !medicFirst) medicStep();
-  if(p.pay==="aid" || p.pay==="free" || p.veteran==="yes"){
-    const forType = !c.has("emt")&&!c.has("medic") ? "emt" : (ff && !c.has("ffii")) ? "fire" : "medic";
-    const f = D.funding.filter(x => x.for.includes(forType) && !x.needs.includes("firefighter") && (p.veteran==="yes" || !x.needs.includes("veteran")))
-      .sort((a,b) => (b.needs.includes("veteran")&&p.veteran==="yes") - (a.needs.includes("veteran")&&p.veteran==="yes") || a.needs.length-b.needs.length).slice(0,3);
-    steps.push({id:"funding", fundFor:forType, t:"Line Up Funding", why: p.veteran==="yes" ? "As a veteran, you may be able to use the GI Bill or the Illinois Veteran Grant for training." : "These programs can cover some or all of your training costs.",
-      items: f.map(x => ({t:x.name, m:x.amount, url:x.url, b:"Details"})), go:"funding"});
-  }
   return steps;
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
