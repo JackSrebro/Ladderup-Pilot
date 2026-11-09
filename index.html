@@ -105,6 +105,7 @@ button,input,select{font:inherit;color:inherit}
 .seg{display:inline-flex;flex-wrap:wrap;border:1.5px solid var(--line);border-radius:8px;padding:3px;background:var(--sunk);gap:2px}
 .seg button{border:0;background:transparent;padding:7px 12px;border-radius:5px;font-weight:600;font-size:14px;color:var(--ink-2);cursor:pointer}
 .seg button[aria-pressed="true"]{background:var(--surface);color:var(--ink);box-shadow:0 0 0 1px var(--line)}
+.jb-view{margin-bottom:18px}.jb-view button{padding:9px 18px;font-size:15px}
 .controls{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:flex-end;margin-bottom:18px}
 input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;flex:none;cursor:pointer}
 /* app */
@@ -576,7 +577,6 @@ html.lenis,html.lenis body{height:auto}
           <button class="tab" role="tab" id="tab-classes" aria-controls="p-classes" data-tab="classes">Class Finder</button>
           <button class="tab" role="tab" id="tab-jobs" aria-controls="p-jobs" data-tab="jobs">Job Board<span class="n" id="jobs-n"></span></button>
           <button class="tab" role="tab" id="tab-ce" aria-controls="p-ce" data-tab="ce">Continuing Ed</button>
-          <button class="tab" role="tab" id="tab-depts" aria-controls="p-depts" data-tab="depts">Departments</button>
           <button class="tab" role="tab" id="tab-funding" aria-controls="p-funding" data-tab="funding">Funding</button>
           <button class="tab" role="tab" id="tab-certs" aria-controls="p-certs" data-tab="certs">My Certifications</button>
           <button class="tab" role="tab" id="tab-kit" aria-controls="p-kit" data-tab="kit">First Shift Kit</button>
@@ -688,17 +688,31 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-jobs" aria-labelledby="tab-jobs" hidden>
-          <div class="pintro"><h3>Job Board</h3><p>Open full-time and part-time firefighter postings, soonest deadline first. Part-time and paid-on-call jobs are a common first fire job once you have your EMT license and Basic Operations Firefighter. Every listing links straight to its application and to the posting we pulled it from.</p></div>
-          <div class="controls">
-            <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
-            <div class="field"><span class="lbl" id="jb-type-l">Job type</span><div class="seg" id="jb-type" role="group" aria-labelledby="jb-type-l"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="full" aria-pressed="false">Full-Time</button><button type="button" data-v="part" aria-pressed="false">Part-Time</button></div></div>
-            <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
-            <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-emt"><span>EMT Only (No Paramedic License Needed)</span></label>
-            <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-dated"><span>Only postings with a deadline</span></label>
+          <div class="seg jb-view" id="jb-view" role="group" aria-label="Show"><button type="button" data-v="jobs" aria-pressed="true">Open Jobs</button><button type="button" data-v="depts" aria-pressed="false">Departments</button></div>
+          <div id="jb-v-jobs">
+            <div class="pintro"><h3>Job Board</h3><p>Open full-time and part-time firefighter postings, soonest deadline first. Part-time and paid-on-call jobs are a common first fire job once you have your EMT license and Basic Operations Firefighter. Every listing links straight to its application and to the posting we pulled it from.</p></div>
+            <div class="controls">
+              <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><span class="lbl" id="jb-type-l">Job type</span><div class="seg" id="jb-type" role="group" aria-labelledby="jb-type-l"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="full" aria-pressed="false">Full-Time</button><button type="button" data-v="part" aria-pressed="false">Part-Time</button></div></div>
+              <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
+              <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-emt"><span>EMT Only (No Paramedic License Needed)</span></label>
+              <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-dated"><span>Only postings with a deadline</span></label>
+            </div>
+            <div class="list" id="jb-list"></div>
+            <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Expected to Test Within a Year</h4><button type="button" class="linkish" data-go2b="depts">All departments</button></div><p class="sub">These departments aren't testing yet, but they usually test every two years and are due within the next year. Expected dates are estimates.</p><div id="jb-soon"></div></div>
+            <p class="fine">Sources: The Blue Line, Public Safety Testing and department announcements. Requirements are summarized. Read the full posting before you apply.</p>
           </div>
-          <div class="list" id="jb-list"></div>
-          <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Expected to Test Within a Year</h4><button type="button" class="linkish" data-go2b="depts">All departments</button></div><p class="sub">These departments aren't testing yet, but they usually test every two years and are due within the next year. Expected dates are estimates.</p><div id="jb-soon"></div></div>
-          <p class="fine">Sources: The Blue Line, Public Safety Testing and department announcements. Requirements are summarized. Read the full posting before you apply.</p>
+          <div id="jb-v-depts" hidden>
+            <div class="pintro"><h3>Departments</h3><p>Fire departments in the pilot area, their hiring status and where they post testing.</p></div>
+            <div class="controls">
+              <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
+                <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
+              <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option></select></div>
+            </div>
+            <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
+            <div class="list" id="dp-list"></div>
+          </div>
         </div>
 
         <div class="panel" role="tabpanel" id="p-ce" aria-labelledby="tab-ce" hidden>
@@ -717,18 +731,6 @@ html.lenis,html.lenis body{height:auto}
           <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Dive Rescue</h4></div><p class="sub" id="ce-dive"></p></div>
           <div class="dcard" style="margin-top:12px"><div class="dcard-h"><h4>More Places to Find Courses</h4></div><ul class="mini" id="ce-prov"></ul></div>
           <p class="fine">Dates and prices come from each provider's 2027 catalog or course page. Many courses are open to members of any department, but some require your Fire Chief's approval or department sponsorship. Check with the provider before you register.</p>
-        </div>
-
-        <div class="panel" role="tabpanel" id="p-depts" aria-labelledby="tab-depts" hidden>
-          <div class="pintro"><h3>Department Directory</h3><p>Fire departments in the pilot area, their hiring status and where they post testing.</p></div>
-          <div class="controls">
-            <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
-            <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
-              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
-            <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option></select></div>
-          </div>
-          <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
-          <div class="list" id="dp-list"></div>
         </div>
 
         <div class="panel" role="tabpanel" id="p-funding" aria-labelledby="tab-funding" hidden>
@@ -862,8 +864,11 @@ function setZip(z){
 function goTo(el){ if(window.__lenis) window.__lenis.scrollTo(el, { offset: -72 }); else el.scrollIntoView(); }
 
 /* Tabs */
-const TABS = ["dash","roadmap","classes","jobs","ce","depts","funding","certs","kit"];
+const TABS = ["dash","roadmap","classes","jobs","ce","funding","certs","kit"];
+let jbView = "jobs";
+function setJbView(v){ jbView = v; $("#jb-v-jobs").hidden = v!=="jobs"; $("#jb-v-depts").hidden = v!=="depts"; segSet("#jb-view", v) }
 function showTab(t, focus){
+  if(t === "depts"){ t = "jobs"; setJbView("depts") } else if(t === "jobs") setJbView("jobs");
   if(!TABS.includes(t)) t = "dash";
   if(!profile && t !== "dash"){ t = "dash"; if(typeof openProfileForm === "function") setTimeout(() => { if($("#prof-form").hidden) openProfileForm() }, 0) }
   TABS.forEach(x => { const b = $("#tab-"+x), p = $("#p-"+x), on = x===t;
@@ -1013,6 +1018,7 @@ function renderCE(){
 /* Departments */
 let dpStatus = "all";
 seg("#dp-status", v => { dpStatus = v; renderDepts() });
+seg("#jb-view", v => setJbView(v));
 const ST = {open:["chip-good","Hiring now"], rolling:["chip-good","Ongoing testing"], closed:["chip-red","Testing closed"], unknown:["","No posting found"]};
 /* Next testing round: announced date, or a projection two years after the last round */
 const SEASON = m => m<=1||m===11 ? "Winter" : m<=4 ? "Spring" : m<=7 ? "Summer" : "Fall";
