@@ -1405,14 +1405,14 @@ const PTASKS = {
   emt: [
     {k:"pick", t:"Pick an EMT class", do:{kind:"classes", type:"emt"}, msg:"Good pick. Apply soon, since classes fill up."},
     {k:"apply", t:"Apply for an EMT class", do:{kind:"classes", type:"emt"}, msg:"Nice work! Now line up the money to pay for it."},
-    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"emt"}, msg:"You're set. Show up, study and finish the class."},
+    {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"emt"}, msg:"You're set. Show up, study and finish the class."},
     {k:"finish", t:"Finish the EMT class", msg:"Class done! Next, schedule your NREMT exam."},
     {k:"nremt", t:"Pass the NREMT exam", do:NREMT, msg:"You passed! Apply for your Illinois EMT license through IDPH."},
     {k:"license", t:"Get your Illinois EMT license", then:{kind:"certs", v:"emt-il"}, msg:"Licensed EMT! Add it to My Certifications so you can track renewal."}],
   academy: [
     {k:"pick", t:"Pick a fire academy", do:{kind:"classes", type:"academy"}, msg:"Good pick. Check the start date and apply."},
     {k:"apply", t:"Apply to the academy", do:{kind:"classes", type:"academy"}, msg:"Nice work! Now line up the money to pay for it."},
-    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"fire"}, msg:"You're set. Time to train."},
+    {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"fire"}, msg:"You're set. Time to train."},
     {k:"finish", t:"Finish the academy", msg:"Academy done! Your certification comes next."},
     {k:"cert", t:"Earn your Basic Operations Firefighter certification", then:{kind:"certs", v:"osfm-141.301"}, msg:"Certified! Add it to My Certifications."}],
   cpat: [
@@ -1423,7 +1423,7 @@ const PTASKS = {
   medic: [
     {k:"pick", t:"Pick a paramedic program", do:{kind:"classes", type:"medic"}, msg:"Good pick. Programs fill early, so apply soon."},
     {k:"apply", t:"Apply to the program", do:{kind:"classes", type:"medic"}, msg:"Nice work! Now line up the money to pay for it."},
-    {k:"fund", t:"Line up a way to pay", do:{kind:"funding", f:"medic"}, msg:"You're set. Paramedic school is a big commitment, so plan your schedule."},
+    {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"medic"}, msg:"You're set. Paramedic school is a big commitment, so plan your schedule."},
     {k:"finish", t:"Finish paramedic school", msg:"School done! Next, schedule your NREMT paramedic exam."},
     {k:"nremt", t:"Pass the NREMT paramedic exam", do:NREMT, msg:"You passed! Apply for your Illinois paramedic license through IDPH."},
     {k:"license", t:"Get your Illinois paramedic license", then:{kind:"certs", v:"medic-il"}, msg:"Licensed paramedic! Add it to My Certifications."}],
