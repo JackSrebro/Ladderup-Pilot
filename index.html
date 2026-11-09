@@ -726,10 +726,12 @@ html.lenis,html.lenis body{height:auto}
               <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
               <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
                 <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
-              <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option></select></div>
+              <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option><option value="calls">Most calls</option><option value="callsLow">Fewest calls</option></select></div>
+              <div class="field"><label class="lbl" for="dp-calls">Calls per year</label><select class="select" id="dp-calls"><option value="any">Any</option><option value="0-2500">Under 2,500</option><option value="2500-5000">2,500 to 5,000</option><option value="5000-10000">5,000 to 10,000</option><option value="10000-1e9">Over 10,000</option></select></div>
             </div>
             <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
             <div class="list" id="dp-list"></div>
+            <p class="fine" id="dp-runs-src"></p>
           </div>
         </div>
 
@@ -1041,21 +1043,29 @@ function monthsAway(dt){ return (dt - TODAY) / (86400000*30.4) }
 const fmtMonth = s => parseDate(s).toLocaleDateString("en-US",{month:"short",year:"numeric"});
 const fmtMonthLong = s => parseDate(s).toLocaleDateString("en-US",{month:"long",year:"numeric"});
 $("#dp-sort").addEventListener("change", renderDepts);
+$("#dp-calls").addEventListener("change", renderDepts);
+/* Latest year with a reported call total */
+function lastRuns(d){ const c = d.runs && d.runs.calls; if(!c) return null; const y = Object.keys(c).filter(k => c[k] != null).sort().pop(); return y ? {y, n: c[y]} : null }
 function renderDepts(){
   let rows = D.departments.map(d => ({...d, mi: miles(d.lat,d.lng), nt: nextTest(d)}))
-    .filter(d => dpStatus==="all" || (dpStatus==="open" ? (d.status==="open"||d.status==="rolling") : dpStatus==="soon" ? (d.nt && monthsAway(d.nt.when) <= 12) : d.status==="closed"));
+    .filter(d => dpStatus==="all" || (dpStatus==="open" ? (d.status==="open"||d.status==="rolling") : dpStatus==="soon" ? (d.nt && monthsAway(d.nt.when) <= 12) : d.status==="closed"))
+    .map(d => ({...d, lr: lastRuns(d)}));
+  const cv = $("#dp-calls").value;
+  if(cv !== "any"){ const [lo, hi] = cv.split("-").map(Number); rows = rows.filter(d => d.lr && d.lr.n >= lo && d.lr.n < hi) }
   const s = $("#dp-sort").value;
-  rows.sort((a,b) => s==="next" ? ((a.status==="open"||a.status==="rolling"?-1:a.nt?+a.nt.when:9e15) - (b.status==="open"||b.status==="rolling"?-1:b.nt?+b.nt.when:9e15)) || ((a.mi??1e9)-(b.mi??1e9))
+  rows.sort((a,b) => s==="calls" ? ((b.lr?b.lr.n:-1)-(a.lr?a.lr.n:-1)) : s==="callsLow" ? ((a.lr?a.lr.n:1e9)-(b.lr?b.lr.n:1e9)) : s==="next" ? ((a.status==="open"||a.status==="rolling"?-1:a.nt?+a.nt.when:9e15) - (b.status==="open"||b.status==="rolling"?-1:b.nt?+b.nt.when:9e15)) || ((a.mi??1e9)-(b.mi??1e9))
     : ((a.mi??1e9)-(b.mi??1e9)) || a.name.localeCompare(b.name));
   const ntChip = nt => !nt ? "" : nt.kind==="announced" ? `<span class="chip chip-good">Next test: ${esc(nt.label)}</span>`
     : nt.kind==="due" ? `<span class="chip chip-warn">Next test expected any time</span>` : `<span class="chip chip-warn">Next test expected: ${esc(nt.label)}</span>`;
   const ntLine = nt => !nt ? "" : nt.kind==="announced" ? `<b style="color:var(--ink)">Next test:</b> ${esc(nt.label)}, announced by the department.`
     : nt.kind==="due" ? `<b style="color:var(--ink)">Next test:</b> It has been about two years since the last one, so a new test could be announced any time.`
     : `<b style="color:var(--ink)">Next test:</b> Expected around ${esc(nt.label.replace(/^(\w+)/, m => m.toLowerCase()))}, about two years after the last one. This is an estimate.`;
+  const rs = D.runsSource; $("#dp-runs-src").innerHTML = rs ? `Stations and call totals: <a class="linkish" href="${esc(rs.url)}" target="_blank" rel="noopener">${esc(rs.name)}</a>.` : "";
   $("#dp-list").innerHTML = rows.length ? rows.map(d => `
     <article class="card">
       <div><h4>${esc(d.name)}</h4><p class="who">${esc(d.address || d.city)}</p>
-        <div class="meta"><span class="chip ${ST[d.status][0]}">${ST[d.status][1]}</span>${ntChip(d.nt)}${distTxt(d.mi)}</div>
+        <div class="meta"><span class="chip ${ST[d.status][0]}">${ST[d.status][1]}</span>${ntChip(d.nt)}${d.lr?`<span class="chip">${d.lr.n.toLocaleString()} calls (${d.lr.y})</span>`:""}${distTxt(d.mi)}</div>
+        ${d.runs?`<p class="who" style="margin-top:10px"><b style="color:var(--ink)">Stations:</b> ${d.runs.stations} · <b style="color:var(--ink)">Calls per year:</b> ${Object.entries(d.runs.calls).map(([y,n]) => `${y}: ${n==null?"Not reported":n.toLocaleString()}`).join(" · ")}</p>`:""}
         ${d.note?`<p class="who" style="margin-top:10px">${esc(d.note)}</p>`:""}
         ${d.lastTest?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> ${fmtMonthLong(d.lastTest.date)}. ${esc(d.lastTest.label)} <a class="linkish" style="font-size:13px" href="${esc(d.lastTest.source)}" target="_blank" rel="noopener">Source</a></p>`:(d.status==="unknown"?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> Not found.</p>`:"")}
         ${d.nt?`<p class="who" style="margin-top:4px">${ntLine(d.nt)}</p>`:""}</div>
