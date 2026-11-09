@@ -1548,6 +1548,7 @@ function pathModel(){
   const ord = academyOrder(), raw = buildPath(profile), has = id => raw.some(x => x.id === id);
   const ordered = applyOrder(raw, ord), pi = ordered.findIndex(x => x.id === "parttime");
   if(pi >= 0){ const pt = ordered.splice(pi, 1)[0], after = Math.max(ordered.findIndex(x => x.id === "emt"), ordered.findIndex(x => x.id === "academy")); ordered.splice(after + 1, 0, pt) }
+  if(ord === "mid"){ const mi = ordered.findIndex(x => x.id === "medic"), ai = ordered.findIndex(x => x.id === "apply"); if(mi > ai && ai >= 0){ const md = ordered.splice(mi, 1)[0]; ordered.splice(ai, 0, md) } }
   const steps = ordered.map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
   const all = steps.flatMap(st => st.tasks), cur = steps.findIndex(st => !st.done);
   return { steps, total: all.length, done: all.filter(t => t.done).length, cur, ord, canFirst: has("academy") && has("emt"), canLast: has("academy") && has("medic") };
