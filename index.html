@@ -693,6 +693,7 @@ html.lenis,html.lenis body{height:auto}
             <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
             <div class="field"><span class="lbl" id="jb-type-l">Job type</span><div class="seg" id="jb-type" role="group" aria-labelledby="jb-type-l"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="full" aria-pressed="false">Full-Time</button><button type="button" data-v="part" aria-pressed="false">Part-Time</button></div></div>
             <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
+            <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-emt"><span>EMT Only (No Paramedic License Needed)</span></label>
             <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-dated"><span>Only postings with a deadline</span></label>
           </div>
           <div class="list" id="jb-list"></div>
@@ -943,12 +944,13 @@ function renderClasses(){
 }
 
 /* Jobs */
-["#jb-sort","#jb-dated"].forEach(s => $(s).addEventListener("change", renderJobs));
+["#jb-sort","#jb-dated","#jb-emt"].forEach(s => $(s).addEventListener("change", renderJobs));
 let jbType = "all"; seg("#jb-type", v => { jbType = v; renderJobs() });
 const isPart = j => j.type === "part";
+const emtOk = j => Array.isArray(j.needs) && !j.needs.includes("medic");
 function liveJobs(){ return D.jobs.filter(j => !j.deadline || daysTo(j.deadline) >= 0) }
 function renderJobs(){
-  let rows = liveJobs().filter(j => jbType==="all" || (jbType==="part") === isPart(j)).filter(j => !$("#jb-dated").checked || j.deadline).map(j => ({...j, mi: miles(j.lat,j.lng)}));
+  let rows = liveJobs().filter(j => jbType==="all" || (jbType==="part") === isPart(j)).filter(j => !$("#jb-dated").checked || j.deadline).filter(j => !$("#jb-emt").checked || emtOk(j)).map(j => ({...j, mi: miles(j.lat,j.lng)}));
   const s = $("#jb-sort").value;
   rows.sort((a,b) => s==="pay" ? ((b.pay??(b.payHr?b.payHr*2080:0))-(a.pay??(a.payHr?a.payHr*2080:0))) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
     : ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6)));
@@ -966,7 +968,7 @@ function renderJobs(){
         ${j.applyTip?`<div style="grid-column:1/-1"><span>How to apply</span><p>${esc(j.applyTip)}</p></div>`:""}
       </div>
       <div class="acts"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a><a class="btn btn-quiet btn-sm" href="${esc(j.source)}" target="_blank" rel="noopener">View posting · ${esc(j.sourceName)}</a>${starBtn(j.id)}</div>
-    </article>` }).join("") : `<p class="empty">No open ${jbType==="part"?"part-time ":jbType==="full"?"full-time ":""}postings match right now.</p>`;
+    </article>` }).join("") : `<p class="empty">No open ${jbType==="part"?"part-time ":jbType==="full"?"full-time ":""}postings${$("#jb-emt").checked?" open to EMTs":""} match right now.</p>`;
 }
 
 /* Continuing education */
@@ -1387,7 +1389,7 @@ function pathCE(f){
 }
 function partTimeItems(p){
   return liveJobs().filter(isPart).map(j => ({...j, mi: miles(j.lat,j.lng), miss: missingFor(j)}))
-    .sort((a,b) => ((a.miss&&a.miss.includes("medic"))?1:0)-((b.miss&&b.miss.includes("medic"))?1:0) || (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9))
+    .sort((a,b) => (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9))
     .map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.payHr?`$${j.payHr}/hr · `:""}${j.status==="check"?"Call to confirm it's open":(j.deadlineNote||"").replace(/\.$/,"")}`, mi:j.mi, url:j.apply, b:"Apply",
       chip: j.miss && j.miss.includes("medic") ? "Needs Paramedic" : ""}));
 }
