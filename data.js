@@ -188,7 +188,8 @@ window.LADDER_DATA = {
       who:"Veterans with GI Bill benefits. The VA lists EMT training as a covered program, and it can also pay back licensing and certification test fees.", deadline:"Rolling", url:"https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/non-college-degree-programs/" }
   ],
 
-  /* Continuing education for working firefighters (checked 2026-11-07). sessions: [{s: ISO start, t: label}] */
+  /* Continuing education for working firefighters. sessions: [{s: ISO start, e: ISO end (optional), t: label, u: that session's registration link (optional), seats (optional)}].
+     IFSI rows (provider "IFSI") are rebuilt each week with tools/ifsi-refresh.js; gk is the "CITY|ZIP" key used to reuse map coordinates. */
   ce: {
  "courses": [
   {
@@ -1427,6 +1428,3786 @@ window.LADDER_DATA = {
    "page": "https://www.nipsta.org/338/Hazardous-Materials-Training",
    "contact": "(847) 998-8090",
    "checked": "2026-11-07"
+  },
+  {
+   "id": "ifsi-951-champaign",
+   "cat": "officer",
+   "name": "Advanced Fire Officer Blended / NFPA 1021 - Fire Officer II",
+   "cert": "Advanced Fire Officer",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1575,
+   "costNote": "Illinois rate. Out of state: $2,000.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-11-01",
+     "e": "2027-12-17",
+     "t": "Nov 1–Dec 17, 2027 (4 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800043&session=134788",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700048&session=132772",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=951",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-923-golconda",
+   "cat": "app",
+   "name": "Emergency Vehicle Operations",
+   "cert": null,
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Golconda (hosted by Rural Pope County FPD)",
+   "address": "64 Franks Road, Golconda, IL 62938",
+   "gk": "GOLCONDA|62938",
+   "lat": 37.3673,
+   "lng": -88.4864,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-09",
+     "t": "Nov 9, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700968&session=134943",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700968&session=134943",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=923",
+   "contact": "(618) 949-3789",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1610-champaign",
+   "cat": "app",
+   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
+   "cert": "Fire Apparatus Engineer",
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 850,
+   "costNote": "Illinois rate. Out of state: $1,200.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-13",
+     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700026&session=132684",
+     "seats": "4 seats left"
+    },
+    {
+     "s": "2027-04-12",
+     "e": "2027-04-16",
+     "t": "Apr 12–16, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
+     "seats": "11 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700026&session=132684",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1650-newlenox",
+   "cat": "officer",
+   "name": "Fire Department Incident Safety Officer / NFPA 1550",
+   "cert": "Fire Department Incident Safety Officer",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "New Lenox (hosted by New Lenox FPD)",
+   "address": "New Lenox FPD, New Lenox, IL 60451",
+   "gk": "NEW LENOX|60451",
+   "lat": 41.512,
+   "lng": -87.9656,
+   "cost": 650,
+   "costNote": "Illinois rate. Out of state: $850.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-13",
+     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700147&session=133736",
+     "seats": "5 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700147&session=133736",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
+   "contact": "(815) 463-4500",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1423-alton",
+   "cat": "prev",
+   "name": "First Due for Fire Alarms",
+   "cert": null,
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Alton (hosted by Alton FD)",
+   "address": "333 E. 20th St., Alton, IL 62002",
+   "gk": "ALTON|62002",
+   "lat": 38.8909,
+   "lng": -90.1843,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-09",
+     "t": "Nov 9, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700884&session=134853",
+     "seats": "20 seats left"
+    },
+    {
+     "s": "2026-11-10",
+     "e": "2026-11-10",
+     "t": "Nov 10, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700886&session=134855",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700887&session=134856",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700884&session=134853",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1423",
+   "contact": "(618) 463-3565",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-869-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Chief Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,700.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-13",
+     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700011&session=132568",
+     "seats": "4 seats left"
+    },
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700798&session=134709",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700011&session=132568",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-871-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Fire Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,350.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-13",
+     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700010&session=132567",
+     "seats": "Full"
+    },
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700797&session=134708",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700010&session=132567",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-870-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Firefighter Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $1,950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-13",
+     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700009&session=132566",
+     "seats": "11 seats left"
+    },
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700796&session=134707",
+     "seats": "16 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700009&session=132566",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1061-silvis",
+   "cat": "other",
+   "name": "Resiliency Development for First Responders",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Silvis (hosted by Silvis FD)",
+   "address": "2010 10th Street, Silvis, IL 61282",
+   "gk": "SILVIS|61282",
+   "lat": 41.5123,
+   "lng": -90.4151,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-09",
+     "t": "Nov 9, 2026, 6:30 p.m.–10:30 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700660&session=134540",
+     "seats": "40 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700660&session=134540",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
+   "contact": "(309) 792-9553",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1438-orlandpark",
+   "cat": "prev",
+   "name": "Youth Firesetting Prevention and Intervention Specialist",
+   "cert": "Youth Firesetter Intervention Specialist",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 W 163rd Pl, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 250,
+   "costNote": "Illinois rate. Out of state: $450.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-09",
+     "e": "2026-11-10",
+     "t": "Nov 9–10, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700055&session=132784",
+     "seats": "18 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700055&session=132784",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-176-lincolnwoo",
+   "cat": "rescue",
+   "name": "Basic Auto Extrication",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Lincolnwood (hosted by Lincolnwood FD)",
+   "address": "6900 Lincoln Ave, Lincolnwood, IL 60712",
+   "gk": "LINCOLNWOOD|60712",
+   "lat": 42.0056,
+   "lng": -87.7356,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-10",
+     "e": "2026-11-10",
+     "t": "Nov 10, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700841&session=134792",
+     "seats": "6 seats left"
+    },
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700842&session=134793",
+     "seats": "7 seats left"
+    },
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700843&session=134794",
+     "seats": "9 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700841&session=134792",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=176",
+   "contact": "(847) 673-1545",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1427-robbins",
+   "cat": "rescue",
+   "name": "Elevator Equipment, Function and Rescue Considerations",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Robbins (hosted by Robbins FD)",
+   "address": "3327 W. 137th St., Robbins, IL 60472",
+   "gk": "ROBBINS|60472",
+   "lat": 41.6439,
+   "lng": -87.7037,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-10",
+     "e": "2026-11-10",
+     "t": "Nov 10, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
+     "seats": "26 seats left"
+    },
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700368&session=134215",
+     "seats": "27 seats left"
+    },
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700369&session=134216",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1427",
+   "contact": "(708) 385-8940",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-44-mascoutah",
+   "cat": "hazmat",
+   "name": "Liquefied Petroleum Gas (Propane) Fire Fighting",
+   "cert": null,
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Mascoutah (hosted by Mascoutah FD/FPD)",
+   "address": "224 N Railway St., Mascoutah, IL 62258",
+   "gk": "MASCOUTAH|62258",
+   "lat": 38.4903,
+   "lng": -89.7932,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-10",
+     "e": "2026-11-10",
+     "t": "Nov 10, 2026, 6:30 p.m.–10:30 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700764&session=134671",
+     "seats": "57 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700764&session=134671",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=44",
+   "contact": "(618) 566-2103",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-566-maywood",
+   "cat": "ff",
+   "name": "Ventilation",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Maywood (hosted by Maywood FD)",
+   "address": "700 W St. Charles Rd, Maywood, IL 60153",
+   "gk": "MAYWOOD|60153",
+   "lat": 41.879,
+   "lng": -87.8436,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-10",
+     "e": "2026-11-10",
+     "t": "Nov 10, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700897&session=134869",
+     "seats": "25 seats left"
+    },
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
+     "seats": "24 seats left"
+    },
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700899&session=134871",
+     "seats": "25 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700897&session=134869",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
+   "contact": "(708) 681-8860",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-593-polo",
+   "cat": "officer",
+   "name": "Basic Tactics and Strategy",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Polo (hosted by Polo FPD)",
+   "address": "206 S. Franklin, Polo, IL 61064",
+   "gk": "POLO|61064",
+   "lat": 41.9861,
+   "lng": -89.5793,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
+     "seats": "15 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=593",
+   "contact": "(815) 946-2153",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-159-carrollton",
+   "cat": "app",
+   "name": "Basic Pumps",
+   "cert": null,
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Carrollton (hosted by Carrollton FPD)",
+   "address": "633 S. Main, Carrollton, IL 62016",
+   "gk": "CARROLLTON|62016",
+   "lat": 39.3023,
+   "lng": -90.4071,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
+     "seats": "9 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=159",
+   "contact": "(217) 942-3618",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-282-elizabeth",
+   "cat": "rescue",
+   "name": "Agriculture Rescue Techniques",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Elizabeth (hosted by Elizabeth Community FPD)",
+   "address": "202 W. Madison St., Elizabeth, IL 61028",
+   "gk": "ELIZABETH|61028",
+   "lat": 42.3178,
+   "lng": -90.2215,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
+     "seats": "19 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=282",
+   "contact": "(815) 858-3612",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-210-tilton",
+   "cat": "officer",
+   "name": "Basic Company Officer",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Tilton (hosted by Tilton FD)",
+   "address": "115 S 5th, Tilton, IL 61833",
+   "gk": "TILTON|61833",
+   "lat": 40.0953,
+   "lng": -87.6475,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
+     "seats": "47 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=210",
+   "contact": "(217) 477-0800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-481-decatur",
+   "cat": "ff",
+   "name": "Basic Truck Company Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Decatur (hosted by Harristown FPD)",
+   "address": "4417 W. Main St., Decatur, IL 62522",
+   "gk": "DECATUR|62522",
+   "lat": 39.8454,
+   "lng": -88.9524,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
+     "seats": "1 seat left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=481",
+   "contact": "(217) 423-2912",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-155-coffeen",
+   "cat": "officer",
+   "name": "Fireground Management for Small Career and Volunteer Departments",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Coffeen (hosted by Coffeen FPD)",
+   "address": "113 W. Main St., Coffeen, IL 62017",
+   "gk": "COFFEEN|62017",
+   "lat": 39.0892,
+   "lng": -89.3906,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
+     "seats": "22 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=155",
+   "contact": "(217) 534-2410",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-highland",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Highland (hosted by Highland FD)",
+   "address": "12990 Troxler Ave, Highland, IL 62249",
+   "gk": "HIGHLAND|62249",
+   "lat": 38.7396,
+   "lng": -89.6715,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-22",
+     "t": "Nov 14–22, 2026 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
+     "seats": "11 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(618) 654-3827",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-723-sullivan",
+   "cat": "officer",
+   "name": "Leadership, Accountability, Culture & Knowledge (LACK)",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Sullivan (hosted by Sullivan FPD)",
+   "address": "115 W Harrison St., Sullivan, IL 61951",
+   "gk": "SULLIVAN|61951",
+   "lat": 39.5995,
+   "lng": -88.6078,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700256&session=134087",
+     "seats": "42 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700256&session=134087",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=723",
+   "contact": "(217) 728-8714",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-691-champaign",
+   "cat": "ff",
+   "name": "Light and Fight - On Campus",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $325.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-14",
+     "e": "2026-11-14",
+     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
+     "seats": "1 seat left"
+    },
+    {
+     "s": "2027-03-13",
+     "e": "2027-03-13",
+     "t": "Mar 13, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700814&session=134735",
+     "seats": "60 seats left"
+    },
+    {
+     "s": "2027-03-27",
+     "e": "2027-03-27",
+     "t": "Mar 27, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700815&session=134736",
+     "seats": "60 seats left"
+    },
+    {
+     "s": "2027-05-08",
+     "e": "2027-05-08",
+     "t": "May 8, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700816&session=134737",
+     "seats": "60 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=691",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-177-hillsboro",
+   "cat": "rescue",
+   "name": "Advanced Auto Extrication",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Hillsboro (hosted by Hillsboro Vol. FD)",
+   "address": "101 S. Broad St., Hillsboro, IL 62049",
+   "gk": "HILLSBORO|62049",
+   "lat": 39.161,
+   "lng": -89.4934,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 6:30 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=177",
+   "contact": "(217) 532-2345",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1610-litchfield",
+   "cat": "app",
+   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
+   "cert": "Fire Apparatus Engineer",
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Litchfield (hosted by Litchfield FD)",
+   "address": "201 E. Edwards, Litchfield, IL 62056",
+   "gk": "LITCHFIELD|62056",
+   "lat": 39.1769,
+   "lng": -89.6556,
+   "cost": 850,
+   "costNote": "Illinois rate. Out of state: $1,200.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-20",
+     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
+     "seats": "8 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
+   "contact": "(217) 851-6073",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-560-mountcarro",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Mount Carroll (hosted by Mount Carroll FPD)",
+   "address": "318 S. Clay St., Mount Carroll, IL 61053",
+   "gk": "MOUNT CARROLL|61053",
+   "lat": 42.0949,
+   "lng": -89.9777,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 5:30 p.m.–9:30 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700710&session=134609",
+     "seats": "22 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700710&session=134609",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(815) 244-4502",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-561-eastalton",
+   "cat": "ff",
+   "name": "Fire Ground Ropes and Knots",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "East Alton (hosted by Rosewood Heights FPD)",
+   "address": "45 E. Airline Dr., East Alton, IL 62024",
+   "gk": "EAST ALTON|62024",
+   "lat": 38.8803,
+   "lng": -90.1112,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
+     "seats": "28 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=561",
+   "contact": "(618) 259-3311",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-149-champaign",
+   "cat": "officer",
+   "name": "Fireground Command Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 2075,
+   "costNote": "Illinois rate. Out of state: $2,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-20",
+     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786"
+    },
+    {
+     "s": "2027-05-10",
+     "e": "2027-05-14",
+     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-148-champaign",
+   "cat": "officer",
+   "name": "Fireground Company Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 2475,
+   "costNote": "Illinois rate. Out of state: $2,675.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-20",
+     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
+     "seats": "Full"
+    },
+    {
+     "s": "2027-05-10",
+     "e": "2027-05-14",
+     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700828&session=134761",
+     "seats": "36 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-joliet",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Joliet (hosted by Joliet FD)",
+   "address": "101 E Clinton St., Joliet, IL 60432",
+   "gk": "JOLIET|60432",
+   "lat": 41.5264,
+   "lng": -88.084,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-20",
+     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
+     "seats": "1 seat left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(815) 724-3500",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1393-smithton",
+   "cat": "ff",
+   "name": "Respectful Entry",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Smithton (hosted by Smithton Vol. F. Co. Inc.)",
+   "address": "711 N. Main St., Smithton, IL 62285",
+   "gk": "SMITHTON|62285",
+   "lat": 38.4087,
+   "lng": -89.9921,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
+     "seats": "36 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
+   "contact": "(618) 234-7373",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1016-champaign",
+   "cat": "rescue",
+   "name": "Structural Collapse Rescue Awareness and Operations",
+   "cert": "Structural Collapse Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 2875,
+   "costNote": "Illinois rate. Out of state: $3,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-20",
+     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
+     "seats": "18 seats left"
+    },
+    {
+     "s": "2027-03-15",
+     "e": "2027-03-19",
+     "t": "Mar 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700823&session=134748",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-566-stickney",
+   "cat": "ff",
+   "name": "Ventilation",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Stickney (hosted by Stickney FD)",
+   "address": "6433 43rd St., Stickney, IL 60402",
+   "gk": "STICKNEY|60402",
+   "lat": 41.8193,
+   "lng": -87.7797,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
+     "seats": "25 seats left"
+    },
+    {
+     "s": "2026-11-17",
+     "e": "2026-11-17",
+     "t": "Nov 17, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700901&session=134873",
+     "seats": "24 seats left"
+    },
+    {
+     "s": "2026-11-18",
+     "e": "2026-11-18",
+     "t": "Nov 18, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700902&session=134874",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
+   "contact": "(708) 795-6333",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-476-waynecity",
+   "cat": "ff",
+   "name": "Forcible Entry",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Wayne City (hosted by Wayne FPD #1)",
+   "address": "302 North Main Street, Wayne City, IL 62895",
+   "gk": "WAYNE CITY|62895",
+   "lat": 38.3453,
+   "lng": -88.5878,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-17",
+     "e": "2026-11-17",
+     "t": "Nov 17, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
+     "seats": "18 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=476",
+   "contact": "(618) 895-2134",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-560-pontoonbea",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Pontoon Beach (hosted by Long Lake Vol. FD)",
+   "address": "4113 Pontoon Road, Pontoon Beach, IL 62040",
+   "gk": "PONTOON BEACH|62040",
+   "lat": 38.7317,
+   "lng": -90.0804,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-18",
+     "e": "2026-11-18",
+     "t": "Nov 18, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700605&session=134463",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700605&session=134463",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(618) 830-5285",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1541-pinckneyvi",
+   "cat": "app",
+   "name": "iPUMPS",
+   "cert": null,
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Pinckneyville (hosted by Pinckneyville FD)",
+   "address": "110 South Walnut Street, Pinckneyville, IL 62274",
+   "gk": "PINCKNEYVILLE|62274",
+   "lat": 38.0803,
+   "lng": -89.382,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-18",
+     "e": "2026-11-18",
+     "t": "Nov 18, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700805&session=134720",
+     "seats": "5 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700805&session=134720",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1541",
+   "contact": "(618) 357-2281",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-568-elmwood",
+   "cat": "ff",
+   "name": "Fires on the Farm",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Elmwood (hosted by Elmwood FD)",
+   "address": "202 N. Magnolia St., Elmwood, IL 61529",
+   "gk": "ELMWOOD|61529",
+   "lat": 40.7778,
+   "lng": -89.9665,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-19",
+     "e": "2026-11-19",
+     "t": "Nov 19, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700286&session=134125"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700286&session=134125",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
+   "contact": "(309) 742-3811",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-235-chandlervi",
+   "cat": "ff",
+   "name": "Essentials III",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Chandlerville (hosted by Chandlerville Vol. FD)",
+   "address": "121 N. Main St., Chandlerville, IL 62627",
+   "gk": "CHANDLERVILLE|62627",
+   "lat": 40.0481,
+   "lng": -90.1551,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-21",
+     "e": "2026-11-22",
+     "t": "Nov 21 and Nov 22, 2026",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700706&session=134604",
+     "seats": "15 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700706&session=134604",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=235",
+   "contact": "(217) 491-6346",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-560-hebron",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Hebron (hosted by Hebron-Alden-Greenwood FPD)",
+   "address": "12302 Rt 173, Hebron, IL 60034",
+   "gk": "HEBRON|60034",
+   "lat": 42.4711,
+   "lng": -88.4311,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-23",
+     "e": "2026-11-23",
+     "t": "Nov 23, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
+     "seats": "25 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(815) 648-2218",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-238-champaign",
+   "cat": "ff",
+   "name": "Truck Company Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1100,
+   "costNote": "Illinois rate. Out of state: $1,300.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-23",
+     "e": "2026-11-25",
+     "t": "Nov 23–25, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700059&session=132788",
+     "seats": "Full"
+    },
+    {
+     "s": "2027-03-17",
+     "e": "2027-03-19",
+     "t": "Mar 17–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700834&session=134772",
+     "seats": "27 seats left"
+    },
+    {
+     "s": "2027-09-01",
+     "e": "2027-09-03",
+     "t": "Sep 1–3, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800038&session=134775",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700059&session=132788",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=238",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-571-staunton",
+   "cat": "ff",
+   "name": "Vehicle Fire Fighting",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Staunton (hosted by Staunton FPD)",
+   "address": "215 S. Wood St., Staunton, IL 62088",
+   "gk": "STAUNTON|62088",
+   "lat": 39.0122,
+   "lng": -89.7885,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-23",
+     "e": "2026-11-23",
+     "t": "Nov 23, 2026, 6:30 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=571",
+   "contact": "(618) 780-4491",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-566-trenton",
+   "cat": "ff",
+   "name": "Ventilation",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Trenton (hosted by Sugar Creek Twp. FD)",
+   "address": "1001 W. Broadway, Trenton, IL 62293",
+   "gk": "TRENTON|62293",
+   "lat": 38.6051,
+   "lng": -89.6818,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-24",
+     "e": "2026-11-24",
+     "t": "Nov 24, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700265&session=134103",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700265&session=134103",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
+   "contact": "(618) 224-9009",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1648-champaign-online",
+   "cat": "ff",
+   "name": "BOF/NFPA 1010 Firefighter I (Module C)",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Online",
+   "address": null,
+   "gk": null,
+   "lat": null,
+   "lng": null,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-28",
+     "e": "2027-01-01",
+     "t": "Nov 28, 2026–Jan 1, 2027",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
+     "seats": "74 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1648",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-568-cortland",
+   "cat": "ff",
+   "name": "Fires on the Farm",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Cortland (hosted by Cortland Fire Dept)",
+   "address": "30 W. North Ave, Cortland, IL 60112",
+   "gk": "CORTLAND|60112",
+   "lat": 41.92,
+   "lng": -88.6887,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-30",
+     "e": "2026-11-30",
+     "t": "Nov 30, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
+     "seats": "40 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
+   "contact": "(815) 756-2545",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1061-toluca",
+   "cat": "other",
+   "name": "Resiliency Development for First Responders",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Toluca (hosted by Toluca-Rutland FPD)",
+   "address": "322 Railroad, Toluca, IL 61369",
+   "gk": "TOLUCA|61369",
+   "lat": 41.0023,
+   "lng": -89.1334,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-01",
+     "e": "2026-12-01",
+     "t": "Dec 1, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700225&session=134037"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700225&session=134037",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
+   "contact": "(815) 452-2422",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-482-eastdubuqu",
+   "cat": "ff",
+   "name": "Basic Engine Company Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "East Dubuque (hosted by East Dubuque FD)",
+   "address": "201 Frentress Lake Road, East Dubuque, IL 61025",
+   "gk": "EAST DUBUQUE|61025",
+   "lat": 42.4922,
+   "lng": -90.6429,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-05",
+     "e": "2026-12-05",
+     "t": "Dec 5, 2026, 8 a.m.–4 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
+     "seats": "41 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=482",
+   "contact": "(815) 747-6619",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1528-galesburg",
+   "cat": "app",
+   "name": "DRIVE (Driver Training)",
+   "cert": null,
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Galesburg (hosted by Galesburg FD)",
+   "address": "2233 Veteran Drive, Galesburg, IL 61401",
+   "gk": "GALESBURG|61401",
+   "lat": 40.9476,
+   "lng": -90.3712,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-07",
+     "e": "2026-12-07",
+     "t": "Dec 7, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701014&session=135059",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-12-08",
+     "e": "2026-12-08",
+     "t": "Dec 8, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701015&session=135060",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-12-09",
+     "e": "2026-12-09",
+     "t": "Dec 9, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701016&session=135061",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-12-10",
+     "e": "2026-12-10",
+     "t": "Dec 10, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701017&session=135062",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2026-12-11",
+     "e": "2026-12-11",
+     "t": "Dec 11, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701018&session=135063",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701014&session=135059",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1528",
+   "contact": "(309) 345-3756",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1650-champaign",
+   "cat": "officer",
+   "name": "Fire Department Incident Safety Officer / NFPA 1550",
+   "cert": "Fire Department Incident Safety Officer",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 650,
+   "costNote": "Illinois rate. Out of state: $850.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-07",
+     "e": "2026-12-11",
+     "t": "Dec 7–11, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
+     "seats": "13 seats left"
+    },
+    {
+     "s": "2027-02-01",
+     "e": "2027-02-05",
+     "t": "Feb 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700799&session=134713",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1520-belleville",
+   "cat": "prev",
+   "name": "Fire Inspector",
+   "cert": "Fire Inspector I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Belleville (hosted by Belleville FD)",
+   "address": "Engine House #4, Belleville, IL 62221",
+   "gk": "BELLEVILLE|62221",
+   "lat": 38.5136,
+   "lng": -89.9842,
+   "cost": 800,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-07",
+     "e": "2026-12-11",
+     "t": "Dec 7–11, 2026, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700724&session=134626",
+     "seats": "12 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700724&session=134626",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
+   "contact": "(618) 234-2236",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1225-staunton",
+   "cat": "app",
+   "name": "Mobile Water Supply Operations",
+   "cert": null,
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Staunton (hosted by Staunton FPD)",
+   "address": "215 S. Wood St., Staunton, IL 62088",
+   "gk": "STAUNTON|62088",
+   "lat": 39.0122,
+   "lng": -89.7885,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-07",
+     "e": "2026-12-07",
+     "t": "Dec 7, 2026, 6:30 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700191&session=133862",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700191&session=133862",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1225",
+   "contact": "(618) 780-4491",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-559-auburn",
+   "cat": "ff",
+   "name": "Building Construction",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Auburn (hosted by Auburn FPD)",
+   "address": "117 W. Jackson, Auburn, IL 62615",
+   "gk": "AUBURN|62615",
+   "lat": 39.5917,
+   "lng": -89.7465,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-09",
+     "e": "2026-12-09",
+     "t": "Dec 9, 2026, 6:30 p.m.–10:30 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=559",
+   "contact": "(217) 438-3223",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-560-norriscity",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Norris City (hosted by Norris City FPD)",
+   "address": "113 South Division Street, Norris City, IL 62869",
+   "gk": "NORRIS CITY|62869",
+   "lat": 37.9812,
+   "lng": -88.3292,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-12",
+     "t": "Dec 12, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700287&session=134126",
+     "seats": "11 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700287&session=134126",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(618) 378-3927",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-22-crevecoeur",
+   "cat": "rescue",
+   "name": "Grain Bin Rescue Awareness",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Creve Coeur (hosted by Creve Coeur Fire & Rescue)",
+   "address": "203 Wagner Dr., Creve Coeur, IL 61610",
+   "gk": "CREVE COEUR|61610",
+   "lat": 40.6473,
+   "lng": -89.5912,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-12",
+     "t": "Dec 12, 2026, 8 a.m.–2 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700972&session=134947"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700972&session=134947",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=22",
+   "contact": "(309) 694-2521",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1439-rockford",
+   "cat": "hazmat",
+   "name": "Hazardous Materials Awareness and Operations (470 - Ch 7, 9.2, 9.6)",
+   "cert": "Hazardous Materials Operations",
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Rockford (hosted by Cherry Valley FPD)",
+   "address": "4919 Blackhawk Road, Rockford, IL 61109",
+   "gk": "ROCKFORD|61109",
+   "lat": 42.2714,
+   "lng": -89.094,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-20",
+     "t": "Dec 12–20, 2026 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700207&session=133890",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700207&session=133890",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
+   "contact": "(815) 332-5382",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1439-bloomingto",
+   "cat": "hazmat",
+   "name": "Hazardous Materials Awareness and Operations (470 - Ch 7, 9.2, 9.6)",
+   "cert": "Hazardous Materials Operations",
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Bloomington (hosted by Bloomington FD)",
+   "address": "1911 Hamilton Rd, Bloomington, IL 61704",
+   "gk": "BLOOMINGTON|61704",
+   "lat": 40.4798,
+   "lng": -88.9939,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-20",
+     "t": "Dec 12–20, 2026 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700208&session=133892",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700208&session=133892",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
+   "contact": "(309) 434-2500",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1439-swansea",
+   "cat": "hazmat",
+   "name": "Hazardous Materials Awareness and Operations (470 - Ch 7, 9.2, 9.6)",
+   "cert": "Hazardous Materials Operations",
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Swansea (hosted by Swansea FD)",
+   "address": "144 Huntwood Road, Swansea, IL 62226",
+   "gk": "SWANSEA|62226",
+   "lat": 38.5339,
+   "lng": -89.989,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-20",
+     "t": "Dec 12–20, 2026 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700209&session=133894",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700209&session=133894",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
+   "contact": "(618) 234-3291",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-eureka",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Eureka (hosted by Eureka-Goodfield FPD)",
+   "address": "211 N Main St., Eureka, IL 61530",
+   "gk": "EUREKA|61530",
+   "lat": 40.7213,
+   "lng": -89.2727,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-20",
+     "t": "Dec 12–20, 2026 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
+     "seats": "17 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(309) 467-6181",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1061-westunion",
+   "cat": "other",
+   "name": "Resiliency Development for First Responders",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "West Union (hosted by West Union FPD)",
+   "address": "502 East Union St., West Union, IL 62477",
+   "gk": "WEST UNION|62477",
+   "lat": 39.2159,
+   "lng": -87.6661,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-12",
+     "e": "2026-12-12",
+     "t": "Dec 12, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701024&session=135069",
+     "seats": "32 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701024&session=135069",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
+   "contact": "(618) 279-3614",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1353-breese",
+   "cat": "hazmat",
+   "name": "Hazardous Materials Refresher",
+   "cert": null,
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Breese (hosted by Breese Vol. FPD)",
+   "address": "50 N. Mine Street, Breese, IL 62230",
+   "gk": "BREESE|62230",
+   "lat": 38.6106,
+   "lng": -89.5259,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-14",
+     "e": "2026-12-14",
+     "t": "Dec 14, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700732&session=134634",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700732&session=134634",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1353",
+   "contact": "(618) 526-4721",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-723-huntley",
+   "cat": "officer",
+   "name": "Leadership, Accountability, Culture & Knowledge (LACK)",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Huntley (hosted by Huntley FPD)",
+   "address": "11118 Main St., Huntley, IL 60142",
+   "gk": "HUNTLEY|60142",
+   "lat": 42.1723,
+   "lng": -88.4269,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-14",
+     "e": "2026-12-14",
+     "t": "Dec 14, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700528&session=134374",
+     "seats": "40 seats left"
+    },
+    {
+     "s": "2026-12-15",
+     "e": "2026-12-15",
+     "t": "Dec 15, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700529&session=134375",
+     "seats": "39 seats left"
+    },
+    {
+     "s": "2026-12-16",
+     "e": "2026-12-16",
+     "t": "Dec 16, 2026, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700530&session=134376",
+     "seats": "37 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700528&session=134374",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=723",
+   "contact": "(847) 669-5066",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1348-golconda",
+   "cat": "ff",
+   "name": "Response to Hybrid and Electric Vehicles",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Golconda (hosted by Rural Pope County FPD)",
+   "address": "64 Franks Road, Golconda, IL 62938",
+   "gk": "GOLCONDA|62938",
+   "lat": 37.3673,
+   "lng": -88.4864,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-14",
+     "e": "2026-12-14",
+     "t": "Dec 14, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700969&session=134944",
+     "seats": "35 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700969&session=134944",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1348",
+   "contact": "(618) 949-3789",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-789-saintjacob",
+   "cat": "hazmat",
+   "name": "Flammable Liquids by Rail Awareness",
+   "cert": null,
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Saint Jacob (hosted by St. Jacob Twp. FPD)",
+   "address": "113 E. Second St., Saint Jacob, IL 62281",
+   "gk": "SAINT JACOB|62281",
+   "lat": 38.7139,
+   "lng": -89.7681,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-15",
+     "e": "2026-12-15",
+     "t": "Dec 15, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700151&session=133765",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700151&session=133765",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=789",
+   "contact": "(618) 644-4636",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-560-greenville",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Greenville (hosted by Greenville FPD)",
+   "address": "1110 E. Harris St., Greenville, IL 62246",
+   "gk": "GREENVILLE|62246",
+   "lat": 38.8923,
+   "lng": -89.4131,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-28",
+     "e": "2026-12-28",
+     "t": "Dec 28, 2026, 7 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700904&session=134876",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700904&session=134876",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(618) 664-4265",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1604-rockford",
+   "cat": "ff",
+   "name": "Firefighter I / NFPA 1010 - Blended",
+   "cert": "Basic Operations Firefighter",
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Rockford (hosted by Cherry Valley FPD)",
+   "address": "4919 Blackhawk Road, Rockford, IL 61109",
+   "gk": "ROCKFORD|61109",
+   "lat": 42.2714,
+   "lng": -89.094,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-09",
+     "e": "2027-05-16",
+     "t": "Jan 9–May 16, 2027 (11 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
+     "seats": "8 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
+   "contact": "(815) 332-5382",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1604-sherman",
+   "cat": "ff",
+   "name": "Firefighter I / NFPA 1010 - Blended",
+   "cert": "Basic Operations Firefighter",
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Sherman (hosted by Sherman FPD)",
+   "address": "2215 E Andrew Road, Sherman, IL 62684",
+   "gk": "SHERMAN|62684",
+   "lat": 39.8937,
+   "lng": -89.6048,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-09",
+     "e": "2027-05-16",
+     "t": "Jan 9–May 16, 2027 (11 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
+     "seats": "39 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
+   "contact": "(319) 572-3289",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1604-swansea",
+   "cat": "ff",
+   "name": "Firefighter I / NFPA 1010 - Blended",
+   "cert": "Basic Operations Firefighter",
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Swansea (hosted by Swansea FD)",
+   "address": "144 Huntwood Road, Swansea, IL 62226",
+   "gk": "SWANSEA|62226",
+   "lat": 38.5339,
+   "lng": -89.989,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-09",
+     "e": "2027-05-16",
+     "t": "Jan 9–May 16, 2027 (11 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
+     "seats": "18 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
+   "contact": "(618) 234-3291",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1415-staunton",
+   "cat": "officer",
+   "name": "Attributes of Leading",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Staunton (hosted by Staunton FPD)",
+   "address": "215 S. Wood St., Staunton, IL 62088",
+   "gk": "STAUNTON|62088",
+   "lat": 39.0122,
+   "lng": -89.7885,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-11",
+     "e": "2027-01-11",
+     "t": "Jan 11, 2027, 6:30 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701026&session=135071",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701026&session=135071",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1415",
+   "contact": "(618) 780-4491",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-westchicag",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "West Chicago (hosted by West Chicago FPD)",
+   "address": "320 Kress Rd., West Chicago, IL 60185",
+   "gk": "WEST CHICAGO|60185",
+   "lat": 41.8848,
+   "lng": -88.204,
+   "cost": 600,
+   "costNote": "Illinois rate. Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-11",
+     "e": "2027-01-15",
+     "t": "Jan 11–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
+     "seats": "25 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(630) 231-2123",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1045-golconda",
+   "cat": "ff",
+   "name": "Firefighting Tools - What You Need To Know",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Golconda (hosted by Rural Pope County FPD)",
+   "address": "64 Franks Road, Golconda, IL 62938",
+   "gk": "GOLCONDA|62938",
+   "lat": 37.3673,
+   "lng": -88.4864,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-18",
+     "e": "2027-01-18",
+     "t": "Jan 18, 2027, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700922&session=134896",
+     "seats": "34 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700922&session=134896",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1045",
+   "contact": "(618) 949-3789",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-4-westchicag",
+   "cat": "officer",
+   "name": "Instructor II",
+   "cert": "Fire Service Instructor II",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "West Chicago (hosted by West Chicago FPD)",
+   "address": "320 Kress Rd., West Chicago, IL 60185",
+   "gk": "WEST CHICAGO|60185",
+   "lat": 41.8848,
+   "lng": -88.204,
+   "cost": 600,
+   "costNote": "Illinois rate. Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-18",
+     "e": "2027-01-22",
+     "t": "Jan 18–22, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
+   "contact": "(630) 231-2123",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-326-roodhouse",
+   "cat": "ff",
+   "name": "Thermal Imaging Camera",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Roodhouse (hosted by Roodhouse FPD)",
+   "address": "1140 South State St., Roodhouse, IL 62082",
+   "gk": "ROODHOUSE|62082",
+   "lat": 39.4839,
+   "lng": -90.3715,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-21",
+     "e": "2027-01-21",
+     "t": "Jan 21, 2027, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701027&session=135072",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701027&session=135072",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=326",
+   "contact": "(217) 589-4141",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-gibsoncity",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Gibson City (hosted by Gibson City FPD)",
+   "address": "115 S. Lawrence St., Gibson City, IL 60936",
+   "gk": "GIBSON CITY|60936",
+   "lat": 40.4653,
+   "lng": -88.3759,
+   "cost": 600,
+   "costNote": "Illinois rate. Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-23",
+     "e": "2027-01-31",
+     "t": "Jan 23–31, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
+     "seats": "24 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(217) 784-5533",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1436-chicagohei",
+   "cat": "hazmat",
+   "name": "Pipeline Emergencies - First Responder Awareness",
+   "cert": null,
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Chicago Heights (hosted by Chicago Heights FD)",
+   "address": "1600 State Street, Chicago Heights, IL 60411",
+   "gk": "CHICAGO HTS|60411",
+   "lat": 41.5063,
+   "lng": -87.6357,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-26",
+     "e": "2027-01-26",
+     "t": "Jan 26, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701007&session=135052",
+     "seats": "25 seats left"
+    },
+    {
+     "s": "2027-01-27",
+     "e": "2027-01-27",
+     "t": "Jan 27, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701008&session=135053",
+     "seats": "25 seats left"
+    },
+    {
+     "s": "2027-01-28",
+     "e": "2027-01-28",
+     "t": "Jan 28, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701009&session=135054",
+     "seats": "25 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701007&session=135052",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
+   "contact": "(309) 303-4579",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1650-marengo",
+   "cat": "officer",
+   "name": "Fire Department Incident Safety Officer / NFPA 1550",
+   "cert": "Fire Department Incident Safety Officer",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Marengo (hosted by Marengo FPD)",
+   "address": "Marengo FPD, Marengo, IL 60152",
+   "gk": "MARENGO|60152",
+   "lat": 42.2501,
+   "lng": -88.6081,
+   "cost": 650,
+   "costNote": "Illinois rate. Out of state: $850.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-01",
+     "e": "2027-02-05",
+     "t": "Feb 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
+     "seats": "24 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
+   "contact": "(815) 568-8912",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-5-westchicag",
+   "cat": "officer",
+   "name": "Instructor III Blended",
+   "cert": "Fire Service Instructor III",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "West Chicago (hosted by West Chicago FPD)",
+   "address": "320 Kress Rd., West Chicago, IL 60185",
+   "gk": "WEST CHICAGO|60185",
+   "lat": 41.8848,
+   "lng": -88.204,
+   "cost": 675,
+   "costNote": "Illinois rate. Out of state: $875.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-01",
+     "e": "2027-03-05",
+     "t": "Feb 1–Mar 5, 2027 (3 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
+     "seats": "22 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=5",
+   "contact": "(630) 231-2123",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1171-crystallak",
+   "cat": "prev",
+   "name": "NFA Plans Review for Fire and Life Safety",
+   "cert": null,
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Crystal Lake (hosted by Crystal Lake FD)",
+   "address": "Crystal Lake FD, Crystal Lake, IL 60014",
+   "gk": "CRYSTAL LAKE|60014",
+   "lat": 42.2411,
+   "lng": -88.3162,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-01",
+     "e": "2027-02-06",
+     "t": "Feb 1–6, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700527&session=134373",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700527&session=134373",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1171",
+   "contact": "(815) 356-3643",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1090-addison",
+   "cat": "prev",
+   "name": "NFA Residential Sprinkler Plan Review",
+   "cert": null,
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Addison (hosted by Addison FPD)",
+   "address": "Addison FPD, Addison, IL 60101",
+   "gk": "ADDISON|60101",
+   "lat": 41.9317,
+   "lng": -87.989,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-08",
+     "e": "2027-02-09",
+     "t": "Feb 8–9, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
+     "seats": "4 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1090",
+   "contact": "(630) 628-3100",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1438-champaign",
+   "cat": "prev",
+   "name": "Youth Firesetting Prevention and Intervention Specialist",
+   "cert": "Youth Firesetter Intervention Specialist",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 250,
+   "costNote": "Illinois rate. Out of state: $450.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-18",
+     "e": "2027-02-19",
+     "t": "Feb 18–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700845&session=134796",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700845&session=134796",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-917-mountcarme",
+   "cat": "rescue",
+   "name": "Grain Bin Rescue Operations",
+   "cert": null,
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Mount Carmel (hosted by Mount Carmel FD)",
+   "address": "830 Walnut St., Mount Carmel, IL 62863",
+   "gk": "MOUNT CARMEL|62863",
+   "lat": 38.4109,
+   "lng": -87.7614,
+   "cost": 300,
+   "costNote": "Illinois rate. Out of state: $450.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-19",
+     "e": "2027-03-07",
+     "t": "Feb 19–Mar 7, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
+     "seats": "15 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=917",
+   "contact": "(618) 262-4311",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-4-oregon",
+   "cat": "officer",
+   "name": "Instructor II",
+   "cert": "Fire Service Instructor II",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Oregon (hosted by Oregon FD)",
+   "address": "100 W. Washington St., Oregon, IL 61061",
+   "gk": "OREGON|61061",
+   "lat": 42.0148,
+   "lng": -89.3323,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-20",
+     "e": "2027-02-28",
+     "t": "Feb 20–28, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
+     "seats": "6 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
+   "contact": "(815) 732-7214",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1015-orlandpark",
+   "cat": "rescue",
+   "name": "Rope Rescue Awareness and Operations",
+   "cert": "Rope Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 163rd Pl., Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 0,
+   "costNote": "Illinois rate. Out of state: $2,350.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-22",
+     "e": "2027-02-26",
+     "t": "Feb 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
+     "seats": "22 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1436-cicero",
+   "cat": "hazmat",
+   "name": "Pipeline Emergencies - First Responder Awareness",
+   "cert": null,
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "Cicero (hosted by Cicero FD)",
+   "address": "5303 W 25th St., Cicero, IL 60804",
+   "gk": "CICERO|60804",
+   "lat": 41.8455,
+   "lng": -87.754,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-23",
+     "e": "2027-02-23",
+     "t": "Feb 23, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700872&session=134836",
+     "seats": "23 seats left"
+    },
+    {
+     "s": "2027-02-24",
+     "e": "2027-02-24",
+     "t": "Feb 24, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700873&session=134837",
+     "seats": "24 seats left"
+    },
+    {
+     "s": "2027-02-25",
+     "e": "2027-02-25",
+     "t": "Feb 25, 2027, 8 a.m.–noon",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700874&session=134838",
+     "seats": "24 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700872&session=134836",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
+   "contact": "(708) 268-0616",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1607-champaign",
+   "cat": "ff",
+   "name": "Firefighter II / NFPA 1010 - Advanced Technician Firefighter",
+   "cert": "Advanced Technician Firefighter",
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1550,
+   "costNote": "Illinois rate. Out of state: $1,750.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-27",
+     "e": "2027-03-07",
+     "t": "Feb 27–Mar 7, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
+     "seats": "29 seats left"
+    },
+    {
+     "s": "2027-04-19",
+     "e": "2027-04-23",
+     "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700837&session=134779",
+     "seats": "34 seats left"
+    },
+    {
+     "s": "2027-10-11",
+     "e": "2027-10-15",
+     "t": "Oct 11–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800040&session=134780",
+     "seats": "34 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1607",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1507-champaign",
+   "cat": "prev",
+   "name": "Fire and Life Safety Educator I",
+   "cert": "Public Fire and Life Safety Educator I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 750,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-01",
+     "e": "2027-03-05",
+     "t": "Mar 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-149-plainfield",
+   "cat": "officer",
+   "name": "Fireground Command Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Plainfield (hosted by Plainfield FPD)",
+   "address": "23748 W 135th Street, Plainfield, IL 60544",
+   "gk": "PLAINFIELD|60544",
+   "lat": 41.6087,
+   "lng": -88.2054,
+   "cost": 1975,
+   "costNote": "Illinois rate. Out of state: $2,175.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-01",
+     "e": "2027-03-05",
+     "t": "Mar 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700827&session=134760"
+    },
+    {
+     "s": "2027-09-13",
+     "e": "2027-09-17",
+     "t": "Sep 13–17, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800033&session=134764"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700827&session=134760",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
+   "contact": "(815) 436-5335",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-148-plainfield",
+   "cat": "officer",
+   "name": "Fireground Company Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Plainfield (hosted by Plainfield FPD)",
+   "address": "23748 W 135th Street, Plainfield, IL 60544",
+   "gk": "PLAINFIELD|60544",
+   "lat": 41.6087,
+   "lng": -88.2054,
+   "cost": 1975,
+   "costNote": "Illinois rate. Out of state: $2,175.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-01",
+     "e": "2027-03-05",
+     "t": "Mar 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700826&session=134759",
+     "seats": "23 seats left"
+    },
+    {
+     "s": "2027-09-13",
+     "e": "2027-09-17",
+     "t": "Sep 13–17, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800032&session=134763",
+     "seats": "23 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700826&session=134759",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
+   "contact": "(815) 436-5335",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1100-champaign",
+   "cat": "ff",
+   "name": "Firefighter-II Challenge Exam - Skills Assessment",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 650,
+   "costNote": "Illinois rate. Out of state: $750.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-06",
+     "e": "2027-03-07",
+     "t": "Mar 6–7, 2027, 7 a.m.–6 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700860&session=134820",
+     "seats": "4 seats left"
+    },
+    {
+     "s": "2027-04-22",
+     "e": "2027-04-23",
+     "t": "Apr 22–23, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700861&session=134821",
+     "seats": "4 seats left"
+    },
+    {
+     "s": "2027-10-14",
+     "e": "2027-10-15",
+     "t": "Oct 14–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800051&session=134822",
+     "seats": "4 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700860&session=134820",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1100",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1003-orlandpark",
+   "cat": "rescue",
+   "name": "Confined Space Rescue Awareness and Operations",
+   "cert": "Confined Space Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 163rd Pl., Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 0,
+   "costNote": "Illinois rate. Out of state: $2,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-08",
+     "e": "2027-03-12",
+     "t": "Mar 8–12, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-570-golconda",
+   "cat": "ff",
+   "name": "Residential Building Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Golconda (hosted by Rural Pope County FPD)",
+   "address": "64 Franks Road, Golconda, IL 62938",
+   "gk": "GOLCONDA|62938",
+   "lat": 37.3673,
+   "lng": -88.4864,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-08",
+     "e": "2027-03-08",
+     "t": "Mar 8, 2027, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700923&session=134897",
+     "seats": "34 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700923&session=134897",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=570",
+   "contact": "(618) 949-3789",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-41-champaign",
+   "cat": "ff",
+   "name": "Engine Company Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 900,
+   "costNote": "Illinois rate. Out of state: $1,100.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-15",
+     "e": "2027-03-17",
+     "t": "Mar 15–17, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
+     "seats": "30 seats left"
+    },
+    {
+     "s": "2027-08-30",
+     "e": "2027-09-01",
+     "t": "Aug 30–Sep 1, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800037&session=134774",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=41",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-869-glenview",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Chief Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Glenview",
+   "address": "NIPSTA, Glenview, IL 60026",
+   "gk": "GLENVIEW|60026",
+   "lat": 42.0701,
+   "lng": -87.8114,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,700.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-22",
+     "e": "2027-03-26",
+     "t": "Mar 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
+     "seats": "6 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-871-glenview",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Fire Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Glenview",
+   "address": "NIPSTA, Glenview, IL 60026",
+   "gk": "GLENVIEW|60026",
+   "lat": 42.0701,
+   "lng": -87.8114,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,350.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-22",
+     "e": "2027-03-26",
+     "t": "Mar 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700794&session=134705",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700794&session=134705",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-870-glenview",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Firefighter Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Glenview",
+   "address": "NIPSTA, Glenview, IL 60026",
+   "gk": "GLENVIEW|60026",
+   "lat": 42.0701,
+   "lng": -87.8114,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $1,950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-22",
+     "e": "2027-03-26",
+     "t": "Mar 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700793&session=134704",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700793&session=134704",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1015-champaign",
+   "cat": "rescue",
+   "name": "Rope Rescue Awareness and Operations",
+   "cert": "Rope Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,350.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-22",
+     "e": "2027-03-26",
+     "t": "Mar 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700819&session=134740",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700819&session=134740",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1520-champaign",
+   "cat": "prev",
+   "name": "Fire Inspector",
+   "cert": "Fire Inspector I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 800,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-29",
+     "e": "2027-04-02",
+     "t": "Mar 29–Apr 2, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700846&session=134797",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700846&session=134797",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1317-elkgrovevi",
+   "cat": "prev",
+   "name": "NFA Fire Investigation: First Responders",
+   "cert": null,
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Elk Grove Village (hosted by Elk Grove Village FD)",
+   "address": "Elk Grove Fire Department Training Center, Elk Grove Village, IL 60007",
+   "gk": "ELK GROVE VILLAGE|60007",
+   "lat": 42.0036,
+   "lng": -88.0038,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-12",
+     "e": "2027-04-13",
+     "t": "Apr 12–13, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700718&session=134617",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700718&session=134617",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1317",
+   "contact": "(847) 734-8000",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1533-champaign",
+   "cat": "rescue",
+   "name": "Common Passenger Vehicle Rescue",
+   "cert": "Common Passenger Vehicle Rescue",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1700,
+   "costNote": "Illinois rate. Out of state: $1,900.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-19",
+     "e": "2027-04-23",
+     "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
+     "seats": "Full"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN. Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1533",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1016-frankfort",
+   "cat": "rescue",
+   "name": "Structural Collapse Rescue Awareness and Operations",
+   "cert": "Structural Collapse Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Frankfort (hosted by Orland FPD)",
+   "address": "24420 S. Lagrange Rd., Frankfort, IL 60423",
+   "gk": "FRANKFORT|60423",
+   "lat": 41.4979,
+   "lng": -87.8496,
+   "cost": 0,
+   "costNote": "Illinois rate. Out of state: $3,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-19",
+     "e": "2027-04-23",
+     "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
+     "seats": "21 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-692-rockford",
+   "cat": "ff",
+   "name": "Light and Fight - Off Campus",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Rockford (hosted by Cherry Valley FPD)",
+   "address": "4919 Blackhawk Rd., Rockford, IL 61109",
+   "gk": "ROCKFORD|61109",
+   "lat": 42.2714,
+   "lng": -89.094,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $325.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-24",
+     "e": "2027-04-24",
+     "t": "Apr 24, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700908&session=134882",
+     "seats": "33 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700908&session=134882",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=692",
+   "contact": "(815) 332-5382",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1003-champaign",
+   "cat": "rescue",
+   "name": "Confined Space Rescue Awareness and Operations",
+   "cert": "Confined Space Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-26",
+     "e": "2027-04-30",
+     "t": "Apr 26–30, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
+     "seats": "14 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-133-champaign",
+   "cat": "ff",
+   "name": "Smoke Divers (Advanced Breathing Apparatus Specialist)",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1450,
+   "costNote": "Illinois rate. Out of state: $1,650.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-27",
+     "e": "2027-04-29",
+     "t": "Apr 27–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700830&session=134767",
+     "seats": "33 seats left"
+    },
+    {
+     "s": "2027-09-08",
+     "e": "2027-09-10",
+     "t": "Sep 8–10, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800036&session=134768",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700830&session=134767",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=133",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1673-elkgrovevi",
+   "cat": "officer",
+   "name": "NFA - Politics and the White Helmet",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Elk Grove Village (hosted by Elk Grove Village FD)",
+   "address": "Elk Grove Fire Department Training Center, Elk Grove Village, IL 60007",
+   "gk": "ELK GROVE VILLAGE|60007",
+   "lat": 42.0036,
+   "lng": -88.0038,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-04",
+     "t": "May 3–4, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700719&session=134618",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700719&session=134618",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1673",
+   "contact": "(847) 734-8000",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1660-elgin",
+   "cat": "prev",
+   "name": "NFA Fire Investigation: Fire as a Weapon",
+   "cert": null,
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Elgin (hosted by Pingree Grove FPD)",
+   "address": "Pingree Grove FPD Station 1, Elgin, IL 60124",
+   "gk": "ELGIN|60124",
+   "lat": 42.0373,
+   "lng": -88.2811,
+   "cost": 0,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-06",
+     "e": "2027-05-07",
+     "t": "May 6–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700526&session=134372",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700526&session=134372",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1660",
+   "contact": "(847) 741-3151",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1518-orlandpark",
+   "cat": "rescue",
+   "name": "Rope Rescue Technician (1006 - Ch 5)",
+   "cert": "Rope Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 163rd Pl., Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 0,
+   "costNote": "Illinois rate. Out of state: $3,650.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-10",
+     "e": "2027-05-21",
+     "t": "May 10–21, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
+     "seats": "33 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1017-wilmington",
+   "cat": "rescue",
+   "name": "Trench Rescue Awareness and Operations",
+   "cert": "Trench Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI class in Wilmington",
+   "address": "19800 W. Arsenal Rd., Wilmington, IL 60481",
+   "gk": "WILMINGTON|60481",
+   "lat": 41.3079,
+   "lng": -88.1468,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,000.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-11",
+     "e": "2027-05-14",
+     "t": "May 11–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
+     "seats": "22 seats left"
+    },
+    {
+     "s": "2027-05-24",
+     "e": "2027-05-27",
+     "t": "May 24–27, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700822&session=134747",
+     "seats": "31 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1017",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-3-canton",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Canton (hosted by Canton FD/City of Canton FD)",
+   "address": "101 E. Spruce St., Canton, IL 61520",
+   "gk": "CANTON|61520",
+   "lat": 40.5581,
+   "lng": -90.0351,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-15",
+     "e": "2027-05-23",
+     "t": "May 15–23, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
+     "seats": "26 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(309) 647-0040",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1515-wilmington",
+   "cat": "rescue",
+   "name": "Trench Rescue Technician (1006 - Ch 12)",
+   "cert": "Trench Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Wilmington (hosted by Orland FPD)",
+   "address": "19800 W. Arsenal Rd., Wilmington, IL 60481",
+   "gk": "WILMINGTON|60481",
+   "lat": 41.3079,
+   "lng": -88.1468,
+   "cost": 0,
+   "costNote": "Illinois rate. Out of state: $2,375.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-06-21",
+     "e": "2027-06-25",
+     "t": "Jun 21–25, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
+     "seats": "23 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1029-champaign",
+   "cat": "prev",
+   "name": "Fire Investigator",
+   "cert": "Fire Investigator",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 2500,
+   "costNote": "Illinois rate. Out of state: $2,950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-07-19",
+     "e": "2027-08-20",
+     "t": "Jul 19–Aug 20, 2027 (3 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800044&session=134798",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800044&session=134798",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1324-orlandpark",
+   "cat": "other",
+   "name": "Small Unmanned Aircraft System (sUAS) Operations - NFPA 2400",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 163rd Pl., Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 1600,
+   "costNote": "Illinois rate. Out of state: $1,975.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-08-09",
+     "e": "2027-08-13",
+     "t": "Aug 9–13, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800029&session=134755",
+     "seats": "24 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800029&session=134755",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1324",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1610-orlandpark",
+   "cat": "app",
+   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
+   "cert": "Fire Apparatus Engineer",
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 163rd Place, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 850,
+   "costNote": "Illinois rate. Out of state: $1,200.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-08-16",
+     "e": "2027-08-20",
+     "t": "Aug 16–20, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800031&session=134758",
+     "seats": "24 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800031&session=134758",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-420-champaign",
+   "cat": "rescue",
+   "name": "Confined Space Rescue Technician",
+   "cert": "Confined Space Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,550.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-08-30",
+     "e": "2027-09-03",
+     "t": "Aug 30–Sep 3, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
+     "seats": "22 seats left"
+    },
+    {
+     "s": "2027-10-11",
+     "e": "2027-10-15",
+     "t": "Oct 11–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800024&session=134745",
+     "seats": "36 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=420",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1518-utica",
+   "cat": "rescue",
+   "name": "Rope Rescue Technician (1006 - Ch 5)",
+   "cert": "Rope Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI class in Utica",
+   "address": "2945 North Route 178, Utica, IL 61373",
+   "gk": "UTICA|61373",
+   "lat": 41.3406,
+   "lng": -89.0101,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $3,650.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-09-13",
+     "e": "2027-09-24",
+     "t": "Sep 13–24, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
+     "seats": "13 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1029-frankfort",
+   "cat": "prev",
+   "name": "Fire Investigator",
+   "cert": "Fire Investigator",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Frankfort (hosted by Frankfort FPD)",
+   "address": "24420 S. Lagrange Rd., Frankfort, IL 60423",
+   "gk": "FRANKFORT|60423",
+   "lat": 41.4979,
+   "lng": -87.8496,
+   "cost": 2500,
+   "costNote": "Illinois rate. Out of state: $2,950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-09-20",
+     "e": "2027-10-22",
+     "t": "Sep 20–Oct 22, 2027 (3 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
+   "contact": "(815) 469-1700",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1509-champaign",
+   "cat": "hazmat",
+   "name": "Hazardous Materials Technician (470 - Ch 11)",
+   "cert": "Hazardous Materials Technician",
+   "aka": "IFSI hazmat",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,975.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-09-20",
+     "e": "2027-10-01",
+     "t": "Sep 20–Oct 1, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
+     "seats": "32 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1509",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1441-champaign",
+   "cat": "rescue",
+   "name": "Structural Collapse Rescue Technician",
+   "cert": "Structural Collapse Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $3,475.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-09-27",
+     "e": "2027-10-01",
+     "t": "Sep 27–Oct 1, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
+     "seats": "27 seats left"
+    }
+   ],
+   "note": "Online registration asks for your fire chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1441",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-09"
+  },
+  {
+   "id": "ifsi-1520-orlandpark",
+   "cat": "prev",
+   "name": "Fire Inspector",
+   "cert": "Fire Inspector I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 W. 163rd Place, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 800,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800045&session=134801",
+     "seats": "28 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800045&session=134801",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-09"
   }
  ],
  "categories": {
@@ -1458,8 +5239,8 @@ window.LADDER_DATA = {
   },
   {
    "name": "Illinois Fire Service Institute (IFSI)",
-   "url": "https://www.fsi.illinois.edu/",
-   "note": "Statewide and regional certification courses."
+   "url": "https://www.fsi.illinois.edu/content/courses/schedule/schedule.cfm",
+   "note": "Every scheduled IFSI class is listed above and refreshed weekly. Most are tuition-free for Illinois fire department members, and many need your chief's PIN to register."
   },
   {
    "name": "OSFM Certification List",
