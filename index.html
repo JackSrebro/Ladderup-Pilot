@@ -1216,6 +1216,7 @@ function renderJoin(){
   $("#join-ext-h").textContent = j ? "You're on the List." : "Join the Free Pilot";
   $("#join-ext-p").textContent = j ? `Thanks, ${profile.name}. We'll email ${profile.email} with pilot updates.` : (profile ? "Add your email in your profile to join. It takes a few seconds." : "Joining is part of building your dashboard. It takes about a minute.");
   $("#join-ext-btn").hidden = !!j;
+  const cta = $(".head-cta"); if(cta) cta.hidden = !!j;
   const rp = $("#join-ext-resend-p");
   if(rp){ rp.hidden = !(j && SF && profile.email); if(!rp.hidden) $("#join-ext-resend").href = signupURL(profile) }
   $("#join-ext-btn").textContent = profile ? "Join the Pilot" : "Build My Dashboard and Join";
