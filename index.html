@@ -222,6 +222,12 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .path-b .why{font-size:14.5px;color:var(--ink-2);margin:0}
 .path-b .mini{margin-top:2px}
 .path-go{justify-self:start;font-size:14px}
+#rm-path{margin-bottom:22px}
+#rm-path .path{display:grid;gap:12px}
+.rm-h{font-size:18px;margin:0 0 12px}
+.path-peek{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.path-peek li{display:flex;gap:10px;align-items:center;font-size:15px}
+.path-peek .path-n{width:26px;height:26px;font-size:13px;flex:none}
 @media (max-width:560px){.opts{grid-template-columns:minmax(0,1fr)}}
 .cert-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
 .cert-form{border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px;background:var(--surface)}
@@ -467,12 +473,12 @@ html.lenis,html.lenis body{height:auto}
         <div class="app-bar"><b>Ladder Up</b><span id="area-note">Showing all listings</span><span class="upd" id="upd"></span></div>
         <div class="tabs" role="tablist" aria-label="Ladder Up tools" id="tabs" data-lenis-prevent-horizontal>
           <button class="tab" role="tab" id="tab-dash" aria-controls="p-dash" data-tab="dash">My Dashboard</button>
+          <button class="tab" role="tab" id="tab-roadmap" aria-controls="p-roadmap" data-tab="roadmap">My Roadmap</button>
           <button class="tab" role="tab" id="tab-classes" aria-controls="p-classes" data-tab="classes">Class Finder</button>
           <button class="tab" role="tab" id="tab-jobs" aria-controls="p-jobs" data-tab="jobs">Job Board<span class="n" id="jobs-n"></span></button>
           <button class="tab" role="tab" id="tab-ce" aria-controls="p-ce" data-tab="ce">Continuing Ed</button>
           <button class="tab" role="tab" id="tab-depts" aria-controls="p-depts" data-tab="depts">Departments</button>
           <button class="tab" role="tab" id="tab-funding" aria-controls="p-funding" data-tab="funding">Funding</button>
-          <button class="tab" role="tab" id="tab-roadmap" aria-controls="p-roadmap" data-tab="roadmap">My Roadmap</button>
           <button class="tab" role="tab" id="tab-certs" aria-controls="p-certs" data-tab="certs">My Certifications</button>
           <button class="tab" role="tab" id="tab-kit" aria-controls="p-kit" data-tab="kit">First Shift Kit</button>
         </div>
@@ -643,7 +649,9 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-roadmap" aria-labelledby="tab-roadmap" hidden>
-          <div class="pintro"><h3>My Roadmap</h3><p>Pick the rung you're on and check off steps. Progress saves in this browser.</p></div>
+          <div class="pintro"><h3>My Roadmap</h3><p>Your recommended path, built from your answers, followed by every rung of the ladder. Pick the rung you're on and check off steps as you go.</p></div>
+          <div id="rm-path"></div>
+          <h4 class="rm-h">The Full Ladder</h4>
           <div class="rm"><ol class="rm-list" id="rm-list"></ol><div id="rm-detail"></div></div>
         </div>
 
@@ -753,7 +761,7 @@ function setZip(z){
 function goTo(el){ if(window.__lenis) window.__lenis.scrollTo(el, { offset: -72 }); else el.scrollIntoView(); }
 
 /* Tabs */
-const TABS = ["dash","classes","jobs","ce","depts","funding","roadmap","certs","kit"];
+const TABS = ["dash","roadmap","classes","jobs","ce","depts","funding","certs","kit"];
 function showTab(t, focus){
   if(!TABS.includes(t)) t = "dash";
   if(!profile && t !== "dash"){ t = "dash"; if(typeof openProfileForm === "function") setTimeout(() => { if($("#prof-form").hidden) openProfileForm() }, 0) }
@@ -1335,12 +1343,12 @@ function buildPath(p){
   }
   return steps;
 }
-function renderPath(){
-  if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="d-retake" style="justify-self:start">Answer the Questions</button></div>`;
+function renderPath(rid = "rm-retake"){
+  if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="${rid}" style="justify-self:start">Answer the Questions</button></div>`;
   const steps = buildPath(profile), have = (profile.certs||[]).filter(k => CERT[k]);
   const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : "", profile.schedule==="nights"?"Nights and Weekends":"", profile.age==="u18"?"Under 18":""].filter(Boolean).join(" · ");
   const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b)}</a></div></li>`;
-  return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="d-retake">Retake questions</button></div>
+  return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="${rid}">Retake Questions</button></div>
     <p class="path-sum">${esc(sum)}</p>
     ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
     ${steps.length ? `<ol class="path-list">${steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}"><span class="path-n">${n+1}</span><div class="path-b">
@@ -1350,8 +1358,28 @@ function renderPath(){
     </div></li>`).join("")}</ol>` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
 }
+/* Dashboard shows a short preview; the full recommended path lives on the My Roadmap tab */
+function renderPathPeek(){
+  if(!profile.stage) return renderPath("d-retake");
+  const steps = buildPath(profile);
+  const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : ""].filter(Boolean).join(" · ");
+  return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" data-go2="roadmap">See your full roadmap</button></div>
+    <p class="path-sum">${esc(sum)}</p>
+    ${steps.length ? `<ol class="path-peek">${steps.slice(0,3).map((st,n)=>`<li><span class="path-n">${n+1}</span><span>${esc(st.t)}</span></li>`).join("")}</ol>${steps.length>3?`<p class="path-sum">Plus ${steps.length-3} more step${steps.length-3===1?"":"s"} on your roadmap.</p>`:""}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+  </div>`;
+}
+function renderRmPath(){
+  const el = $("#rm-path"); if(!el) return;
+  if(!profile){ el.innerHTML = `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Build your free dashboard and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="rm-start" style="justify-self:start">Build My Dashboard</button></div>`;
+    $("#rm-start").onclick = () => { openProfileForm(); goTo($("#tools")) }; return }
+  el.innerHTML = renderPath("rm-retake");
+  const rt = $("#rm-retake"); if(rt) rt.onclick = () => { openProfileForm(); goTo($("#tools")) };
+  el.querySelectorAll("[data-more]").forEach(b => b.onclick = () => { el.querySelectorAll(`[data-more-of="${b.dataset.more}"]`).forEach(x => x.hidden = false); b.remove() });
+  el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
+}
 function renderDash(){
   const el = $("#dash");
+  renderRmPath();
   if(!profile){ el.hidden = true; if(window.LU && window.LU.gate && window.LU.gate({quiet:true})) return; if($("#prof-form").hidden){ fillProfileForm(); $("#prof-form").hidden = false } return }
   if(!$("#prof-form").hidden) return;
   el.hidden = false;
@@ -1392,7 +1420,7 @@ function renderDash(){
       <div class="kpi"><b style="color:var(--red-ink)">${ready.length}</b><small>Open jobs you meet the listed requirements for</small></div>
       <div class="kpi"><b>${dl.length ? (daysTo(dl[0].d)===0?"Today":daysTo(dl[0].d)+" days") : "None"}</b><small>${dl.length ? "Until the "+esc(dl[0].t) : "No dated deadlines coming up"}</small></div>
     </div>
-    ${renderPath()}
+    ${renderPathPeek()}
     <div class="dash-cols">
       <div class="dcard"><div class="dcard-h"><h4>Your Next Steps</h4><button type="button" class="linkish" data-go2="roadmap">Open roadmap</button></div>
         <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label>${s.done?"":cpatStepLink(s.s)}</li>`).join("")}</ul>
