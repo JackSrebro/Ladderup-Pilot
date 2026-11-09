@@ -185,6 +185,15 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .acct-link:hover{color:var(--ink)}
 @media (max-width:420px){.acct-link{display:none!important}}
 .start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.au-names{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.au-names > div{display:grid;gap:6px}
+@media (max-width:380px){.au-names{grid-template-columns:1fr}}
+.gate h4{margin:0;font-size:20px}
+.gate .qz-sub{margin:0}
+.gate .start-login{margin:0}
+.gate-btns{display:flex;gap:12px;flex-wrap:wrap}
+.gate-btns .btn{flex:1 1 220px;justify-content:center}
+.gate-wait{margin:0;padding:12px 14px;border-radius:8px;background:var(--surface);border:1px solid var(--line);font-size:14.5px}
 .qz-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
 .qz-count{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
 .qz-bar{height:5px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:-6px}
@@ -421,8 +430,8 @@ html.lenis,html.lenis body{height:auto}
       <div class="start" id="hero-start">
         <p class="eyebrow">Start here</p>
         <h2>Build Your Free Dashboard</h2>
-        <p>Answer a few quick questions and Ladder Up shows the jobs you qualify for, the classes for your next step, continuing education, your deadlines and funding. No account needed.</p>
-        <div class="start-row"><button type="button" class="btn btn-red" id="start-btn">Build My Dashboard</button><span class="hint">Takes about a minute. No account needed.</span></div>
+        <p>Create a free account, answer a few quick questions, and Ladder Up shows the jobs you qualify for, the classes for your next step, continuing education, your deadlines and funding.</p>
+        <div class="start-row"><button type="button" class="btn btn-red" id="start-btn">Build My Dashboard</button><span class="hint">Free. Takes about a minute.</span></div>
         <p class="start-login" id="start-login" hidden>Already have an account? <button type="button" class="linkish" data-auth="login">Log in</button></p>
       </div>
       <form class="zsearch" id="hs-form" novalidate>
@@ -470,6 +479,13 @@ html.lenis,html.lenis body{height:auto}
         <h2 class="vh" id="tools-h">Tools</h2>
 
         <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="tab-dash" hidden>
+          <div class="prof gate" id="pf-gate" hidden>
+            <h4>Create Your Free Account First</h4>
+            <p class="qz-sub">Your account keeps your dashboard, roadmap progress, saved items and certifications on any phone or computer. Next, a few quick questions build a path that fits your situation.</p>
+            <div class="gate-btns"><button type="button" class="btn btn-line auth-google" id="gate-google" hidden><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue With Google</button><button type="button" class="btn btn-red" data-auth="signup" id="gate-email">Create Account With Email</button></div>
+            <p class="gate-wait" id="gate-wait" hidden></p>
+            <p class="start-login">Already have an account? <button type="button" class="linkish" data-auth="login">Log in</button></p>
+          </div>
           <form class="prof quiz" id="prof-form" novalidate hidden>
             <div class="qz-head"><h4 id="prof-h">Set Up Your Dashboard</h4><span class="qz-count" id="qz-count"></span></div>
             <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
@@ -528,7 +544,8 @@ html.lenis,html.lenis body{height:auto}
               <p class="qz-q">Last step: who are you?</p>
               <p class="qz-sub">If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
               <div class="prof-grid">
-                <div class="field"><label class="lbl" for="pf-name">First and last name</label><input class="tinput" id="pf-name" autocomplete="name" maxlength="60"></div>
+                <div class="field"><label class="lbl" for="pf-first">First name</label><input class="tinput" id="pf-first" autocomplete="given-name" maxlength="40"></div>
+                <div class="field"><label class="lbl" for="pf-last">Last name</label><input class="tinput" id="pf-last" autocomplete="family-name" maxlength="40"></div>
                 <div class="field"><label class="lbl" for="pf-email">Email</label><input class="tinput" id="pf-email" type="email" autocomplete="email" maxlength="120"></div>
               </div>
               <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you.</span></label>
@@ -1036,10 +1053,13 @@ function nextType(p){
 }
 function inRange(mi){ const r = profile ? +profile.radius : 0; return !r || mi==null || mi <= r }
 
+const clean = v => v.trim().replace(/\s+/g," ");
+const splitName = n => { n = clean(n || ""); const i = n.indexOf(" "); return i < 0 ? [n, ""] : [n.slice(0,i), n.slice(i+1)] };
+const pfFull = () => { const f = clean($("#pf-first").value), l = clean($("#pf-last").value); return f && l ? f + " " + l : "" };
 function fillProfileForm(){
   const acct = (!profile && window.LU && window.LU.account) ? window.LU.account() : null;
   const p = profile || {name:"", fullName: acct ? acct.name : "", email: acct ? acct.email : "", zip: zip || "", radius:"30", goal:"ffpm", rung:1, certs:[]};
-  $("#pf-name").value = p.fullName || p.name; $("#pf-email").value = p.email || "";
+  { const nm = p.firstName ? [p.firstName, p.lastName || ""] : splitName(p.fullName || p.name); $("#pf-first").value = nm[0]; $("#pf-last").value = nm[1] } $("#pf-email").value = p.email || "";
   $("#pf-join-row").hidden = !!(profile && profile.joined); $("#pf-join").checked = !(profile && profile.joined); $("#pf-zip").value = p.zip; $("#pf-radius").value = String(p.radius);
   $("#pf-goal").value = p.goal; $("#pf-rung").value = String(p.rung);
   $$("[data-cert]").forEach(c => c.checked = p.certs.includes(c.dataset.cert));
@@ -1050,7 +1070,7 @@ function fillProfileForm(){
 function zipNote(){ const z = $("#pf-zip").value.trim(); const o = D.zips[z];
   $("#pf-zip-note").textContent = z.length<5 ? "" : o ? o[2] : "Outside the pilot area. We'll show everything." }
 $("#pf-zip").addEventListener("input", zipNote);
-function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); qzFocus() }
+function openProfileForm(){ if(window.LU && window.LU.gate && window.LU.gate()) return; $("#pf-gate").hidden = true; fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); qzFocus() }
 $("#pf-cancel").addEventListener("click", () => { $("#prof-form").hidden = true; $("#dash").hidden = false });
 /* Setup questionnaire: one question group per screen. Hired firefighters get a shorter branch. */
 const STAGES = {
@@ -1150,19 +1170,19 @@ function signupURL(p){
   return D.signupForm.replace(/viewform.*$/, "formResponse") + "?" + q.toString();
 }
 function saveProfile(e){
-  const fullName = $("#pf-name").value.trim().replace(/\s+/g," "), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim(), err = $("#pf-err");
+  const fullName = pfFull(), first = clean($("#pf-first").value), last = clean($("#pf-last").value), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim(), err = $("#pf-err");
   const join = !$("#pf-join-row").hidden && $("#pf-join").checked && !!SF;
   const badEmail = (join || email) && !/^\S+@\S+\.\S+$/.test(email);
-  $("#pf-name").setAttribute("aria-invalid", !fullName); $("#pf-zip").setAttribute("aria-invalid", !/^\d{5}$/.test(z)); $("#pf-email").setAttribute("aria-invalid", !!badEmail);
+  $("#pf-first").setAttribute("aria-invalid", !first); $("#pf-last").setAttribute("aria-invalid", !last); $("#pf-zip").setAttribute("aria-invalid", !/^\d{5}$/.test(z)); $("#pf-email").setAttribute("aria-invalid", !!badEmail);
   if(!fullName || !/^\d{5}$/.test(z) || badEmail){
     e.preventDefault();
-    err.textContent = join ? "Add your name, a valid email and a 5-digit ZIP." : "Add your name and a 5-digit ZIP."; err.hidden = false; return;
+    err.textContent = join ? "Add your first name, last name, a valid email and a 5-digit ZIP." : "Add your first name, last name and a 5-digit ZIP."; err.hidden = false; return;
   }
   const acctErr = (window.LU && window.LU.validateForm) ? window.LU.validateForm() : null;
   if(acctErr){ e.preventDefault(); err.textContent = acctErr; err.hidden = false; return }
   err.hidden = true;
   const prev = profile || {};
-  profile = { name: fullName.split(" ")[0], fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
+  profile = { name: first, firstName: first, lastName: last, fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
               certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined,
               stage: QA.stage || null, timeline: QA.timeline || null, schedule: QA.schedule || null, pay: QA.pay || null,
               age: QA.age || null, veteran: QA.veteran || null, focus: QA.focus || [] };
@@ -1178,7 +1198,7 @@ function saveProfile(e){
 function presetSaveHref(){
   const btn = $("#pf-save"); if(!btn) return;
   const join = !$("#pf-join-row").hidden && $("#pf-join").checked && !!SF;
-  const fullName = $("#pf-name").value.trim().replace(/\s+/g," "), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim();
+  const fullName = pfFull(), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim();
   const ok = fullName && /^\d{5}$/.test(z) && /^\S+@\S+\.\S+$/.test(email);
   if(join && ok){
     const tmp = { fullName, email, zip: z, rung: +$("#pf-rung").value, certs: $$("[data-cert]:checked").map(c => c.dataset.cert) };
@@ -1324,7 +1344,7 @@ function renderPath(){
 }
 function renderDash(){
   const el = $("#dash");
-  if(!profile){ el.hidden = true; if($("#prof-form").hidden){ fillProfileForm(); $("#prof-form").hidden = false } return }
+  if(!profile){ el.hidden = true; if(window.LU && window.LU.gate && window.LU.gate({quiet:true})) return; if($("#prof-form").hidden){ fillProfileForm(); $("#prof-form").hidden = false } return }
   if(!$("#prof-form").hidden) return;
   el.hidden = false;
   const o = D.zips[profile.zip], r = RUNGS[profile.rung-1] || RUNGS[0];
@@ -1610,8 +1630,10 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
     <div class="auth-or"><span>or</span></div>
   </div>
   <form id="auth-form" novalidate>
-    <label class="lbl" for="au-name" data-show="signup">Name</label>
-    <input class="tinput" id="au-name" autocomplete="name" maxlength="80" data-show="signup">
+    <div class="au-names" data-show="signup">
+      <div><label class="lbl" for="au-first">First name</label><input class="tinput" id="au-first" autocomplete="given-name" maxlength="40"></div>
+      <div><label class="lbl" for="au-last">Last name</label><input class="tinput" id="au-last" autocomplete="family-name" maxlength="40"></div>
+    </div>
     <label class="lbl" for="au-email" data-show="login signup forgot">Email</label>
     <input class="tinput" id="au-email" type="email" autocomplete="email" maxlength="120" data-show="login signup forgot">
     <label class="lbl" for="au-pw" data-show="login signup reset" id="au-pw-l">Password</label>
@@ -1640,6 +1662,8 @@ const esc = s => String(s==null?"":s).replace(/[&<>"']/g, c => ({"&":"&amp;","<"
 const ls = { get(k){ try{ return localStorage.getItem("lu:"+k) }catch(e){ return null } }, set(k,v){ try{ localStorage.setItem("lu:"+k,v) }catch(e){} }, del(k){ try{ localStorage.removeItem("lu:"+k) }catch(e){} } };
 const ss = { get(k){ try{ return sessionStorage.getItem(k) }catch(e){ return null } }, set(k,v){ try{ sessionStorage.setItem(k,v) }catch(e){} } };
 
+const clean = v => v.trim().replace(/\s+/g," ");
+const splitName = n => { n = clean(n || ""); const i = n.indexOf(" "); return i < 0 ? [n, ""] : [n.slice(0,i), n.slice(i+1)] };
 function toast(msg){ const t = document.createElement("div"); t.className = "lu-toast"; t.setAttribute("role","status"); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200) }
 function niceErr(e){
   const m = String((e && e.message) || "").trim();
@@ -1651,11 +1675,31 @@ function niceErr(e){
 }
 
 async function main(){
-  let I, settings;
-  try { I = await import("https://cdn.jsdelivr.net/npm/@netlify/identity@2.0.0/+esm") } catch(e){ return }
-  try { settings = await I.getSettings() } catch(e){ return }   // Identity is off: keep the site exactly as it was.
-
+  let I, settings, ready = false, wantDlg = false;
   let user = null, pushT = null, mode = "login";
+  // An account comes first: until someone logs in, the dashboard tab shows the account step instead of the questionnaire.
+  const gate = $("#pf-gate");
+  function gateUI(){
+    $("#gate-google").hidden = !(ready && settings && settings.providers && settings.providers.google);
+    const pend = ls.get("pendingAcct"), w = $("#gate-wait");
+    w.hidden = !pend;
+    if(pend) w.innerHTML = `We sent a confirmation link to <b>${esc(pend)}</b>. Open it on this device and you'll come right back here to build your dashboard. It comes from Netlify, so check your spam folder if you don't see it.`;
+  }
+  LU.gate = (o) => {
+    if(user) return false;
+    const ev = window.event, explicit = !(o && o.quiet) && ev && (ev.type === "click" || ev.type === "submit");
+    if(!ls.get("profile")){
+      $("#prof-form").hidden = true; $("#dash").hidden = true; gate.hidden = false; gateUI();
+      if(!(o && o.quiet) && LU.showTab) LU.showTab("dash");
+    }
+    if(explicit){ if(ready) openDlg(ls.get("pendingAcct") ? "login" : "signup", true); else wantDlg = true }
+    return true;
+  };
+  const ungate = () => { LU.gate = null; if(!gate.hidden){ gate.hidden = true; if(!ls.get("profile") && LU.openProfileForm) LU.openProfileForm() } };
+  if(!ls.get("profile")) LU.gate({ quiet: true });
+  try { I = await import("https://cdn.jsdelivr.net/npm/@netlify/identity@2.0.0/+esm") } catch(e){ ungate(); return }
+  try { settings = await I.getSettings() } catch(e){ ungate(); return }   // Identity is off: keep the site exactly as it was.
+
   const dlg = $("#auth-dlg"), btn = $("#acct-btn");
 
   const snapshot = () => { const d = {}; SYNC.forEach(k => { const v = ls.get(k); if(v != null) d[k] = v }); return d };
@@ -1732,6 +1776,8 @@ async function main(){
   function refresh(){
     btn.hidden = false; btn.textContent = user ? "Account" : "Log In";
     if(user) ls.del("pendingAcct");
+    if(user && !gate.hidden){ gate.hidden = true; if(!ls.get("profile") && LU.openProfileForm) LU.openProfileForm() }
+    else if(!gate.hidden) gateUI();
     if(!$("#prof-form").hidden) formAcctUI();
     const sl = $("#start-login"); if(sl) sl.hidden = !!user;
     if(LU.rerender) LU.rerender();
@@ -1754,32 +1800,34 @@ async function main(){
     if(m === "account") $("#au-who").innerHTML = `Logged in as <b>${esc(user && user.email)}</b>.`;
     $("#au-err").hidden = true; $("#au-ok").hidden = true;
   }
-  function openDlg(m){
+  function openDlg(m, gated){
     setMode(user && m !== "reset" ? "account" : m);
-    try { const p = JSON.parse(ls.get("profile") || "null"); if(p){ if(!$("#au-name").value) $("#au-name").value = p.fullName || p.name || ""; if(!$("#au-email").value) $("#au-email").value = p.email || "" } } catch(e){}
+    if(gated && !user && (m === "signup" || m === "login")){ $("#auth-sub").hidden = false; $("#auth-sub").textContent = m === "signup" ? "Create your free account first. Then a few quick questions build your dashboard." : "Log in first. Then a few quick questions build your dashboard." }
+    try { const p = JSON.parse(ls.get("profile") || "null"); if(p){ if(!$("#au-first").value){ const nm = p.firstName ? [p.firstName, p.lastName || ""] : splitName(p.fullName || p.name); $("#au-first").value = nm[0]; $("#au-last").value = nm[1] } if(!$("#au-email").value) $("#au-email").value = p.email || "" } } catch(e){}
     if(!dlg.open) dlg.showModal();
-    const f = mode === "signup" ? $("#au-name") : (mode === "reset" ? $("#au-pw") : (mode === "account" ? $("#au-logout") : $("#au-email")));
+    const f = mode === "signup" ? $("#au-first") : (mode === "reset" ? $("#au-pw") : (mode === "account" ? $("#au-logout") : $("#au-email")));
     setTimeout(() => f && f.focus(), 30);
   }
   const fail = msg => { const e = $("#au-err"); e.textContent = msg; e.hidden = false; $("#au-ok").hidden = true };
   const okMsg = msg => { const o = $("#au-ok"); o.textContent = msg; o.hidden = false; $("#au-err").hidden = true };
 
   btn.addEventListener("click", () => openDlg("login"));
-  document.addEventListener("click", e => { const a = e.target.closest("[data-auth]"); if(a){ e.preventDefault(); openDlg(a.dataset.auth) } });
+  document.addEventListener("click", e => { const a = e.target.closest("[data-auth]"); if(a){ e.preventDefault(); openDlg(a.dataset.auth, !!a.closest("#pf-gate")) } });
   $$("#auth-tabs [data-mode]").forEach(b => b.addEventListener("click", () => setMode(b.dataset.mode)));
   $("#au-forgot").addEventListener("click", () => setMode("forgot"));
   $("#au-back").addEventListener("click", () => setMode("login"));
+  $("#gate-google").addEventListener("click", () => { try { I.oauthLogin("google") } catch(e){ toast(niceErr(e)) } });
   $("#auth-google").addEventListener("click", () => { try { I.oauthLogin("google") } catch(e){ fail(niceErr(e)) } });
   dlg.addEventListener("click", e => { if(e.target === dlg) dlg.close() });
 
   $("#auth-form").addEventListener("submit", async e => {
     e.preventDefault();
-    const name = $("#au-name").value.trim(), email = $("#au-email").value.trim(), pw = $("#au-pw").value;
+    const first = clean($("#au-first").value), last = clean($("#au-last").value), name = first && last ? first + " " + last : "", email = $("#au-email").value.trim(), pw = $("#au-pw").value;
     const sb = $("#au-submit"), label = sb.textContent;
     if(mode !== "reset" && !/^\S+@\S+\.\S+$/.test(email)) return fail("Enter a valid email address.");
     if((mode === "signup" || mode === "reset") && pw.length < 8) return fail("Use a password with at least 8 characters.");
     if(mode === "login" && !pw) return fail("Enter your password.");
-    if(mode === "signup" && !name) return fail("Enter your name.");
+    if(mode === "signup" && (!first || !last)) return fail("Enter your first and last name.");
     sb.disabled = true; sb.textContent = "One moment…";
     try {
       if(mode === "login"){
@@ -1787,9 +1835,9 @@ async function main(){
         if(await syncOnLogin(u)) return;
         dlg.close(); refresh(); toast("You're logged in. Your dashboard now saves to your account."); startIfNew();
       } else if(mode === "signup"){
-        const u = await I.signup(email, pw, { full_name: name });
+        const u = await I.signup(email, pw, { full_name: name, first_name: first, last_name: last });
         if(settings.autoconfirm && u){ if(await syncOnLogin(u)) return; dlg.close(); refresh(); toast("Account created. Your dashboard now saves to your account."); startIfNew() }
-        else okMsg("Almost done. We sent a confirmation link to " + email + ". Open it on this device to finish. It comes from Netlify, so check your spam folder if you don't see it.");
+        else { ls.set("pendingAcct", email); if(!gate.hidden) gateUI(); okMsg("Almost done. We sent a confirmation link to " + email + ". Open it on this device to finish. It comes from Netlify, so check your spam folder if you don't see it.") }
       } else if(mode === "forgot"){
         await I.requestPasswordRecovery(email);
         okMsg("If an account exists for " + email + ", a reset link is on its way. Check your spam folder too.");
@@ -1809,6 +1857,7 @@ async function main(){
     location.reload();
   });
 
+  ready = true; if(!gate.hidden) gateUI(); if(wantDlg && !user) openDlg(ls.get("pendingAcct") ? "login" : "signup", true);
   // Links from emails (confirm, reset) and the return from Google land here.
   try {
     const r = await I.handleAuthCallback();
