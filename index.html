@@ -71,6 +71,8 @@ button,input,select{font:inherit;color:inherit}
 .chip{display:inline-flex;align-items:center;gap:6px;font:600 12px/1 var(--f-body);padding:5px 8px;border-radius:999px;white-space:nowrap;background:var(--sunk);color:var(--ink-2);border:1px solid var(--line)}
 .chip-good{background:var(--good-wash);color:var(--good);border-color:transparent}
 .chip-warn{background:var(--warn-wash);color:var(--warn);border-color:transparent}
+.chip-type-pt{background:color-mix(in srgb,#2f80ed 12%,transparent);color:#1f5fb8;border-color:transparent}
+.chip-type-ft{background:var(--sunk);color:var(--ink-2)}
 .chip-red{background:var(--red-wash);color:var(--red-ink);border-color:transparent}
 .dist{font-family:var(--f-mono);font-weight:600;font-size:12.5px}
 .stripe{height:6px;background:repeating-linear-gradient(-45deg,var(--red) 0 11px,var(--lime) 11px 22px)}
@@ -686,9 +688,10 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-jobs" aria-labelledby="tab-jobs" hidden>
-          <div class="pintro"><h3>Job Board</h3><p>Open full-time firefighter postings, soonest deadline first. Every listing links straight to its application and to the posting we pulled it from.</p></div>
+          <div class="pintro"><h3>Job Board</h3><p>Open full-time and part-time firefighter postings, soonest deadline first. Part-time and paid-on-call jobs are a common first fire job once you have your EMT license and Basic Operations Firefighter. Every listing links straight to its application and to the posting we pulled it from.</p></div>
           <div class="controls">
             <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
+            <div class="field"><span class="lbl" id="jb-type-l">Job type</span><div class="seg" id="jb-type" role="group" aria-labelledby="jb-type-l"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="full" aria-pressed="false">Full-Time</button><button type="button" data-v="part" aria-pressed="false">Part-Time</button></div></div>
             <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
             <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-dated"><span>Only postings with a deadline</span></label>
           </div>
@@ -941,19 +944,21 @@ function renderClasses(){
 
 /* Jobs */
 ["#jb-sort","#jb-dated"].forEach(s => $(s).addEventListener("change", renderJobs));
+let jbType = "all"; seg("#jb-type", v => { jbType = v; renderJobs() });
+const isPart = j => j.type === "part";
 function liveJobs(){ return D.jobs.filter(j => !j.deadline || daysTo(j.deadline) >= 0) }
 function renderJobs(){
-  let rows = liveJobs().filter(j => !$("#jb-dated").checked || j.deadline).map(j => ({...j, mi: miles(j.lat,j.lng)}));
+  let rows = liveJobs().filter(j => jbType==="all" || (jbType==="part") === isPart(j)).filter(j => !$("#jb-dated").checked || j.deadline).map(j => ({...j, mi: miles(j.lat,j.lng)}));
   const s = $("#jb-sort").value;
-  rows.sort((a,b) => s==="pay" ? ((b.pay??0)-(a.pay??0)) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
+  rows.sort((a,b) => s==="pay" ? ((b.pay??(b.payHr?b.payHr*2080:0))-(a.pay??(a.payHr?a.payHr*2080:0))) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
     : ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6)));
   $("#jobs-n").textContent = liveJobs().length;
   $("#jb-list").innerHTML = rows.length ? rows.map(j => { const d = j.deadline ? daysTo(j.deadline) : null;
-    const chip = d==null ? `<span class="chip">No deadline posted</span>` : `<span class="chip ${d<=14?"chip-red":"chip-warn"}">${d===0?"Due today":d===1?"1 day left":d+" days left"}</span>`;
+    const chip = d==null ? `<span class="chip">${isPart(j) ? "Rolling" : "No deadline posted"}</span>` : `<span class="chip ${d<=14?"chip-red":"chip-warn"}">${d===0?"Due today":d===1?"1 day left":d+" days left"}</span>`;
     return `<article class="card">
       <div><h4>${esc(j.title)}</h4><p class="who">${esc(j.dept)} · ${esc(j.city)}</p>
-        <div class="meta">${chip}${qualChip(j)}${j.fee===0?`<span class="chip chip-good">Free test</span>`:""}${distTxt(j.mi)}</div></div>
-      <div class="right">${j.pay?`<span class="money">${fmt$(j.pay)}</span><small>Starting pay</small>`:`<small>Pay not posted</small>`}</div>
+        <div class="meta"><span class="chip ${isPart(j)?"chip-type-pt":"chip-type-ft"}">${isPart(j)?"Part-Time":"Full-Time"}</span>${chip}${j.status==="check"?`<span class="chip chip-warn">Call to confirm it's open</span>`:""}${qualChip(j)}${j.fee===0?`<span class="chip chip-good">Free test</span>`:""}${distTxt(j.mi)}</div></div>
+      <div class="right">${j.pay?`<span class="money">${fmt$(j.pay)}</span><small>Starting pay</small>`:j.payHr?`<span class="money">$${j.payHr}/hr</span><small>Starting pay</small>`:`<small>Pay not posted</small>`}</div>
       <div class="kv">
         <div><span>Deadline</span><p>${j.deadline?fmtDate(j.deadline)+". ":""}${esc(j.deadlineNote||"")}</p></div>
         ${j.payNote?`<div><span>Pay details</span><p>${esc(j.payNote)}</p></div>`:""}
@@ -961,7 +966,7 @@ function renderJobs(){
         ${j.applyTip?`<div style="grid-column:1/-1"><span>How to apply</span><p>${esc(j.applyTip)}</p></div>`:""}
       </div>
       <div class="acts"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a><a class="btn btn-quiet btn-sm" href="${esc(j.source)}" target="_blank" rel="noopener">View posting · ${esc(j.sourceName)}</a>${starBtn(j.id)}</div>
-    </article>` }).join("") : `<p class="empty">No open postings match right now.</p>`;
+    </article>` }).join("") : `<p class="empty">No open ${jbType==="part"?"part-time ":jbType==="full"?"full-time ":""}postings match right now.</p>`;
 }
 
 /* Continuing education */
@@ -1380,9 +1385,15 @@ function pathCE(f){
     .sort((a,b) => (a.nx?daysTo(a.nx.s):1e6)-(b.nx?daysTo(b.nx.s):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3)
     .map(c => ({t:c.name, m:`${c.provider}${c.nx?` · Next: ${c.nx.t}`:" · Dates not posted"}${c.cost!=null?` · ${fmt$(c.cost)}`:""}`, mi:c.mi, url:c.register||c.url, b:"Register"}));
 }
+function partTimeItems(p){
+  return liveJobs().filter(isPart).map(j => ({...j, mi: miles(j.lat,j.lng), miss: missingFor(j)}))
+    .sort((a,b) => ((a.miss&&a.miss.includes("medic"))?1:0)-((b.miss&&b.miss.includes("medic"))?1:0) || (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9))
+    .map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.payHr?`$${j.payHr}/hr · `:""}${j.status==="check"?"Call to confirm it's open":(j.deadlineNote||"").replace(/\.$/,"")}`, mi:j.mi, url:j.apply, b:"Apply",
+      chip: j.miss && j.miss.includes("medic") ? "Needs Paramedic" : ""}));
+}
 function buildPath(p){
   const c = new Set(p.certs || []), g = goalOf(p), ff = g==="ffpm" || g==="ffemt", steps = [];
-  const known = liveJobs().filter(j => j.needs), kn = known.length, need = k => known.filter(j => j.needs.includes(k)).length;
+  const known = liveJobs().filter(j => j.needs && !isPart(j)), kn = known.length, need = k => known.filter(j => j.needs.includes(k)).length;
   const reqLine = (n, what) => kn ? `${n} of the ${kn} open postings in the area that list requirements need ${what}.` : "";
   if(STAGES[p.stage] && STAGES[p.stage].hired){
     if(p.stage==="probation") steps.push({id:"probation", t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
@@ -1415,6 +1426,11 @@ function buildPath(p){
       items: pathPrograms("medic", p)});
   };
   if(ff && !c.has("ffii")) steps.push({id:"academy", t:"Complete a Fire Academy", why:`${reqLine(need("ffii"), "Basic Operations Firefighter (Firefighter II) certification")} ${p.pay==="free"?"Department-sponsored academies are free, but only for people a department has hired or enrolled. These are open to anyone.":"These academies are open to anyone. Others only take department-sponsored students."}`, items: pathPrograms("academy", p)});
+  /* Part-time step: once a student has (or is working toward) EMT and the academy, part-time and paid-on-call jobs are the usual first fire job */
+  if(ff && D.jobs.some(isPart)){
+    const pts = partTimeItems(p);
+    steps.push({id:"parttime", t:"Get Hired Part-Time", why:"With your EMT license and Basic Operations Firefighter certification, many departments will hire you part-time or paid-on-call before you have a paramedic license. It's paid experience, it looks great on full-time applications, and you can keep training while you work.", items: pts, limit:3, key:"pt", go:"jobs-part"});
+  }
   if(ff && !c.has("cpat")){
     const cp = cpatSites().filter(x => inRange(x.mi)).sort((a,b) => (a.nx?daysTo(a.nx.d):1e6)-(b.nx?daysTo(b.nx.d):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3);
     steps.push({id:"cpat", ladder:!c.has("ladder"), t:"Pass the CPAT"+(c.has("ladder")?"":" and Ladder Climb"), why:`Most departments want a CPAT card from the last 12 months, so time it close to when you'll apply.${c.has("ladder")?"":" Illinois also requires a ladder climb certificate, which some CPAT sites include."}`,
@@ -1422,7 +1438,7 @@ function buildPath(p){
   }
   if((g==="ffpm" || g==="medic") && !c.has("medic") && medicFirst) medicStep();
   if(ff){
-    const jobs = myJobs().map(j => ({...j, miss: missingFor(j)})).sort((a,b) => ((a.miss&&!a.miss.length)?0:1)-((b.miss&&!b.miss.length)?0:1) || ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6))).slice(0,3);
+    const jobs = myJobs().filter(j => !isPart(j)).map(j => ({...j, miss: missingFor(j)})).sort((a,b) => ((a.miss&&!a.miss.length)?0:1)-((b.miss&&!b.miss.length)?0:1) || ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6))).slice(0,3);
     const soon = D.departments.map(d => ({...d, nt: nextTest(d), mi: miles(d.lat,d.lng)})).filter(d => d.nt && monthsAway(d.nt.when) <= 12 && inRange(d.mi)).slice(0,3);
     const notes = [];
     if(p.age==="u18" || p.age==="18-20") notes.push("You must be 21 to be hired. Some departments let you apply if you'll be 21 by the hire date, so check each posting.");
@@ -1512,6 +1528,10 @@ const PTASKS = {
     {k:"reg", t:"Register for the course", do:{kind:"ce"}, msg:"Registered! Mark it on your calendar."},
     {k:"finish", t:"Finish the course", msg:"Course done! Apply for the OSFM certification next."},
     {k:"cert", t:"Earn the OSFM certification", then:{kind:"tab", tab:"certs", label:"Add It to My Certifications"}, msg:"Certified! Add it to My Certifications so you can track recertification."}],
+  parttime: [
+    {k:"pick", t:"Pick part-time departments near you", do:{kind:"parttime"}, msg:"Good list. Some of these don't post deadlines, so call each one to ask if they're hiring."},
+    {k:"apply", t:"Apply for a part-time or paid-on-call position", do:{kind:"parttime"}, msg:"Applied! Many departments test part-time candidates with an interview and a skills or agility test."},
+    {k:"hired", t:"Get hired and start picking up shifts", msg:"Nice work! Part-time experience makes you a stronger candidate for full-time jobs."}],
   certs: [{k:"add", t:"Add your first certification", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
 };
 function stepTasks(st){
@@ -1522,7 +1542,9 @@ function stepTasks(st){
 }
 function pathModel(){
   const ord = academyOrder(), raw = buildPath(profile), has = id => raw.some(x => x.id === id);
-  const steps = applyOrder(raw, ord).map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
+  const ordered = applyOrder(raw, ord), pi = ordered.findIndex(x => x.id === "parttime");
+  if(pi >= 0){ const pt = ordered.splice(pi, 1)[0], after = Math.max(ordered.findIndex(x => x.id === "emt"), ordered.findIndex(x => x.id === "academy")); ordered.splice(after + 1, 0, pt) }
+  const steps = ordered.map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
   const all = steps.flatMap(st => st.tasks), cur = steps.findIndex(st => !st.done);
   return { steps, total: all.length, done: all.filter(t => t.done).length, cur, ord, canFirst: has("academy") && has("emt"), canLast: has("academy") && has("medic") };
 }
@@ -1551,8 +1573,9 @@ function actHTML(a, st){
       .map(x => ({t:x.name, m:`${x.nx?`Next: ${fmtDate(x.nx.d)}`:"Dates on the booking page"}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.register, b:"Register"}));
     return list(xs) + `<button type="button" class="btn btn-quiet btn-sm" data-cpat>All CPAT Sites</button>`;
   }
+  if(a.kind === "parttime") return list(partTimeItems(profile).slice(0,3)) + `<button type="button" class="btn btn-quiet btn-sm" data-act="jobs-part">See All Part-Time Jobs</button>`;
   if(a.kind === "jobs"){
-    const xs = myJobs().sort((x,y) => (x.deadline?daysTo(x.deadline):1e6)-(y.deadline?daysTo(y.deadline):1e6)).slice(0,3)
+    const xs = myJobs().filter(j => !isPart(j)).sort((x,y) => (x.deadline?daysTo(x.deadline):1e6)-(y.deadline?daysTo(y.deadline):1e6)).slice(0,3)
       .map(j => ({t:`${j.title} · ${j.dept}`, m:j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted", mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"}));
     return list(xs) + `<button type="button" class="btn btn-quiet btn-sm" data-act="tab" data-tab="jobs">Open Job Board</button>`;
   }
@@ -1598,7 +1621,7 @@ function renderPath(rid = "rm-retake"){
   const m = pathModel(), have = (profile.certs||[]).filter(k => CERT[k]), pct = m.total ? Math.round(m.done / m.total * 100) : 0;
   const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : "", profile.schedule==="nights"?"Nights and Weekends":"", profile.age==="u18"?"Under 18":""].filter(Boolean).join(" · ");
   const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b||"Open")}</a></div></li>`;
-  const nb = nextBox(m), un = upNext(m), nxStep = un.nx ? un.nx.st.id : null, dup = un.nx && un.nx.t.do && ["classes","cpat","jobs","ce","funding"].includes(un.nx.t.do.kind);
+  const nb = nextBox(m), un = upNext(m), nxStep = un.nx ? un.nx.st.id : null, dup = un.nx && un.nx.t.do && ["classes","cpat","jobs","ce","funding","parttime"].includes(un.nx.t.do.kind);
   return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="${rid}">Retake Questions</button></div>
     <p class="path-sum">${esc(sum)}</p>
     ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
@@ -1609,8 +1632,8 @@ function renderPath(rid = "rm-retake"){
       ${st.id==="academy" && (m.canFirst || m.canLast) ? `<button type="button" class="linkish ps-route" data-goroute>Change your route</button>` : ""}
       ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
       ${st.id === nxStep ? nb : ""}
-      ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
-      ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":`data-go2="${st.go}"`}>See more</button>`:""}
+      ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="parttime"?"Part-time jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
+      ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":st.go==="jobs-part"?`data-act="jobs-part"`:`data-go2="${st.go}"`}>${st.go==="jobs-part"?"See all part-time jobs":"See more"}</button>`:""}
     </div></details></div></li>`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
 }
@@ -1635,7 +1658,8 @@ function pathBurst(el){
 }
 function pathAct(b){
   const a = b.dataset.act;
-  if(a === "funding"){ $("#fd-for").value = b.dataset.f; renderFunding(); showTab("funding"); goTo($("#tools")) }
+  if(a === "jobs-part"){ jbType = "part"; segSet("#jb-type", "part"); renderJobs(); showTab("jobs"); goTo($("#tools")) }
+  else if(a === "funding"){ $("#fd-for").value = b.dataset.f; renderFunding(); showTab("funding"); goTo($("#tools")) }
   else if(a === "classes"){ clType = b.dataset.type; segSet("#cl-type", clType); renderClasses(); showTab("classes"); goTo($("#tools")) }
   else if(a === "tab"){ showTab(b.dataset.tab); goTo($("#tools")) }
   else if(a === "certs"){ showTab("certs"); openCertForm(null); const s = $("#ct-type"); s.value = b.dataset.v; s.dispatchEvent(new Event("change")); goTo($("#tools")) }
@@ -1726,7 +1750,7 @@ function renderDash(){
         ${dl.length ? `<ul class="mini">${dl.map(x=>`<li><div><p class="t">${esc(x.t)}</p><p class="m">${fmtDate(x.d)}</p></div><div class="r"><span class="chip ${daysTo(x.d)<=14?"chip-red":"chip-warn"}">${daysTo(x.d)} days</span>${x.go?`<button type="button" class="linkish" data-go2="${x.go}">Open</button>`:`<a class="linkish" href="${esc(x.url)}" target="_blank" rel="noopener">Open</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">Nothing with a date in your area right now.</p>`}</div>
       <div class="dcard wide"><div class="dcard-h"><h4>Jobs for You</h4><span class="hint">${jobs.length} open ${radiusTxt}</span></div>
         ${jobs.length ? `<ul class="mini">${jobs.map(j=>{ const m = missingFor(j);
-          return `<li><div><p class="t">${esc(j.title)} · ${esc(j.dept)}</p><p class="m">${j.deadline?`Due ${fmtDate(j.deadline)}`:esc((j.deadlineNote||"").replace(/\.$/,""))}${j.pay?` · <span class="money">${fmt$(j.pay)}</span> starting pay`:""}${distTxt(j.mi)}${m===null?`<span class="chip">Check requirements</span>`:m.length?`<span class="chip chip-warn">You need: ${m.map(c=>CERT[c]).join(", ")}</span>`:`<span class="chip chip-good">You meet the listed requirements</span>`}</p>${j.needsNote&&m&&m.length?`<p class="m">${esc(j.needsNote)}</p>`:""}</div>
+          return `<li><div><p class="t">${esc(j.title)} · ${esc(j.dept)}</p><p class="m">${isPart(j)?`<span class="chip chip-type-pt">Part-Time</span> `:""}${j.deadline?`Due ${fmtDate(j.deadline)}`:esc((j.deadlineNote||"").replace(/\.$/,""))}${j.pay?` · <span class="money">${fmt$(j.pay)}</span> starting pay`:j.payHr?` · <span class="money">$${j.payHr}/hr</span>`:""}${distTxt(j.mi)}${m===null?`<span class="chip">Check requirements</span>`:m.length?`<span class="chip chip-warn">You need: ${m.map(c=>CERT[c]).join(", ")}</span>`:`<span class="chip chip-good">You meet the listed requirements</span>`}</p>${j.needsNote&&m&&m.length?`<p class="m">${esc(j.needsNote)}</p>`:""}</div>
           <div class="r"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a></div></li>` }).join("")}</ul>` : `<p class="dempty">No open postings ${radiusTxt}. Try a wider distance in your profile, or check the Departments tab for upcoming testing.</p>`}</div>
       <div class="dcard"><div class="dcard-h"><h4>${t ? typeName[t]+" for Your Next Step" : "Training"}</h4>${t?`<button type="button" class="linkish" data-go2="classes">See all</button>`:""}</div>
         ${t ? `<ul class="mini">${classes.map(p=>`<li><div><p class="t">${esc(p.name)}</p><p class="m">${esc(p.provider)}${distTxt(p.mi)}${p.status==="full"?'<span class="chip chip-red">Full</span>':""}${p.status==="check"?'<span class="chip chip-warn">Not yet verified</span>':""}${p.sponsor==="open"?'<span class="chip chip-good">Open to anyone</span>':""}</p></div><div class="r">${p.cost!=null?`<span class="money">${fmt$(p.cost)}</span>`:""}${p.apply?`<a class="btn btn-red btn-sm" href="${esc(p.apply)}" target="_blank" rel="noopener">Apply</a>`:`<a class="linkish" href="${esc(p.url)}" target="_blank" rel="noopener">Details</a>`}</div></li>`).join("")}</ul>` : `<p class="dempty">You have the licenses your goal needs. Look at Advanced Training and promotion prep on your roadmap.</p>`}</div>
