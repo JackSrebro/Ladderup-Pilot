@@ -102,7 +102,7 @@ window.ifsiRefresh = async function(knownGeo = {}){
     const costNote = (free && cin === 0) ? "Tuition-free for members of Illinois fire departments (except Chicago FD)." + (cout ? ` Out of state: ${money(cout)}.` : "")
       : (cout && cout !== cin ? `Illinois rate. Out of state: ${money(cout)}.` : null);
     const ss = g.ss.sort((a,b) => a.s < b.s ? -1 : 1), notes = [];
-    if(g.pin) notes.push("Online registration asks for your fire chief's PIN.");
+    if(g.pin) notes.push("Online registration asks for your Fire Chief's PIN.");
     if(ss.every(s => s.seats === "Full")) notes.push("Full right now. Call to ask about a waitlist.");
     if(g.phoneReg) notes.push("Register by phone with the host department.");
     const c = cat(n), base = `ifsi-${r.course_id}-${city.toLowerCase().replace(/[^a-z]/g,"").slice(0,10)}${g.online?"-online":""}`;
