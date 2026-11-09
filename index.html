@@ -185,6 +185,35 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .acct-link:hover{color:var(--ink)}
 @media (max-width:420px){.acct-link{display:none!important}}
 .start-login{margin-top:14px;font-size:14px;color:var(--ink-2)}
+.qz-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;flex-wrap:wrap}
+.qz-count{font-family:var(--f-mono);font-size:12.5px;color:var(--ink-3);letter-spacing:.04em}
+.qz-bar{height:5px;border-radius:5px;background:var(--line);overflow:hidden;margin-top:-6px}
+.qz-bar i{display:block;height:100%;width:0;background:var(--red);transition:width .25s ease}
+.qs{display:grid;gap:12px}
+.qz-q{font-size:20px;font-weight:700;color:var(--ink);margin:0}
+.qz-q2{margin-top:10px}
+.qz-sub{font-size:14.5px;color:var(--ink-2);margin:-4px 0 0}
+.opts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px}
+.opt{display:grid;gap:2px;text-align:left;padding:12px 14px;border:1.5px solid var(--line);border-radius:10px;background:var(--surface);color:var(--ink);font:inherit;cursor:pointer;min-height:48px}
+.opt b{font-size:15px;font-weight:600}
+.opt small{font-size:13px;color:var(--ink-3)}
+.opt:hover{border-color:var(--ink-3)}
+.opt[aria-pressed="true"]{border-color:var(--red);background:var(--red-wash);box-shadow:inset 0 0 0 1px var(--red)}
+.certs-big{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:6px 16px}
+.certs-big label{padding:8px 4px}
+.qz-foot #pf-save,.qz-foot #qz-next{min-width:140px;justify-content:center}
+.path .path-sum{font-size:14px;color:var(--ink-2);margin:0}
+.path-have{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:14px;color:var(--ink-2);margin:0}
+.path-list{list-style:none;margin:6px 0 0;padding:0;display:grid;gap:14px}
+.path-step{display:grid;grid-template-columns:32px minmax(0,1fr);gap:12px;align-items:start}
+.path-n{width:32px;height:32px;border-radius:50%;background:var(--red);color:var(--on-red);display:grid;place-items:center;font-weight:700;font-family:var(--f-mono)}
+.path-step.warn .path-n{background:var(--ink)}
+.path-b{display:grid;gap:6px;min-width:0}
+.path-b h5{font-size:17px;margin:4px 0 0}
+.path-b .why{font-size:14.5px;color:var(--ink-2);margin:0}
+.path-b .mini{margin-top:2px}
+.path-go{justify-self:start;font-size:14px}
+@media (max-width:560px){.opts{grid-template-columns:minmax(0,1fr)}}
 .cert-top{display:flex;align-items:center;gap:14px;flex-wrap:wrap;margin-bottom:16px}
 .cert-form{border:1px solid var(--line);border-radius:10px;padding:18px;margin-bottom:16px;background:var(--surface)}
 .cert-form h4{margin:0 0 12px;font-size:18px}
@@ -441,35 +470,82 @@ html.lenis,html.lenis body{height:auto}
         <h2 class="vh" id="tools-h">Tools</h2>
 
         <div class="panel" role="tabpanel" id="p-dash" aria-labelledby="tab-dash" hidden>
-          <form class="prof" id="prof-form" novalidate hidden>
-            <h4 id="prof-h">Set Up Your Dashboard</h4>
-            <p>Tell us where you are and where you're headed, and we'll show the jobs you qualify for, the classes for your next step and your deadlines. If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
-            <div class="pf-quick" id="pf-quick" hidden><button type="button" class="btn btn-line auth-google" id="pf-google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue With Google</button><span>Fills in your name and email and creates your free account. Already have one? <button type="button" class="linkish" data-auth="login">Log in</button>.</span></div>
-            <div class="unlock" id="unlock"></div>
-            <div class="prof-grid">
-              <div class="field"><label class="lbl" for="pf-name">First and last name</label><input class="tinput" id="pf-name" autocomplete="name" maxlength="60"></div>
-              <div class="field"><label class="lbl" for="pf-email">Email</label><input class="tinput" id="pf-email" type="email" autocomplete="email" maxlength="120"></div>
-              <div class="field"><label class="lbl" for="pf-zip">Home ZIP</label><input class="tinput zip" id="pf-zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" style="width:100%"><span class="zip-note" id="pf-zip-note"></span></div>
-              <div class="field"><label class="lbl" for="pf-radius">How far will you travel?</label><select class="select" id="pf-radius"><option value="15">Within 15 miles</option><option value="30" selected>Within 30 miles</option><option value="50">Within 50 miles</option><option value="0">Any distance</option></select></div>
-              <div class="field"><label class="lbl" for="pf-goal">Career goal</label><select class="select" id="pf-goal"><option value="ffpm">Firefighter/Paramedic</option><option value="ffemt">Firefighter/EMT</option><option value="medic">Paramedic</option><option value="emt">EMT</option></select></div>
-              <div class="field span2" style="min-width:0"><label class="lbl" for="pf-rung">Where are you now?</label><select class="select" id="pf-rung" style="width:100%"></select></div>
-            </div>
-            <fieldset class="certs"><legend class="lbl">What you already have</legend>
-              <label><input type="checkbox" data-cert="emt"><span>EMT license</span></label>
-              <label><input type="checkbox" data-cert="medic"><span>Paramedic license</span></label>
-              <label><input type="checkbox" data-cert="cpat"><span>CPAT card</span></label>
-              <label><input type="checkbox" data-cert="ffii"><span>Firefighter II / Basic Operations</span></label>
-            </fieldset>
-            <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you.</span></label>
-            <div class="acct-opt" id="pf-acct" hidden>
+          <form class="prof quiz" id="prof-form" novalidate hidden>
+            <div class="qz-head"><h4 id="prof-h">Set Up Your Dashboard</h4><span class="qz-count" id="qz-count"></span></div>
+            <div class="qz-bar" aria-hidden="true"><i id="qz-bar"></i></div>
+            <section class="qs" data-step="stage">
+              <p class="qz-q">Where are you right now?</p>
+              <p class="qz-sub">A few quick questions and we'll build a path that fits your situation. Takes about a minute.</p>
+              <div class="pf-quick" id="pf-quick" hidden><button type="button" class="btn btn-line auth-google" id="pf-google"><svg width="18" height="18" viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.6 20.5H42V20H24v8h11.3C33.7 32.7 29.2 36 24 36c-6.6 0-12-5.4-12-12s5.4-12 12-12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 12.9 4 4 12.9 4 24s8.9 20 20 20 20-8.9 20-20c0-1.3-.1-2.4-.4-3.5z"/><path fill="#FF3D00" d="M6.3 14.7l6.6 4.8C14.7 15.1 19 12 24 12c3.1 0 5.8 1.2 7.9 3.1l5.7-5.7C34 6.1 29.3 4 24 4 16.3 4 9.7 8.3 6.3 14.7z"/><path fill="#4CAF50" d="M24 44c5.2 0 9.9-2 13.4-5.2l-6.2-5.2C29.2 35.1 26.7 36 24 36c-5.2 0-9.6-3.3-11.3-7.9l-6.5 5C9.5 39.6 16.2 44 24 44z"/><path fill="#1976D2" d="M43.6 20.5H42V20H24v8h11.3c-.8 2.2-2.2 4.2-4.1 5.6l6.2 5.2C37 39.2 44 34 44 24c0-1.3-.1-2.4-.4-3.5z"/></svg>Continue With Google</button><span>Fills in your name and email and creates your free account. Already have one? <button type="button" class="linkish" data-auth="login">Log in</button>.</span></div>
+              <div class="opts" data-q="stage"></div>
+              <div class="unlock" id="unlock"></div>
+            </section>
+            <section class="qs" data-step="have" hidden>
+              <p class="qz-q">What do you already have?</p>
+              <p class="qz-sub">Check everything that applies. Skip it if you're just starting.</p>
+              <fieldset class="certs certs-big"><legend class="vh">What you already have</legend>
+                <label><input type="checkbox" data-cert="emt"><span>EMT license</span></label>
+                <label><input type="checkbox" data-cert="medic"><span>Paramedic license</span></label>
+                <label><input type="checkbox" data-cert="cpat"><span>CPAT card</span></label>
+                <label><input type="checkbox" data-cert="ladder"><span>Ladder climb certificate</span></label>
+                <label><input type="checkbox" data-cert="ffii"><span>Basic Operations Firefighter / Firefighter II</span></label>
+                <label><input type="checkbox" data-cert="degree"><span>College degree</span></label>
+              </fieldset>
+            </section>
+            <section class="qs" data-step="goal" hidden>
+              <p class="qz-q">What's the goal?</p>
+              <div class="opts" data-q="goal"></div>
+              <p class="qz-q qz-q2">How soon do you want to be hired?</p>
+              <div class="opts" data-q="timeline"></div>
+            </section>
+            <section class="qs" data-step="focus" hidden>
+              <p class="qz-q">What are you working toward next?</p>
+              <p class="qz-sub">Pick as many as you like.</p>
+              <div class="opts" data-q="focus" data-multi></div>
+            </section>
+            <section class="qs" data-step="life" hidden>
+              <p class="qz-q">What does your schedule allow?</p>
+              <div class="opts" data-q="schedule"></div>
+              <p class="qz-q qz-q2">How will you pay for training?</p>
+              <div class="opts" data-q="pay"></div>
+            </section>
+            <section class="qs" data-step="about" hidden>
+              <p class="qz-q">How old are you?</p>
+              <p class="qz-sub">Optional. Age limits change which programs and jobs make sense.</p>
+              <div class="opts" data-q="age"></div>
+              <p class="qz-q qz-q2">Are you a military veteran?</p>
+              <p class="qz-sub">Optional. Veterans get extra funding options and hiring preference points.</p>
+              <div class="opts" data-q="veteran"></div>
+            </section>
+            <section class="qs" data-step="where" hidden>
+              <p class="qz-q">Where are you?</p>
+              <div class="prof-grid">
+                <div class="field"><label class="lbl" for="pf-zip">Home ZIP</label><input class="tinput zip" id="pf-zip" inputmode="numeric" maxlength="5" autocomplete="postal-code" style="width:100%"><span class="zip-note" id="pf-zip-note"></span></div>
+                <div class="field"><label class="lbl" for="pf-radius">How far will you travel?</label><select class="select" id="pf-radius"><option value="15">Within 15 miles</option><option value="30" selected>Within 30 miles</option><option value="50">Within 50 miles</option><option value="0">Any distance</option></select></div>
+              </div>
+            </section>
+            <section class="qs" data-step="you" hidden>
+              <p class="qz-q">Last step: who are you?</p>
+              <p class="qz-sub">If you join the pilot, we get your name, email, ZIP and career stage so we can send you updates.</p>
+              <div class="prof-grid">
+                <div class="field"><label class="lbl" for="pf-name">First and last name</label><input class="tinput" id="pf-name" autocomplete="name" maxlength="60"></div>
+                <div class="field"><label class="lbl" for="pf-email">Email</label><input class="tinput" id="pf-email" type="email" autocomplete="email" maxlength="120"></div>
+              </div>
+              <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you.</span></label>
+              <div class="acct-opt" id="pf-acct" hidden>
               <label class="check join-opt" id="pf-acct-row"><input type="checkbox" id="pf-acct-on"><span><b>Save my dashboard to a free account.</b> Log in on any phone or computer and pick up where you left off.</span></label>
               <div class="field" id="pf-pw-wrap" hidden><label class="lbl" for="pf-pw">Choose a password (at least 8 characters)</label><input class="tinput" id="pf-pw" type="password" autocomplete="new-password" maxlength="100"></div>
               <p class="acct-in" id="pf-acct-in" hidden></p>
             </div>
-            <div class="prof-foot">
+            </section>
+            <select id="pf-goal" hidden aria-hidden="true" tabindex="-1"><option value="ffpm">Firefighter/Paramedic</option><option value="ffemt">Firefighter/EMT</option><option value="medic">Paramedic</option><option value="emt">EMT</option><option value="unsure">Not sure yet</option></select>
+            <select id="pf-rung" hidden aria-hidden="true" tabindex="-1"></select>
+            <p class="err" id="pf-err" hidden></p>
+            <div class="prof-foot qz-foot">
+              <button class="btn btn-quiet" type="button" id="qz-back">Back</button>
+              <button class="btn btn-red" type="button" id="qz-next">Next</button>
               <a class="btn btn-red" id="pf-save" href="#" target="_blank" rel="noopener" role="button">Build My Dashboard</a>
               <button class="btn btn-quiet" type="button" id="pf-cancel" hidden>Cancel</button>
-              <p class="err" id="pf-err" hidden></p>
             </div>
           </form>
           <div id="dash" hidden></div>
@@ -540,6 +616,7 @@ html.lenis,html.lenis body{height:auto}
                 <label><input type="checkbox" data-need="workforce"><span>Unemployed, underemployed or laid off</span></label>
                 <label><input type="checkbox" data-need="firefighter"><span>Already on a fire department</span></label>
                 <label><input type="checkbox" data-need="hired"><span>Open to getting hired as an EMT first</span></label>
+                <label><input type="checkbox" data-need="veteran"><span>Military veteran</span></label>
               </fieldset>
             </div>
             <div><div class="list" id="fd-list"></div></div>
@@ -857,7 +934,7 @@ function renderFunding(){
   const f = $("#fd-for").value, have = new Set($$("[data-need]:checked").map(c => c.dataset.need));
   const rows = D.funding.filter(x => x.for.includes(f)).map(x => ({...x, ok: x.needs.every(n => have.has(n)), miss: x.needs.filter(n => !have.has(n))}))
     .sort((a,b) => (b.ok-a.ok) || a.miss.length-b.miss.length);
-  const NEED = {college:"community college enrollment", fafsa:"a FAFSA", workforce:"workforce program eligibility", firefighter:"fire department membership", hired:"an EMT job first"};
+  const NEED = {college:"community college enrollment", fafsa:"a FAFSA", workforce:"workforce program eligibility", firefighter:"fire department membership", hired:"an EMT job first", veteran:"military veteran status"};
   $("#fd-list").innerHTML = rows.map(x => { const dl = /^\d{4}-\d\d-\d\d$/.test(x.deadline) ? fmtDate(x.deadline) : x.deadline;
     return `<article class="card ${x.ok?"":"dim"}">
       <div><h4>${esc(x.name)}</h4><p class="who">${esc(x.provider)}</p>
@@ -931,8 +1008,9 @@ $("#kit-reset").addEventListener("click", () => { kit = {}; store.set("kit", kit
 /* ---------- Personal profile (this browser only) ---------- */
 let profile = store.get("profile", null);
 let saved = store.get("saved", {});
-const CERT = {emt:"EMT license", medic:"Paramedic license", cpat:"CPAT card", ffii:"Firefighter II / BOF"};
-const GOAL = {ffpm:"Firefighter/Paramedic", ffemt:"Firefighter/EMT", medic:"Paramedic", emt:"EMT"};
+const CERT = {emt:"EMT license", medic:"Paramedic license", cpat:"CPAT card", ffii:"Firefighter II / BOF", ladder:"Ladder climb certificate", degree:"College degree"};
+const GOAL = {ffpm:"Firefighter/Paramedic", ffemt:"Firefighter/EMT", medic:"Paramedic", emt:"EMT", unsure:"Not sure yet"};
+const goalOf = p => (p && p.goal === "unsure") ? "ffpm" : (p ? p.goal : "ffpm");
 const STAR = '<svg width="14" height="14" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1-4.4-4.3 6.1-.9z"/></svg>';
 function starBtn(id){ const on = !!saved[id]; return `<button type="button" class="save" data-save="${esc(id)}" aria-pressed="${on}">${STAR}<span>${on?"Saved":"Save"}</span></button>` }
 document.addEventListener("click", e => { const b = e.target.closest("[data-save]"); if(!b) return;
@@ -951,8 +1029,9 @@ function nextType(p){
   if(!p) return null;
   const c = p.certs || [];
   if(!c.includes("emt") && !c.includes("medic")) return "emt";
-  if((p.goal==="ffpm"||p.goal==="ffemt") && !c.includes("ffii")) return "academy";
-  if((p.goal==="ffpm"||p.goal==="medic") && !c.includes("medic")) return "medic";
+  const g = goalOf(p);
+  if((g==="ffpm"||g==="ffemt") && !c.includes("ffii")) return "academy";
+  if((g==="ffpm"||g==="medic") && !c.includes("medic")) return "medic";
   return null;
 }
 function inRange(mi){ const r = profile ? +profile.radius : 0; return !r || mi==null || mi <= r }
@@ -966,13 +1045,84 @@ function fillProfileForm(){
   $$("[data-cert]").forEach(c => c.checked = p.certs.includes(c.dataset.cert));
   $("#prof-h").textContent = profile ? "Edit Your Profile" : "Set Up Your Dashboard";
   updateSaveLabel();
-  $("#pf-cancel").hidden = !profile; zipNote();
+  $("#pf-cancel").hidden = !profile; zipNote(); qzFill(p);
 }
 function zipNote(){ const z = $("#pf-zip").value.trim(); const o = D.zips[z];
   $("#pf-zip-note").textContent = z.length<5 ? "" : o ? o[2] : "Outside the pilot area. We'll show everything." }
 $("#pf-zip").addEventListener("input", zipNote);
-function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); $("#pf-name").focus() }
+function openProfileForm(){ fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); qzFocus() }
 $("#pf-cancel").addEventListener("click", () => { $("#prof-form").hidden = true; $("#dash").hidden = false });
+/* Setup questionnaire: one question group per screen. Hired firefighters get a shorter branch. */
+const STAGES = {
+  new:{t:"Brand new", s:"Just starting to look into it", rung:1}, emtclass:{t:"In EMT class", rung:2},
+  emt:{t:"Licensed EMT", rung:3, certs:["emt"]}, academy:{t:"In fire academy", rung:3},
+  medicschool:{t:"In paramedic school", rung:4, certs:["emt"]}, medic:{t:"Licensed paramedic", rung:3, certs:["emt","medic"]},
+  testing:{t:"Testing for jobs", rung:5}, probation:{t:"Hired, on probation", rung:6, hired:true}, career:{t:"Career firefighter", s:"Off probation", rung:7, hired:true}
+};
+const QOPTS = {
+  stage: Object.entries(STAGES).map(([v,o]) => [v, o.t, o.s || ""]),
+  goal: [["ffpm","Firefighter/Paramedic","The most common hire in this area"],["ffemt","Firefighter/EMT",""],["medic","Paramedic","Ambulance or hospital work"],["emt","EMT",""],["unsure","Not sure yet","We'll start you on the firefighter path"]],
+  timeline: [["asap","As soon as possible"],["soon","Within 1–2 years"],["exploring","Just exploring"]],
+  schedule: [["day","Daytime classes work"],["nights","Nights and weekends, around a job"]],
+  pay: [["pay","I can pay"],["aid","I'll need help paying"],["free","I need free or sponsored options"]],
+  age: [["u18","Under 18"],["18-20","18 to 20"],["21-34","21 to 34"],["35+","35 or older"],["na","Prefer not to say"]],
+  veteran: [["yes","Yes"],["no","No"],["na","Prefer not to say"]],
+  focus: [["engineer","Engineer or driver"],["officer","Lieutenant or captain"],["rescue","Technical rescue"],["hazmat","Hazmat"],["instructor","Instructor"],["medic","Paramedic"],["prevention","Inspector or investigator"],["unsure","Not sure yet"]]
+};
+let QA = {focus:[]}, qzI = 0;
+$$("#prof-form .opts").forEach(el => { const q = el.dataset.q;
+  el.setAttribute("role", el.hasAttribute("data-multi") ? "group" : "radiogroup");
+  el.innerHTML = QOPTS[q].map(([v,t,sub]) => `<button type="button" class="opt" data-v="${v}" aria-pressed="false"><b>${esc(t)}</b>${sub?`<small>${esc(sub)}</small>`:""}</button>`).join("") });
+const qzSteps = () => (QA.stage && STAGES[QA.stage].hired) ? ["stage","have","focus","where","you"] : ["stage","have","goal","life","about","where","you"];
+const qzIsLast = () => qzI === qzSteps().length - 1;
+function rungFor(){
+  const st = STAGES[QA.stage]; if(!st) return 1;
+  const c = $$("[data-cert]:checked").map(x => x.dataset.cert);
+  if((QA.stage==="emt" || QA.stage==="medic") && c.includes("ffii")) return (goalOf({goal:QA.goal})==="ffpm" && !c.includes("medic")) ? 4 : 5;
+  return st.rung;
+}
+function qzSync(){
+  $$("#prof-form .opts").forEach(el => { const q = el.dataset.q, cur = QA[q];
+    el.querySelectorAll(".opt").forEach(b => b.setAttribute("aria-pressed", String(Array.isArray(cur) ? cur.includes(b.dataset.v) : cur===b.dataset.v))) });
+  if(QA.goal) $("#pf-goal").value = QA.goal;
+  $("#pf-rung").value = String(rungFor());
+}
+function qzShow(i){
+  const steps = qzSteps(); qzI = Math.max(0, Math.min(i, steps.length-1));
+  $$("#prof-form .qs").forEach(sec => { sec.hidden = sec.dataset.step !== steps[qzI] });
+  $("#qz-count").textContent = `Step ${qzI+1} of ${steps.length}`;
+  $("#qz-bar").style.width = Math.round((qzI+1)/steps.length*100) + "%";
+  $("#qz-back").hidden = qzI === 0;
+  $("#qz-next").hidden = qzIsLast(); $("#pf-save").hidden = !qzIsLast();
+  $("#pf-err").hidden = true; qzSync();
+}
+function qzFocus(){ const sec = $(`#prof-form .qs[data-step="${qzSteps()[qzI]}"]`); const f = sec && sec.querySelector('.opt[aria-pressed="true"], .opt, input, select'); if(f) f.focus({preventScroll:true}) }
+function qzErr(msg){ const e = $("#pf-err"); e.textContent = msg; e.hidden = false }
+function qzNext(){
+  const step = qzSteps()[qzI];
+  if(step==="stage" && !QA.stage) return qzErr("Pick the one closest to where you are.");
+  if(step==="goal" && !QA.goal) return qzErr("Pick a goal. \"Not sure yet\" is fine.");
+  if(step==="where" && !/^\d{5}$/.test($("#pf-zip").value.trim())){ $("#pf-zip").setAttribute("aria-invalid","true"); return qzErr("Add your 5-digit ZIP.") }
+  qzShow(qzI+1); presetSaveHref(); qzFocus();
+  if($("#prof-form").getBoundingClientRect().top < 0) goTo($("#prof-form"));
+}
+$("#qz-next").addEventListener("click", qzNext);
+$("#qz-back").addEventListener("click", () => { qzShow(qzI-1); qzFocus() });
+$("#prof-form").addEventListener("click", e => {
+  const b = e.target.closest(".opt"); if(!b) return;
+  const el = b.closest(".opts"), q = el.dataset.q, v = b.dataset.v;
+  if(el.hasAttribute("data-multi")){ const set = new Set(QA[q] || []); set.has(v) ? set.delete(v) : set.add(v); QA[q] = [...set] }
+  else QA[q] = v;
+  if(q==="stage"){ (STAGES[v].certs || []).forEach(k => { const cb = $(`[data-cert="${k}"]`); if(cb) cb.checked = true }); qzShow(qzI) }
+  qzSync(); updateSaveLabel(); presetSaveHref(); $("#pf-err").hidden = true;
+});
+$$("[data-cert]").forEach(cb => cb.addEventListener("change", qzSync));
+function qzFill(p){
+  const stageFromRung = {1:"new",2:"emtclass",3:"academy",4:"medicschool",5:"testing",6:"probation",7:"career"};
+  QA = { stage: p.stage || (profile ? stageFromRung[p.rung] : null), goal: profile ? p.goal : null, timeline: p.timeline || null, schedule: p.schedule || null,
+         pay: p.pay || null, age: p.age || null, veteran: p.veteran || null, focus: p.focus || [] };
+  qzShow(0);
+}
 /* One step: build the dashboard and, if they opt in, send their answers to the Ladder Up Google Form.
    Google's form needs a real link click (a page can't post to it), so the button is a link that opens
    Google's "response recorded" page in a new tab while the dashboard opens here. */
@@ -1013,7 +1163,9 @@ function saveProfile(e){
   err.hidden = true;
   const prev = profile || {};
   profile = { name: fullName.split(" ")[0], fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
-              certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined };
+              certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined,
+              stage: QA.stage || null, timeline: QA.timeline || null, schedule: QA.schedule || null, pay: QA.pay || null,
+              age: QA.age || null, veteran: QA.veteran || null, focus: QA.focus || [] };
   if(join){ $("#pf-save").href = signupURL(profile); profile.joined = true; profile.joinedAt = new Date().toISOString() }
   else e.preventDefault();
   store.set("profile", profile);
@@ -1036,7 +1188,7 @@ function presetSaveHref(){
 ["input","change"].forEach(ev => $("#prof-form").addEventListener(ev, presetSaveHref));
 $("#pf-save").addEventListener("pointerdown", presetSaveHref);
 $("#pf-save").addEventListener("click", saveProfile);
-$("#prof-form").addEventListener("submit", e => { e.preventDefault(); $("#pf-save").click() });
+$("#prof-form").addEventListener("submit", e => { e.preventDefault(); if(qzIsLast()) $("#pf-save").click(); else qzNext() });
 
 function renderJoin(){
   if(!$("#join-ext")) return;
@@ -1057,6 +1209,7 @@ function applyProfile(){
   if(profile){
     $("#fd-for").value = t==="academy" ? "fire" : t==="medic" ? "medic" : t==="emt" ? "emt" : (profile.goal==="emt"?"emt":"medic");
     const ff = $('[data-need="firefighter"]'); if(ff) ff.checked = profile.rung >= 6 || has("ffii") && profile.rung >= 5;
+    const vet = $('[data-need="veteran"]'); if(vet) vet.checked = profile.veteran === "yes";
   }
   renderRoadmap(); renderHello();
 }
@@ -1070,6 +1223,105 @@ function renderHello(){
 }
 function myJobs(){ return liveJobs().map(j => ({...j, mi: miles(j.lat,j.lng)})).filter(j => inRange(j.mi)) }
 
+/* Recommended Path: ordered steps built from the questionnaire answers and the live listings */
+const NIGHT = /\b(?:[4-9]|1[01])(?::\d\d)?\s*(?:[–-]\s*\d{1,2}(?::\d\d)?\s*)?PM\b|evening|night|weekend|\bSat\b|part-time/i;
+function pathPrograms(type, p){
+  return D.programs.filter(x => x.type===type && (type!=="academy" || x.sponsor!=="sponsored"))
+    .map(x => ({...x, mi: miles(x.lat,x.lng), night: NIGHT.test(x.schedule||"")}))
+    .sort((a,b) => (a.status==="full")-(b.status==="full") || (p.schedule==="nights" ? (b.night-a.night) : 0) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3)
+    .map(x => ({t:x.name, m:`${x.provider}${x.night?" · Night or weekend option":""}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.apply||x.url, b:x.apply?"Apply":"Details", chip: x.status==="full"?"Full":""}));
+}
+const CE_FOCUS = {
+  engineer:{t:"Become an Engineer or Driver", cats:["app"], certs:"Fire Apparatus Engineer and Fire Service Vehicle Operator"},
+  officer:{t:"Prepare for Lieutenant or Captain", cats:["officer"], re:/Company|Boot Camp|Officer Academy|Instructor I\b/, certs:"Company Fire Officer and Fire Service Instructor I"},
+  rescue:{t:"Add Technical Rescue", cats:["rescue","water"], re:/Operations|Vehicle/, certs:"Rope, Trench, Confined Space, Structural Collapse and Vehicle Rescue (Operations level first)"},
+  hazmat:{t:"Add Hazmat", cats:["hazmat"], certs:"Hazardous Materials Operations, then Technician"},
+  instructor:{t:"Become an Instructor", cats:["officer"], re:/Instructor/, certs:"Fire Service Instructor I, II and III"},
+  prevention:{t:"Move Toward Inspection or Investigation", cats:["prev"], certs:"Basic Fire Prevention Officer, Fire Inspector I and Fire Investigator"},
+  unsure:{t:"Build Your Firefighting Skills", cats:["ff"], certs:"Advanced Technician Firefighter"}
+};
+function pathCE(f){
+  return (D.ce ? D.ce.courses : []).filter(c => f.cats.includes(c.cat) && (!f.re || f.re.test(c.name)))
+    .map(c => ({...c, mi: miles(c.lat,c.lng), nx: nextSession(c)})).filter(c => inRange(c.mi))
+    .sort((a,b) => (a.nx?daysTo(a.nx.s):1e6)-(b.nx?daysTo(b.nx.s):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3)
+    .map(c => ({t:c.name, m:`${c.provider}${c.nx?` · Next: ${c.nx.t}`:" · Dates not posted"}${c.cost!=null?` · ${fmt$(c.cost)}`:""}`, mi:c.mi, url:c.register||c.url, b:"Register"}));
+}
+function buildPath(p){
+  const c = new Set(p.certs || []), g = goalOf(p), ff = g==="ffpm" || g==="ffemt", steps = [];
+  const known = liveJobs().filter(j => j.needs), kn = known.length, need = k => known.filter(j => j.needs.includes(k)).length;
+  const reqLine = (n, what) => kn ? `${n} of the ${kn} open postings in the area that list requirements need ${what}.` : "";
+  if(STAGES[p.stage] && STAGES[p.stage].hired){
+    if(p.stage==="probation") steps.push({t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
+    (p.focus && p.focus.length ? p.focus : ["unsure"]).forEach(f => {
+      if(f==="medic"){ if(!c.has("medic")) steps.push({t:"Earn Your Paramedic License", why:"Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)}); return }
+      const F = CE_FOCUS[f]; if(F) steps.push({t:F.t, why:`OSFM certifications to aim for: ${F.certs}. Most OSFM certifications need recertification every 4 years.`, items:pathCE(F), go:"ce"});
+    });
+    if(!certList.length) steps.push({t:"Track Your Certifications", why:"Add your licenses and OSFM certifications so you can see what's due for renewal.", items:[], go:"certs"});
+    return steps;
+  }
+  if(p.age==="u18"){
+    const ys = (D.youth ? D.youth.programs : []).map(y => ({...y, mi: miles(y.lat,y.lng)}))
+      .sort((a,b) => (a.status==="check")-(b.status==="check") || (a.mi??1e9)-(b.mi??1e9));
+    steps.push({t:"Join a Fire Cadet Program", why:(D.youth ? D.youth.note : "") + " Several programs below only take people who live in their district, so check the requirements.",
+      items: ys.map(y => ({t: y.type==="school" ? `${y.org} ${y.name}` : y.name, m:`${y.org} · ${y.ages}${y.cost===0?" · Free":""}${y.status==="check"?" · Not yet verified":""}`, sub:y.residency, mi:y.mi, url:y.apply, b:y.type==="school"?"Enroll":"Apply"})), limit:3, key:"youth"});
+  }
+  if(p.age==="35+" && ff) steps.push({t:"Check the Age Rule First", warn:true, why:"Illinois law bars people 35 and older from most firefighter entrance exams. The exceptions are current or former Illinois firefighters (including volunteer, paid-on-call and part-time) and veterans who turned 35 while serving and are under 40. A paid-on-call or part-time spot, or a paramedic career, may be your best route.", items:[]});
+  if(!c.has("emt") && !c.has("medic")){
+    const inClass = p.stage==="emtclass";
+    steps.push({t: inClass ? "Finish EMT Class and Pass the NREMT" : "Get Your EMT License",
+      why: `${p.age==="u18"?"You can start an EMT class once you're 18, and you can take the NREMT exam at 17. ":""}${reqLine(known.filter(j=>j.needs.includes("emt")||j.needs.includes("medic")).length, "an EMT or paramedic license")} After the class, pass the NREMT exam and apply for your Illinois license.${p.schedule==="nights"&&!inClass?" Classes with night or weekend options are listed first.":""}`,
+      items: inClass ? [] : pathPrograms("emt", p)});
+  }
+  const medicFirst = g==="medic" || (g==="ffpm" && kn && need("medic")/kn >= 0.5);
+  const medicStep = () => {
+    const later = known.find(j => /paramedic within/i.test(j.needsNote||""));
+    steps.push({t:"Earn Your Paramedic License", why: medicFirst
+      ? `${reqLine(need("medic"), "a paramedic license")} Paramedics can also earn up to 5 preference points on Illinois hiring lists.`
+      : `${reqLine(need("medic"), "a paramedic license")}${later?` Some departments hire EMTs who earn it after hire (${later.dept}: ${later.needsNote.replace(/\.$/,"").toLowerCase()}).`:""} Many departments also sponsor paramedic school for their firefighters.`,
+      items: pathPrograms("medic", p)});
+  };
+  if(ff && !c.has("ffii")) steps.push({t:"Complete a Fire Academy", why:`${reqLine(need("ffii"), "Basic Operations Firefighter (Firefighter II) certification")} ${p.pay==="free"?"Department-sponsored academies are free, but only for people a department has hired or enrolled. These are open to anyone.":"These academies are open to anyone. Others only take department-sponsored students."}`, items: pathPrograms("academy", p)});
+  if(ff && !c.has("cpat")){
+    const cp = cpatSites().filter(x => inRange(x.mi)).sort((a,b) => (a.nx?daysTo(a.nx.d):1e6)-(b.nx?daysTo(b.nx.d):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3);
+    steps.push({t:"Pass the CPAT"+(c.has("ladder")?"":" and Ladder Climb"), why:`Most departments want a CPAT card from the last 12 months, so time it close to when you'll apply.${c.has("ladder")?"":" Illinois also requires a ladder climb certificate, which some CPAT sites include."}`,
+      items: cp.map(x => ({t:x.name, m:`${x.nx?`Next: ${fmtDate(x.nx.d)}`:"Dates on the booking page"}${x.cost!=null?` · ${fmt$(x.cost)}`:""}`, mi:x.mi, url:x.register, b:"Register"})), go:"cpat"});
+  }
+  if((g==="ffpm" || g==="medic") && !c.has("medic") && medicFirst) medicStep();
+  if(ff){
+    const jobs = myJobs().map(j => ({...j, miss: missingFor(j)})).sort((a,b) => ((a.miss&&!a.miss.length)?0:1)-((b.miss&&!b.miss.length)?0:1) || ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6))).slice(0,3);
+    const soon = D.departments.map(d => ({...d, nt: nextTest(d), mi: miles(d.lat,d.lng)})).filter(d => d.nt && monthsAway(d.nt.when) <= 12 && inRange(d.mi)).slice(0,3);
+    const notes = [];
+    if(p.age==="u18" || p.age==="18-20") notes.push("You must be 21 to be hired. Some departments let you apply if you'll be 21 by the hire date, so check each posting.");
+    if(p.veteran==="yes") notes.push("Veterans get 5 preference points on Illinois firefighter hiring lists.");
+    if(soon.length) notes.push(`Expected to test within a year: ${soon.map(d=>d.name).join(", ")}.`);
+    steps.push({t:"Test and Apply", why: notes.join(" ") || "Apply to every department you'd work for. Most test only every two years.",
+      items: jobs.map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted"}${j.miss&&j.miss.length?` · You need: ${j.miss.map(k=>CERT[k]).join(", ")}`:j.miss?" · You meet the listed requirements":""}`, mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"})), go:"jobs"});
+  }
+  if((g==="ffpm") && !c.has("medic") && !medicFirst) medicStep();
+  if(p.pay==="aid" || p.pay==="free" || p.veteran==="yes"){
+    const forType = !c.has("emt")&&!c.has("medic") ? "emt" : (ff && !c.has("ffii")) ? "fire" : "medic";
+    const f = D.funding.filter(x => x.for.includes(forType) && !x.needs.includes("firefighter") && (p.veteran==="yes" || !x.needs.includes("veteran")))
+      .sort((a,b) => (b.needs.includes("veteran")&&p.veteran==="yes") - (a.needs.includes("veteran")&&p.veteran==="yes") || a.needs.length-b.needs.length).slice(0,3);
+    steps.push({t:"Line Up Funding", why: p.veteran==="yes" ? "As a veteran, you may be able to use the GI Bill or the Illinois Veteran Grant for training." : "These programs can cover some or all of your training costs.",
+      items: f.map(x => ({t:x.name, m:x.amount, url:x.url, b:"Details"})), go:"funding"});
+  }
+  return steps;
+}
+function renderPath(){
+  if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll recommend the best path for your situation.</p><button type="button" class="btn btn-red btn-sm" id="d-retake" style="justify-self:start">Answer the Questions</button></div>`;
+  const steps = buildPath(profile), have = (profile.certs||[]).filter(k => CERT[k]);
+  const sum = [STAGES[profile.stage].t, GOAL[profile.goal] && !STAGES[profile.stage].hired ? "Goal: "+GOAL[profile.goal] : "", profile.schedule==="nights"?"Nights and weekends":"", profile.age==="u18"?"Under 18":""].filter(Boolean).join(" · ");
+  const item = (x, key, k) => `<li ${key && k>=3?`hidden data-more-of="${key}"`:""}><div><p class="t">${esc(x.t)}</p><p class="m">${esc(x.m||"")}${distTxt(x.mi)}</p>${x.sub?`<p class="m">${esc(x.sub)}</p>`:""}</div><div class="r">${x.chip?`<span class="chip chip-red">${esc(x.chip)}</span>`:""}<a class="btn btn-red btn-sm" href="${esc(x.url)}" target="_blank" rel="noopener">${esc(x.b)}</a></div></li>`;
+  return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4><button type="button" class="linkish" id="d-retake">Retake questions</button></div>
+    <p class="path-sum">${esc(sum)}</p>
+    ${have.length?`<p class="path-have">Already done: ${have.map(k=>`<span class="chip chip-good">${esc(CERT[k])}</span>`).join(" ")}</p>`:""}
+    ${steps.length ? `<ol class="path-list">${steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}"><span class="path-n">${n+1}</span><div class="path-b">
+      <h5>${esc(st.t)}</h5>${st.why?`<p class="why">${esc(st.why)}</p>`:""}
+      ${st.items && st.items.length ? `<ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}` : ""}
+      ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":`data-go2="${st.go}"`}>See more</button>`:""}
+    </div></li>`).join("")}</ol>` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+  </div>`;
+}
 function renderDash(){
   const el = $("#dash");
   if(!profile){ el.hidden = true; if($("#prof-form").hidden){ fillProfileForm(); $("#prof-form").hidden = false } return }
@@ -1112,6 +1364,7 @@ function renderDash(){
       <div class="kpi"><b style="color:var(--red-ink)">${ready.length}</b><small>Open jobs you meet the listed requirements for</small></div>
       <div class="kpi"><b>${dl.length ? (daysTo(dl[0].d)===0?"Today":daysTo(dl[0].d)+" days") : "None"}</b><small>${dl.length ? "Until the "+esc(dl[0].t) : "No dated deadlines coming up"}</small></div>
     </div>
+    ${renderPath()}
     <div class="dash-cols">
       <div class="dcard"><div class="dcard-h"><h4>Your Next Steps</h4><button type="button" class="linkish" data-go2="roadmap">Open roadmap</button></div>
         <ul class="checks" style="margin-top:0">${steps.map((s,k)=>`<li><label class="check"><input type="checkbox" data-dstep="${profile.rung}-${k}" ${s.done?"checked":""}><span>${esc(s.s)}</span></label>${s.done?"":cpatStepLink(s.s)}</li>`).join("")}</ul>
@@ -1138,6 +1391,8 @@ function renderDash(){
     <p class="fine"><span id="acct-note">${(window.LU && window.LU.acctNote) ? window.LU.acctNote() : "Your profile is saved in this browser on this device only. Clearing your browser data removes it."}</span> <button type="button" class="linkish" id="d-reset">Start over</button></p>
     <p class="err" id="d-confirm" hidden>Erase your profile, roadmap progress, saved items and certifications from this browser? <button type="button" class="linkish" id="d-yes">Yes, erase</button> · <button type="button" class="linkish" id="d-no">Keep them</button></p>`;
   $("#d-edit").onclick = openProfileForm;
+  const rt = $("#d-retake"); if(rt) rt.onclick = () => { openProfileForm(); goTo($("#tools")) };
+  el.querySelectorAll("[data-more]").forEach(b => b.onclick = () => { el.querySelectorAll(`[data-more-of="${b.dataset.more}"]`).forEach(x => x.hidden = false); b.remove() });
   el.querySelectorAll("[data-go2]").forEach(b => b.onclick = () => showTab(b.dataset.go2));
   el.querySelectorAll("[data-dstep]").forEach(c => c.onchange = () => { rmDone[c.dataset.dstep] = c.checked; store.set("rmDone", rmDone); renderRoadmap(); renderDash() });
   const nx = $("#d-next"); if(nx) nx.onclick = () => { profile.rung++; store.set("profile", profile); rmCur = profile.rung; store.set("rung", rmCur); applyProfile(); renderDash() };
