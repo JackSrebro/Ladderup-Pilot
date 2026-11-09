@@ -181,7 +181,11 @@ window.LADDER_DATA = {
     { id:"ifsi", name:"IFSI Memorial Scholarships", provider:"Illinois Fire Service Institute", amount:"Six $1,000 grants", for:["fire"], needs:["firefighter"],
       who:"Illinois firefighters pursuing fire service training or education. Awarded through IFCA.", deadline:"Postmarked by Mar 15", url:"https://www.fsi.illinois.edu/content/giving/scholarship.cfm" },
     { id:"hire", name:"Get Hired First, and the Department Pays for Paramedic School", provider:"Fire departments (example: New Lenox FPD)", amount:"Paramedic tuition", for:["medic"], needs:["hired"],
-      who:"EMTs hired by departments that let new hires earn the paramedic license after hire. New Lenox allows 18 months.", deadline:"Tied to each department's hiring cycle", url:"https://countryherald.com/illinois/new-lenox/new-lenox-il-fire-district-hiring-firefighters-emts-and-paramedics" }
+      who:"EMTs hired by departments that let new hires earn the paramedic license after hire. New Lenox allows 18 months.", deadline:"Tied to each department's hiring cycle", url:"https://countryherald.com/illinois/new-lenox/new-lenox-il-fire-district-hiring-firefighters-emts-and-paramedics" },
+    { id:"ivg", name:"Illinois Veteran Grant (IVG)", provider:"Illinois Student Assistance Commission", amount:"Covers eligible tuition and mandatory fees", for:["emt","medic","fire"], needs:["veteran","college"],
+      who:"Illinois veterans with at least one year of active duty (or qualifying service) and an honorable discharge, at Illinois public community colleges and universities. Ask the college's financial aid office whether your EMT or paramedic course counts.", deadline:"Rolling", url:"https://isac.org/students/during-college/types-of-financial-aid/grants/ivg-program.html" },
+    { id:"gibill", name:"Post-9/11 GI Bill (Non-College Degree Programs)", provider:"U.S. Department of Veterans Affairs", amount:"Tuition and a monthly housing allowance, based on your eligibility", for:["emt","medic","fire"], needs:["veteran"],
+      who:"Veterans with GI Bill benefits. The VA lists EMT training as a covered program, and it can also pay back licensing and certification test fees.", deadline:"Rolling", url:"https://www.va.gov/education/about-gi-bill-benefits/how-to-use-benefits/non-college-degree-programs/" }
   ],
 
   /* Continuing education for working firefighters (checked 2026-11-07). sessions: [{s: ISO start, t: label}] */
@@ -1515,6 +1519,59 @@ window.LADDER_DATA = {
         schedule:"Test days start with a 9 a.m. orientation, followed by practices and tests at 9:45, 10:30 and 11:15 a.m. Book through National Testing Network and choose the MAAC location to see open dates.",
         sessions:[], register:"https://candidates.nationaltestingnetwork.com/#/cpat-info", url:"https://maacfoundation.org/cpat/",
         contact:"Mike Wirtes, CPAT manager · 219-508-7579", checked:"2026-11-07" }
+    ]
+  },
+
+  /* Programs for teens under 18: fire department cadets, a junior academy and high school fire science.
+     status: "open" when the program's own page or a 2025–2026 source shows it active; "check" when it couldn't be confirmed. */
+  youth: {
+    note: "Illinois requires you to be 18 to be licensed as an EMT (you can take the exam at 17) and 21 to be hired as a firefighter. Cadet programs are how most teens get started, and some departments help their cadets pay for EMT, paramedic and fire academy later.",
+    programs: [
+      { id:"y-frankfort", name:"Frankfort Fire Cadets", org:"Frankfort Fire Protection District", type:"cadet", city:"Frankfort",
+        address:"333 W. Nebraska St., Frankfort, IL 60423", lat:41.4982, lng:-87.8585, ages:"Ages 15 to 21", minAge:15,
+        residency:null, schedule:"Tuesdays, 6–9 p.m. New cadets are usually added once a year, in January.", cost:null,
+        earn:"Train with district staff, ride on apparatus, help at public education events and attend training in Champaign. Dedicated cadets may get help earning an EMT license, paramedic license or Basic Firefighter certification.",
+        apply:"https://forms.office.com/r/HgScR7mWcC?origin=lprLink", url:"https://www.frankfortfire.org/about-2", contact:"815-469-1700", status:"open", checked:"2026-11-09" },
+      { id:"y-minooka", name:"Minooka Fire Cadets", org:"Minooka Fire Protection District", type:"cadet", city:"Minooka",
+        address:"Station 1, 7901 E. Minooka Rd., Minooka, IL 60447", lat:41.4543, lng:-88.2822, ages:"Ages 15 up to your 18th birthday", minAge:15,
+        residency:"You must live in the Minooka, Channahon or Troy (Shorewood) fire districts and keep at least a C average.", schedule:"Not posted. Ask the district.", cost:null,
+        earn:"Training with the district, with a path to becoming a recruit volunteer firefighter.",
+        apply:"https://www.minookafire.com/volunteer-firefighter-internship-and-cadets/", url:"https://www.minookafire.com/volunteer-firefighter-internship-and-cadets/", contact:"815-467-5637 · info@minookafire.com", status:"open", checked:"2026-11-09" },
+      { id:"y-lockport", name:"Lockport Township Fire Cadets", org:"Lockport Township Fire Protection District", type:"cadet", city:"Lockport",
+        address:"19623 W. Renwick Rd., Lockport, IL 60441", lat:41.595, lng:-88.0951, ages:"Ages 16 to 21", minAge:16,
+        residency:"You must live in the district, be immediate family of a district employee, or attend Lockport Township High School or Wilco Area Career Center. A 3.0 GPA is required.", schedule:"A four-week Saturday orientation academy, then monthly drills.", cost:null,
+        earn:"Ride time with crews and possible district sponsorship for EMT, paramedic and fire academy, based on performance.",
+        apply:"https://www.lockportfire.org/post/now-taking-cadet-applications-1", url:"https://www.lockportfire.org/post/now-taking-cadet-applications-1", contact:"815-838-3287", status:"open", checked:"2026-11-09" },
+      { id:"y-plainfield", name:"Plainfield Fire Cadets", org:"Plainfield Fire Protection District", type:"cadet", city:"Plainfield",
+        address:"23748 W. 135th St., Plainfield, IL 60544", lat:41.638, lng:-88.1974, ages:"Ages 16 to 21", minAge:16,
+        residency:"District residents only.", schedule:"At least 12 trainings a year plus monthly ride time.", cost:0,
+        earn:"Four days at the Illinois Fire Service Institute's Cadet College, and sponsorship for the Basic Operations Firefighter academy and paramedic school.",
+        apply:"https://plainfieldfpd.specialdistrict.org/cadet-program", url:"https://plainfieldfpd.specialdistrict.org/cadet-program", contact:"Brett Krasuski · bkrasuski@plainfieldfpd.com · 815-436-5335", status:"open", checked:"2026-11-09" },
+      { id:"y-naperville", name:"Naperville Fire Cadets", org:"Naperville Fire Department", type:"cadet", city:"Naperville",
+        address:"Station 4, 1936 Brookdale Rd., Naperville, IL 60563", lat:41.7914, lng:-88.2016, ages:"High school freshman, age 14, up to age 20", minAge:14,
+        residency:null, schedule:"Tuesdays, 6–9 p.m. The 2026 application window was April 1 to July 15.", cost:null,
+        earn:"Training in hose lines, ladders, ventilation, search and rescue, fire behavior, water supply and EMS.",
+        apply:"https://www.naperville.il.us/services/naperville-fire-department/programs-and-services/naperville-fire-cadets/", url:"https://www.naperville.il.us/services/naperville-fire-department/programs-and-services/naperville-fire-cadets/", contact:"FF/PM Chris Garon · garonc@naperville.il.us", status:"open", checked:"2026-11-09" },
+      { id:"y-orland-jr", name:"Junior Cadet Fire Academy", org:"Orland Fire Protection District", type:"academy", city:"Orland Park",
+        address:"9790 W. 151st St., Orland Park, IL 60462", lat:41.6159, lng:-87.8583, ages:"Ages 13 to 18", minAge:13,
+        residency:"District residents get first pick. Non-residents can join for $30 if spots remain.", schedule:"A one-day academy held each June. Registration opens in May.", cost:null,
+        earn:"A hands-on day with Orland firefighters. A good first taste before committing to a cadet program.",
+        apply:"https://opfpd.specialdistrict.org/junior-cadet-fire-academy", url:"https://opfpd.specialdistrict.org/junior-cadet-fire-academy", contact:"Betsy Dine, program coordinator · 708-349-0074", status:"open", checked:"2026-11-09" },
+      { id:"y-orland", name:"Orland Fire Cadets", org:"Orland Fire Protection District", type:"cadet", city:"Orland Park",
+        address:"9790 W. 151st St., Orland Park, IL 60462", lat:41.6159, lng:-87.8583, ages:"Ages 16 to 20", minAge:16,
+        residency:null, schedule:"Online coursework plus Saturday-morning hands-on training. Applications are accepted year-round.", cost:null,
+        earn:"Basic Operations Firefighter training, first aid and CPR, and EMT and paramedic sponsorship.",
+        apply:"https://opfpd.specialdistrict.org/cadet-program", url:"https://opfpd.specialdistrict.org/cadet-program", contact:"j.girdick@orlandfire.org", status:"check", checked:"2026-11-09" },
+      { id:"y-crete", name:"Crete Fire Cadets and Explorers", org:"Crete Fire Department", type:"cadet", city:"Crete",
+        address:"524 W. Exchange St., Crete, IL 60417", lat:41.4442, lng:-87.6328, ages:"Ages 14 to 18", minAge:14,
+        residency:null, schedule:"Not posted. Visit the station or call and ask for the recruitment coordinator.", cost:0,
+        earn:"A volunteer program, not a paid position.",
+        apply:"https://villageofcrete.org/government/departments/fire-department/recruitment-employment/cadet-program/", url:"https://villageofcrete.org/government/departments/fire-department/recruitment-employment/cadet-program/", contact:"708-672-2727", status:"check", checked:"2026-11-09" },
+      { id:"y-wilco", name:"Fire Science", org:"Wilco Area Career Center", type:"school", city:"Romeoville",
+        address:"500 Wilco Blvd., Romeoville, IL 60446", lat:41.5989, lng:-88.0937, ages:"High school students at Bolingbrook, Lemont, Lockport, Plainfield (Central, East, North and South), Reed-Custer, Romeoville and Wilmington high schools", minAge:14,
+        residency:"For students at Wilco's partner high schools. Ask your school counselor.", schedule:"Part of the school day. Dual-credit enrollment goes through Joliet Junior College.", cost:159,
+        earn:"7 Joliet Junior College credits (FSCI 120 and EMS 101) and the chance to earn IDPH Emergency Medical Responder, CPR/BLS and FEMA incident command certificates. Cost is a $75 student fee plus $84 JJC tuition.",
+        apply:"https://jjc.dualenroll.com", url:"https://wilco.socs.net/vnews/display.v/ART/504f4b313a940", contact:"Mark Oglesby · moglesby@wilcoacc.org · 815-838-6941 ext. 1017", status:"open", checked:"2026-11-09" }
     ]
   },
 
