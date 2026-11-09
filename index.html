@@ -514,7 +514,6 @@ html.lenis,html.lenis body{height:auto}
     <ul class="nav">
       <li><a href="#tools" data-go="classes">Classes</a></li>
       <li><a href="#tools" data-go="jobs">Jobs</a></li>
-      <li><a href="#tools" data-go="ce">Continuing Ed</a></li>
       <li><a href="#tools" data-go="funding">Funding</a></li>
     </ul>
     <a class="btn btn-line btn-sm head-dash" href="#tools" data-go="dash" id="nav-dash">My Dashboard</a>
@@ -575,7 +574,6 @@ html.lenis,html.lenis body{height:auto}
           <button class="tab" role="tab" id="tab-roadmap" aria-controls="p-roadmap" data-tab="roadmap">My Roadmap</button>
           <button class="tab" role="tab" id="tab-classes" aria-controls="p-classes" data-tab="classes">Class Finder</button>
           <button class="tab" role="tab" id="tab-jobs" aria-controls="p-jobs" data-tab="jobs">Job Board<span class="n" id="jobs-n"></span></button>
-          <button class="tab" role="tab" id="tab-ce" aria-controls="p-ce" data-tab="ce">Continuing Ed</button>
           <button class="tab" role="tab" id="tab-funding" aria-controls="p-funding" data-tab="funding">Funding</button>
           <button class="tab" role="tab" id="tab-certs" aria-controls="p-certs" data-tab="certs">My Certifications</button>
           <button class="tab" role="tab" id="tab-kit" aria-controls="p-kit" data-tab="kit">First Shift Kit</button>
@@ -673,17 +671,37 @@ html.lenis,html.lenis body{height:auto}
         </div>
 
         <div class="panel" role="tabpanel" id="p-classes" aria-labelledby="tab-classes">
-          <div class="pintro"><h3>Class Finder</h3><p>EMT, Paramedic and fire academy programs, plus CPAT test sites, sorted by distance from your ZIP. Costs are the program's own published numbers. Where a program doesn't publish one, we say so.</p></div>
-          <div class="controls">
-            <div class="field"><span class="lbl">Program</span><div class="seg" id="cl-type">
-              <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="emt" aria-pressed="false">EMT</button><button type="button" data-v="medic" aria-pressed="false">Paramedic</button><button type="button" data-v="academy" aria-pressed="false">Fire Academy</button><button type="button" data-v="cpat" aria-pressed="false">CPAT Testing</button></div></div>
-            <div class="field"><label class="lbl" for="cl-zip">ZIP</label><input class="tinput zip" id="cl-zip" inputmode="numeric" maxlength="5" data-zip></div>
-            <div class="field"><label class="lbl" for="cl-sort">Sort by</label><select class="select" id="cl-sort"><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
-            <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-open"><span>Hide full classes</span></label>
-            <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-anyone"><span>Academies I can join without a department</span></label>
+          <div class="seg jb-view" id="cl-view" role="group" aria-label="Show"><button type="button" data-v="classes" aria-pressed="true">Training Programs</button><button type="button" data-v="ce" aria-pressed="false">Continuing Ed</button></div>
+          <div id="cl-v-classes">
+            <div class="pintro"><h3>Class Finder</h3><p>EMT, Paramedic and fire academy programs, plus CPAT test sites, sorted by distance from your ZIP. Costs are the program's own published numbers. Where a program doesn't publish one, we say so.</p></div>
+            <div class="controls">
+              <div class="field"><span class="lbl">Program</span><div class="seg" id="cl-type">
+                <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="emt" aria-pressed="false">EMT</button><button type="button" data-v="medic" aria-pressed="false">Paramedic</button><button type="button" data-v="academy" aria-pressed="false">Fire Academy</button><button type="button" data-v="cpat" aria-pressed="false">CPAT Testing</button></div></div>
+              <div class="field"><label class="lbl" for="cl-zip">ZIP</label><input class="tinput zip" id="cl-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><label class="lbl" for="cl-sort">Sort by</label><select class="select" id="cl-sort"><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
+              <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-open"><span>Hide full classes</span></label>
+              <label class="check cl-prog-only" style="padding-block:10px"><input type="checkbox" id="cl-anyone"><span>Academies I can join without a department</span></label>
+            </div>
+            <div class="list" id="cl-list"></div>
+            <p class="fine" id="cl-fine">Pass rates: none of these programs publish NREMT first-attempt pass rates on their program pages, so Ladder Up doesn't rank by them yet. Always confirm cost and dates with the program before you enroll.</p>
           </div>
-          <div class="list" id="cl-list"></div>
-          <p class="fine" id="cl-fine">Pass rates: none of these programs publish NREMT first-attempt pass rates on their program pages, so Ladder Up doesn't rank by them yet. Always confirm cost and dates with the program before you enroll.</p>
+          <div id="cl-v-ce" hidden>
+            <div class="pintro"><h3>Continuing Education</h3><p>For firefighters already on a department: OSFM certification courses and specialty training, from Advanced Technician Firefighter and Engineer to technical rescue, water rescue, hazmat and officer classes. Includes every scheduled IFSI class in Illinois. Upcoming sessions are listed first.</p></div>
+            <div class="controls">
+              <div class="field"><label class="lbl" for="ce-q">Search</label><input class="tinput" id="ce-q" type="search" placeholder="Try rope, IFSI, FAE or officer" style="width:min(280px,100%)"></div>
+              <div class="field"><label class="lbl" for="ce-cat">Type</label><select class="select" id="ce-cat"><option value="all">All types</option></select></div>
+              <div class="field"><label class="lbl" for="ce-zip">ZIP</label><input class="tinput zip" id="ce-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><label class="lbl" for="ce-prov-f">Provider</label><select class="select" id="ce-prov-f"><option value="all">All providers</option></select></div>
+              <div class="field"><label class="lbl" for="ce-dist">Distance</label><select class="select" id="ce-dist"><option value="0">Any distance</option><option value="15">Within 15 miles</option><option value="30">Within 30 miles</option><option value="50">Within 50 miles</option><option value="100">Within 100 miles</option></select></div>
+              <div class="field"><label class="lbl" for="ce-sort">Sort by</label><select class="select" id="ce-sort"><option value="date">Next session</option><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
+              <label class="check" style="padding-block:10px"><input type="checkbox" id="ce-dated"><span>Only courses with dates</span></label>
+            </div>
+            <p class="who" id="ce-count" style="margin-bottom:12px"></p>
+            <div class="list" id="ce-list"></div>
+            <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Dive Rescue</h4></div><p class="sub" id="ce-dive"></p></div>
+            <div class="dcard" style="margin-top:12px"><div class="dcard-h"><h4>More Places to Find Courses</h4></div><ul class="mini" id="ce-prov"></ul></div>
+            <p class="fine">Dates and prices come from each provider's 2027 catalog or course page. Many courses are open to members of any department, but some require your Fire Chief's approval or department sponsorship. Check with the provider before you register.</p>
+          </div>
         </div>
 
         <div class="panel" role="tabpanel" id="p-jobs" aria-labelledby="tab-jobs" hidden>
@@ -712,24 +730,6 @@ html.lenis,html.lenis body{height:auto}
             <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
             <div class="list" id="dp-list"></div>
           </div>
-        </div>
-
-        <div class="panel" role="tabpanel" id="p-ce" aria-labelledby="tab-ce" hidden>
-          <div class="pintro"><h3>Continuing Education</h3><p>For firefighters already on a department: OSFM certification courses and specialty training, from Advanced Technician Firefighter and Engineer to technical rescue, water rescue, hazmat and officer classes. Includes every scheduled IFSI class in Illinois. Upcoming sessions are listed first.</p></div>
-          <div class="controls">
-            <div class="field"><label class="lbl" for="ce-q">Search</label><input class="tinput" id="ce-q" type="search" placeholder="Try rope, IFSI, FAE or officer" style="width:min(280px,100%)"></div>
-            <div class="field"><label class="lbl" for="ce-cat">Type</label><select class="select" id="ce-cat"><option value="all">All types</option></select></div>
-            <div class="field"><label class="lbl" for="ce-zip">ZIP</label><input class="tinput zip" id="ce-zip" inputmode="numeric" maxlength="5" data-zip></div>
-            <div class="field"><label class="lbl" for="ce-prov-f">Provider</label><select class="select" id="ce-prov-f"><option value="all">All providers</option></select></div>
-            <div class="field"><label class="lbl" for="ce-dist">Distance</label><select class="select" id="ce-dist"><option value="0">Any distance</option><option value="15">Within 15 miles</option><option value="30">Within 30 miles</option><option value="50">Within 50 miles</option><option value="100">Within 100 miles</option></select></div>
-            <div class="field"><label class="lbl" for="ce-sort">Sort by</label><select class="select" id="ce-sort"><option value="date">Next session</option><option value="dist">Distance</option><option value="cost">Cost (lowest first)</option></select></div>
-            <label class="check" style="padding-block:10px"><input type="checkbox" id="ce-dated"><span>Only courses with dates</span></label>
-          </div>
-          <p class="who" id="ce-count" style="margin-bottom:12px"></p>
-          <div class="list" id="ce-list"></div>
-          <div class="dcard" style="margin-top:18px"><div class="dcard-h"><h4>Dive Rescue</h4></div><p class="sub" id="ce-dive"></p></div>
-          <div class="dcard" style="margin-top:12px"><div class="dcard-h"><h4>More Places to Find Courses</h4></div><ul class="mini" id="ce-prov"></ul></div>
-          <p class="fine">Dates and prices come from each provider's 2027 catalog or course page. Many courses are open to members of any department, but some require your Fire Chief's approval or department sponsorship. Check with the provider before you register.</p>
         </div>
 
         <div class="panel" role="tabpanel" id="p-funding" aria-labelledby="tab-funding" hidden>
@@ -863,11 +863,14 @@ function setZip(z){
 function goTo(el){ if(window.__lenis) window.__lenis.scrollTo(el, { offset: -72 }); else el.scrollIntoView(); }
 
 /* Tabs */
-const TABS = ["dash","roadmap","classes","jobs","ce","funding","certs","kit"];
+const TABS = ["dash","roadmap","classes","jobs","funding","certs","kit"];
+let clView = "classes";
+function setClView(v){ clView = v; $("#cl-v-classes").hidden = v!=="classes"; $("#cl-v-ce").hidden = v!=="ce"; segSet("#cl-view", v) }
 let jbView = "jobs";
 function setJbView(v){ jbView = v; $("#jb-v-jobs").hidden = v!=="jobs"; $("#jb-v-depts").hidden = v!=="depts"; segSet("#jb-view", v) }
 function showTab(t, focus){
   if(t === "depts"){ t = "jobs"; setJbView("depts") } else if(t === "jobs") setJbView("jobs");
+  if(t === "ce"){ t = "classes"; setClView("ce") } else if(t === "classes") setClView("classes");
   if(!TABS.includes(t)) t = "dash";
   if(!profile && t !== "dash"){ t = "dash"; if(typeof openProfileForm === "function") setTimeout(() => { if($("#prof-form").hidden) openProfileForm() }, 0) }
   TABS.forEach(x => { const b = $("#tab-"+x), p = $("#p-"+x), on = x===t;
@@ -1018,6 +1021,7 @@ function renderCE(){
 let dpStatus = "all";
 seg("#dp-status", v => { dpStatus = v; renderDepts() });
 seg("#jb-view", v => setJbView(v));
+seg("#cl-view", v => setClView(v));
 const ST = {open:["chip-good","Hiring now"], rolling:["chip-good","Ongoing testing"], closed:["chip-red","Testing closed"], unknown:["","No posting found"]};
 /* Next testing round: announced date, or a projection two years after the last round */
 const SEASON = m => m<=1||m===11 ? "Winter" : m<=4 ? "Spring" : m<=7 ? "Summer" : "Fall";
