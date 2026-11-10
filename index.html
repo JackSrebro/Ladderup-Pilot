@@ -765,7 +765,7 @@ html.lenis,html.lenis body{height:auto}
               <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option><option value="calls">Most calls</option><option value="callsLow">Fewest calls</option></select></div>
               <div class="field"><label class="lbl" for="dp-calls">Calls per year</label><select class="select" id="dp-calls"><option value="any">Any</option><option value="0-2500">Under 2,500</option><option value="2500-5000">2,500 to 5,000</option><option value="5000-10000">5,000 to 10,000</option><option value="10000-1e9">Over 10,000</option></select></div>
             </div>
-            <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years, so expected dates are two years after the last test we found. They're estimates unless the department announced the date.</p>
+            <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years. Expected test dates are estimates unless the department announced the date.</p>
             <div class="list" id="dp-list"></div>
             <p class="fine" id="dp-runs-src"></p>
           </div>
@@ -1127,11 +1127,8 @@ function renderDepts(){
   const s = $("#dp-sort").value;
   rows.sort((a,b) => s==="calls" ? ((b.lr?b.lr.n:-1)-(a.lr?a.lr.n:-1)) : s==="callsLow" ? ((a.lr?a.lr.n:1e9)-(b.lr?b.lr.n:1e9)) : s==="next" ? ((a.status==="open"||a.status==="rolling"?-1:a.nt?+a.nt.when:9e15) - (b.status==="open"||b.status==="rolling"?-1:b.nt?+b.nt.when:9e15)) || ((a.mi??1e9)-(b.mi??1e9))
     : ((a.mi??1e9)-(b.mi??1e9)) || a.name.localeCompare(b.name));
-  const ntChip = nt => !nt ? "" : nt.kind==="announced" ? `<span class="chip chip-good">Next test: ${esc(nt.label)}</span>`
-    : nt.kind==="due" ? `<span class="chip chip-warn">Next test expected any time</span>` : `<span class="chip chip-warn">Next test expected: ${esc(nt.label)}</span>`;
-  const ntLine = nt => !nt ? "" : nt.kind==="announced" ? `<b style="color:var(--ink)">Next test:</b> ${esc(nt.label)}, announced by the department.`
-    : nt.kind==="due" ? `<b style="color:var(--ink)">Next test:</b> It has been about two years since the last one, so a new test could be announced any time.`
-    : `<b style="color:var(--ink)">Next test:</b> Expected around ${esc(nt.label.replace(/^(\w+)/, m => m.toLowerCase()))}, about two years after the last one. This is an estimate.`;
+  const ntChip = nt => !nt ? "" : nt.kind==="announced" ? `<span class="chip chip-good">Next expected test: ${esc(nt.label)} (announced)</span>`
+    : nt.kind==="due" ? `<span class="chip chip-warn">Next expected test: Any time now</span>` : `<span class="chip chip-warn">Next expected test: ${esc(nt.label)}</span>`;
   const rs = D.runsSource; $("#dp-runs-src").innerHTML = rs ? `Stations and call totals: <a class="linkish" href="${esc(rs.url)}" target="_blank" rel="noopener">${esc(rs.name)}</a>.` : "";
   $("#dp-list").innerHTML = rows.length ? rows.map(d => flipCard(`
     <article class="card">
@@ -1139,8 +1136,6 @@ function renderDepts(){
         <div class="meta"><span class="chip ${ST[d.status][0]}">${ST[d.status][1]}</span>${ntChip(d.nt)}${d.lr?`<span class="chip">${d.lr.n.toLocaleString()} calls (${d.lr.y})</span>`:""}${distTxt(d.mi)}</div>
 
         ${d.note?`<p class="who" style="margin-top:10px">${esc(d.note)}</p>`:""}
-        ${d.lastTest?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> ${fmtMonthLong(d.lastTest.date)}. ${esc(d.lastTest.label)} <a class="linkish" style="font-size:13px" href="${esc(d.lastTest.source)}" target="_blank" rel="noopener">Source</a></p>`:(d.status==="unknown"?`<p class="who" style="margin-top:6px"><b style="color:var(--ink)">Last test:</b> Not found.</p>`:"")}
-        ${d.nt?`<p class="who" style="margin-top:4px">${ntLine(d.nt)}</p>`:""}
 </div>
       <div class="acts">${moreBtn}${d.jobs?`<a class="btn btn-red btn-sm" href="${esc(d.jobs)}" target="_blank" rel="noopener">Hiring / testing page</a>`:""}${d.site?`<a class="btn btn-quiet btn-sm" href="${esc(d.site)}" target="_blank" rel="noopener">Website</a>`:`<a class="btn btn-quiet btn-sm" href="https://www.google.com/search?q=${encodeURIComponent(d.name+" Illinois")}" target="_blank" rel="noopener">Search the web</a>`}</div>
     </article>`, jobInfo({deptId: d.id, dept: d.name}))).join("") : `<p class="empty">No departments match.</p>`;
@@ -1151,7 +1146,7 @@ function renderSoon(){
   const el = $("#jb-soon"); if(!el) return;
   const rows = D.departments.map(d => ({...d, mi: miles(d.lat,d.lng), nt: nextTest(d)})).filter(d => d.nt && monthsAway(d.nt.when) <= 12)
     .sort((a,b) => (a.nt.when - b.nt.when) || ((a.mi??1e9)-(b.mi??1e9)));
-  el.innerHTML = rows.length ? `<ul class="mini">${rows.map(d => `<li><div><p class="t">${esc(d.name)}</p><p class="m">${d.nt.kind==="due"?"Expected any time":d.nt.kind==="announced"?`Announced for ${esc(d.nt.label)}`:`Expected ${esc(d.nt.label)}`}${d.lastTest?` · Last tested ${fmtMonth(d.lastTest.date)}`:""}${distTxt(d.mi)}</p></div><div class="r">${d.jobs?`<a class="linkish" href="${esc(d.jobs)}" target="_blank" rel="noopener">Testing page</a>`:""}</div></li>`).join("")}</ul>` : `<p class="dempty">None expected in the next 12 months.</p>`;
+  el.innerHTML = rows.length ? `<ul class="mini">${rows.map(d => `<li><div><p class="t">${esc(d.name)}</p><p class="m">${d.nt.kind==="due"?"Expected any time":d.nt.kind==="announced"?`Announced for ${esc(d.nt.label)}`:`Expected ${esc(d.nt.label)}`}${distTxt(d.mi)}</p></div><div class="r">${d.jobs?`<a class="linkish" href="${esc(d.jobs)}" target="_blank" rel="noopener">Testing page</a>`:""}</div></li>`).join("")}</ul>` : `<p class="dempty">None expected in the next 12 months.</p>`;
 }
 
 document.addEventListener("click", e => { const b = e.target.closest("[data-go2b]"); if(b){ showTab(b.dataset.go2b); dpStatus = "soon"; segSet("#dp-status","soon"); renderDepts() } });
