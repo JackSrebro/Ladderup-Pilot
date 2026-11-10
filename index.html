@@ -856,7 +856,7 @@ html.lenis,html.lenis body{height:auto}
 
 <!-- Netlify reads this hidden form at deploy time so it can accept pilot sign-ups sent from the dashboard -->
 <form name="pilot-signup" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
-  <input name="first-name"><input name="last-name"><input name="email"><input name="zip"><input name="stage"><input name="age-range"><input name="parent-ok"><input name="bot-field">
+  <input name="first-name"><input name="last-name"><input name="email"><input name="zip"><input name="stage"><input name="age-range"><input name="parent-ok"><input name="signed-up"><input name="bot-field">
 </form>
 
 <div class="lu-notice" id="lu-notice" role="region" aria-label="Storage notice" hidden><p>Ladder Up saves your dashboard in this browser, and keeps you logged in if you have an account. No ads or tracking. <a href="/cookies.html">Cookie Policy</a></p><button type="button" class="btn btn-red btn-sm" id="lu-notice-ok">Got It</button></div>
@@ -1351,7 +1351,8 @@ const SF = true;   // pilot sign-ups go to the Netlify form "pilot-signup" (see 
 function pilotToast(msg){ const t = document.createElement("div"); t.className = "lu-toast"; t.setAttribute("role","status"); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 6000) }
 async function sendSignup(p){
   const body = new URLSearchParams({ "form-name": "pilot-signup", "first-name": p.firstName || "", "last-name": p.lastName || "", email: p.email || "", zip: p.zip || "",
-    stage: stagesFor(p).join(", "), "age-range": p.age ? ((QOPTS.age.find(a => a[0] === p.age) || [])[1] || p.age) : "", "parent-ok": p.age === "u18" ? (p.parentOk ? "Yes" : "No") : "", "bot-field": "" });
+    stage: stagesFor(p).join(", "), "age-range": p.age ? ((QOPTS.age.find(a => a[0] === p.age) || [])[1] || p.age) : "", "parent-ok": p.age === "u18" ? (p.parentOk ? "Yes" : "No") : "",
+    "signed-up": new Date().toLocaleString("en-US", { timeZone: "America/Chicago", dateStyle: "medium", timeStyle: "short" }) + " CT", "bot-field": "" });
   try { const r = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() }); return r.ok } catch(e){ return false }
 }
 async function joinPilot(p){
