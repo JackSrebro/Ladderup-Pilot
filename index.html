@@ -159,6 +159,7 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .check:hover{background:var(--sunk)}
 .check input:checked + span{color:var(--ink-3);text-decoration:line-through}
 .kit-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px 28px}
+.kit-note{font-size:14px;color:var(--ink-2);margin:10px 0 0;font-style:italic}
 .kit-group h4{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:22px;padding-bottom:8px;border-bottom:2px solid var(--ink)}
 .bar{height:10px;background:var(--line-2);border-radius:99px;overflow:hidden;flex:1 1 200px}
 .bar i{display:block;height:100%;background:var(--good);border-radius:99px}
@@ -1204,16 +1205,25 @@ $("#rm-detail").addEventListener("change", e => { const k = e.target.dataset.k; 
 
 /* First Shift Kit */
 const KIT = {
-  "Uniform":["Two sets of station uniforms","Belt and boots (broken in)","Job shirt or jacket for the weather","Undershirts, socks and underwear for 24+ hours"],
+  "Uniform":["Two sets of station uniforms","Belt and boots","Undershirts, socks and underwear for 24+ hours"],
   "On the rig":["Watch with a second hand","Trauma shears and penlight","Pocket notebook and pens","Personal stethoscope","Gloves and safety glasses"],
-  "Bunk room":["Sheets, pillow and blanket","Shower kit and flip-flops","Phone charger"],
-  "Kitchen & paperwork":["Food money for house meals","Your share for the coffee fund","Copies of licenses and ID","Department SOP book or app"]
+  "Bunk room":["Sheets, pillow and blanket","Shower kit and flip-flops","Deodorant","Toothbrush and toothpaste","Razor and shaving cream","Phone charger"],
+  "Kitchen & paperwork":["Food money for house meals (preferably cash)","Copies of licenses and ID","Department SOP book or app"]
 };
+const KIT_NOTE = {"Uniform":"What you need here depends on what your department requires, so check with your officer before you buy anything."};
 let kit = store.get("kit", {});
+{ // checks used to be saved by position; move them to item names so editing the list never shifts them
+  const OLD = {"Uniform":["Two sets of station uniforms","Belt and boots","Job shirt or jacket for the weather","Undershirts, socks and underwear for 24+ hours"],"On the rig":KIT["On the rig"],"Bunk room":["Sheets, pillow and blanket","Shower kit and flip-flops","Phone charger"],"Kitchen & paperwork":["Food money for house meals (preferably cash)","Your share for the coffee fund","Copies of licenses and ID","Department SOP book or app"]};
+  let moved = false;
+  Object.keys(kit).forEach(k => { const m = k.match(/^(.*)\|(\d+)$/); if(!m) return; const it = OLD[m[1]] && OLD[m[1]][+m[2]]; if(it && kit[k]) kit[m[1]+"|"+it] = true; delete kit[k]; moved = true });
+  const valid = new Set(Object.entries(KIT).flatMap(([g,items]) => items.map(it => g+"|"+it)));
+  Object.keys(kit).forEach(k => { if(!valid.has(k)){ delete kit[k]; moved = true } });
+  if(moved) store.set("kit", kit);
+}
 function renderKit(){
-  const all = Object.entries(KIT).flatMap(([g,items]) => items.map((it,i)=>g+"|"+i)), n = all.filter(k=>kit[k]).length;
+  const all = Object.entries(KIT).flatMap(([g,items]) => items.map(it => g+"|"+it)), n = all.filter(k=>kit[k]).length;
   $("#kit-count").textContent = `${n} / ${all.length} packed`; $("#kit-bar").style.width = (100*n/all.length)+"%";
-  $("#kit-grid").innerHTML = Object.entries(KIT).map(([g,items]) => `<div class="kit-group"><h4>${esc(g)}</h4><ul class="checks">${items.map((it,i)=>`<li><label class="check"><input type="checkbox" data-kit="${esc(g)}|${i}" ${kit[g+"|"+i]?"checked":""}><span>${esc(it)}</span></label></li>`).join("")}</ul></div>`).join("");
+  $("#kit-grid").innerHTML = Object.entries(KIT).map(([g,items]) => `<div class="kit-group"><h4>${esc(g)}</h4><ul class="checks">${items.map(it=>`<li><label class="check"><input type="checkbox" data-kit="${esc(g)}|${esc(it)}" ${kit[g+"|"+it]?"checked":""}><span>${esc(it)}</span></label></li>`).join("")}</ul>${KIT_NOTE[g]?`<p class="kit-note">${esc(KIT_NOTE[g])}</p>`:""}</div>`).join("");
 }
 $("#kit-grid").addEventListener("change", e => { const k = e.target.dataset.kit; if(!k) return; kit[k] = e.target.checked; store.set("kit", kit); renderKit() });
 $("#kit-reset").addEventListener("click", () => { kit = {}; store.set("kit", kit); renderKit() });
