@@ -260,18 +260,31 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .ps-count{font-size:12.5px;font-family:var(--f-mono);color:var(--ink-3);white-space:nowrap}
 .path-step.done .ps-count{color:var(--good);font-weight:700}
 .ptasks{list-style:none;margin:2px 0 0;padding:0;display:grid;gap:6px}
-.ptasks label{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);border-radius:10px;background:var(--surface);cursor:pointer;transition:background .3s,border-color .3s,transform .15s}
-.ptasks label:hover{border-color:var(--ink-3)}
-.ptasks label:active{transform:scale(.99)}
+.ptasks > li{border:1px solid var(--line);border-radius:10px;background:var(--surface);transition:background .3s,border-color .3s}
+.ptasks > li:hover{border-color:var(--ink-3)}
+.pt-row{display:flex;align-items:center;gap:6px}
+.pt-open{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:11px 4px 11px 12px;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
+.pt-open .chev{width:18px;height:18px;flex:none;fill:none;stroke:var(--ink-3);stroke-width:2.2;transition:transform .2s}
+.ptasks li.open .pt-open .chev{transform:rotate(180deg)}
+.pt-lab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px}
+.pt-tag{flex:none;font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red-ink);border:1px solid currentColor;border-radius:999px;padding:3px 7px}
+.pt-chk{flex:none;display:grid;place-items:center;width:44px;height:44px;margin-right:4px;cursor:pointer}
+.pt-chk .pt-box{border-radius:50%}
+.pt-panel{padding:2px 14px 14px 14px;display:grid;gap:10px;border-top:1px dashed var(--line);margin:0 12px;padding-left:0;padding-right:0;padding-top:12px}
+.pt-panel > .btn,.pt-panel > a.btn{justify-self:start}
+.pt-panel .nx-msg{margin:0;font-weight:600;color:var(--good)}
+.pt-panel .pt-hint{margin:0;font-size:14.5px;color:var(--ink-2)}
+.pt-done-btn{justify-self:start}
+.ptasks li.upnext{border:2px solid var(--red);box-shadow:var(--shadow)}
 .ptasks input{position:absolute;opacity:0;width:1px;height:1px}
 .pt-box{width:22px;height:22px;flex:none;border-radius:6px;border:2px solid var(--ink-3);display:grid;place-items:center;transition:background .25s,border-color .25s}
 .pt-box svg{width:16px;height:16px;fill:none;stroke:#fff;stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:24;stroke-dashoffset:24;transition:stroke-dashoffset .3s ease-out}
 .ptasks input:focus-visible + .pt-box{outline:3px solid var(--focus,#2f80ed);outline-offset:2px}
-.ptasks li.on label{background:var(--good-wash);border-color:color-mix(in srgb,var(--good) 45%,transparent)}
+.ptasks li.on{background:var(--good-wash);border-color:color-mix(in srgb,var(--good) 45%,transparent)}
 .ptasks li.on .pt-box{background:var(--good);border-color:var(--good)}
 .ptasks li.on .pt-box svg{stroke-dashoffset:0}
 .ptasks li.on .pt-t{color:var(--good);text-decoration:line-through;text-decoration-thickness:1.5px}
-.ptasks li.flash label{animation:pt-flash .7s ease-out}
+.ptasks li.flash{animation:pt-flash .7s ease-out}
 @keyframes pt-flash{0%{box-shadow:0 0 0 0 color-mix(in srgb,var(--good) 60%,transparent);transform:scale(1.02)}100%{box-shadow:0 0 0 10px transparent;transform:scale(1)}}
 .path-next{display:grid;gap:8px;padding:14px 16px;border-radius:12px;border:2px solid var(--red);background:var(--surface);box-shadow:var(--shadow)}
 .path-next h6{font-size:16px;margin:0}
@@ -1566,7 +1579,7 @@ function buildPath(p){
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
    recommends what to do next, with the classes, funding, test sites or jobs for it right there. */
-let stepOpen = {}, routeOpen = null;
+let stepOpen = {}, routeOpen = null, taskOpen = {};
 let pathDone = store.get("pathDone", {}), pathOrder = store.get("pathOrder", null), pathFlash = null;
 /* The fire academy can come before EMT, between EMT and paramedic (most common), or after paramedic.
    Paramedic always stays after EMT. The order follows the student: an explicit choice, or the step they start first. */
@@ -1733,6 +1746,19 @@ function routePicker(m){
     ${pathFlash && pathFlash.route ? `<p class="route-ok" role="status">Route updated. Your steps below now go ${routeSeq(pathFlash.route).join(", then ")}.</p>` : ""}
   </div></details>`;
 }
+/* One roadmap task: tapping the row opens its help (classes, funding, links); the circle on the right or the
+   "Mark as Done" button checks it off. The next unchecked task opens on its own, tagged Up Next. */
+function taskHTML(t, st, un){
+  const isNext = un.nx && un.nx.t.key === t.key, open = taskOpen[t.key] !== undefined ? taskOpen[t.key] : isNext;
+  const after = isNext && un.after ? un.after : null;
+  const head = after ? `${after.t.msg}${after.st.done && un.nx.st !== after.st ? ` On to the next step: ${un.nx.st.t}.` : ""}` : "";
+  const help = t.done ? `<p class="nx-msg">${esc(t.msg)}</p>${t.then ? actHTML(t.then, st) : ""}` : (t.do ? actHTML(t.do, st) : `<p class="pt-hint">Check this off when it's done.</p>`);
+  return `<li class="${t.done?"on":""}${open?" open":""}${isNext?" upnext":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"${isNext?' id="path-next"':""}>
+    <div class="pt-row"><button type="button" class="pt-open" data-topen="${t.key}" aria-expanded="${open}"><span class="pt-lab">${isNext?'<span class="pt-tag">Up Next</span>':""}<span class="pt-t">${esc(t.t)}</span></span><svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+    <label class="pt-chk" title="${t.done?"Mark as not done":"Mark as done"}"><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""} aria-label="${esc(t.t)}: done"><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span></label></div>
+    ${open ? `<div class="pt-panel">${head?`<p class="nx-msg">${esc(head)}</p>`:""}${after && after.t.then ? actHTML(after.t.then, after.st) : ""}${help}
+      <button type="button" class="btn ${t.done?"btn-quiet":"btn-red"} btn-sm pt-done-btn" data-tdone="${t.key}">${t.done?"Mark as Not Done":"Mark as Done"}</button></div>` : ""}</li>`;
+}
 const STUDY = {emt:"EMT and NREMT Study Materials", academy:"Basic Operations Firefighter Study Materials", medic:"Paramedic and NREMT Study Materials"};
 function renderPath(rid = "rm-retake"){
   if(!profile.stage) return `<div class="dcard wide path"><div class="dcard-h"><h4>Your Recommended Path</h4></div><p class="dempty">Answer a few quick questions and we'll suggest a path that fits your situation.</p><button type="button" class="btn btn-red btn-sm" id="${rid}" style="justify-self:start">Answer the Questions</button></div>`;
@@ -1749,13 +1775,12 @@ function renderPath(rid = "rm-retake"){
     ${m.steps.length ? `<ol class="path-list">${m.optAfter === "" ? ptNote : ""}${m.steps.map((st,n) => `<li class="path-step${st.warn?" warn":""}${st.done?" done":""}${n===m.cur?" cur":""}${pathFlash&&pathFlash.step===st.id&&st.done?" just-done":""}${pathFlash&&pathFlash.moved===st.id?" moved":""}" data-step="${st.id}"><span class="path-n" aria-hidden="true"><span class="pn-num">${n+1}</span><svg class="pn-check" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><div class="path-b"><details class="ps-det" data-sd="${st.id}"${(stepOpen[st.id] ?? (n===m.cur || st.id===nxStep)) ? " open" : ""}>
       <summary class="ps-h"><h5>${esc(st.t)}</h5><span class="ps-meta">${st.tasks.length?`<span class="ps-count">${st.done?"Done":`${st.n} of ${st.tasks.length}`}</span>`:""}<svg class="chev" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="ps-body">${st.why?`<p class="why">${esc(st.why)}</p>`:""}
       ${st.id==="academy" && (m.canFirst || m.canLast) ? `<button type="button" class="linkish ps-route" data-goroute>Change your route</button>` : ""}
-      ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
-      ${st.id === nxStep ? nb : ""}
+      ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => taskHTML(t, st, un)).join("")}</ul>` : ""}
       ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="parttime"?"Part-time jobs":st.id==="cpat"?"Test sites":(st.id==="cefind"||st.ce)?"Upcoming courses":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
       ${STUDY[st.id]?`<details class="iv-box"><summary>Study Materials</summary><div class="soon-box" style="margin-top:0"><span class="chip">Coming Soon</span><b>${STUDY[st.id]}</b><p>Practice questions, study guides and tips to help you pass.</p></div></details>`:""}
       ${st.id==="apply"?`<details class="iv-box"><summary>Interview Prep</summary><ul><li>Wear a suit: dark and pressed, with clean dress shoes and a fresh haircut and shave.</li><li>Bring enough printed copies of your resume for everyone on the panel, plus a few extras, in a folder.</li><li>Know the department: its mission statement, stations, call volume, the Fire Chief&#39;s name and the union local. The Learn More About This Job card on the Job Board has most of this.</li><li>Plan your route and arrive at least 30 minutes early.</li><li class="iv-opt">Optional: bring copies of your licenses and certifications only if the department specifically asks for them.</li></ul><div class="soon-box"><span class="chip">Coming Soon</span><b>Practice Interview Questions and Tips</b><p>Common questions interview panels ask, how to answer them, and tips from firefighters who have been through it.</p></div></details>`:""}
       ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":st.go==="jobs-part"?`data-act="jobs-part"`:`data-go2="${st.go}"`}>${st.go==="jobs-part"?"See all part-time jobs":"See more"}</button>`:""}
-    </div></details></div></li>${st.id === m.optAfter ? ptNote : ""}`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
+    </div></details></div></li>${st.id === m.optAfter ? ptNote : ""}`).join("")}</ol>${un.nx ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
 }
 /* Dashboard shows a short preview; the full recommended path lives on the My Roadmap tab */
@@ -1805,8 +1830,11 @@ function renderRmPath(){
   el.querySelectorAll(".ps-det").forEach(d => d.addEventListener("toggle", () => { stepOpen[d.dataset.sd] = d.open }));
   el.querySelectorAll("[data-sall]").forEach(b => b.onclick = () => { const o = b.dataset.sall === "1"; el.querySelectorAll(".ps-det").forEach(d => { d.open = o; stepOpen[d.dataset.sd] = o }) });
   el.querySelectorAll("[data-goroute]").forEach(b => b.onclick = () => { const r = $("#route"); if(r){ r.open = true; routeOpen = true } if(r) (window.__lenis ? window.__lenis.scrollTo(r, {offset:-90}) : r.scrollIntoView({block:"start", behavior:"smooth"})) });
+  el.querySelectorAll("[data-topen]").forEach(b => b.onclick = () => { const k = b.dataset.topen; taskOpen[k] = b.getAttribute("aria-expanded") !== "true"; renderRmPath(); const f = el.querySelector(`[data-topen="${k}"]`); if(f) f.focus({preventScroll:true}) });
+  el.querySelectorAll("[data-tdone]").forEach(b => b.onclick = () => { const c = el.querySelector(`[data-ptask="${b.dataset.tdone}"]`); if(c){ c.checked = !c.checked; c.dispatchEvent(new Event("change")) } });
   el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
     const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
+    delete taskOpen[k]; if(c.checked) taskOpen[k] = false;
     store.set("pathDone", pathDone);
     syncPathCert(k, c.checked);
     pathFlash = c.checked ? {key:k, step:c.dataset.step} : null;
