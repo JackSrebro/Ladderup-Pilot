@@ -1601,33 +1601,28 @@ function applyOrder(steps, ord){
 const NREMT = {kind:"link", url:"https://www.nremt.org", label:"Go to NREMT.org"};
 const PTASKS = {
   emt: [
-    {k:"pick", t:"Pick an EMT class", do:{kind:"classes", type:"emt"}, msg:"Good pick. Apply soon, since classes fill up."},
-    {k:"apply", t:"Apply for an EMT class", do:{kind:"classes", type:"emt"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"apply", t:"Pick an EMT class and apply", do:{kind:"classes", type:"emt"}, msg:"Nice work! Now line up the money to pay for it."},
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"emt"}, msg:"You're set. Show up, study and finish the class."},
     {k:"finish", t:"Finish the EMT class", msg:"Class done! Next, schedule your NREMT exam."},
     {k:"nremt", t:"Pass the NREMT exam", do:NREMT, msg:"You passed! Apply for your Illinois EMT license through IDPH."},
     {k:"license", t:"Get your Illinois EMT license", then:{kind:"certs", v:"emt-il"}, msg:"Licensed EMT! Add it to My Certifications so you can track renewal."}],
   academy: [
-    {k:"pick", t:"Pick a fire academy", do:{kind:"classes", type:"academy"}, msg:"Good pick. Check the start date and apply."},
-    {k:"apply", t:"Apply to the academy", do:{kind:"classes", type:"academy"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"apply", t:"Pick a fire academy and apply", do:{kind:"classes", type:"academy"}, msg:"Nice work! Now line up the money to pay for it."},
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"fire"}, msg:"You're set. Time to train."},
     {k:"finish", t:"Finish the academy", msg:"Academy done! Your certification comes next."},
     {k:"cert", t:"Earn your Basic Operations Firefighter certification", then:{kind:"certs", v:"osfm-141.301"}, msg:"Certified! Add it to My Certifications."}],
   cpat: [
-    {k:"pick", t:"Pick a CPAT test site", do:{kind:"cpat"}, msg:"Good pick. Book a test date before spots fill."},
-    {k:"book", t:"Book a test date", do:{kind:"cpat"}, msg:"Booked! Start training. The CPAT is timed, so practice stair climbs and carries with weight."},
+    {k:"book", t:"Pick a CPAT test site and book a date", do:{kind:"cpat"}, msg:"Booked! Start training. The CPAT is timed, so practice stair climbs and carries with weight."},
     {k:"pass", t:"Pass the CPAT", then:{kind:"certs", v:"cpat"}, msg:"You passed! Add your CPAT card so you know when it expires."},
     {k:"ladder", t:"Pass the ladder climb", only:"ladder", then:{kind:"certs", v:"ladder"}, msg:"Ladder climb done! Add the certificate to My Certifications."}],
   medic: [
-    {k:"pick", t:"Pick a paramedic program", do:{kind:"classes", type:"medic"}, msg:"Good pick. Programs fill early, so apply soon."},
-    {k:"apply", t:"Apply to the program", do:{kind:"classes", type:"medic"}, msg:"Nice work! Now line up the money to pay for it."},
+    {k:"apply", t:"Pick a paramedic program and apply", do:{kind:"classes", type:"medic"}, msg:"Nice work! Now line up the money to pay for it."},
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"medic"}, msg:"You're set. Paramedic school is a big commitment, so plan your schedule."},
     {k:"finish", t:"Finish paramedic school", msg:"School done! Next, schedule your NREMT paramedic exam."},
     {k:"nremt", t:"Pass the NREMT paramedic exam", do:NREMT, msg:"You passed! Apply for your Illinois paramedic license through IDPH."},
     {k:"license", t:"Get your Illinois paramedic license", then:{kind:"certs", v:"medic-il"}, msg:"Licensed paramedic! Add it to My Certifications."}],
   apply: [
-    {k:"pick", t:"Pick the departments you'd work for", do:{kind:"tab", tab:"depts", label:"Open Departments"}, msg:"Good list. Watch for their testing dates."},
-    {k:"apply", t:"Apply to an open posting", do:{kind:"jobs"}, msg:"Applied! Most departments test in stages, starting with a written exam."},
+    {k:"apply", t:"Pick the departments you'd work for and apply", do:{kind:"jobs"}, msg:"Applied! Most departments test in stages, starting with a written exam."},
     {k:"written", t:"Take the written exam", msg:"Written exam done! The physical test and interview come next."},
     {k:"oral", t:"Pass the physical test and interview", msg:"Great work. Now it's the hiring list and background check."},
     {k:"hired", t:"Get hired", then:{kind:"retake"}, msg:"Congratulations! Update your answers to \"Hired, on Probation\" to get your next path."}],
@@ -1635,8 +1630,7 @@ const PTASKS = {
     {k:"apply", t:"Apply for at least one grant or scholarship", do:{kind:"funding"}, msg:"Applied! Keep an eye on your email for a decision."},
     {k:"fafsa", t:"File the FAFSA if your program is at a college", do:{kind:"link", url:"https://studentaid.gov/h/apply-for-aid/fafsa", label:"Go to the FAFSA"}, msg:"FAFSA filed! That opens more grants at community colleges."}],
   youth: [
-    {k:"pick", t:"Pick a cadet program", do:{kind:"path"}, msg:"Good pick. Check the age and residency rules."},
-    {k:"apply", t:"Apply", do:{kind:"path"}, msg:"Applied! Ask the program when new cadets start."},
+    {k:"apply", t:"Pick a cadet program and apply", do:{kind:"path"}, msg:"Applied! Ask the program when new cadets start."},
     {k:"join", t:"Join and start going to meetings", msg:"You're a cadet! Once you turn 18, you can start an EMT class."}],
   age: [{k:"check", t:"Check whether an exception applies to you", msg:"Good. Now you know which paths are open to you."}],
   probation: [
@@ -1646,8 +1640,7 @@ const PTASKS = {
     {k:"streets", t:"Learn the streets in your district", msg:"Good work! Knowing the streets gets you to calls faster, especially at night."},
     {k:"pass", t:"Finish probation", then:{kind:"retake"}, msg:"Off probation! Update your answers to \"Career Firefighter\" for your next path."}],
   ce: [
-    {k:"pick", t:"Pick a course", do:{kind:"ce"}, msg:"Good pick. Many departments pay for training, so ask your training officer before you pay."},
-    {k:"reg", t:"Register for the course", do:{kind:"ce"}, msg:"Registered! Mark it on your calendar."},
+    {k:"reg", t:"Pick a course and register", do:{kind:"ce"}, msg:"Registered! Mark it on your calendar. Many departments pay for training, so ask your training officer before you pay."},
     {k:"finish", t:"Finish the course", msg:"Course done! Apply for the OSFM certification next."},
     {k:"cert", t:"Earn the OSFM certification", then:{kind:"tab", tab:"certs", label:"Add It to My Certifications"}, msg:"Certified! Add it to My Certifications so you can track recertification."}],
   promo: [
@@ -1655,16 +1648,18 @@ const PTASKS = {
     {k:"certs", t:"Earn the certifications it requires", do:{kind:"ce"}, msg:"Nice work! Keep your certificates in My Certifications."},
     {k:"exam", t:"Sign up for the next promotional exam", msg:"Signed up! Study the department's reading list and good luck."}],
   parttime: [
-    {k:"pick", t:"Pick part-time departments near you", do:{kind:"parttime"}, msg:"Good list. Some of these don't post deadlines, so call each one to ask if they're hiring."},
-    {k:"apply", t:"Apply for a part-time or paid-on-call position", do:{kind:"parttime"}, msg:"Applied! Many departments test part-time candidates with an interview and a skills or agility test."},
+    {k:"apply", t:"Pick part-time departments near you and apply", do:{kind:"parttime"}, msg:"Applied! Many departments test part-time candidates with an interview and a skills or agility test. Some don't post deadlines, so call to ask if they're hiring."},
     {k:"hired", t:"Get hired and start picking up shifts", msg:"Nice work! Part-time experience makes you a stronger candidate for full-time jobs."}],
   certs: [{k:"add", t:"Add your first certification", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
 };
+/* "Pick" and "apply/book/register" used to be two tasks; an old "pick" check-off still counts for the merged task. */
+const TASK_OLD = {"emt.apply":"emt.pick","academy.apply":"academy.pick","medic.apply":"medic.pick","cpat.book":"cpat.pick","youth.apply":"youth.pick","parttime.apply":"parttime.pick","apply.apply":"apply.pick"};
+function oldTaskKey(k){ if(TASK_OLD[k]) return TASK_OLD[k]; const m = /^(ce-.+|cefind)\.reg$/.exec(k); return m ? m[1] + ".pick" : null }
 function stepTasks(st){
   let ts = PTASKS[st.id && (st.id.startsWith("ce-") || st.id === "cefind") ? "ce" : st.id] || [];
-  if(st.id === "emt" && st.inClass) ts = ts.filter(t => !["pick","apply","fund"].includes(t.k));
+  if(st.id === "emt" && st.inClass) ts = ts.filter(t => !["apply","fund"].includes(t.k));
   if(st.id === "cpat" && !st.ladder) ts = ts.filter(t => t.only !== "ladder");
-  return ts.map(t => ({...t, key: st.id + "." + t.k, done: !!pathDone[st.id + "." + t.k]}));
+  return ts.map(t => { const key = st.id + "." + t.k; return {...t, key, done: !!(pathDone[key] || (oldTaskKey(key) && pathDone[oldTaskKey(key)]))} });
 }
 function pathModel(){
   const ord = academyOrder(), raw = buildPath(profile), has = id => raw.some(x => x.id === id);
@@ -1833,7 +1828,7 @@ function renderRmPath(){
   el.querySelectorAll("[data-topen]").forEach(b => b.onclick = () => { const k = b.dataset.topen; taskOpen[k] = b.getAttribute("aria-expanded") !== "true"; renderRmPath(); const f = el.querySelector(`[data-topen="${k}"]`); if(f) f.focus({preventScroll:true}) });
   el.querySelectorAll("[data-tdone]").forEach(b => b.onclick = () => { const c = el.querySelector(`[data-ptask="${b.dataset.tdone}"]`); if(c){ c.checked = !c.checked; c.dispatchEvent(new Event("change")) } });
   el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
-    const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
+    const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else { delete pathDone[k]; const ok = oldTaskKey(k); if(ok) delete pathDone[ok] }
     delete taskOpen[k]; if(c.checked) taskOpen[k] = false;
     store.set("pathDone", pathDone);
     syncPathCert(k, c.checked);
