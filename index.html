@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Crect width='28' height='28' rx='6' fill='%23fff'/%3E%3Cpath d='M8 27V11M20 27V11' stroke='%23111' stroke-width='3.2' fill='none'/%3E%3Cpath d='M8 22.5h12M8 16.5h12' stroke='%23111' stroke-width='2.6' fill='none'/%3E%3Cpath d='M4.5 11.5L14 3l9.5 8.5' stroke='%23d7261e' stroke-width='3.2' fill='none'/%3E%3C/svg%3E">
 <meta property="og:title" content="Ladder Up Pilot">
-<meta property="og:description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for Will County and the southwest suburbs.">
+<meta property="og:description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for the Chicagoland suburbs.">
 <title>Ladder Up Pilot</title>
-<meta name="description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for Will County and the southwest suburbs.">
+<meta name="description" content="Real EMT, Paramedic and fire academy classes, fire departments, open jobs and funding for the Chicagoland suburbs.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap">
@@ -125,6 +125,8 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .fine{font-size:12.5px;color:var(--ink-3);margin-top:16px;max-width:60em}
 /* list cards */
 .list{display:grid;gap:10px}
+.dp-count{margin:6px 0 0;text-align:center;font-size:14px;color:var(--ink-2)}
+#dp-more{justify-self:center}
 .card{border:1px solid var(--line);border-radius:8px;padding:16px;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px 20px;align-items:start}
 .card h4{font-size:16.5px;line-height:1.3}
 .card .who{font-size:14px;color:var(--ink-2);margin-top:2px}
@@ -579,7 +581,7 @@ html.lenis,html.lenis body{height:auto}
     <div class="hero-glow" aria-hidden="true"><i class="g1"></i><i class="g2"></i></div>
     <div class="wrap hero-grid">
     <div class="hero-main">
-      <p class="eyebrow">Will County + southwest suburbs pilot</p>
+      <p class="eyebrow">Chicagoland suburbs pilot</p>
       <h1 id="hero-h">From Your First EMT Class <em>to Chief.</em></h1>
       <p class="lede">Real classes, real departments and real open jobs near you, with a link to every source and application.</p>
       <p class="hello" id="hello" hidden></p>
@@ -775,13 +777,14 @@ html.lenis,html.lenis body{height:auto}
             <p class="fine">Sources: The Blue Line, Public Safety Testing and department announcements. Requirements are summarized. Read the full posting before you apply.</p>
           </div>
           <div id="jb-v-depts" hidden>
-            <div class="pintro"><h3>Departments</h3><p>Fire departments in the pilot area, their hiring status and where they post testing.</p></div>
+            <div class="pintro"><h3>Departments</h3><p>Fire departments across the Chicagoland suburbs, their hiring status and where they post testing. Closest ones first when you enter a ZIP.</p></div>
             <div class="controls">
               <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
               <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
                 <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
               <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option><option value="calls">Most calls</option><option value="callsLow">Fewest calls</option></select></div>
               <div class="field"><label class="lbl" for="dp-calls">Calls per year</label><select class="select" id="dp-calls"><option value="any">Any</option><option value="0-2500">Under 2,500</option><option value="2500-5000">2,500 to 5,000</option><option value="5000-10000">5,000 to 10,000</option><option value="10000-1e9">Over 10,000</option></select></div>
+              <div class="field"><label class="lbl" for="dp-county">County</label><select class="select" id="dp-county"><option value="all">All counties</option><option>Cook</option><option>DuPage</option><option>Kane</option><option>Kendall</option><option>Lake</option><option>McHenry</option><option>Will</option></select></div>
             </div>
             <p class="fine" style="margin:-4px 0 14px">Most departments here test about every two years. Expected test dates are estimates unless the department announced the date.</p>
             <div class="list" id="dp-list"></div>
@@ -849,7 +852,7 @@ html.lenis,html.lenis body{height:auto}
       <div>
         <p class="eyebrow" style="color:var(--inv-ink-2)">Illinois pilot · Free during the demo</p>
         <h2 class="h2" id="join-h">Get on the <em>List.</em></h2>
-        <p class="lede">Sign up for the Ladder Up pilot. It's free while we test it in Will County and the southwest suburbs. We'll tell you when new classes, testing dates and scholarships open near you.</p>
+        <p class="lede">Sign up for the Ladder Up pilot. It's free while we test it in the Chicagoland suburbs. We'll tell you when new classes, testing dates and scholarships open near you.</p>
       </div>
       <div>
         <div class="done" id="join-ext" hidden>
@@ -905,9 +908,17 @@ html.lenis,html.lenis body{height:auto}
 </dialog>
 
 <script src="data.js"></script>
+<script src="zips-area.js"></script>
+<script src="depts-area.js"></script>
 <script>
 (function(){
 const D = window.LADDER_DATA || {programs:[],departments:[],jobs:[],funding:[],zips:{}};
+/* Add the wider suburban Chicagoland departments (depts-area.js). Ones already in data.js keep their full details. */
+(function(){ const A = window.LADDER_AREA; if(!A || !D.departments) return;
+  D.departments.forEach(d => { if(!d.county && A.county[d.id]) d.county = A.county[d.id] });
+  const have = new Set(D.departments.map(d => d.id));
+  A.rows.forEach(([id,name,city,county,lat,lng,st,c1,c2,c3]) => { if(!have.has(id)) D.departments.push({id, name, city, county, lat, lng, site:null, jobs:null, status:"unchecked", area:true, runs:{stations:st, calls:{"2023":c1, "2024":c2, "2025":c3}}}) });
+})();
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const store = { get(k,d){ try{ const v = localStorage.getItem("lu:"+k); return v==null?d:JSON.parse(v) }catch(e){ return d } },
                 set(k,v){ try{ localStorage.setItem("lu:"+k, JSON.stringify(v)) }catch(e){} if(window.LU && window.LU.onSet) window.LU.onSet(k) } };
@@ -1094,11 +1105,11 @@ function renderCE(){
 }
 
 /* Departments */
-let dpStatus = "all";
-seg("#dp-status", v => { dpStatus = v; renderDepts() });
+let dpStatus = "all", dpShow = 24;
+seg("#dp-status", v => { dpStatus = v; dpShow = 24; renderDepts() });
 seg("#jb-view", v => setJbView(v));
 seg("#cl-view", v => setClView(v));
-const ST = {open:["chip-good","Hiring now"], rolling:["chip-good","Ongoing testing"], closed:["chip-red","Testing closed"], unknown:["","No posting found"]};
+const ST = {open:["chip-good","Hiring now"], rolling:["chip-good","Ongoing testing"], closed:["chip-red","Testing closed"], unknown:["","No posting found"], unchecked:["","Testing status not checked yet"]};
 /* Next testing round: announced date, or a projection two years after the last round */
 const SEASON = m => m<=1||m===11 ? "Winter" : m<=4 ? "Spring" : m<=7 ? "Summer" : "Fall";
 function seasonLabel(d){ const y = d.getFullYear() + (d.getMonth()===11 ? 1 : 0); return SEASON(d.getMonth()) + " " + y }
@@ -1115,13 +1126,13 @@ function nextTest(d){
 function monthsAway(dt){ return (dt - TODAY) / (86400000*30.4) }
 const fmtMonth = s => parseDate(s).toLocaleDateString("en-US",{month:"short",year:"numeric"});
 const fmtMonthLong = s => parseDate(s).toLocaleDateString("en-US",{month:"long",year:"numeric"});
-$("#dp-sort").addEventListener("change", renderDepts);
-$("#dp-calls").addEventListener("change", renderDepts);
+["#dp-sort","#dp-calls","#dp-county"].forEach(q => $(q).addEventListener("change", () => { dpShow = 24; renderDepts() }));
+document.addEventListener("click", e => { if(e.target.closest("#dp-more")){ dpShow += 24; renderDepts(); const c = $$("#dp-list .fcard")[dpShow - 24]; if(c){ const f = c.querySelector("[data-flip]"); if(f) f.focus({preventScroll:true}) } } });
 /* "Learn More About This Job": the card flips like a flash card to show department details */
-function jobInfo(o){ const d = o.deptId ? D.departments.find(x => x.id === o.deptId) : (o.about ? o : null); return { name: d ? d.name : o.dept, runs: (d && d.runs) || o.runs || null, about: (d && d.about) || {} } }
+function jobInfo(o){ const d = o.deptId ? D.departments.find(x => x.id === o.deptId) : (o.about ? o : null); return { name: d ? d.name : o.dept, runs: (d && d.runs) || o.runs || null, about: (d && d.about) || {}, area: !!(d && d.area) } }
 const moreBtn = `<button type="button" class="btn btn-quiet btn-sm" data-flip>Learn More About This Job</button>`;
 function flipCard(front, info){
-  const a = info.about, runs = info.runs, NA = `<span class="dm-na">Not published yet. Ask the department.</span>`;
+  const a = info.about, runs = info.runs, NA = `<span class="dm-na">${info.area ? "Not checked yet." : "Not published yet. Ask the department."}</span>`;
   const calls = runs ? Object.entries(runs.calls).map(([y,n]) => `${y}: ${n==null?"Not reported":n.toLocaleString()}`).join(" · ") : null;
   const rows = [["Calls Ran", calls], ["Shift and Time Off", a.timeOff], ["Union", a.union], ["Stations", runs ? String(runs.stations) : null], ["Area Covered", a.area], ["Residents", a.residents], ["Employees", a.staff]];
   const src = (a.sources||[]).map((u,i) => `<a class="linkish" href="${esc(u)}" target="_blank" rel="noopener">${i+1}</a>`).join(" ");
@@ -1140,6 +1151,7 @@ function renderDepts(){
   let rows = D.departments.map(d => ({...d, mi: miles(d.lat,d.lng), nt: nextTest(d)}))
     .filter(d => dpStatus==="all" || (dpStatus==="open" ? (d.status==="open"||d.status==="rolling") : dpStatus==="soon" ? (d.nt && monthsAway(d.nt.when) <= 12) : d.status==="closed"))
     .map(d => ({...d, lr: lastRuns(d)}));
+  const co = $("#dp-county").value; if(co !== "all") rows = rows.filter(d => d.county === co);
   const cv = $("#dp-calls").value;
   if(cv !== "any"){ const [lo, hi] = cv.split("-").map(Number); rows = rows.filter(d => d.lr && d.lr.n >= lo && d.lr.n < hi) }
   const s = $("#dp-sort").value;
@@ -1148,15 +1160,16 @@ function renderDepts(){
   const ntChip = nt => !nt ? "" : nt.kind==="announced" ? `<span class="chip chip-good">Next expected test: ${esc(nt.label)} (announced)</span>`
     : nt.kind==="due" ? `<span class="chip chip-warn">Next expected test: Any time now</span>` : `<span class="chip chip-warn">Next expected test: ${esc(nt.label)}</span>`;
   const rs = D.runsSource; $("#dp-runs-src").innerHTML = rs ? `Stations and call totals: <a class="linkish" href="${esc(rs.url)}" target="_blank" rel="noopener">${esc(rs.name)}</a>.` : "";
+  const total = rows.length; rows = rows.slice(0, dpShow);
   $("#dp-list").innerHTML = rows.length ? rows.map(d => flipCard(`
     <article class="card">
-      <div><h4>${esc(d.name)}</h4><p class="who">${esc(d.address || d.city)}</p>
+      <div><h4>${esc(d.name)}</h4><p class="who">${esc(d.address || d.city)}${d.county?` · ${esc(d.county)} County`:""}</p>
         <div class="meta"><span class="chip ${ST[d.status][0]}">${ST[d.status][1]}</span>${ntChip(d.nt)}${d.lr?`<span class="chip">${d.lr.n.toLocaleString()} calls (${d.lr.y})</span>`:""}${distTxt(d.mi)}</div>
 
         ${d.note?`<p class="who" style="margin-top:10px">${esc(d.note)}</p>`:""}
 </div>
       <div class="acts">${moreBtn}${d.jobs?`<a class="btn btn-red btn-sm" href="${esc(d.jobs)}" target="_blank" rel="noopener">Hiring / testing page</a>`:""}${d.site?`<a class="btn btn-quiet btn-sm" href="${esc(d.site)}" target="_blank" rel="noopener">Website</a>`:`<a class="btn btn-quiet btn-sm" href="https://www.google.com/search?q=${encodeURIComponent(d.name+" Illinois")}" target="_blank" rel="noopener">Search the web</a>`}</div>
-    </article>`, jobInfo({deptId: d.id, dept: d.name}))).join("") : `<p class="empty">No departments match.</p>`;
+    </article>`, jobInfo({deptId: d.id, dept: d.name}))).join("") + (total > rows.length ? `<p class="dp-count">Showing ${rows.length} of ${total} departments</p><button type="button" class="btn btn-quiet" id="dp-more">Show ${Math.min(24, total - rows.length)} More</button>` : total > 24 ? `<p class="dp-count">Showing all ${total} departments</p>` : "") : `<p class="empty">No departments match.</p>`;
   renderSoon();
 }
 /* Job Board: departments expected to test within a year */
