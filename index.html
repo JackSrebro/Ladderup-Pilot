@@ -1459,10 +1459,11 @@ const CE_FOCUS = {
   hazmat:{t:"Add Hazmat", cats:["hazmat"], certs:"Hazardous Materials Operations, then Technician"},
   instructor:{t:"Become an Instructor", cats:["officer"], re:/Instructor/, certs:"Fire Service Instructor I, II and III"},
   prevention:{t:"Move Toward Inspection or Investigation", cats:["prev"], certs:"Basic Fire Prevention Officer, Fire Inspector I and Fire Investigator"},
-  unsure:{t:"Build Your Firefighting Skills", cats:["ff"], certs:"Advanced Technician Firefighter"}
+  unsure:{t:"Build Your Firefighting Skills", cats:["ff"], certs:"Advanced Technician Firefighter"},
+  all:{t:"Find Continuing Education Courses", cats:null}
 };
 function pathCE(f){
-  return (D.ce ? D.ce.courses : []).filter(c => f.cats.includes(c.cat) && (!f.re || f.re.test(c.name)))
+  return (D.ce ? D.ce.courses : []).filter(c => (!f.cats || f.cats.includes(c.cat)) && (!f.re || f.re.test(c.name)))
     .map(c => ({...c, mi: miles(c.lat,c.lng), nx: nextSession(c)})).filter(c => inRange(c.mi))
     .sort((a,b) => (a.nx?daysTo(a.nx.s):1e6)-(b.nx?daysTo(b.nx.s):1e6) || (a.mi??1e9)-(b.mi??1e9)).slice(0,3)
     .map(c => ({t:c.name, m:`${c.provider}${c.nx?` · Next: ${c.nx.t}`:" · Dates not posted"}${c.cost!=null?` · ${fmt$(c.cost)}`:""}`, mi:c.mi, url:c.register||c.url, b:"Register"}));
@@ -1479,7 +1480,13 @@ function buildPath(p){
   const reqLine = (n, what) => kn ? `${n} of the ${kn} open postings in the area that list requirements need ${what}.` : "";
   if(STAGES[p.stage] && STAGES[p.stage].hired){
     if(p.stage==="probation") steps.push({id:"probation", t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
-    (p.focus && p.focus.length ? p.focus : ["unsure"]).forEach(f => {
+    // Continuing education comes first: most firefighters are always looking for CE, and it's what builds toward promotion.
+    steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Most firefighters take continuing education their whole career, for promotion, specialty teams and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
+    const picks = (p.focus && p.focus.length ? p.focus : ["unsure"]).filter(f => f !== "unsure"), promo = ["officer","engineer"];
+    const order = [...picks.filter(f => promo.includes(f)), ...picks.filter(f => !promo.includes(f))];
+    if(p.stage === "career" && !order.some(f => promo.includes(f)))
+      steps.push({id:"promo", ce:"officer", t:"Get Ready for Promotion", why:"Promotional exams for Engineer, Lieutenant and Captain usually require years of service plus OSFM certifications such as Fire Apparatus Engineer, Company Fire Officer and Fire Service Instructor I. The CE you take counts toward them, so check your department's requirements and plan your courses around them.", items:pathCE(CE_FOCUS.officer), go:"ce"});
+    order.forEach(f => {
       if(f==="medic"){ if(!c.has("medic")) steps.push({id:"medic", t:"Earn Your Paramedic License", why:"Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)}); return }
       const F = CE_FOCUS[f]; if(F) steps.push({id:"ce-"+f, ce:f, t:F.t, why:`OSFM certifications to aim for: ${F.certs}. Most OSFM certifications need recertification every 4 years.`, items:pathCE(F), go:"ce"});
     });
@@ -1603,6 +1610,10 @@ const PTASKS = {
     {k:"reg", t:"Register for the course", do:{kind:"ce"}, msg:"Registered! Mark it on your calendar."},
     {k:"finish", t:"Finish the course", msg:"Course done! Apply for the OSFM certification next."},
     {k:"cert", t:"Earn the OSFM certification", then:{kind:"tab", tab:"certs", label:"Add It to My Certifications"}, msg:"Certified! Add it to My Certifications so you can track recertification."}],
+  promo: [
+    {k:"reqs", t:"Check your department's promotional requirements", msg:"Good. Now you know the years of service and certifications you need."},
+    {k:"certs", t:"Earn the certifications it requires", do:{kind:"ce"}, msg:"Nice work! Keep your certificates in My Certifications."},
+    {k:"exam", t:"Sign up for the next promotional exam", msg:"Signed up! Study the department's reading list and good luck."}],
   parttime: [
     {k:"pick", t:"Pick part-time departments near you", do:{kind:"parttime"}, msg:"Good list. Some of these don't post deadlines, so call each one to ask if they're hiring."},
     {k:"apply", t:"Apply for a part-time or paid-on-call position", do:{kind:"parttime"}, msg:"Applied! Many departments test part-time candidates with an interview and a skills or agility test."},
@@ -1610,7 +1621,7 @@ const PTASKS = {
   certs: [{k:"add", t:"Add your first certification", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
 };
 function stepTasks(st){
-  let ts = PTASKS[st.id && st.id.startsWith("ce-") ? "ce" : st.id] || [];
+  let ts = PTASKS[st.id && (st.id.startsWith("ce-") || st.id === "cefind") ? "ce" : st.id] || [];
   if(st.id === "emt" && st.inClass) ts = ts.filter(t => !["pick","apply","fund"].includes(t.k));
   if(st.id === "cpat" && !st.ladder) ts = ts.filter(t => t.only !== "ladder");
   return ts.map(t => ({...t, key: st.id + "." + t.k, done: !!pathDone[st.id + "." + t.k]}));
@@ -1710,7 +1721,7 @@ function renderPath(rid = "rm-retake"){
       ${st.id==="academy" && (m.canFirst || m.canLast) ? `<button type="button" class="linkish ps-route" data-goroute>Change your route</button>` : ""}
       ${st.tasks.length ? `<ul class="ptasks">${st.tasks.map(t => `<li class="${t.done?"on":""}${pathFlash&&pathFlash.key===t.key?" flash":""}"><label><input type="checkbox" data-ptask="${t.key}" data-step="${st.id}" ${t.done?"checked":""}><span class="pt-box" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg></span><span class="pt-t">${esc(t.t)}</span></label></li>`).join("")}</ul>` : ""}
       ${st.id === nxStep ? nb : ""}
-      ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="parttime"?"Part-time jobs":st.id==="cpat"?"Test sites":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
+      ${st.items && st.items.length ? `<details class="ps-more"${st.done||(st.id===nxStep&&dup)?"":" open"}><summary>${st.id==="apply"?"Open jobs":st.id==="parttime"?"Part-time jobs":st.id==="cpat"?"Test sites":(st.id==="cefind"||st.ce)?"Upcoming courses":st.id==="funding"?"Funding options":"Options near you"}</summary><ul class="mini">${st.items.map((x,k) => item(x, st.limit?st.key:null, k)).join("")}</ul>${st.limit && st.items.length>st.limit?`<button type="button" class="linkish" data-more="${st.key}">Show all ${st.items.length}</button>`:""}</details>` : ""}
       ${st.go?`<button type="button" class="linkish path-go" ${st.go==="cpat"?"data-cpat":st.go==="jobs-part"?`data-act="jobs-part"`:`data-go2="${st.go}"`}>${st.go==="jobs-part"?"See all part-time jobs":"See more"}</button>`:""}
     </div></details></div></li>${st.id === m.optAfter ? ptNote : ""}`).join("")}</ol>${nxStep ? "" : nb}` : `<p class="dempty">You've covered the main steps. Keep your certifications current and watch the Job Board.</p>`}
   </div>`;
