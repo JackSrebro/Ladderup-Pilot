@@ -392,6 +392,24 @@ dialog.auth::backdrop{background:rgba(8,12,18,.55)}
 .auth .ok{font-size:14px;color:var(--ink);background:var(--sunk);border-radius:8px;padding:10px 12px;margin:6px 0 0}
 .auth .err{margin:6px 0 0}
 .auth-acct p{font-size:15px;margin:0 0 12px}
+.ac-sec{border:1px solid var(--line);border-radius:10px;padding:12px 14px;margin:0 0 12px;background:var(--surface)}
+.ac-sec h3{font:700 12px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);margin:0 0 10px}
+.ac-rows{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+.ac-rows li{display:flex;justify-content:space-between;align-items:baseline;gap:12px;font-size:14.5px}
+.ac-rows li span:first-child{color:var(--ink-2)}
+.ac-rows li b{text-align:right;font-weight:600}
+.ac-next{font-size:14px;color:var(--ink-2);margin:10px 0 0}
+.ac-btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.ac-btns .btn{flex:1 1 auto}
+.ac-pilot{font-size:14px;margin:10px 0 0;color:var(--ink-2)}
+.ac-pilot b{color:var(--good)}
+.ac-pw summary{cursor:pointer;font-weight:600;font-size:14.5px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+.ac-pw summary::-webkit-details-marker{display:none}
+.ac-pw summary::after{content:"+";font-size:18px;color:var(--ink-3)}
+.ac-pw[open] summary::after{content:"\2212"}
+.ac-pw .tinput{margin-top:6px}
+.ac-pw .btn{width:100%;margin-top:10px}
+.ac-msg{font-size:14px;margin:8px 0 0}
 .lu-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:8px;font-size:14.5px;font-weight:600;z-index:200;box-shadow:0 8px 24px rgba(0,0,0,.25);max-width:calc(100vw - 32px)}
 .form-2{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:14px}
 @media (max-width:480px){.form-2{grid-template-columns:minmax(0,1fr)}}
@@ -2134,7 +2152,38 @@ async function initData(){
 form.hidden = true; $("#join-ext").hidden = false; renderJoin();
 $("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) });
 $("#join-ext-resend").addEventListener("click", async e => { const b = e.currentTarget; b.disabled = true; if(profile) await joinPilot(profile); b.disabled = false });
-window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo, openProfileForm, hasProfile: () => !!profile });
+/* My Account: a quick snapshot of progress plus profile and pilot details */
+function acctHTML(){
+  if(!profile) return `<div class="ac-sec"><h3>Your Dashboard</h3><p class="ac-next" style="margin:0">You haven't built your dashboard yet. A few quick questions set up your roadmap, job matches and classes.</p><div class="ac-btns"><button type="button" class="btn btn-red btn-sm" data-ac="edit">Build My Dashboard</button></div></div>`;
+  let done = 0, total = 0, nx = null;
+  try { const m = pathModel(); m.steps.forEach(st => st.tasks.forEach(t => { total++; if(t.done) done++ })); const u = upNext(m); nx = u.nx } catch(e){}
+  const ids = Object.keys(saved).filter(k => saved[k]);
+  const sj = ids.filter(id => D.jobs.some(j => j.id === id)).length, sc = ids.length - sj;
+  const rows = certsSorted(), soon = rows.filter(c => c.exp && daysTo(c.exp) >= 0 && daysTo(c.exp) <= 90).length, gone = rows.filter(c => c.exp && daysTo(c.exp) < 0).length;
+  const certTxt = rows.length ? `${rows.length} saved${soon ? `, ${soon} due soon` : ""}${gone ? `, ${gone} expired` : ""}` : "None added yet";
+  const name = [profile.firstName, profile.lastName].filter(Boolean).join(" ") || profile.fullName || profile.name || "";
+  const pilot = profile.joined ? `<p class="ac-pilot"><b>You're in the free pilot.</b> We'll email ${esc(profile.email || "you")} with updates. Want off the list? Email <a href="mailto:jack@ladder-up.net">jack@ladder-up.net</a>.</p>`
+    : `<p class="ac-pilot">You're not in the free pilot yet.</p><div class="ac-btns"><button type="button" class="btn btn-line btn-sm" data-ac="join">Join the Free Pilot</button></div>`;
+  return `<div class="ac-sec"><h3>Your Progress</h3><ul class="ac-rows">
+      <li><span>Goal</span><b>${esc(GOAL[profile.goal] || "Not set")}</b></li>
+      <li><span>Roadmap</span><b>${total ? `${done} of ${total} tasks done` : "No tasks yet"}</b></li>
+      <li><span>Saved</span><b>${sj} job${sj===1?"":"s"}, ${sc} class${sc===1?"":"es"}</b></li>
+      <li><span>Certifications</span><b>${certTxt}</b></li></ul>
+    ${nx ? `<p class="ac-next">Up next: <b style="color:var(--ink)">${esc(nx.t.t)}</b></p>` : ""}
+    <div class="ac-btns"><button type="button" class="btn btn-quiet btn-sm" data-ac="roadmap">Open My Roadmap</button><button type="button" class="btn btn-quiet btn-sm" data-ac="certs">My Certifications</button></div></div>
+    <div class="ac-sec"><h3>Your Profile</h3><ul class="ac-rows">
+      ${name ? `<li><span>Name</span><b>${esc(name)}</b></li>` : ""}
+      <li><span>ZIP</span><b>${esc(profile.zip || "Not set")}${profile.radius ? ` · within ${esc(String(profile.radius))} mi` : ""}</b></li></ul>
+    ${pilot}
+    <div class="ac-btns"><button type="button" class="btn btn-quiet btn-sm" data-ac="edit">Edit My Answers</button></div></div>`;
+}
+function acctAct(a){
+  if(a === "roadmap"){ showTab("roadmap"); goTo($("#tools")) }
+  else if(a === "certs"){ showTab("certs"); goTo($("#tools")) }
+  else if(a === "edit"){ openProfileForm(); goTo($("#tools")) }
+  else if(a === "join" && profile){ if(profile.email) joinPilot(profile); else { openProfileForm(); goTo($("#tools")) } }
+}
+window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo, openProfileForm, hasProfile: () => !!profile, acctHTML, acctAct });
 })();
 </script>
 
@@ -2168,6 +2217,13 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
   </form>
   <div class="auth-acct" data-show="account">
     <p id="au-who"></p>
+    <div id="au-summary"></div>
+    <details class="ac-sec ac-pw" id="ac-pw"><summary>Change Password</summary>
+      <label class="lbl" for="ac-pw1">New password</label><input class="tinput" id="ac-pw1" type="password" autocomplete="new-password" minlength="8">
+      <label class="lbl" for="ac-pw2">Type it again</label><input class="tinput" id="ac-pw2" type="password" autocomplete="new-password" minlength="8">
+      <p class="ac-msg" id="ac-pw-msg" role="status" hidden></p>
+      <button type="button" class="btn btn-red btn-sm" id="ac-pw-save">Save New Password</button>
+    </details>
     <p class="auth-sub">Your dashboard, roadmap progress and saved items are stored in your account. Logging out removes them from this browser, but they stay in your account.</p>
     <button type="button" class="btn btn-line" id="au-logout" style="width:100%;justify-content:center">Log Out</button>
     <button type="button" class="linkish" data-delete-data style="margin-top:12px">Delete My Account Data</button>
@@ -2318,7 +2374,7 @@ async function main(){
     $("#auth-h").textContent = T[0]; $("#auth-sub").textContent = T[1]; $("#auth-sub").hidden = !T[1]; $("#au-submit").textContent = T[2];
     $("#au-pw").autocomplete = m === "login" ? "current-password" : "new-password";
     $("#au-pw-l").textContent = m === "reset" ? "New password" : "Password";
-    if(m === "account") $("#au-who").innerHTML = `Logged in as <b>${esc(user && user.email)}</b>.`;
+    if(m === "account"){ $("#au-who").innerHTML = `Logged in as <b>${esc(user && user.email)}</b>.`; $("#au-summary").innerHTML = LU.acctHTML ? LU.acctHTML() : ""; $("#ac-pw").open = false; $("#ac-pw1").value = $("#ac-pw2").value = ""; $("#ac-pw-msg").hidden = true }
     $("#au-err").hidden = true; $("#au-ok").hidden = true;
   }
   function openDlg(m, gated){
@@ -2377,6 +2433,17 @@ async function main(){
     if(user){ try { await I.updateUser({ data: { ladderup: null } }) } catch(e){} try { await I.logout() } catch(e){} user = null }
     return had;
   };
+  $("#au-summary").addEventListener("click", e => { const b = e.target.closest("[data-ac]"); if(!b) return; const a = b.dataset.ac; if(a !== "join") dlg.close(); if(LU.acctAct) LU.acctAct(a); if(a === "join") setTimeout(() => { $("#au-summary").innerHTML = LU.acctHTML() }, 600) });
+  $("#ac-pw-save").addEventListener("click", async () => {
+    const a = $("#ac-pw1").value, b = $("#ac-pw2").value, msg = $("#ac-pw-msg"), btn = $("#ac-pw-save");
+    const say = (t, bad) => { msg.textContent = t; msg.style.color = bad ? "var(--red-ink)" : "var(--good)"; msg.hidden = false };
+    if(a.length < 8) return say("Use at least 8 characters.", true);
+    if(a !== b) return say("Those passwords don't match.", true);
+    btn.disabled = true; btn.textContent = "Saving…";
+    try { const u = await I.updateUser({ password: a }); if(u) user = u; $("#ac-pw1").value = $("#ac-pw2").value = ""; say("Your new password is saved.") }
+    catch(err){ say(niceErr(err), true) }
+    finally { btn.disabled = false; btn.textContent = "Save New Password" }
+  });
   $("#au-logout").addEventListener("click", async () => {
     if(pushT) await push();
     try { await I.logout() } catch(e){}
