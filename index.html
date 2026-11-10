@@ -1382,6 +1382,7 @@ function saveProfile(e){
   profile = { name: first, firstName: first, lastName: last, fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
               certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined,
               stage: QA.stage || null, timeline: QA.timeline || null, schedule: QA.schedule || null, pay: QA.pay || null,
+              pathCerts: (prev.pathCerts || []).filter(k => $$("[data-cert]:checked").some(c => c.dataset.cert === k)),
               age: QA.age || null, parentOk: QA.age === "u18" ? $("#pf-parent").checked : undefined, veteran: QA.veteran || null, focus: QA.focus || [] };
   if(join){ $("#pf-save").href = signupURL(profile); profile.joined = true; profile.joinedAt = new Date().toISOString() }
   else e.preventDefault();
@@ -1419,6 +1420,7 @@ function renderJoin(){
   $("#join-ext-btn").textContent = profile ? "Join the Pilot" : "Build My Dashboard and Join";
 }
 function applyProfile(){
+  try { backfillPathCerts() } catch(e){}   // not ready yet on the very first call; it runs again once the roadmap code loads
   renderJoin();
   document.documentElement.classList.toggle("no-profile", !profile); document.documentElement.classList.toggle("has-profile", !!profile);
   $("#nav-dash").textContent = profile ? "My Dashboard" : "Build My Dashboard";
@@ -1472,7 +1474,7 @@ function partTimeItems(p){
       chip: j.miss && j.miss.includes("medic") ? "Needs Paramedic" : ""}));
 }
 function buildPath(p){
-  const c = new Set(p.certs || []), g = goalOf(p), ff = g==="ffpm" || g==="ffemt", steps = [];
+  const c = new Set((p.certs || []).filter(k => !(p.pathCerts || []).includes(k))), g = goalOf(p), ff = g==="ffpm" || g==="ffemt", steps = [];  // certs earned by checking off roadmap tasks keep their step on the roadmap (shown as done)
   const known = liveJobs().filter(j => j.needs && !isPart(j)), kn = known.length, need = k => known.filter(j => j.needs.includes(k)).length;
   const reqLine = (n, what) => kn ? `${n} of the ${kn} open postings in the area that list requirements need ${what}.` : "";
   if(STAGES[p.stage] && STAGES[p.stage].hired){
@@ -1763,6 +1765,7 @@ function renderRmPath(){
   el.querySelectorAll("[data-ptask]").forEach(c => c.onchange = () => {
     const k = c.dataset.ptask; if(c.checked) pathDone[k] = true; else delete pathDone[k];
     store.set("pathDone", pathDone);
+    syncPathCert(k, c.checked);
     pathFlash = c.checked ? {key:k, step:c.dataset.step} : null;
     { const m2 = pathModel(), st2 = m2.steps.find(x => x.id === c.dataset.step);
       if(c.checked && st2 && st2.done){ const nxt = m2.steps[m2.cur]; stepOpen[c.dataset.step] = false; if(nxt) delete stepOpen[nxt.id] } }
@@ -1773,6 +1776,26 @@ function renderRmPath(){
     const again = el.querySelector(`[data-ptask="${k}"]`); if(again) again.focus({preventScroll:true});
     pathFlash = null;
   });
+}
+/* Checking off a license or certification task on the roadmap counts it everywhere: job matches, the dashboard and the Job Board.
+   Unchecking it takes it back off, but only if the roadmap added it. */
+const TASK_CERT = {"emt.license":"emt", "academy.cert":"ffii", "medic.license":"medic", "cpat.pass":"cpat", "cpat.ladder":"ladder"};
+function backfillPathCerts(){ // tasks checked before check-offs counted as certifications
+  if(!profile) return false;
+  const add = Object.keys(TASK_CERT).filter(k => pathDone[k] && !(profile.certs || []).includes(TASK_CERT[k])).map(k => TASK_CERT[k]);
+  if(!add.length) return false;
+  profile = {...profile, certs: [...(profile.certs || []), ...add], pathCerts: [...new Set([...(profile.pathCerts || []), ...add])]}; store.set("profile", profile); return true;
+}
+function syncPathCert(key, on){
+  const cert = TASK_CERT[key]; if(!cert || !profile) return;
+  const certs = new Set(profile.certs || []), pc = new Set(profile.pathCerts || []);
+  if(on && !certs.has(cert)){ certs.add(cert); pc.add(cert) }
+  else if(!on && pc.has(cert)){ certs.delete(cert); pc.delete(cert) }
+  else return;
+  profile = {...profile, certs: [...certs], pathCerts: [...pc]};
+  store.set("profile", profile);
+  $$("[data-cert]").forEach(cb => cb.checked = profile.certs.includes(cb.dataset.cert));
+  renderJobs();
 }
 function renderDash(){
   const el = $("#dash");
