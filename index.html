@@ -919,7 +919,9 @@ const D = window.LADDER_DATA || {programs:[],departments:[],jobs:[],funding:[],z
 (function(){ const A = window.LADDER_AREA; if(!A || !D.departments) return;
   D.departments.forEach(d => { if(!d.county && A.county[d.id]) d.county = A.county[d.id] });
   const have = new Set(D.departments.map(d => d.id));
-  A.rows.forEach(([id,name,city,county,lat,lng,st,c1,c2,c3]) => { if(!have.has(id)) D.departments.push({id, name, city, county, lat, lng, site:null, jobs:null, status:"unchecked", area:true, runs:{stations:st, calls:{"2023":c1, "2024":c2, "2025":c3}}}) });
+  const SS = A.status || {};
+  A.rows.forEach(([id,name,city,county,lat,lng,st,c1,c2,c3]) => { if(have.has(id)) return; const x = SS[id];
+    D.departments.push({id, name, city, county, lat, lng, site:null, jobs: x ? x[2] : null, status: x ? x[0] : (A.checked ? "unknown" : "unchecked"), note: x ? x[1] : (A.boardsNote || null), lastTest: x && x[3] ? {date: x[3], label: x[1], source: x[2]} : null, area:true, runs:{stations:st, calls:{"2023":c1, "2024":c2, "2025":c3}}}) });
 })();
 const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
 const store = { get(k,d){ try{ const v = localStorage.getItem("lu:"+k); return v==null?d:JSON.parse(v) }catch(e){ return d } },
