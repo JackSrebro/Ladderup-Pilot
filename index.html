@@ -684,7 +684,7 @@ html.lenis,html.lenis body{height:auto}
             <div class="prof-foot qz-foot">
               <button class="btn btn-quiet" type="button" id="qz-back">Back</button>
               <button class="btn btn-red" type="button" id="qz-next">Next</button>
-              <a class="btn btn-red" id="pf-save" href="#" target="_blank" rel="noopener" role="button">Build My Dashboard</a>
+              <button type="button" class="btn btn-red" id="pf-save">Build My Dashboard</button>
               <button class="btn btn-quiet" type="button" id="pf-cancel" hidden>Cancel</button>
             </div>
           </form>
@@ -822,7 +822,7 @@ html.lenis,html.lenis body{height:auto}
           <h3 id="join-ext-h">Join the Free Pilot</h3>
           <p id="join-ext-p">Joining is part of building your dashboard. It takes about a minute.</p>
           <button type="button" class="btn btn-red" id="join-ext-btn" style="justify-self:start">Build My Dashboard and Join</button>
-          <p id="join-ext-resend-p" class="small" hidden>Didn't see a Google Forms confirmation page? <a id="join-ext-resend" href="#" target="_blank" rel="noopener">Send my sign-up again</a>.</p>
+          <p id="join-ext-resend-p" class="small" hidden>Your sign-up didn't go through. <button type="button" class="linkish" id="join-ext-resend" style="color:inherit;font-weight:700">Send my sign-up again</button></p>
         </div>
         <form class="form" id="join-form" novalidate>
           <div class="form-2">
@@ -853,6 +853,11 @@ html.lenis,html.lenis body{height:auto}
   <p>Ladder Up is operated by Jack Michael Srebro. Questions, corrections or privacy requests: <a class="mail" href="mailto:jack@ladder-up.net?subject=Ladder%20Up%20Pilot" target="_blank" rel="noopener">jack@ladder-up.net</a>.</p>
   <p>&copy; 2026 Ladder Up. Free during the Illinois pilot.</p>
 </div></footer>
+
+<!-- Netlify reads this hidden form at deploy time so it can accept pilot sign-ups sent from the dashboard -->
+<form name="pilot-signup" data-netlify="true" netlify-honeypot="bot-field" hidden aria-hidden="true">
+  <input name="first-name"><input name="last-name"><input name="email"><input name="zip"><input name="stage"><input name="age-range"><input name="parent-ok"><input name="bot-field">
+</form>
 
 <div class="lu-notice" id="lu-notice" role="region" aria-label="Storage notice" hidden><p>Ladder Up saves your dashboard in this browser, and keeps you logged in if you have an account. No ads or tracking. <a href="/cookies.html">Cookie Policy</a></p><button type="button" class="btn btn-red btn-sm" id="lu-notice-ok">Got It</button></div>
 
@@ -1261,7 +1266,7 @@ function fillProfileForm(){
 function zipNote(){ const z = $("#pf-zip").value.trim(); const o = D.zips[z];
   $("#pf-zip-note").textContent = z.length<5 ? "" : o ? o[2] : "Outside the pilot area. We'll show everything." }
 $("#pf-zip").addEventListener("input", zipNote);
-function openProfileForm(){ if(window.LU && window.LU.gate && window.LU.gate()) return; $("#pf-gate").hidden = true; fillProfileForm(); presetSaveHref(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); qzFocus() }
+function openProfileForm(){ if(window.LU && window.LU.gate && window.LU.gate()) return; $("#pf-gate").hidden = true; fillProfileForm(); $("#prof-form").hidden = false; $("#dash").hidden = true; showTab("dash"); if(window.LU && window.LU.onFormOpen) window.LU.onFormOpen(); qzFocus() }
 $("#pf-cancel").addEventListener("click", () => { $("#prof-form").hidden = true; $("#dash").hidden = false });
 /* Setup questionnaire: one question group per screen. Hired firefighters get a shorter branch. */
 const STAGES = {
@@ -1318,7 +1323,7 @@ function qzNext(){
   if(step==="about" && QA.age==="u13") return qzErr("Ladder Up is for people 13 and older.");
   if(step==="about" && QA.age==="u18" && !$("#pf-parent").checked) return qzErr("Check the box to confirm a parent or guardian said it's OK.");
   if(step==="where" && !/^\d{5}$/.test($("#pf-zip").value.trim())){ $("#pf-zip").setAttribute("aria-invalid","true"); return qzErr("Add your 5-digit ZIP.") }
-  qzShow(qzI+1); presetSaveHref(); qzFocus();
+  qzShow(qzI+1); qzFocus();
   if($("#prof-form").getBoundingClientRect().top < 0) goTo($("#prof-form"));
 }
 $("#qz-next").addEventListener("click", qzNext);
@@ -1329,7 +1334,7 @@ $("#prof-form").addEventListener("click", e => {
   if(el.hasAttribute("data-multi")){ const set = new Set(QA[q] || []); set.has(v) ? set.delete(v) : set.add(v); QA[q] = [...set] }
   else QA[q] = v;
   if(q==="stage"){ (STAGES[v].certs || []).forEach(k => { const cb = $(`[data-cert="${k}"]`); if(cb) cb.checked = true }); qzShow(qzI) }
-  qzSync(); updateSaveLabel(); presetSaveHref(); $("#pf-err").hidden = true;
+  qzSync(); updateSaveLabel(); $("#pf-err").hidden = true;
 });
 $$("[data-cert]").forEach(cb => cb.addEventListener("change", qzSync));
 function qzFill(p){
@@ -1339,10 +1344,23 @@ function qzFill(p){
   $("#pf-parent").checked = !!p.parentOk;
   qzShow(0);
 }
-/* One step: build the dashboard and, if they opt in, send their answers to the Ladder Up Google Form.
+/* One step: build the dashboard and, if they opt in, add them to the pilot list (a Netlify form, saved in the background).
    Google's form needs a real link click (a page can't post to it), so the button is a link that opens
    Google's "response recorded" page in a new tab while the dashboard opens here. */
-const SF = D.signupFields || null;
+const SF = true;   // pilot sign-ups go to the Netlify form "pilot-signup" (see the hidden form at the end of the page)
+function pilotToast(msg){ const t = document.createElement("div"); t.className = "lu-toast"; t.setAttribute("role","status"); t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 6000) }
+async function sendSignup(p){
+  const body = new URLSearchParams({ "form-name": "pilot-signup", "first-name": p.firstName || "", "last-name": p.lastName || "", email: p.email || "", zip: p.zip || "",
+    stage: stagesFor(p).join(", "), "age-range": p.age ? ((QOPTS.age.find(a => a[0] === p.age) || [])[1] || p.age) : "", "parent-ok": p.age === "u18" ? (p.parentOk ? "Yes" : "No") : "", "bot-field": "" });
+  try { const r = await fetch("/", { method: "POST", headers: { "Content-Type": "application/x-www-form-urlencoded" }, body: body.toString() }); return r.ok } catch(e){ return false }
+}
+async function joinPilot(p){
+  const ok = await sendSignup(p);
+  if(!profile) return ok;
+  profile = {...profile, joined: true, joinSent: ok, joinedAt: profile.joinedAt || new Date().toISOString()}; store.set("profile", profile); renderJoin();
+  pilotToast(ok ? `You're on the pilot list! We'll email ${p.email} with updates.` : "Your dashboard is saved, but your pilot sign-up didn't go through. Use \"Send my sign-up again\" in the Join section.");
+  return ok;
+}
 function updateSaveLabel(){
   const join = !$("#pf-join-row").hidden && $("#pf-join").checked;
   $("#pf-save").textContent = profile ? (join ? "Save and Join the Pilot" : "Save Changes") : (join ? "Build My Dashboard and Join" : "Build My Dashboard");
@@ -1380,43 +1398,32 @@ function saveProfile(e){
   err.hidden = true;
   const prev = profile || {};
   profile = { name: first, firstName: first, lastName: last, fullName, email, zip: z, radius: $("#pf-radius").value, goal: $("#pf-goal").value, rung: +$("#pf-rung").value,
-              certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined,
+              certs: $$("[data-cert]:checked").map(c => c.dataset.cert), joined: !!prev.joined, joinSent: prev.joinSent,
               stage: QA.stage || null, timeline: QA.timeline || null, schedule: QA.schedule || null, pay: QA.pay || null,
               pathCerts: (prev.pathCerts || []).filter(k => $$("[data-cert]:checked").some(c => c.dataset.cert === k)),
               age: QA.age || null, parentOk: QA.age === "u18" ? $("#pf-parent").checked : undefined, veteran: QA.veteran || null, focus: QA.focus || [] };
-  if(join){ $("#pf-save").href = signupURL(profile); profile.joined = true; profile.joinedAt = new Date().toISOString() }
-  else e.preventDefault();
+  e.preventDefault();
+  if(join){ profile.joined = true; profile.joinSent = false; profile.joinedAt = new Date().toISOString() }
   store.set("profile", profile);
   rmCur = profile.rung; store.set("rung", rmCur);
   $("#prof-form").hidden = true; $("#dash").hidden = false;
   applyProfile(); setZip(z); showTab(profile.stage ? "roadmap" : "dash"); goTo($("#tools"));
   if(window.LU && window.LU.afterProfileSave) window.LU.afterProfileSave(profile);
+  if(join) joinPilot(profile);
 }
-/* Keep the sign-up link ready before the tap, so the page host opens the right address */
-function presetSaveHref(){
-  const btn = $("#pf-save"); if(!btn) return;
-  const join = !$("#pf-join-row").hidden && $("#pf-join").checked && !!SF;
-  const fullName = pfFull(), email = $("#pf-email").value.trim(), z = $("#pf-zip").value.trim();
-  const ok = fullName && /^\d{5}$/.test(z) && /^\S+@\S+\.\S+$/.test(email);
-  if(join && ok){
-    const tmp = { fullName, email, zip: z, rung: +$("#pf-rung").value, certs: $$("[data-cert]:checked").map(c => c.dataset.cert) };
-    btn.href = signupURL(tmp); btn.target = "_blank";
-  } else { btn.href = "#"; btn.removeAttribute("target") }
-}
-["input","change"].forEach(ev => $("#prof-form").addEventListener(ev, presetSaveHref));
-$("#pf-save").addEventListener("pointerdown", presetSaveHref);
 $("#pf-save").addEventListener("click", saveProfile);
 $("#prof-form").addEventListener("submit", e => { e.preventDefault(); if(qzIsLast()) $("#pf-save").click(); else qzNext() });
 
 function renderJoin(){
   if(!$("#join-ext")) return;
   const j = profile && profile.joined;
-  $("#join-ext-h").textContent = j ? "You're on the List." : "Join the Free Pilot";
+  const failed = j && profile.joinSent === false;
+  $("#join-ext-h").textContent = failed ? "Almost on the List." : j ? "You're on the List." : "Join the Free Pilot";
   $("#join-ext-p").textContent = j ? `Thanks, ${profile.name}. We'll email ${profile.email} with pilot updates.` : (profile ? "Add your email in your profile to join. It takes a few seconds." : "Joining is part of building your dashboard. It takes about a minute.");
   $("#join-ext-btn").hidden = !!j;
   const cta = $(".head-cta"); if(cta) cta.hidden = !!j;
   const rp = $("#join-ext-resend-p");
-  if(rp){ rp.hidden = !(j && SF && profile.email); if(!rp.hidden) $("#join-ext-resend").href = signupURL(profile) }
+  if(rp) rp.hidden = !(j && profile.joinSent === false && profile.email);
   $("#join-ext-btn").textContent = profile ? "Join the Pilot" : "Build My Dashboard and Join";
 }
 function applyProfile(){
@@ -2080,10 +2087,10 @@ async function initData(){
     });
   }
 }
-/* When a sign-up form link is set in data.js, everyone uses it (it emails the owner and keeps the list). */
-if(D.signupForm){ form.hidden = true; $("#join-ext").hidden = false; renderJoin();
-  $("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) }); }
-else initData();
+/* Joining happens with the dashboard: sign-ups go to the Netlify form "pilot-signup". */
+form.hidden = true; $("#join-ext").hidden = false; renderJoin();
+$("#join-ext-btn").addEventListener("click", () => { openProfileForm(); goTo($("#tools")) });
+$("#join-ext-resend").addEventListener("click", async e => { const b = e.currentTarget; b.disabled = true; if(profile) await joinPilot(profile); b.disabled = false });
 window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash() }, showTab, goTo, openProfileForm, hasProfile: () => !!profile });
 })();
 </script>
