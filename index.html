@@ -1557,7 +1557,7 @@ function buildPath(p){
   if((g==="ffpm") && !c.has("medic") && !medicFirst) medicStep();
   // After getting hired: probation, then continuing education for the rest of the career
   if(steps.some(st => st.id === "apply")){
-    steps.push({id:"probation", t:"Get Through Probation", why:"Once you're hired, your first year is usually probation. You'll be learning your department's procedures, riding with a training officer and finishing any department testing. Keep your licenses current and log your training hours.", items:[]});
+    steps.push({id:"probation", t:"Get Through Probation", why:"Once you're hired, your first year is usually probation. You'll be learning your department's procedures, where all the equipment is and how to use it, and the streets in your district, while riding with a training officer and finishing any department testing. Keep your licenses current and log your training hours.", items:[]});
     steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Firefighters take continuing education their whole career, for promotion, specialty teams and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
   }
   return steps;
@@ -1627,6 +1627,8 @@ const PTASKS = {
   probation: [
     {k:"license", t:"Keep your EMT or paramedic license current", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Good. Your license is current."},
     {k:"log", t:"Log your training hours", msg:"Logged! Keep it up through probation."},
+    {k:"equip", t:"Know where all the equipment is on every rig and how to use it", msg:"Nice! Keep checking the rigs every shift until you can find anything without looking."},
+    {k:"streets", t:"Learn the streets in your district", msg:"Good work! Knowing the streets gets you to calls faster, especially at night."},
     {k:"pass", t:"Finish probation", then:{kind:"retake"}, msg:"Off probation! Update your answers to \"Career Firefighter\" for your next path."}],
   ce: [
     {k:"pick", t:"Pick a course", do:{kind:"ce"}, msg:"Good pick. Many departments pay for training, so ask your training officer before you pay."},
