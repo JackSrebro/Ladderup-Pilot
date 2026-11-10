@@ -767,6 +767,7 @@ html.lenis,html.lenis body{height:auto}
             <div class="pintro"><h3>Job Board</h3><p>Open full-time and part-time firefighter postings, soonest deadline first. Part-time and paid-on-call jobs are a common first fire job once you have your EMT license and Basic Operations Firefighter. Every listing links straight to its application and to the posting we pulled it from.</p></div>
             <div class="controls">
               <div class="field"><label class="lbl" for="jb-zip">ZIP</label><input class="tinput zip" id="jb-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><label class="lbl" for="jb-dist">Distance</label><select class="select" id="jb-dist" data-dist><option value="0">Any distance</option><option value="10">Within 10 miles</option><option value="20">Within 20 miles</option><option value="30">Within 30 miles</option><option value="50">Within 50 miles</option></select></div>
               <div class="field"><span class="lbl" id="jb-type-l">Job type</span><div class="seg" id="jb-type" role="group" aria-labelledby="jb-type-l"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="full" aria-pressed="false">Full-Time</button><button type="button" data-v="part" aria-pressed="false">Part-Time</button></div></div>
               <div class="field"><label class="lbl" for="jb-sort">Sort by</label><select class="select" id="jb-sort"><option value="deadline">Deadline</option><option value="dist">Distance</option><option value="pay">Starting pay</option></select></div>
               <label class="check" style="padding-block:10px"><input type="checkbox" id="jb-emt"><span>EMT Only (No Paramedic License Needed)</span></label>
@@ -780,6 +781,7 @@ html.lenis,html.lenis body{height:auto}
             <div class="pintro"><h3>Departments</h3><p>Fire departments across the Chicagoland suburbs, their hiring status and where they post testing. Closest ones first when you enter a ZIP.</p></div>
             <div class="controls">
               <div class="field"><label class="lbl" for="dp-zip">ZIP</label><input class="tinput zip" id="dp-zip" inputmode="numeric" maxlength="5" data-zip></div>
+              <div class="field"><label class="lbl" for="dp-dist">Distance</label><select class="select" id="dp-dist" data-dist><option value="0">Any distance</option><option value="10">Within 10 miles</option><option value="20">Within 20 miles</option><option value="30">Within 30 miles</option><option value="50">Within 50 miles</option></select></div>
               <div class="field"><span class="lbl">Status</span><div class="seg" id="dp-status">
                 <button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="open" aria-pressed="false">Hiring</button><button type="button" data-v="soon" aria-pressed="false">Testing within a year</button><button type="button" data-v="closed" aria-pressed="false">Closed</button></div></div>
               <div class="field"><label class="lbl" for="dp-sort">Sort by</label><select class="select" id="dp-sort"><option value="dist">Distance</option><option value="next">Next test</option><option value="calls">Most calls</option><option value="callsLow">Fewest calls</option></select></div>
@@ -1039,12 +1041,17 @@ function renderClasses(){
 
 /* Jobs */
 ["#jb-sort","#jb-dated","#jb-emt"].forEach(s => $(s).addEventListener("change", renderJobs));
+/* Distance range, shared by the Jobs and Departments views (needs a ZIP) */
+let jbDist = +(store.get("jbDist", 0)) || 0;
+const inDist = mi => !jbDist || !origin() || (mi != null && mi <= jbDist);
+const distNote = () => jbDist && !origin() ? `<p class="dp-count">Enter your ZIP above to filter by distance.</p>` : "";
+$$("[data-dist]").forEach(sel => { sel.value = String(jbDist); sel.addEventListener("change", () => { jbDist = +sel.value; store.set("jbDist", jbDist); $$("[data-dist]").forEach(x => x.value = sel.value); dpShow = 24; renderJobs(); renderDepts() }) });
 let jbType = "all"; seg("#jb-type", v => { jbType = v; renderJobs() });
 const isPart = j => j.type === "part";
 const emtOk = j => Array.isArray(j.needs) && !j.needs.includes("medic");
 function liveJobs(){ return D.jobs.filter(j => !j.deadline || daysTo(j.deadline) >= 0) }
 function renderJobs(){
-  let rows = liveJobs().filter(j => jbType==="all" || (jbType==="part") === isPart(j)).filter(j => !$("#jb-dated").checked || j.deadline).filter(j => !$("#jb-emt").checked || emtOk(j)).map(j => ({...j, mi: miles(j.lat,j.lng)}));
+  let rows = liveJobs().filter(j => jbType==="all" || (jbType==="part") === isPart(j)).filter(j => !$("#jb-dated").checked || j.deadline).filter(j => !$("#jb-emt").checked || emtOk(j)).map(j => ({...j, mi: miles(j.lat,j.lng)})).filter(j => inDist(j.mi));
   const s = $("#jb-sort").value;
   rows.sort((a,b) => s==="pay" ? ((b.pay??(b.payHr?b.payHr*2080:0))-(a.pay??(a.payHr?a.payHr*2080:0))) : s==="dist" ? ((a.mi??1e9)-(b.mi??1e9))
     : ((a.deadline?daysTo(a.deadline):1e6)-(b.deadline?daysTo(b.deadline):1e6)));
@@ -1062,7 +1069,8 @@ function renderJobs(){
         ${j.applyTip?`<div style="grid-column:1/-1"><span>How to apply</span><p>${esc(j.applyTip)}</p></div>`:""}
       </div>
       <div class="acts"><a class="btn btn-red btn-sm" href="${esc(j.apply)}" target="_blank" rel="noopener">Apply</a>${moreBtn}<a class="btn btn-quiet btn-sm" href="${esc(j.source)}" target="_blank" rel="noopener">View posting · ${esc(j.sourceName)}</a>${starBtn(j.id)}</div>
-    </article>`, jobInfo(j)) }).join("") : `<p class="empty">No open ${jbType==="part"?"part-time ":jbType==="full"?"full-time ":""}postings${$("#jb-emt").checked?" open to EMTs":""} match right now.</p>`;
+    </article>`, jobInfo(j)) }).join("") : `<p class="empty">No open ${jbType==="part"?"part-time ":jbType==="full"?"full-time ":""}postings${$("#jb-emt").checked?" open to EMTs":""}${jbDist&&origin()?` within ${jbDist} miles`:""} match right now.${jbDist&&origin()?" Try a bigger distance.":""}</p>`;
+  if(jbDist && !origin()) $("#jb-list").insertAdjacentHTML("afterbegin", distNote());
 }
 
 /* Continuing education */
@@ -1152,6 +1160,7 @@ function renderDepts(){
     .filter(d => dpStatus==="all" || (dpStatus==="open" ? (d.status==="open"||d.status==="rolling") : dpStatus==="soon" ? (d.nt && monthsAway(d.nt.when) <= 12) : d.status==="closed"))
     .map(d => ({...d, lr: lastRuns(d)}));
   const co = $("#dp-county").value; if(co !== "all") rows = rows.filter(d => d.county === co);
+  rows = rows.filter(d => inDist(d.mi));
   const cv = $("#dp-calls").value;
   if(cv !== "any"){ const [lo, hi] = cv.split("-").map(Number); rows = rows.filter(d => d.lr && d.lr.n >= lo && d.lr.n < hi) }
   const s = $("#dp-sort").value;
@@ -1169,7 +1178,11 @@ function renderDepts(){
         ${d.note?`<p class="who" style="margin-top:10px">${esc(d.note)}</p>`:""}
 </div>
       <div class="acts">${moreBtn}${d.jobs?`<a class="btn btn-red btn-sm" href="${esc(d.jobs)}" target="_blank" rel="noopener">Hiring / testing page</a>`:""}${d.site?`<a class="btn btn-quiet btn-sm" href="${esc(d.site)}" target="_blank" rel="noopener">Website</a>`:`<a class="btn btn-quiet btn-sm" href="https://www.google.com/search?q=${encodeURIComponent(d.name+" Illinois")}" target="_blank" rel="noopener">Search the web</a>`}</div>
-    </article>`, jobInfo({deptId: d.id, dept: d.name}))).join("") + (total > rows.length ? `<p class="dp-count">Showing ${rows.length} of ${total} departments</p><button type="button" class="btn btn-quiet" id="dp-more">Show ${Math.min(24, total - rows.length)} More</button>` : total > 24 ? `<p class="dp-count">Showing all ${total} departments</p>` : "") : `<p class="empty">No departments match.</p>`;
+    </article>`, jobInfo({deptId: d.id, dept: d.name}))).join("") + (total > rows.length ? `<p class="dp-count">Showing ${rows.length} of ${total} departments</p><button type="button" class="btn btn-quiet" id="dp-more">Show ${Math.min(24, total - rows.length)} More</button>` : total > 24 ? `<p class="dp-count">Showing all ${total} departments</p>` : "") : `<p class="empty">No departments match${jbDist&&origin()?` within ${jbDist} miles. Try a bigger distance`:""}.</p>`;
+  if(jbDist && !origin()) $("#dp-list").insertAdjacentHTML("afterbegin", distNote());
+  /* Load more automatically as the list scrolls into view (the button stays as a fallback) */
+  if(window.IntersectionObserver){ if(!window.__dpIO) window.__dpIO = new IntersectionObserver(es => { if(es.some(e => e.isIntersecting) && !$("#jb-v-depts").hidden){ dpShow += 24; renderDepts() } }, {rootMargin: "600px 0px"});
+    window.__dpIO.disconnect(); const mb = $("#dp-more"); if(mb) window.__dpIO.observe(mb) }
   renderSoon();
 }
 /* Job Board: departments expected to test within a year */
