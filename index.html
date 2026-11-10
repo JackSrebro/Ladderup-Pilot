@@ -1555,6 +1555,11 @@ function buildPath(p){
       items: jobs.map(j => ({t:`${j.title} · ${j.dept}`, m:`${j.deadline?`Due ${fmtDate(j.deadline)}`:"No deadline posted"}${j.miss&&j.miss.length?` · You need: ${j.miss.map(k=>CERT[k]).join(", ")}`:j.miss?" · You meet the listed requirements":""}`, mi:miles(j.lat,j.lng), url:j.apply, b:"Apply"})), go:"jobs"});
   }
   if((g==="ffpm") && !c.has("medic") && !medicFirst) medicStep();
+  // After getting hired: probation, then continuing education for the rest of the career
+  if(steps.some(st => st.id === "apply")){
+    steps.push({id:"probation", t:"Get Through Probation", why:"Once you're hired, your first year is usually probation. You'll be learning your department's procedures, riding with a training officer and finishing any department testing. Keep your licenses current and log your training hours.", items:[]});
+    steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Firefighters take continuing education their whole career, for promotion, specialty teams and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
+  }
   return steps;
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
@@ -1649,6 +1654,8 @@ function pathModel(){
   const ordered = applyOrder(raw, ord), pi = ordered.findIndex(x => x.id === "parttime");
   if(pi >= 0){ const pt = ordered.splice(pi, 1)[0], after = Math.max(ordered.findIndex(x => x.id === "emt"), ordered.findIndex(x => x.id === "academy")); ordered.splice(after + 1, 0, pt) }
   if(ord === "mid"){ const mi = ordered.findIndex(x => x.id === "medic"), ci = ordered.findIndex(x => x.id === "cpat"), ai = ci >= 0 ? ci : ordered.findIndex(x => x.id === "apply"); if(mi > ai && ai >= 0){ const md = ordered.splice(mi, 1)[0]; ordered.splice(ai, 0, md) } }
+  { const pr = ordered.findIndex(x => x.id === "probation"), ap = ordered.findIndex(x => x.id === "apply");   // probation right after Test and Apply
+    if(pr >= 0 && ap >= 0 && pr !== ap + 1){ const st = ordered.splice(pr, 1)[0]; ordered.splice(ordered.findIndex(x => x.id === "apply") + 1, 0, st) } }
   let optAfter; { const k = ordered.findIndex(x => x.id === "parttime"); if(k >= 0){ ordered.splice(k, 1); optAfter = k > 0 ? ordered[k-1].id : "" } }
   const steps = ordered.map(st => { const ts = stepTasks(st); return {...st, tasks: ts, done: ts.length > 0 && ts.every(t => t.done), n: ts.filter(t => t.done).length} });
   const all = steps.flatMap(st => st.tasks), cur = steps.findIndex(st => !st.done);
