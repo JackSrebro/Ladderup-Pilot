@@ -1559,11 +1559,12 @@ function buildPath(p){
     // Specialties (hazmat, technical rescue, instructor, inspector/investigator) live in the Continuing Education step and tab.
     // Promotion goes Engineer/Driver first, then Lieutenant/Captain.
     const picks = (p.focus && p.focus.length ? p.focus : ["unsure"]), promo = ["engineer","officer"];
-    const order = [...promo.filter(f => picks.includes(f)), ...(picks.includes("medic") ? ["medic"] : [])];
+    // Anyone without a paramedic license gets the paramedic step right after continuing education, before Engineer/Driver.
+    if(!c.has("medic")) steps.push({id:"medic", t:"Earn Your Paramedic License", why:"Most departments here hire Firefighter/Paramedics and pay more for it, and it's often needed for promotion. Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)});
+    const order = promo.filter(f => picks.includes(f));
     if(p.stage === "career" && !order.some(f => promo.includes(f)))
       steps.push({id:"promo", ce:"officer", t:"Get Ready for Promotion", why:"Promotional exams for Engineer, Lieutenant and Captain usually require years of service plus OSFM certifications such as Fire Apparatus Engineer, Company Fire Officer and Fire Service Instructor I. The CE you take counts toward them, so check your department's requirements and plan your courses around them.", items:pathCE(CE_FOCUS.officer), go:"ce"});
     order.forEach(f => {
-      if(f==="medic"){ if(!c.has("medic")) steps.push({id:"medic", t:"Earn Your Paramedic License", why:"Many departments sponsor paramedic school for their firefighters, so ask your training officer before you pay.", items:pathPrograms("medic", p)}); return }
       const F = CE_FOCUS[f]; if(F) steps.push({id:"ce-"+f, ce:f, t:F.t, why:`OSFM certifications to aim for: ${F.certs}. Most OSFM certifications need recertification every 4 years.`, items:pathCE(F), go:"ce"});
     });
     if(!certList.length) steps.push({id:"certs", t:"Track Your Certifications", why:"Add your licenses and OSFM certifications so you can see what's due for renewal.", items:[], go:"certs"});
