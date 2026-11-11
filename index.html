@@ -1349,7 +1349,7 @@ const QOPTS = {
   pay: [["pay","I Can Pay"],["aid","I'll Need Help Paying"]],
   age: [["u13","Under 13"],["u18","13 to 17"],["18-20","18 to 20"],["21-34","21 to 34"],["35+","35 or Older"],["na","Prefer Not to Say"]],
   veteran: [["yes","Yes"],["no","No"],["na","Prefer Not to Say"]],
-  focus: [["engineer","Engineer or Driver"],["officer","Lieutenant or Captain"],["rescue","Technical Rescue"],["hazmat","Hazmat"],["instructor","Instructor"],["medic","Paramedic"],["prevention","Inspector or Investigator"],["unsure","Not Sure Yet"]]
+  focus: [["engineer","Engineer or Driver"],["officer","Lieutenant or Captain"],["medic","Paramedic"],["unsure","Not Sure Yet"]]
 };
 let QA = {focus:[]}, qzI = 0;
 $$("#prof-form .opts").forEach(el => { const q = el.dataset.q;
@@ -1555,9 +1555,11 @@ function buildPath(p){
   if(STAGES[p.stage] && STAGES[p.stage].hired){
     if(p.stage==="probation") steps.push({id:"probation", t:"Finish Your Probation Year", why:"Your department's probation requirements come first. Keep your EMT or paramedic license current and log your training.", items:[], go:"roadmap"});
     // Continuing education comes first: most firefighters are always looking for CE, and it's what builds toward promotion.
-    steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Most firefighters take continuing education their whole career, for promotion, specialty teams and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
-    const picks = (p.focus && p.focus.length ? p.focus : ["unsure"]).filter(f => f !== "unsure"), promo = ["officer","engineer"];
-    const order = [...picks.filter(f => promo.includes(f)), ...picks.filter(f => !promo.includes(f))];
+    steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Most firefighters take continuing education their whole career, for promotion, specialty teams (hazmat, technical rescue, instructor, inspector and investigator) and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
+    // Specialties (hazmat, technical rescue, instructor, inspector/investigator) live in the Continuing Education step and tab.
+    // Promotion goes Engineer/Driver first, then Lieutenant/Captain.
+    const picks = (p.focus && p.focus.length ? p.focus : ["unsure"]), promo = ["engineer","officer"];
+    const order = [...promo.filter(f => picks.includes(f)), ...(picks.includes("medic") ? ["medic"] : [])];
     if(p.stage === "career" && !order.some(f => promo.includes(f)))
       steps.push({id:"promo", ce:"officer", t:"Get Ready for Promotion", why:"Promotional exams for Engineer, Lieutenant and Captain usually require years of service plus OSFM certifications such as Fire Apparatus Engineer, Company Fire Officer and Fire Service Instructor I. The CE you take counts toward them, so check your department's requirements and plan your courses around them.", items:pathCE(CE_FOCUS.officer), go:"ce"});
     order.forEach(f => {
