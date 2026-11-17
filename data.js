@@ -269,7 +269,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-engine",
@@ -298,7 +298,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-truck",
@@ -323,7 +323,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-scba",
@@ -348,7 +348,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-ric",
@@ -373,7 +373,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-fsvo",
@@ -414,7 +414,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-fae",
@@ -447,7 +447,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-fae",
@@ -484,7 +484,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog/index/fd5a6df6d57df6c9d7e8088d03e60411?filter=c2VhcmNoPSZjYXRlZ29yeSU1QjEwMDAyJTVEPTE%3D",
    "page": "https://www.nipsta.org/361/Fire-Apparatus-Engineer-FAE",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-rope-ops",
@@ -521,7 +521,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-rope-tech",
@@ -546,7 +546,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-trench-ops",
@@ -571,7 +571,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-trench-tech",
@@ -596,7 +596,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-cs-ops",
@@ -621,7 +621,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-col-ops",
@@ -646,7 +646,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-col-tech",
@@ -671,7 +671,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-cpvr",
@@ -704,7 +704,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-hvr",
@@ -733,7 +733,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-water-ops",
@@ -762,7 +762,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-swift",
@@ -787,7 +787,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-watercraft",
@@ -820,7 +820,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-ice",
@@ -849,7 +849,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-hm-ops",
@@ -886,7 +886,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-hm-tech",
@@ -911,7 +911,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-cfo",
@@ -940,7 +940,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-afo",
@@ -965,7 +965,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-chief",
@@ -990,7 +990,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-iso",
@@ -1019,7 +1019,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-inst1",
@@ -1052,7 +1052,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-inst2",
@@ -1077,7 +1077,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-bootcamp",
@@ -1102,7 +1102,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-fcoa",
@@ -1131,7 +1131,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-coa",
@@ -1160,7 +1160,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-insp1",
@@ -1185,7 +1185,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-insp2",
@@ -1210,7 +1210,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-pfle",
@@ -1235,7 +1235,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-inv",
@@ -1260,7 +1260,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "rfa-uas",
@@ -1289,7 +1289,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-atf",
@@ -1304,12 +1304,29 @@ window.LADDER_DATA = {
    "cost": null,
    "costNote": "Not listed. Check NIPSTA.",
    "length": "40 hours",
-   "sessions": [],
-   "note": "NIPSTA hasn't posted 2027 dates on this page yet.",
+   "sessions": [
+    {
+     "s": "2027-03-01",
+     "t": "Mar 1–5, 2027"
+    },
+    {
+     "s": "2027-05-17",
+     "t": "May 17–21, 2027"
+    },
+    {
+     "s": "2027-08-16",
+     "t": "Aug 16–20, 2027"
+    },
+    {
+     "s": "2027-11-15",
+     "t": "Nov 15–19, 2027"
+    }
+   ],
+   "note": null,
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/360/Advanced-Technician-Firefighter",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-vm",
@@ -1329,7 +1346,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/374/Vehicle-Machinery-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-cs",
@@ -1349,7 +1366,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/371/Confined-Space-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-rope",
@@ -1369,7 +1386,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/367/Rope-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-trench",
@@ -1389,7 +1406,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/372/Trench-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-col",
@@ -1409,7 +1426,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/373/Collapse-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-off",
@@ -1429,7 +1446,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/394/Fire-Officer-Training",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-inv",
@@ -1444,12 +1461,21 @@ window.LADDER_DATA = {
    "cost": null,
    "costNote": "Not listed. Check NIPSTA.",
    "length": null,
-   "sessions": [],
-   "note": "NIPSTA hasn't posted 2027 dates on this page yet.",
+   "sessions": [
+    {
+     "s": "2027-04-05",
+     "t": "Spring 2027: Apr 5–9, Apr 19–23 and May 3–7"
+    },
+    {
+     "s": "2027-10-18",
+     "t": "Fall 2027: Oct 18–22, Nov 1–5 and Nov 15–19"
+    }
+   ],
+   "note": "Three one-week parts.",
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/488/Fire-Investigator",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
+   "checked": "2026-11-17"
   },
   {
    "id": "nip-hm",
@@ -1469,385 +1495,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/338/Hazardous-Materials-Training",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-07"
-  },
-  {
-   "id": "ifsi-539-lagrange",
-   "cat": "other",
-   "name": "ICS 400 - Advanced ICS for Complex Incidents (O0467)",
-   "cert": null,
-   "aka": "IFSI ",
-   "provider": "IFSI",
-   "location": "La Grange (hosted by La Grange Fd, Village of)",
-   "address": "La Grange Village Hall, La Grange, IL 60525",
-   "gk": "LA GRANGE|60525",
-   "lat": 41.8148,
-   "lng": -87.8736,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $650.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-05",
-     "e": "2026-11-06",
-     "t": "Nov 5–6, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700593&session=134439",
-     "seats": "2 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700593&session=134439",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=539",
-   "contact": "(708) 215-3565",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1033-litchfield",
-   "cat": "rescue",
-   "name": "Large Animal Rescue Operations (L.A.R.O.)",
-   "cert": null,
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "Litchfield (hosted by Horsemen's Council of Illinois)",
-   "address": "18292 East Frontage Road, Litchfield, IL 62056",
-   "gk": "LITCHFIELD|62056",
-   "lat": 39.1769,
-   "lng": -89.6556,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-07",
-     "e": "2026-11-07",
-     "t": "Nov 7, 2026, 8 a.m.–5 p.m.",
-     "seats": "17 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN. Register by phone with the host department.",
-   "register": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1033",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1033",
-   "contact": "(217) 689-4224",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-923-golconda",
-   "cat": "app",
-   "name": "Emergency Vehicle Operations",
-   "cert": null,
-   "aka": "IFSI engineer driver pump",
-   "provider": "IFSI",
-   "location": "Golconda (hosted by Rural Pope County FPD)",
-   "address": "64 Franks Road, Golconda, IL 62938",
-   "gk": "GOLCONDA|62938",
-   "lat": 37.3673,
-   "lng": -88.4864,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-09",
-     "t": "Nov 9, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700968&session=134943",
-     "seats": "26 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700968&session=134943",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=923",
-   "contact": "(618) 949-3789",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1610-champaign",
-   "cat": "app",
-   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
-   "cert": "Fire Apparatus Engineer",
-   "aka": "IFSI engineer driver pump",
-   "provider": "IFSI",
-   "location": "IFSI campus, Champaign",
-   "address": "11 Gerty Dr, Champaign, IL 61820",
-   "gk": "CHAMPAIGN|61820",
-   "lat": 40.1165,
-   "lng": -88.2431,
-   "cost": 850,
-   "costNote": "Illinois rate. Out of state: $1,200.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-13",
-     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700026&session=132684",
-     "seats": "6 seats left"
-    },
-    {
-     "s": "2027-04-12",
-     "e": "2027-04-16",
-     "t": "Apr 12–16, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
-     "seats": "11 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700026&session=132684",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1650-newlenox",
-   "cat": "officer",
-   "name": "Fire Department Incident Safety Officer / NFPA 1550",
-   "cert": "Fire Department Incident Safety Officer",
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "New Lenox (hosted by New Lenox FPD)",
-   "address": "New Lenox FPD, New Lenox, IL 60451",
-   "gk": "NEW LENOX|60451",
-   "lat": 41.512,
-   "lng": -87.9656,
-   "cost": 650,
-   "costNote": "Illinois rate. Out of state: $850.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-13",
-     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700147&session=133736",
-     "seats": "5 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700147&session=133736",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
-   "contact": "(815) 463-4500",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1423-alton",
-   "cat": "prev",
-   "name": "First Due for Fire Alarms",
-   "cert": null,
-   "aka": "IFSI prevention",
-   "provider": "IFSI",
-   "location": "Alton (hosted by Alton FD)",
-   "address": "333 E. 20th St., Alton, IL 62002",
-   "gk": "ALTON|62002",
-   "lat": 38.8909,
-   "lng": -90.1843,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-09",
-     "t": "Nov 9, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700884&session=134853",
-     "seats": "20 seats left"
-    },
-    {
-     "s": "2026-11-10",
-     "e": "2026-11-10",
-     "t": "Nov 10, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
-     "seats": "30 seats left"
-    },
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700886&session=134855",
-     "seats": "30 seats left"
-    },
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700887&session=134856",
-     "seats": "30 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700884&session=134853",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1423",
-   "contact": "(618) 463-3565",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-869-urbana",
-   "cat": "officer",
-   "name": "Leadership Development and Decision Making Program: Chief Officer Level",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "IFSI class in Urbana",
-   "address": "ILEAS, Urbana, IL 61802",
-   "gk": "URBANA|61802",
-   "lat": 40.1117,
-   "lng": -88.2073,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,700.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-13",
-     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700011&session=132568",
-     "seats": "4 seats left"
-    },
-    {
-     "s": "2027-05-03",
-     "e": "2027-05-07",
-     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700798&session=134709",
-     "seats": "10 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700011&session=132568",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-871-urbana",
-   "cat": "officer",
-   "name": "Leadership Development and Decision Making Program: Fire Officer Level",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "IFSI class in Urbana",
-   "address": "ILEAS, Urbana, IL 61802",
-   "gk": "URBANA|61802",
-   "lat": 40.1117,
-   "lng": -88.2073,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,350.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-13",
-     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700010&session=132567",
-     "seats": "Full"
-    },
-    {
-     "s": "2027-05-03",
-     "e": "2027-05-07",
-     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700797&session=134708",
-     "seats": "10 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700010&session=132567",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-870-urbana",
-   "cat": "officer",
-   "name": "Leadership Development and Decision Making Program: Firefighter Level",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "IFSI class in Urbana",
-   "address": "ILEAS, Urbana, IL 61802",
-   "gk": "URBANA|61802",
-   "lat": 40.1117,
-   "lng": -88.2073,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $1,950.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-13",
-     "t": "Nov 9–13, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700009&session=132566",
-     "seats": "11 seats left"
-    },
-    {
-     "s": "2027-05-03",
-     "e": "2027-05-07",
-     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700796&session=134707",
-     "seats": "16 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700009&session=132566",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1061-silvis",
-   "cat": "other",
-   "name": "Resiliency Development for First Responders",
-   "cert": null,
-   "aka": "IFSI ",
-   "provider": "IFSI",
-   "location": "Silvis (hosted by Silvis FD)",
-   "address": "2010 10th Street, Silvis, IL 61282",
-   "gk": "SILVIS|61282",
-   "lat": 41.5123,
-   "lng": -90.4151,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-09",
-     "t": "Nov 9, 2026, 6:30 p.m.–10:30 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700660&session=134540",
-     "seats": "27 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700660&session=134540",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
-   "contact": "(309) 792-9553",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-1438-orlandpark",
-   "cat": "prev",
-   "name": "Youth Firesetting Prevention and Intervention Specialist",
-   "cert": "Youth Firesetter Intervention Specialist",
-   "aka": "IFSI prevention",
-   "provider": "IFSI",
-   "location": "Orland Park (hosted by Orland FPD)",
-   "address": "10728 W 163rd Pl, Orland Park, IL 60467",
-   "gk": "ORLAND PARK|60467",
-   "lat": 41.6307,
-   "lng": -87.8536,
-   "cost": 250,
-   "costNote": "Illinois rate. Out of state: $450.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-09",
-     "e": "2026-11-10",
-     "t": "Nov 9–10, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700055&session=132784",
-     "seats": "18 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700055&session=132784",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
-   "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-17"
   },
   {
    "id": "ifsi-176-lincolnwoo",
@@ -1884,14 +1532,14 @@ window.LADDER_DATA = {
      "e": "2026-11-12",
      "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700843&session=134794",
-     "seats": "9 seats left"
+     "seats": "11 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700841&session=134792",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=176",
    "contact": "(847) 673-1545",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1427-robbins",
@@ -1914,41 +1562,41 @@ window.LADDER_DATA = {
      "e": "2026-11-10",
      "t": "Nov 10, 2026, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
-     "seats": "26 seats left"
+     "seats": "12 seats left"
     },
     {
      "s": "2026-11-11",
      "e": "2026-11-11",
      "t": "Nov 11, 2026, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700368&session=134215",
-     "seats": "27 seats left"
+     "seats": "16 seats left"
     },
     {
      "s": "2026-11-12",
      "e": "2026-11-12",
      "t": "Nov 12, 2026, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700369&session=134216",
-     "seats": "29 seats left"
+     "seats": "14 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1427",
    "contact": "(708) 385-8940",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
-   "id": "ifsi-44-mascoutah",
-   "cat": "hazmat",
-   "name": "Liquefied Petroleum Gas (Propane) Fire Fighting",
+   "id": "ifsi-1423-alton",
+   "cat": "prev",
+   "name": "First Due for Fire Alarms",
    "cert": null,
-   "aka": "IFSI hazmat",
+   "aka": "IFSI prevention",
    "provider": "IFSI",
-   "location": "Mascoutah (hosted by Mascoutah FD/FPD)",
-   "address": "224 N Railway St., Mascoutah, IL 62258",
-   "gk": "MASCOUTAH|62258",
-   "lat": 38.4903,
-   "lng": -89.7932,
+   "location": "Alton (hosted by Alton FD)",
+   "address": "333 E. 20th St., Alton, IL 62002",
+   "gk": "ALTON|62002",
+   "lat": 38.8909,
+   "lng": -90.1843,
    "cost": 0,
    "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
    "length": null,
@@ -1956,60 +1604,30 @@ window.LADDER_DATA = {
     {
      "s": "2026-11-10",
      "e": "2026-11-10",
-     "t": "Nov 10, 2026, 6:30 p.m.–10:30 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700764&session=134671",
-     "seats": "56 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700764&session=134671",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=44",
-   "contact": "(618) 566-2103",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-566-maywood",
-   "cat": "ff",
-   "name": "Ventilation",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Maywood (hosted by Maywood FD)",
-   "address": "700 W St. Charles Rd, Maywood, IL 60153",
-   "gk": "MAYWOOD|60153",
-   "lat": 41.879,
-   "lng": -87.8436,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-10",
-     "e": "2026-11-10",
-     "t": "Nov 10, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700897&session=134869",
-     "seats": "25 seats left"
+     "t": "Nov 10, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
+     "seats": "22 seats left"
     },
     {
      "s": "2026-11-11",
      "e": "2026-11-11",
-     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
-     "seats": "24 seats left"
+     "t": "Nov 11, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700886&session=134855",
+     "seats": "22 seats left"
     },
     {
      "s": "2026-11-12",
      "e": "2026-11-12",
-     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700899&session=134871",
-     "seats": "25 seats left"
+     "t": "Nov 12, 2026, 9 a.m.–1 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700887&session=134856",
+     "seats": "23 seats left"
     }
    ],
    "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700897&session=134869",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
-   "contact": "(708) 681-8860",
-   "checked": "2026-11-09"
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1423",
+   "contact": "(618) 463-3565",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-593-polo",
@@ -2032,14 +1650,51 @@ window.LADDER_DATA = {
      "e": "2026-11-11",
      "t": "Nov 11, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
-     "seats": "14 seats left"
+     "seats": "12 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=593",
    "contact": "(815) 946-2153",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-566-maywood",
+   "cat": "ff",
+   "name": "Ventilation",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Maywood (hosted by Maywood FD)",
+   "address": "700 W St. Charles Rd, Maywood, IL 60153",
+   "gk": "MAYWOOD|60153",
+   "lat": 41.879,
+   "lng": -87.8436,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-11",
+     "e": "2026-11-11",
+     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
+     "seats": "15 seats left"
+    },
+    {
+     "s": "2026-11-12",
+     "e": "2026-11-12",
+     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700899&session=134871",
+     "seats": "15 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
+   "contact": "(708) 681-8860",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-159-carrollton",
@@ -2062,14 +1717,14 @@ window.LADDER_DATA = {
      "e": "2026-11-12",
      "t": "Nov 12, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
-     "seats": "9 seats left"
+     "seats": "6 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=159",
    "contact": "(217) 942-3618",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-282-elizabeth",
@@ -2092,14 +1747,14 @@ window.LADDER_DATA = {
      "e": "2026-11-14",
      "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
-     "seats": "19 seats left"
+     "seats": "26 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=282",
    "contact": "(815) 858-3612",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-210-tilton",
@@ -2109,7 +1764,7 @@ window.LADDER_DATA = {
    "aka": "IFSI officer leadership",
    "provider": "IFSI",
    "location": "Tilton (hosted by Tilton FD)",
-   "address": "115 S 5th, Tilton, IL 61833",
+   "address": "115 W 5th, Tilton, IL 61833",
    "gk": "TILTON|61833",
    "lat": 40.0953,
    "lng": -87.6475,
@@ -2122,14 +1777,14 @@ window.LADDER_DATA = {
      "e": "2026-11-14",
      "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
-     "seats": "46 seats left"
+     "seats": "40 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=210",
    "contact": "(217) 477-0800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-481-decatur",
@@ -2152,44 +1807,14 @@ window.LADDER_DATA = {
      "e": "2026-11-14",
      "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
-     "seats": "1 seat left"
+     "seats": "4 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=481",
    "contact": "(217) 423-2912",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-155-coffeen",
-   "cat": "officer",
-   "name": "Fireground Management for Small Career and Volunteer Departments",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Coffeen (hosted by Coffeen FPD)",
-   "address": "113 W. Main St., Coffeen, IL 62017",
-   "gk": "COFFEEN|62017",
-   "lat": 39.0892,
-   "lng": -89.3906,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
-     "seats": "22 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=155",
-   "contact": "(217) 534-2410",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-highland",
@@ -2212,44 +1837,14 @@ window.LADDER_DATA = {
      "e": "2026-11-22",
      "t": "Nov 14–22, 2026 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
-     "seats": "10 seats left"
+     "seats": "14 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(618) 654-3827",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-723-sullivan",
-   "cat": "officer",
-   "name": "Leadership, Accountability, Culture & Knowledge (LACK)",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Sullivan (hosted by Sullivan FPD)",
-   "address": "115 W Harrison St., Sullivan, IL 61951",
-   "gk": "SULLIVAN|61951",
-   "lat": 39.5995,
-   "lng": -88.6078,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–noon",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700256&session=134087",
-     "seats": "42 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700256&session=134087",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=723",
-   "contact": "(217) 728-8714",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-691-champaign",
@@ -2279,7 +1874,7 @@ window.LADDER_DATA = {
      "e": "2027-03-13",
      "t": "Mar 13, 2027, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700814&session=134735",
-     "seats": "60 seats left"
+     "seats": "50 seats left"
     },
     {
      "s": "2027-03-27",
@@ -2300,7 +1895,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=691",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-177-hillsboro",
@@ -2323,14 +1918,14 @@ window.LADDER_DATA = {
      "e": "2026-11-16",
      "t": "Nov 16, 2026, 6:30 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
-     "seats": "30 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=177",
    "contact": "(217) 532-2345",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1610-litchfield",
@@ -2360,7 +1955,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(217) 851-6073",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-560-mountcarro",
@@ -2390,7 +1985,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700710&session=134609",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(815) 244-4502",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-561-eastalton",
@@ -2413,14 +2008,14 @@ window.LADDER_DATA = {
      "e": "2026-11-16",
      "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
-     "seats": "28 seats left"
+     "seats": "24 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=561",
    "contact": "(618) 259-3311",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-149-champaign",
@@ -2449,13 +2044,19 @@ window.LADDER_DATA = {
      "e": "2027-05-14",
      "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762"
+    },
+    {
+     "s": "2027-11-15",
+     "e": "2027-11-19",
+     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800035&session=134766"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-148-champaign",
@@ -2478,7 +2079,7 @@ window.LADDER_DATA = {
      "e": "2026-11-20",
      "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
-     "seats": "Full"
+     "seats": "3 seats left"
     },
     {
      "s": "2027-05-10",
@@ -2486,13 +2087,50 @@ window.LADDER_DATA = {
      "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700828&session=134761",
      "seats": "36 seats left"
+    },
+    {
+     "s": "2027-11-15",
+     "e": "2027-11-19",
+     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800034&session=134765",
+     "seats": "36 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-476-colchester",
+   "cat": "ff",
+   "name": "Forcible Entry",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Colchester (hosted by Colchester FPD)",
+   "address": "210 E Market St., Colchester, IL 62326",
+   "gk": "COLCHESTER|62326",
+   "lat": 40.4264,
+   "lng": -90.7926,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-16",
+     "e": "2026-11-16",
+     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701055&session=135120",
+     "seats": "27 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701055&session=135120",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=476",
+   "contact": "(309) 776-3233",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-joliet",
@@ -2515,14 +2153,14 @@ window.LADDER_DATA = {
      "e": "2026-11-20",
      "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
-     "seats": "1 seat left"
+     "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(815) 724-3500",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1393-smithton",
@@ -2545,14 +2183,14 @@ window.LADDER_DATA = {
      "e": "2026-11-16",
      "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
-     "seats": "36 seats left"
+     "seats": "23 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
    "contact": "(618) 234-7373",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1016-champaign",
@@ -2575,21 +2213,21 @@ window.LADDER_DATA = {
      "e": "2026-11-20",
      "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
-     "seats": "18 seats left"
+     "seats": "19 seats left"
     },
     {
      "s": "2027-03-15",
      "e": "2027-03-19",
      "t": "Mar 15–19, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700823&session=134748",
-     "seats": "10 seats left"
+     "seats": "6 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-566-stickney",
@@ -2612,28 +2250,58 @@ window.LADDER_DATA = {
      "e": "2026-11-16",
      "t": "Nov 16, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
-     "seats": "25 seats left"
+     "seats": "7 seats left"
     },
     {
      "s": "2026-11-17",
      "e": "2026-11-17",
      "t": "Nov 17, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700901&session=134873",
-     "seats": "24 seats left"
+     "seats": "20 seats left"
     },
     {
      "s": "2026-11-18",
      "e": "2026-11-18",
      "t": "Nov 18, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700902&session=134874",
-     "seats": "26 seats left"
+     "seats": "22 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
    "contact": "(708) 795-6333",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-155-coffeen",
+   "cat": "officer",
+   "name": "Fireground Management for Small Career and Volunteer Departments",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Coffeen (hosted by Coffeen FPD)",
+   "address": "113 W. Main St., Coffeen, IL 62017",
+   "gk": "COFFEEN|62017",
+   "lat": 39.0892,
+   "lng": -89.3906,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-11-17",
+     "e": "2026-11-17",
+     "t": "Nov 17, 2026, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
+     "seats": "27 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=155",
+   "contact": "(217) 534-2410",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-476-waynecity",
@@ -2656,44 +2324,14 @@ window.LADDER_DATA = {
      "e": "2026-11-17",
      "t": "Nov 17, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
-     "seats": "18 seats left"
+     "seats": "8 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=476",
    "contact": "(618) 895-2134",
-   "checked": "2026-11-09"
-  },
-  {
-   "id": "ifsi-560-pontoonbea",
-   "cat": "ff",
-   "name": "Fire Behavior and Reading Smoke",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Pontoon Beach (hosted by Long Lake Vol. FD)",
-   "address": "4113 Pontoon Road, Pontoon Beach, IL 62040",
-   "gk": "PONTOON BEACH|62040",
-   "lat": 38.7317,
-   "lng": -90.0804,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-18",
-     "e": "2026-11-18",
-     "t": "Nov 18, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700605&session=134463",
-     "seats": "26 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700605&session=134463",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
-   "contact": "(618) 830-5285",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1541-pinckneyvi",
@@ -2723,7 +2361,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700805&session=134720",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1541",
    "contact": "(618) 357-2281",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-568-elmwood",
@@ -2752,7 +2390,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700286&session=134125",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
    "contact": "(309) 742-3811",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-235-chandlervi",
@@ -2782,7 +2420,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700706&session=134604",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=235",
    "contact": "(217) 491-6346",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-560-hebron",
@@ -2805,14 +2443,14 @@ window.LADDER_DATA = {
      "e": "2026-11-23",
      "t": "Nov 23, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
-     "seats": "25 seats left"
+     "seats": "23 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(815) 648-2218",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-238-champaign",
@@ -2856,7 +2494,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700059&session=132788",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=238",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-571-staunton",
@@ -2879,14 +2517,14 @@ window.LADDER_DATA = {
      "e": "2026-11-23",
      "t": "Nov 23, 2026, 6:30 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
-     "seats": "29 seats left"
+     "seats": "30 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=571",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-566-trenton",
@@ -2916,7 +2554,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700265&session=134103",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
    "contact": "(618) 224-9009",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1648-champaign-online",
@@ -2939,14 +2577,14 @@ window.LADDER_DATA = {
      "e": "2027-01-01",
      "t": "Nov 28, 2026–Jan 1, 2027",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
-     "seats": "74 seats left"
+     "seats": "73 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1648",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-568-cortland",
@@ -2969,14 +2607,14 @@ window.LADDER_DATA = {
      "e": "2026-11-30",
      "t": "Nov 30, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
-     "seats": "38 seats left"
+     "seats": "37 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
    "contact": "(815) 756-2545",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1061-toluca",
@@ -3005,7 +2643,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700225&session=134037",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
    "contact": "(815) 452-2422",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-482-eastdubuqu",
@@ -3028,14 +2666,14 @@ window.LADDER_DATA = {
      "e": "2026-12-05",
      "t": "Dec 5, 2026, 8 a.m.–4 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
-     "seats": "41 seats left"
+     "seats": "32 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=482",
    "contact": "(815) 747-6619",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1528-galesburg",
@@ -3093,7 +2731,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701014&session=135059",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1528",
    "contact": "(309) 345-3756",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1650-champaign",
@@ -3116,13 +2754,20 @@ window.LADDER_DATA = {
      "e": "2026-12-11",
      "t": "Dec 7–11, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
-     "seats": "13 seats left"
+     "seats": "14 seats left"
     },
     {
      "s": "2027-02-01",
      "e": "2027-02-05",
      "t": "Feb 1–5, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700799&session=134713",
+     "seats": "27 seats left"
+    },
+    {
+     "s": "2027-12-06",
+     "e": "2027-12-10",
+     "t": "Dec 6–10, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800016&session=134714",
      "seats": "30 seats left"
     }
    ],
@@ -3130,7 +2775,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1520-belleville",
@@ -3153,14 +2798,14 @@ window.LADDER_DATA = {
      "e": "2026-12-11",
      "t": "Dec 7–11, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700724&session=134626",
-     "seats": "12 seats left"
+     "seats": "11 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700724&session=134626",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
    "contact": "(618) 234-2236",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1225-staunton",
@@ -3190,7 +2835,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700191&session=133862",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1225",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-559-auburn",
@@ -3219,7 +2864,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=559",
    "contact": "(217) 438-3223",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-560-norriscity",
@@ -3249,7 +2894,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700287&session=134126",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(618) 378-3927",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1609-mountzion",
@@ -3272,14 +2917,14 @@ window.LADDER_DATA = {
      "e": "2026-12-12",
      "t": "Dec 12, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700754&session=134658",
-     "seats": "19 seats left"
+     "seats": "20 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700754&session=134658",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1609",
    "contact": "(217) 864-2081",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-22-crevecoeur",
@@ -3308,7 +2953,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700972&session=134947",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=22",
    "contact": "(309) 694-2521",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1439-rockford",
@@ -3338,7 +2983,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700207&session=133890",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1439-bloomingto",
@@ -3368,7 +3013,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700208&session=133892",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(309) 434-2500",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1439-swansea",
@@ -3398,7 +3043,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700209&session=133894",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(618) 234-3291",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-eureka",
@@ -3421,14 +3066,14 @@ window.LADDER_DATA = {
      "e": "2026-12-20",
      "t": "Dec 12–20, 2026 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
-     "seats": "17 seats left"
+     "seats": "16 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 467-6181",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1061-westunion",
@@ -3451,14 +3096,14 @@ window.LADDER_DATA = {
      "e": "2026-12-12",
      "t": "Dec 12, 2026, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701024&session=135069",
-     "seats": "32 seats left"
+     "seats": "31 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701024&session=135069",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
    "contact": "(618) 279-3614",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1353-breese",
@@ -3488,7 +3133,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700732&session=134634",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1353",
    "contact": "(618) 526-4721",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-723-huntley",
@@ -3532,7 +3177,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700528&session=134374",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=723",
    "contact": "(847) 669-5066",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1348-golconda",
@@ -3555,14 +3200,14 @@ window.LADDER_DATA = {
      "e": "2026-12-14",
      "t": "Dec 14, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700969&session=134944",
-     "seats": "35 seats left"
+     "seats": "34 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700969&session=134944",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1348",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-789-saintjacob",
@@ -3592,7 +3237,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700151&session=133765",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=789",
    "contact": "(618) 644-4636",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-560-greenville",
@@ -3622,7 +3267,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700904&session=134876",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(618) 664-4265",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1604-rockford",
@@ -3645,14 +3290,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
-     "seats": "6 seats left"
+     "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1604-sherman",
@@ -3675,14 +3320,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
-     "seats": "39 seats left"
+     "seats": "35 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(319) 572-3289",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1604-swansea",
@@ -3705,14 +3350,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
-     "seats": "18 seats left"
+     "seats": "16 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(618) 234-3291",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1415-staunton",
@@ -3735,14 +3380,14 @@ window.LADDER_DATA = {
      "e": "2027-01-11",
      "t": "Jan 11, 2027, 6:30 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701026&session=135071",
-     "seats": "30 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701026&session=135071",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1415",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-westchicag",
@@ -3765,14 +3410,20 @@ window.LADDER_DATA = {
      "e": "2027-01-15",
      "t": "Jan 11–15, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
-     "seats": "25 seats left"
+     "seats": "24 seats left"
+    },
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "seats": "30 seats left"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN. Register by phone with the host department.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1045-golconda",
@@ -3795,14 +3446,14 @@ window.LADDER_DATA = {
      "e": "2027-01-18",
      "t": "Jan 18, 2027, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700922&session=134896",
-     "seats": "34 seats left"
+     "seats": "33 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700922&session=134896",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1045",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-4-westchicag",
@@ -3825,14 +3476,20 @@ window.LADDER_DATA = {
      "e": "2027-01-22",
      "t": "Jan 18–22, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
-     "seats": "26 seats left"
+     "seats": "24 seats left"
+    },
+    {
+     "s": "2027-11-01",
+     "e": "2027-11-05",
+     "t": "Nov 1–5, 2027, 8 a.m.–5 p.m. daily",
+     "seats": "28 seats left"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN. Register by phone with the host department.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-326-roodhouse",
@@ -3862,7 +3519,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701027&session=135072",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=326",
    "contact": "(217) 589-4141",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-gibsoncity",
@@ -3892,7 +3549,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(217) 784-5533",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1436-chicagohei",
@@ -3936,7 +3593,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701007&session=135052",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
    "contact": "(309) 303-4579",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1650-marengo",
@@ -3959,14 +3616,14 @@ window.LADDER_DATA = {
      "e": "2027-02-05",
      "t": "Feb 1–5, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
-     "seats": "24 seats left"
+     "seats": "22 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(815) 568-8912",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-5-westchicag",
@@ -3996,7 +3653,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=5",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1171-crystallak",
@@ -4026,7 +3683,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700527&session=134373",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1171",
    "contact": "(815) 356-3643",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1090-addison",
@@ -4049,14 +3706,14 @@ window.LADDER_DATA = {
      "e": "2027-02-09",
      "t": "Feb 8–9, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
-     "seats": "4 seats left"
+     "seats": "3 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1090",
    "contact": "(630) 628-3100",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1702-champaign",
@@ -4079,7 +3736,7 @@ window.LADDER_DATA = {
      "e": "2027-02-11",
      "t": "Feb 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701035&session=135097",
-     "seats": "12 seats left"
+     "seats": "14 seats left"
     },
     {
      "s": "2027-05-03",
@@ -4093,14 +3750,35 @@ window.LADDER_DATA = {
      "e": "2027-05-20",
      "t": "May 17–20, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701037&session=135099",
-     "seats": "13 seats left"
+     "seats": "11 seats left"
+    },
+    {
+     "s": "2027-11-08",
+     "e": "2027-11-11",
+     "t": "Nov 8–11, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800069&session=135101",
+     "seats": "12 seats left"
+    },
+    {
+     "s": "2027-11-29",
+     "e": "2027-12-02",
+     "t": "Nov 29–Dec 2, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800068&session=135100",
+     "seats": "11 seats left"
+    },
+    {
+     "s": "2027-12-13",
+     "e": "2027-12-16",
+     "t": "Dec 13–16, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800070&session=135102",
+     "seats": "14 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701035&session=135097",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1702",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1701-champaign",
@@ -4123,28 +3801,49 @@ window.LADDER_DATA = {
      "e": "2027-02-11",
      "t": "Feb 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701032&session=135091",
-     "seats": "32 seats left"
+     "seats": "18 seats left"
     },
     {
      "s": "2027-05-03",
      "e": "2027-05-06",
      "t": "May 3–6, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701033&session=135092",
-     "seats": "7 seats left"
+     "seats": "1 seat left"
     },
     {
      "s": "2027-05-17",
      "e": "2027-05-20",
      "t": "May 17–20, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701034&session=135093",
-     "seats": "35 seats left"
+     "seats": "31 seats left"
+    },
+    {
+     "s": "2027-11-08",
+     "e": "2027-11-11",
+     "t": "Nov 8–11, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800066&session=135095",
+     "seats": "20 seats left"
+    },
+    {
+     "s": "2027-11-29",
+     "e": "2027-12-02",
+     "t": "Nov 29–Dec 2, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800065&session=135094",
+     "seats": "4 seats left"
+    },
+    {
+     "s": "2027-12-13",
+     "e": "2027-12-16",
+     "t": "Dec 13–16, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800067&session=135096",
+     "seats": "40 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701032&session=135091",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1701",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1438-champaign",
@@ -4174,7 +3873,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700845&session=134796",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-917-mountcarme",
@@ -4204,7 +3903,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=917",
    "contact": "(618) 262-4311",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-4-oregon",
@@ -4234,7 +3933,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(815) 732-7214",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1015-orlandpark",
@@ -4257,14 +3956,14 @@ window.LADDER_DATA = {
      "e": "2027-02-26",
      "t": "Feb 22–26, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
-     "seats": "21 seats left"
+     "seats": "Full"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
+   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1436-cicero",
@@ -4308,7 +4007,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700872&session=134836",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
    "contact": "(708) 268-0616",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1607-champaign",
@@ -4331,21 +4030,28 @@ window.LADDER_DATA = {
      "e": "2027-03-07",
      "t": "Feb 27–Mar 7, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
-     "seats": "28 seats left"
+     "seats": "27 seats left"
     },
     {
      "s": "2027-04-19",
      "e": "2027-04-23",
      "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700837&session=134779",
-     "seats": "33 seats left"
+     "seats": "32 seats left"
+    },
+    {
+     "s": "2027-10-11",
+     "e": "2027-10-15",
+     "t": "Oct 11–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800040&session=134780",
+     "seats": "34 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1607",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1507-champaign",
@@ -4368,14 +4074,14 @@ window.LADDER_DATA = {
      "e": "2027-03-05",
      "t": "Mar 1–5, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
-     "seats": "30 seats left"
+     "seats": "27 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-149-plainfield",
@@ -4410,7 +4116,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700827&session=134760",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
    "contact": "(815) 436-5335",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-148-plainfield",
@@ -4447,7 +4153,37 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700826&session=134759",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
    "contact": "(815) 436-5335",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-538-freeport",
+   "cat": "other",
+   "name": "ICS 300 - Intermediate ICS (O0465)",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Freeport (hosted by Freeport FD)",
+   "address": "Freeport FD, Freeport, IL 61032",
+   "gk": "FREEPORT|61032",
+   "lat": 42.2967,
+   "lng": -89.6212,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $750.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-05",
+     "e": "2027-03-07",
+     "t": "Mar 5–7, 2027, 6 p.m.–7 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701044&session=135109",
+     "seats": "Full"
+    }
+   ],
+   "note": "Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701044&session=135109",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=538",
+   "contact": "(815) 235-8217",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1100-champaign",
@@ -4478,13 +4214,20 @@ window.LADDER_DATA = {
      "t": "Apr 22–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700861&session=134821",
      "seats": "4 seats left"
+    },
+    {
+     "s": "2027-10-14",
+     "e": "2027-10-15",
+     "t": "Oct 14–15, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800051&session=134822",
+     "seats": "4 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700860&session=134820",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1100",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1003-orlandpark",
@@ -4507,14 +4250,14 @@ window.LADDER_DATA = {
      "e": "2027-03-12",
      "t": "Mar 8–12, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
-     "seats": "29 seats left"
+     "seats": "18 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-570-golconda",
@@ -4537,14 +4280,44 @@ window.LADDER_DATA = {
      "e": "2027-03-08",
      "t": "Mar 8, 2027, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700923&session=134897",
-     "seats": "34 seats left"
+     "seats": "33 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700923&session=134897",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=570",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-539-freeport",
+   "cat": "other",
+   "name": "ICS 400 - Advanced ICS for Complex Incidents (O0467)",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Freeport (hosted by Freeport FD)",
+   "address": "Freeport FD, Freeport, IL 61032",
+   "gk": "FREEPORT|61032",
+   "lat": 42.2967,
+   "lng": -89.6212,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $650.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-13",
+     "e": "2027-03-14",
+     "t": "Mar 13–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701045&session=135110",
+     "seats": "Full"
+    }
+   ],
+   "note": "Full right now. Call to ask about a waitlist.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701045&session=135110",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=539",
+   "contact": "(815) 235-8217",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-41-champaign",
@@ -4567,21 +4340,21 @@ window.LADDER_DATA = {
      "e": "2027-03-17",
      "t": "Mar 15–17, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
-     "seats": "30 seats left"
+     "seats": "29 seats left"
     },
     {
      "s": "2027-08-30",
      "e": "2027-09-01",
      "t": "Aug 30–Sep 1, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800037&session=134774",
-     "seats": "30 seats left"
+     "seats": "29 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=41",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-869-glenview",
@@ -4611,7 +4384,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-871-glenview",
@@ -4641,7 +4414,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700794&session=134705",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-870-glenview",
@@ -4671,7 +4444,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700793&session=134704",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1015-champaign",
@@ -4701,7 +4474,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700819&session=134740",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1520-champaign",
@@ -4724,14 +4497,51 @@ window.LADDER_DATA = {
      "e": "2027-04-02",
      "t": "Mar 29–Apr 2, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700846&session=134797",
-     "seats": "29 seats left"
+     "seats": "27 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700846&session=134797",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-1610-champaign",
+   "cat": "app",
+   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
+   "cert": "Fire Apparatus Engineer",
+   "aka": "IFSI engineer driver pump",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 850,
+   "costNote": "Illinois rate. Out of state: $1,200.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-12",
+     "e": "2027-04-16",
+     "t": "Apr 12–16, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
+     "seats": "8 seats left"
+    },
+    {
+     "s": "2027-11-08",
+     "e": "2027-11-12",
+     "t": "Nov 8–12, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800018&session=134729",
+     "seats": "13 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1317-elkgrovevi",
@@ -4761,7 +4571,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700718&session=134617",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1317",
    "contact": "(847) 734-8000",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1533-champaign",
@@ -4785,13 +4595,20 @@ window.LADDER_DATA = {
      "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
      "seats": "Full"
+    },
+    {
+     "s": "2027-11-15",
+     "e": "2027-11-19",
+     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800030&session=134757",
+     "seats": "15 seats left"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1533",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1016-frankfort",
@@ -4814,14 +4631,14 @@ window.LADDER_DATA = {
      "e": "2027-04-23",
      "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
-     "seats": "20 seats left"
+     "seats": "11 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-692-rockford",
@@ -4851,7 +4668,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700908&session=134882",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=692",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1003-champaign",
@@ -4874,14 +4691,14 @@ window.LADDER_DATA = {
      "e": "2027-04-30",
      "t": "Apr 26–30, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
-     "seats": "14 seats left"
+     "seats": "13 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-133-champaign",
@@ -4918,7 +4735,118 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700830&session=134767",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=133",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-869-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Chief Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,700.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700798&session=134709",
+     "seats": "10 seats left"
+    },
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800015&session=134712",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700798&session=134709",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-871-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Fire Officer Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,350.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700797&session=134708",
+     "seats": "9 seats left"
+    },
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800014&session=134711",
+     "seats": "10 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700797&session=134708",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-870-urbana",
+   "cat": "officer",
+   "name": "Leadership Development and Decision Making Program: Firefighter Level",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI class in Urbana",
+   "address": "ILEAS, Urbana, IL 61802",
+   "gk": "URBANA|61802",
+   "lat": 40.1117,
+   "lng": -88.2073,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $1,950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-03",
+     "e": "2027-05-07",
+     "t": "May 3–7, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700796&session=134707",
+     "seats": "15 seats left"
+    },
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800013&session=134710",
+     "seats": "20 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700796&session=134707",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1673-elkgrovevi",
@@ -4948,7 +4876,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700719&session=134618",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1673",
    "contact": "(847) 734-8000",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1660-elgin",
@@ -4978,7 +4906,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700526&session=134372",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1660",
    "contact": "(847) 741-3151",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1518-orlandpark",
@@ -5001,14 +4929,14 @@ window.LADDER_DATA = {
      "e": "2027-05-21",
      "t": "May 10–21, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
-     "seats": "33 seats left"
+     "seats": "31 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1017-wilmington",
@@ -5031,21 +4959,21 @@ window.LADDER_DATA = {
      "e": "2027-05-14",
      "t": "May 11–14, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
-     "seats": "22 seats left"
+     "seats": "16 seats left"
     },
     {
      "s": "2027-05-24",
      "e": "2027-05-27",
      "t": "May 24–27, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700822&session=134747",
-     "seats": "30 seats left"
+     "seats": "29 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1017",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-3-canton",
@@ -5075,7 +5003,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 647-0040",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1515-wilmington",
@@ -5098,14 +5026,14 @@ window.LADDER_DATA = {
      "e": "2027-06-25",
      "t": "Jun 21–25, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
-     "seats": "22 seats left"
+     "seats": "15 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1029-champaign",
@@ -5135,7 +5063,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800044&session=134798",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1324-orlandpark",
@@ -5165,7 +5093,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800029&session=134755",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1324",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1610-orlandpark",
@@ -5195,7 +5123,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800031&session=134758",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-420-champaign",
@@ -5218,21 +5146,21 @@ window.LADDER_DATA = {
      "e": "2027-09-03",
      "t": "Aug 30–Sep 3, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
-     "seats": "22 seats left"
+     "seats": "18 seats left"
     },
     {
      "s": "2027-10-11",
      "e": "2027-10-15",
      "t": "Oct 11–15, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800024&session=134745",
-     "seats": "36 seats left"
+     "seats": "34 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=420",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1518-utica",
@@ -5255,14 +5183,14 @@ window.LADDER_DATA = {
      "e": "2027-09-24",
      "t": "Sep 13–24, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
-     "seats": "13 seats left"
+     "seats": "9 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1029-frankfort",
@@ -5285,14 +5213,14 @@ window.LADDER_DATA = {
      "e": "2027-10-22",
      "t": "Sep 20–Oct 22, 2027 (3 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
-     "seats": "29 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(815) 469-1700",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1509-champaign",
@@ -5322,7 +5250,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1509",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-1441-champaign",
@@ -5345,14 +5273,81 @@ window.LADDER_DATA = {
      "e": "2027-10-01",
      "t": "Sep 27–Oct 1, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
-     "seats": "27 seats left"
+     "seats": "23 seats left"
+    },
+    {
+     "s": "2027-10-18",
+     "e": "2027-10-22",
+     "t": "Oct 18–22, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800026&session=134750",
+     "seats": "25 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1441",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-1515-marion",
+   "cat": "rescue",
+   "name": "Trench Rescue Technician (1006 - Ch 12)",
+   "cert": "Trench Technician",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "Marion (hosted by Marion FD)",
+   "address": "8963 Crinshaw Rd., Marion, IL 62959",
+   "gk": "MARION|62959",
+   "lat": 37.7306,
+   "lng": -88.9331,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $2,375.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-10-04",
+     "e": "2027-10-08",
+     "t": "Oct 4–8, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800039&session=134776",
+     "seats": "15 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800039&session=134776",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
+   "contact": "(618) 997-5730",
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-1520-orlandpark",
+   "cat": "prev",
+   "name": "Fire Inspector",
+   "cert": "Fire Inspector I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 W. 163rd Place, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 800,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-10-25",
+     "e": "2027-10-29",
+     "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800045&session=134801",
+     "seats": "28 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800045&session=134801",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-16"
   },
   {
    "id": "ifsi-951-champaign",
@@ -5375,14 +5370,74 @@ window.LADDER_DATA = {
      "e": "2027-12-17",
      "t": "Nov 1–Dec 17, 2027 (4 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800043&session=134788",
-     "seats": "30 seats left"
+     "seats": "29 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800043&session=134788",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=951",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-09"
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-1438-orlandpark",
+   "cat": "prev",
+   "name": "Youth Firesetting Prevention and Intervention Specialist",
+   "cert": "Youth Firesetter Intervention Specialist",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 W. 163rd Place, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 250,
+   "costNote": "Illinois rate. Out of state: $450.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-11-08",
+     "e": "2027-11-09",
+     "t": "Nov 8–9, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800046&session=134802",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800046&session=134802",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-16"
+  },
+  {
+   "id": "ifsi-1507-orlandpark",
+   "cat": "prev",
+   "name": "Fire and Life Safety Educator I",
+   "cert": "Public Fire and Life Safety Educator I",
+   "aka": "IFSI prevention",
+   "provider": "IFSI",
+   "location": "Orland Park (hosted by Orland FPD)",
+   "address": "10728 W. 163rd Place, Orland Park, IL 60467",
+   "gk": "ORLAND PARK|60467",
+   "lat": 41.6307,
+   "lng": -87.8536,
+   "cost": 750,
+   "costNote": "Illinois rate. Out of state: $950.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-11-29",
+     "e": "2027-12-03",
+     "t": "Nov 29–Dec 3, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800047&session=134803",
+     "seats": "29 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800047&session=134803",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
+   "contact": "(708) 349-0074",
+   "checked": "2026-11-16"
   }
  ],
  "categories": {
