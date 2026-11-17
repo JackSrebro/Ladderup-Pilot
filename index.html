@@ -707,7 +707,7 @@ html.lenis,html.lenis body{height:auto}
                 <div class="field"><label class="lbl" for="pf-last">Last name</label><input class="tinput" id="pf-last" autocomplete="family-name" maxlength="40"></div>
                 <div class="field"><label class="lbl" for="pf-email">Email</label><input class="tinput" id="pf-email" type="email" autocomplete="email" maxlength="120"></div>
               </div>
-              <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join"><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you. Unsubscribe anytime. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
+              <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you. Unsubscribe anytime. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
               <div class="acct-opt" id="pf-acct" hidden>
               <label class="check join-opt" id="pf-acct-row"><input type="checkbox" id="pf-acct-on"><span><b>Save my dashboard to a free account.</b> Log in on any phone or computer and pick up where you left off.</span></label>
               <div class="field" id="pf-pw-wrap" hidden><label class="lbl" for="pf-pw">Choose a password (at least 8 characters)</label><input class="tinput" id="pf-pw" type="password" autocomplete="new-password" maxlength="100"></div>
@@ -1322,7 +1322,7 @@ function fillProfileForm(){
   const acct = (!profile && window.LU && window.LU.account) ? window.LU.account() : null;
   const p = profile || {name:"", fullName: acct ? acct.name : "", email: acct ? acct.email : "", zip: zip || "", radius:"30", goal:"ffpm", rung:1, certs:[]};
   { const nm = p.firstName ? [p.firstName, p.lastName || ""] : splitName(p.fullName || p.name); $("#pf-first").value = nm[0]; $("#pf-last").value = nm[1] } $("#pf-email").value = p.email || "";
-  $("#pf-join-row").hidden = !!(profile && profile.joined); $("#pf-join").checked = false; $("#pf-zip").value = p.zip; $("#pf-radius").value = String(p.radius);
+  $("#pf-join-row").hidden = !!(profile && profile.joined); $("#pf-join").checked = true; $("#pf-zip").value = p.zip; $("#pf-radius").value = String(p.radius);
   $("#pf-goal").value = p.goal; $("#pf-rung").value = String(p.rung);
   $$("[data-cert]").forEach(c => c.checked = p.certs.includes(c.dataset.cert));
   $("#prof-h").textContent = profile ? "Edit Your Profile" : "Set Up Your Dashboard";
