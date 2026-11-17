@@ -8,15 +8,14 @@
         "A",
         "B",
         "C",
+        "D",
         "E",
         "F",
         "G",
         "H"
       ],
-      "pending": [
-        "D"
-      ],
-      "note": "Rotation positions 0-24: 22 data.js departments status-checked (details were filled Nov 9-10); Addison, Algonquin-Lake in the Hills and Alsip given full entries."
+      "pending": [],
+      "note": "Rotation positions 0-24: 22 data.js departments status-checked (details were filled Nov 9-10); Addison, Algonquin-Lake in the Hills and Alsip given full entries. IFSI: 118 classes (177 sessions)."
     }
   ]
 }
