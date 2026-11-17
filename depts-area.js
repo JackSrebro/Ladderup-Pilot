@@ -4,13 +4,13 @@
    status: testing status found on a check, [status, note, hiring/testing URL, last round's deadline (optional)].
    Departments with no entry had no open posting on the job boards listed in boardsNote when last checked. */
 window.LADDER_AREA = {
-  checked: "2026-11-10",
-  boardsNote: "No open posting found on Public Safety Testing, National Testing Network, The Blue Line or the Illinois Fire Chiefs job board (checked Nov 10, 2026). Some departments only post on their own website.",
+  checked: "2026-11-17",
+  boardsNote: "No open posting found on Public Safety Testing, National Testing Network, The Blue Line or the Illinois Fire Chiefs job board (checked Nov 17, 2026). Some departments only post on their own website.",
   county: {"lockport":"Will","homer":"Will","newlenox":"Will","frankfort":"Will","mokena":"Will","manhattan":"Will","plainfield":"Will","bolingbrook":"Will","romeoville":"Will","lemont":"Cook","eastjoliet":"Will","joliet":"Will","orland":"Cook","tinley":"Cook","palosheights":"Cook","northpalos":"Cook","manteno":"Kankakee","troy":"Will","channahon":"Will","crete":"Will","monee":"Will","wilmington":"Will"},
   status: {
     "a-hoffman-estates":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 15, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3471"],
     "a-wood-dale":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 30, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2716"],
-    "a-oakbrook-terrace":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 13, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2702"],
+    "a-oakbrook-terrace":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 27, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2702"],
     "a-itasca":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 7, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3197"],
     "a-elburn-countryside-fpd":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 21, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/394"],
     "a-calumet-city":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 30, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2148"],
@@ -19,10 +19,10 @@ window.LADDER_AREA = {
     "a-marengo":["open","Full-time Firefighter/Paramedic testing through National Testing Network. Applications close Dec 15, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2676"],
     "a-schiller-park":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 20, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2964"],
     "a-franklin-park":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 18, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2355"],
-    "a-arlington-heights":["open","Firefighter testing through Public Safety Testing. The testing deadline is Nov 12, 2026.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
+    "a-arlington-heights":["closed","The last Firefighter testing round closed Nov 12, 2026.","https://www.publicsafetytesting.com/career-path/positions/firefighter","2026-11-12"],
     "a-sauk-village":["open","Firefighter/EMT or Firefighter/Paramedic applications are due Dec 4, 2026.","https://www.theblueline.com/findAJob/view/40109"],
     "a-lansing":["open","Firefighter/Paramedic applications are due Nov 18, 2026, through COPS and FIRE Testing.","https://www.theblueline.com/findAJob/view/40081"],
-    "a-braidwood":["open","Firefighter/EMT or Paramedic applications are due in person Nov 16, 2026. Also takes part-time applications.","https://braidwoodfire.org/"],
+    "a-braidwood":["closed","The last Firefighter/EMT or Paramedic round closed Nov 16, 2026. Still takes part-time applications.","https://braidwoodfire.org/employment/","2026-11-16"],
     "a-hanover-park":["rolling","Ongoing full-time Firefighter/Paramedic and part-time Firefighter/EMT testing through National Testing Network.","https://candidates.nationaltestingnetwork.com/#/jobs/1894"],
     "a-river-forest":["rolling","Ongoing Firefighter/Paramedic eligibility testing through National Testing Network. The posting lists an immediate opening.","https://candidates.nationaltestingnetwork.com/#/jobs/1458"],
     "a-country-club-hills":["rolling","Ongoing Firefighter/Paramedic testing through National Testing Network.","https://candidates.nationaltestingnetwork.com/#/jobs/1801"],
@@ -41,8 +41,8 @@ window.LADDER_AREA = {
     "a-robbins":["rolling","Hiring part-time Firefighter/EMT-B and part-time EMT-Basic through National Testing Network.","https://candidates.nationaltestingnetwork.com/#/jobs/2402"],
     "a-long-grove":["rolling","Hiring part-time Firefighter/Paramedics through National Testing Network ($22.66–$28.35 an hour).","https://candidates.nationaltestingnetwork.com/#/jobs/2197"],
     "a-montgomery-countryside":["rolling","Hiring part-time Firefighter/Paramedics and Paramedics. Open until filled.","https://www.theblueline.com/findAJob/view/39814"],
-    "a-alsip":["closed","The last Firefighter/Paramedic round closed Oct 14, 2026.","https://www.theblueline.com/findAJob/view/39486","2026-10-14"],
-    "a-chicago-heights":["closed","The last Firefighter/Paramedic round closed Oct 26, 2026.","https://www.theblueline.com/findAJob/view/39383","2026-10-26"]
+    "a-chicago-heights":["closed","The last Firefighter/Paramedic round closed Oct 26, 2026.","https://www.theblueline.com/findAJob/view/39383","2026-10-26"],
+    "a-pingree-grove-countryside-fpd":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 18, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3229"]
   },
   rows: [
 ["a-addison","Addison","Addison","DuPage",41.934,-88.005,3,5656,5811,5828],
@@ -81,7 +81,7 @@ window.LADDER_AREA = {
 ["a-carpentersville","Carpentersville","Carpentersville","Kane",42.123,-88.261,3,4379,4859,5082],
 ["a-cary","Cary","Cary","McHenry",42.22,-88.243,2,2662,2659,2773],
 ["a-central-stickney-fpd","Central Stickney FPD","Burbank area","Cook",41.745,-87.77,1,801,790,727],
-["a-chicago-heights","Chicago Heights","Chicago Heights","Cook",41.509,-87.59,4,8795,9275,8081],
+["a-chicago-heights","Chicago Heights","Chicago Heights","Cook",41.509,-87.59,4,8795,9275,7773],
 ["a-chicago-ridge","Chicago Ridge","Chicago Ridge","Cook",41.702,-87.777,2,3587,3634,3832],
 ["a-cicero","Cicero","Cicero","Cook",41.838,-87.76,3,10781,10695,10369],
 ["a-clarendon-hills","Clarendon Hills","Clarendon Hills","DuPage",41.797,-87.957,1,1023,1140,1179],
