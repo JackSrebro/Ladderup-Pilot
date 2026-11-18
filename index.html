@@ -268,7 +268,7 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .pt-open{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:11px 4px 11px 12px;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .pt-open .chev{width:18px;height:18px;flex:none;fill:none;stroke:var(--ink-3);stroke-width:2.2;transition:transform .2s}
 .ptasks li.open .pt-open .chev{transform:rotate(180deg)}
-.pt-lab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px} .pt-line{display:flex;align-items:baseline;gap:8px;min-width:0} .pt-code{flex:none;min-width:2.1em;font:600 13px/1.2 var(--f-mono);color:var(--ink-3)} .ptasks li.on .pt-code{color:var(--good)}
+.pt-lab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px} .pw-wrap{position:relative;display:block;width:100%} .pw-wrap .tinput{width:100%;padding-right:68px} .pw-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13px;font-weight:600;padding:6px 8px;border-radius:6px;cursor:pointer} .pw-eye:hover{color:var(--ink)} .pw-eye:focus-visible{outline:2px solid var(--red);outline-offset:1px} .pt-line{display:flex;align-items:baseline;gap:8px;min-width:0} .pt-code{flex:none;min-width:2.1em;font:600 13px/1.2 var(--f-mono);color:var(--ink-3)} .ptasks li.on .pt-code{color:var(--good)}
 .pt-tag{flex:none;font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red-ink);border:1px solid currentColor;border-radius:999px;padding:3px 7px}
 .pt-chk{flex:none;display:grid;place-items:center;width:44px;height:44px;margin-right:4px;cursor:pointer}
 .pt-chk .pt-box{border-radius:50%}
@@ -2626,5 +2626,28 @@ main();
 })();
 </script>
 
+<script>
+/* Show/hide toggle on every password box (sign up, log in, reset, change password) */
+(function(){
+  function eye(inp){
+    if(inp.dataset.eye) return; inp.dataset.eye = "1";
+    const wrap = document.createElement("span"); wrap.className = "pw-wrap";
+    if(inp.dataset.show) wrap.dataset.show = inp.dataset.show;
+    inp.parentNode.insertBefore(wrap, inp); wrap.appendChild(inp);
+    const b = document.createElement("button"); b.type = "button"; b.className = "pw-eye";
+    b.textContent = "Show"; b.setAttribute("aria-pressed", "false");
+    b.setAttribute("aria-label", "Show password"); if(inp.id) b.setAttribute("aria-controls", inp.id);
+    b.addEventListener("click", () => {
+      const show = inp.type === "password"; inp.type = show ? "text" : "password";
+      b.textContent = show ? "Hide" : "Show"; b.setAttribute("aria-pressed", String(show));
+      b.setAttribute("aria-label", show ? "Hide password" : "Show password");
+    });
+    wrap.appendChild(b);
+  }
+  const scan = root => (root.querySelectorAll ? root.querySelectorAll('input[type="password"]') : []).forEach(eye);
+  scan(document);
+  new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { if(n.nodeType === 1){ if(n.matches && n.matches('input[type="password"]')) eye(n); scan(n) } }))).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
 </body>
 </html>
