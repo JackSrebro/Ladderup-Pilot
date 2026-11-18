@@ -2015,6 +2015,9 @@ function renderDash(){
 /* Hero search + ZIP inputs */
 $$("[data-zip]").forEach(i => i.addEventListener("input", () => { if(i.value.replace(/\D/g,"").length===5 || i.value==="") setZip(i.value) }));
 $$("[data-try]").forEach(b => b.addEventListener("click", () => { $("#hs-zip").value = b.dataset.try }));
+/* The ZIP box at the top of the home page is where people change their home ZIP: a new 5-digit ZIP there is saved to their profile (and account). */
+$("#hs-zip").addEventListener("input", () => { const v = $("#hs-zip").value.replace(/\D/g,"");
+  if(v.length !== 5) return; if(profile && profile.zip !== v){ profile = {...profile, zip: v}; store.set("profile", profile) } setZip(v) });
 $("#hs-form").addEventListener("submit", e => { e.preventDefault(); if(!profile){ openProfileForm(); goTo($("#tools")); return } setZip($("#hs-zip").value);
   const [tab, type] = $("#hs-what").value.split(":");
   if(type){ clType = type; segSet("#cl-type", type); renderClasses() }
