@@ -547,7 +547,7 @@ html.lenis,html.lenis body{height:auto}
 .lu-notice{position:fixed;left:16px;right:16px;bottom:16px;z-index:60;max-width:620px;margin:0 auto;display:flex;flex-wrap:wrap;align-items:center;gap:10px 16px;padding:12px 16px;border:1px solid var(--line);border-radius:12px;background:var(--surface);box-shadow:0 8px 30px rgba(0,0,0,.18)}
 .lu-notice p{margin:0;flex:1 1 260px;font-size:14px;color:var(--ink)}.lu-notice a{color:var(--ink);font-weight:600;text-decoration:underline}
 .lu-del{max-width:460px;width:calc(100% - 32px);border:1px solid var(--line);border-radius:14px;padding:22px;background:var(--surface);color:var(--ink)}.lu-del::backdrop{background:rgba(0,0,0,.45)}
-.lu-del h3{margin:0 0 8px}.lu-del p{color:var(--ink-2);font-size:15px}.del-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;margin-top:14px}
+.lu-del h3{margin:0 0 8px}.lu-del p{color:var(--ink-2);font-size:15px} .ext-skip{margin:4px 0 16px;font-size:14px} .ext-skip input:checked + span{color:inherit;text-decoration:none}.del-btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:flex-end;margin-top:14px}
 .foot p{font-size:13px;color:var(--ink-3);max-width:70em}
 .demo-bar{background:var(--surface);border-bottom:1px solid var(--line);font-size:13.5px;color:var(--ink-2);text-align:center;padding:7px 16px;line-height:1.4}
 .demo-bar a,.foot a.mail{color:var(--ink);font-weight:600;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
@@ -908,6 +908,13 @@ html.lenis,html.lenis body{height:auto}
   <div id="del-done" hidden><h3 tabindex="-1" id="del-done-h">Your Data Is Deleted</h3>
     <p>Your dashboard is gone from this browser<span id="del-acct-note"></span>. To also remove your login and any pilot sign-up, send us a deletion request. We complete requests within 30 days.</p>
     <div class="del-btns"><a class="btn btn-red" id="del-mail" href="mailto:jack@ladder-up.net?subject=Delete%20my%20Ladder%20Up%20data">Email a Deletion Request</a><button type="button" class="btn btn-quiet" id="del-close">Close</button></div></div>
+</dialog>
+
+<dialog class="lu-del" id="ext-dlg" aria-labelledby="ext-h" aria-describedby="ext-p">
+  <h3 id="ext-h">You're Leaving Ladder Up</h3>
+  <p id="ext-p">This link opens <b id="ext-host"></b>, a site Ladder Up doesn't run. Their information, privacy policy and terms apply there. Double-check dates, costs and requirements with them before you act.</p>
+  <label class="check ext-skip"><input type="checkbox" id="ext-skip"><span>Don't show this again on this device</span></label>
+  <div class="del-btns"><button type="button" class="btn btn-quiet" id="ext-stay">Stay on Ladder Up</button><button type="button" class="btn btn-red" id="ext-go">Continue</button></div>
 </dialog>
 
 <script src="data.js"></script>
@@ -2677,6 +2684,32 @@ main();
   const scan = root => (root.querySelectorAll ? root.querySelectorAll('input[type="password"]') : []).forEach(eye);
   scan(document);
   new MutationObserver(ms => ms.forEach(m => m.addedNodes.forEach(n => { if(n.nodeType === 1){ if(n.matches && n.matches('input[type="password"]')) eye(n); scan(n) } }))).observe(document.body, { childList: true, subtree: true });
+})();
+</script>
+<script>
+/* Leaving-site notice: any link to another website shows a short warning first (people can turn it off on their device). */
+(function(){
+  const dlg = document.getElementById("ext-dlg"); if(!dlg || !dlg.showModal) return;
+  let pending = null;
+  const off = () => { try { return localStorage.getItem("lu:extOk") === "1" } catch(e){ return false } };
+  document.addEventListener("click", e => {
+    if(e.defaultPrevented || e.button !== 0) return;
+    const a = e.target.closest && e.target.closest("a[href]"); if(!a) return;
+    let u; try { u = new URL(a.getAttribute("href"), location.href) } catch(_){ return }
+    if(!/^https?:$/.test(u.protocol) || u.hostname === location.hostname || /(^|\.)ladder-up\.net$/.test(u.hostname) || off()) return;
+    e.preventDefault();
+    pending = { href: u.href, blank: a.target === "_blank" || e.metaKey || e.ctrlKey || e.shiftKey };
+    document.getElementById("ext-host").textContent = u.hostname.replace(/^www\./, "");
+    document.getElementById("ext-skip").checked = false;
+    dlg.showModal(); document.getElementById("ext-go").focus();
+  }, true);
+  document.getElementById("ext-go").addEventListener("click", () => {
+    if(document.getElementById("ext-skip").checked){ try { localStorage.setItem("lu:extOk", "1") } catch(e){} }
+    const p = pending; pending = null; dlg.close();
+    if(p){ if(p.blank) window.open(p.href, "_blank", "noopener"); else location.href = p.href; }
+  });
+  document.getElementById("ext-stay").addEventListener("click", () => { pending = null; dlg.close() });
+  dlg.addEventListener("cancel", () => { pending = null });
 })();
 </script>
 </body>
