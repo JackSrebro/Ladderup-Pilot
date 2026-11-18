@@ -268,7 +268,7 @@ input[type="checkbox"]{accent-color:var(--red);width:18px;height:18px;margin:0;f
 .pt-open{flex:1;min-width:0;display:flex;align-items:center;gap:8px;padding:11px 4px 11px 12px;background:none;border:0;font:inherit;color:inherit;text-align:left;cursor:pointer}
 .pt-open .chev{width:18px;height:18px;flex:none;fill:none;stroke:var(--ink-3);stroke-width:2.2;transition:transform .2s}
 .ptasks li.open .pt-open .chev{transform:rotate(180deg)}
-.pt-lab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px} .pw-wrap{position:relative;display:block;width:100%} .pw-wrap .tinput{width:100%;padding-right:68px} .pw-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13px;font-weight:600;padding:6px 8px;border-radius:6px;cursor:pointer} .pw-eye:hover{color:var(--ink)} .pw-eye:focus-visible{outline:2px solid var(--red);outline-offset:1px} .pt-line{display:flex;align-items:baseline;gap:8px;min-width:0} .pt-code{flex:none;min-width:2.1em;font:600 13px/1.2 var(--f-mono);color:var(--ink-3)} .ptasks li.on .pt-code{color:var(--good)}
+.pt-lab{flex:1;min-width:0;display:flex;flex-direction:column;align-items:flex-start;gap:5px} #qz-next.is-off{opacity:.45;cursor:not-allowed} .pw-wrap{position:relative;display:block;width:100%} .pw-wrap .tinput{width:100%;padding-right:68px} .pw-eye{position:absolute;right:6px;top:50%;transform:translateY(-50%);border:0;background:transparent;color:var(--ink-2);font:inherit;font-size:13px;font-weight:600;padding:6px 8px;border-radius:6px;cursor:pointer} .pw-eye:hover{color:var(--ink)} .pw-eye:focus-visible{outline:2px solid var(--red);outline-offset:1px} .pt-line{display:flex;align-items:baseline;gap:8px;min-width:0} .pt-code{flex:none;min-width:2.1em;font:600 13px/1.2 var(--f-mono);color:var(--ink-3)} .ptasks li.on .pt-code{color:var(--good)}
 .pt-tag{flex:none;font:600 11px/1 var(--f-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--red-ink);border:1px solid currentColor;border-radius:999px;padding:3px 7px}
 .pt-chk{flex:none;display:grid;place-items:center;width:44px;height:44px;margin-right:4px;cursor:pointer}
 .pt-chk .pt-box{border-radius:50%}
@@ -655,7 +655,7 @@ html.lenis,html.lenis body{height:auto}
             </section>
             <section class="qs" data-step="have" hidden>
               <p class="qz-q">What Do You Already Have?</p>
-              <p class="qz-sub">Check everything that applies. Skip it if you're just starting.</p>
+              <p class="qz-sub">Check everything that applies, or None of These Yet if you're just starting.</p>
               <fieldset class="certs certs-big"><legend class="vh">What you already have</legend>
                 <label><input type="checkbox" data-cert="emt"><span>EMT License</span></label>
                 <label><input type="checkbox" data-cert="medic"><span>Paramedic License</span></label>
@@ -663,6 +663,7 @@ html.lenis,html.lenis body{height:auto}
                 <label><input type="checkbox" data-cert="ladder"><span>Ladder Climb Certificate</span></label>
                 <label><input type="checkbox" data-cert="ffii"><span>Basic Operations Firefighter / Firefighter II</span></label>
                 <label><input type="checkbox" data-cert="degree"><span>College Degree</span></label>
+                <label><input type="checkbox" id="pf-none-yet"><span>None of These Yet</span></label>
               </fieldset>
             </section>
             <section class="qs" data-step="goal" hidden>
@@ -684,12 +685,12 @@ html.lenis,html.lenis body{height:auto}
             </section>
             <section class="qs" data-step="about" hidden>
               <p class="qz-q">How Old Are You?</p>
-              <p class="qz-sub">Optional. Age limits change which programs and jobs make sense.</p>
+              <p class="qz-sub">Age limits change which programs and jobs make sense.</p>
               <div class="opts" data-q="age"></div>
               <p class="age-note" id="pf-u13" role="alert" hidden>Ladder Up is for people 13 and older. Come back when you turn 13, and ask your local fire department about youth safety programs in the meantime.</p>
               <label class="check join-opt" id="pf-parent-row" hidden><input type="checkbox" id="pf-parent"><span><b>A parent or guardian knows I'm using Ladder Up and said it's OK.</b> Required for users under 18.</span></label>
               <p class="qz-q qz-q2">Are You a Military Veteran?</p>
-              <p class="qz-sub">Optional. Veterans get extra funding options and hiring preference points.</p>
+              <p class="qz-sub">Veterans get extra funding options and hiring preference points.</p>
               <div class="opts" data-q="veteran"></div>
             </section>
             <section class="qs" data-step="where" hidden>
@@ -1370,6 +1371,8 @@ function qzSync(){
     el.querySelectorAll(".opt").forEach(b => b.setAttribute("aria-pressed", String(Array.isArray(cur) ? cur.includes(b.dataset.v) : cur===b.dataset.v))) });
   if(QA.goal) $("#pf-goal").value = QA.goal;
   $("#pf-rung").value = String(rungFor());
+  if($$("[data-cert]:checked").length) $("#pf-none-yet").checked = false;
+  qzNextState();
 }
 function qzShow(i){
   const steps = qzSteps(); qzI = Math.max(0, Math.min(i, steps.length-1));
@@ -1382,10 +1385,27 @@ function qzShow(i){
 }
 function qzFocus(){ const sec = $(`#prof-form .qs[data-step="${qzSteps()[qzI]}"]`); const f = sec && sec.querySelector('.opt[aria-pressed="true"], .opt, input, select'); if(f) f.focus({preventScroll:true}) }
 function qzErr(msg){ const e = $("#pf-err"); e.textContent = msg; e.hidden = false }
+/* Every question needs an answer before Next works ("Not Sure Yet" and "Prefer Not to Say" count). */
+function qzMissing(){
+  const step = qzSteps()[qzI];
+  if(step==="stage" && !QA.stage) return "Pick the one closest to where you are.";
+  if(step==="have" && !$$("[data-cert]:checked").length && !$("#pf-none-yet").checked) return "Check what you have, or pick None of These Yet.";
+  if(step==="goal" && !QA.goal) return "Pick a goal. \"Not Sure Yet\" is fine.";
+  if(step==="goal" && !QA.timeline) return "Pick how soon you want to be hired.";
+  if(step==="focus" && !(QA.focus || []).length) return "Pick at least one. \"Not Sure Yet\" is fine.";
+  if(step==="life" && !QA.schedule) return "Pick what your schedule allows.";
+  if(step==="life" && !QA.pay) return "Pick how you'll pay for training.";
+  if(step==="about" && !QA.age) return "Pick your age range. \"Prefer Not to Say\" is fine.";
+  if(step==="about" && !QA.veteran) return "Pick whether you're a veteran. \"Prefer Not to Say\" is fine.";
+  if(step==="about" && QA.age==="u13") return "Ladder Up is for people 13 and older.";
+  if(step==="about" && QA.age==="u18" && !$("#pf-parent").checked) return "Check the box to confirm a parent or guardian said it's OK.";
+  if(step==="where" && !/^\d{5}$/.test($("#pf-zip").value.trim())) return "Add your 5-digit ZIP.";
+  return null;
+}
+function qzNextState(){ const b = $("#qz-next"); if(!b) return; const m = qzMissing(); b.classList.toggle("is-off", !!m); b.setAttribute("aria-disabled", m ? "true" : "false") }
 function qzNext(){
   const step = qzSteps()[qzI];
-  if(step==="stage" && !QA.stage) return qzErr("Pick the one closest to where you are.");
-  if(step==="goal" && !QA.goal) return qzErr("Pick a goal. \"Not Sure Yet\" is fine.");
+  const miss = qzMissing(); if(miss && step !== "where" && !(step==="about" && (QA.age==="u13" || QA.age==="u18"))) return qzErr(miss);
   if(step==="about" && QA.age==="u13") return qzErr("Ladder Up is for people 13 and older.");
   if(step==="about" && QA.age==="u18" && !$("#pf-parent").checked) return qzErr("Check the box to confirm a parent or guardian said it's OK.");
   if(step==="where" && !/^\d{5}$/.test($("#pf-zip").value.trim())){ $("#pf-zip").setAttribute("aria-invalid","true"); return qzErr("Add your 5-digit ZIP.") }
@@ -1402,12 +1422,15 @@ $("#prof-form").addEventListener("click", e => {
   if(q==="stage"){ (STAGES[v].certs || []).forEach(k => { const cb = $(`[data-cert="${k}"]`); if(cb) cb.checked = true }); qzShow(qzI) }
   qzSync(); updateSaveLabel(); $("#pf-err").hidden = true;
 });
-$$("[data-cert]").forEach(cb => cb.addEventListener("change", qzSync));
+$$("[data-cert]").forEach(cb => cb.addEventListener("change", () => { $("#pf-err").hidden = true; qzSync() }));
+$("#pf-none-yet").addEventListener("change", e => { if(e.target.checked) $$("[data-cert]").forEach(cb => cb.checked = false); $("#pf-err").hidden = true; qzSync() });
+$("#pf-parent").addEventListener("change", qzNextState); $("#pf-zip").addEventListener("input", qzNextState);
 function qzFill(p){
   const stageFromRung = {1:"new",2:"emtclass",3:"academy",4:"medicschool",5:"testing",6:"probation",7:"career"};
   QA = { stage: p.stage || (profile ? stageFromRung[p.rung] : null), goal: profile ? p.goal : null, timeline: p.timeline || null, schedule: p.schedule || null,
          pay: p.pay || null, age: p.age || null, veteran: p.veteran || null, focus: p.focus || [] };
   $("#pf-parent").checked = !!p.parentOk;
+  $("#pf-none-yet").checked = !!profile && !(p.certs || []).length;
   qzShow(0);
 }
 /* One step: build the dashboard and, if they opt in, add them to the pilot list (a Netlify form, saved in the background).
