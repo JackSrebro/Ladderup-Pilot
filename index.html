@@ -447,7 +447,7 @@ dialog.auth::backdrop{background:rgba(8,12,18,.55)}
 [hidden]{display:none!important}
 .prof-grid .span2{grid-column:span 2}
 @media (max-width:460px){.prof-grid .span2{grid-column:auto}}
-.join-opt input:checked + span{color:inherit;text-decoration:none}
+.join-opt input:checked + span, .au-consent input:checked + span{color:inherit;text-decoration:none}
 .join-opt{padding:12px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);max-width:46em}
 .joined-note{font-size:14px;color:var(--good);font-weight:600}
 .dash-head{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;padding-bottom:20px;margin-bottom:20px;border-bottom:1px solid var(--line-2)}
@@ -710,7 +710,7 @@ html.lenis,html.lenis body{height:auto}
               <label class="check join-opt" id="pf-join-row"><input type="checkbox" id="pf-join" checked><span><b>Sign me up for the free Ladder Up pilot.</b> We'll email you when new classes, testing dates and scholarships open near you. Unsubscribe anytime. See our <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>.</span></label>
               <div class="acct-opt" id="pf-acct" hidden>
               <label class="check join-opt" id="pf-acct-row"><input type="checkbox" id="pf-acct-on"><span><b>Save my dashboard to a free account.</b> Log in on any phone or computer and pick up where you left off.</span></label>
-              <div class="field" id="pf-pw-wrap" hidden><label class="lbl" for="pf-pw">Choose a password (at least 8 characters)</label><input class="tinput" id="pf-pw" type="password" autocomplete="new-password" maxlength="100"></div>
+              <div class="field" id="pf-pw-wrap" hidden><label class="lbl" for="pf-pw">Choose a password (at least 8 characters)</label><input class="tinput" id="pf-pw" type="password" autocomplete="new-password" maxlength="100"><label class="lbl" for="pf-pw2" style="margin-top:12px">Confirm password</label><input class="tinput" id="pf-pw2" type="password" autocomplete="new-password" maxlength="100"></div>
               <p class="acct-in" id="pf-acct-in" hidden></p>
             </div>
             </section>
@@ -2237,6 +2237,8 @@ window.LU = Object.assign(window.LU || {}, { rerender(){ if(profile) renderDash(
     <input class="tinput" id="au-email" type="email" autocomplete="email" maxlength="120" data-show="login signup forgot">
     <label class="lbl" for="au-pw" data-show="login signup reset" id="au-pw-l">Password</label>
     <input class="tinput" id="au-pw" type="password" autocomplete="current-password" maxlength="100" data-show="login signup reset">
+    <label class="lbl" for="au-pw2" data-show="signup reset">Confirm password</label>
+    <input class="tinput" id="au-pw2" type="password" autocomplete="new-password" maxlength="100" data-show="signup reset">
     <label class="check au-consent" data-show="signup"><input type="checkbox" id="au-age"><span>I'm 13 or older and agree to the <a href="/terms.html" target="_blank" rel="noopener">Terms of Service</a> and <a href="/privacy.html" target="_blank" rel="noopener">Privacy Policy</a>. If I'm under 18, a parent or guardian said it's OK.</span></label>
     <p class="err" id="au-err" role="alert" hidden></p>
     <p class="ok" id="au-ok" role="status" hidden></p>
@@ -2364,11 +2366,12 @@ async function main(){
     if(user || !pfOn.checked) return null;
     if(!/^\S+@\S+\.\S+$/.test($("#pf-email").value.trim())) return "Add your email to create your account.";
     if(pfPw.value.length < 8) return "Choose a password with at least 8 characters.";
+    if(pfPw.value !== $("#pf-pw2").value) return "Your passwords don't match. Type the same password in both boxes.";
     return null;
   };
   LU.afterProfileSave = async p => {
     if(user || !pfOn.checked) return;
-    const email = $("#pf-email").value.trim(), pw = pfPw.value; pfPw.value = ""; pfOn.checked = false;
+    const email = $("#pf-email").value.trim(), pw = pfPw.value; pfPw.value = ""; $("#pf-pw2").value = ""; pfOn.checked = false;
     try {
       const u = await I.signup(email, pw, { full_name: p.fullName });
       if(settings.autoconfirm && u){ await syncOnLogin(u); refresh(); toast("Account created. Your dashboard now saves to your account.") }
@@ -2434,6 +2437,7 @@ async function main(){
     const sb = $("#au-submit"), label = sb.textContent;
     if(mode !== "reset" && !/^\S+@\S+\.\S+$/.test(email)) return fail("Enter a valid email address.");
     if((mode === "signup" || mode === "reset") && pw.length < 8) return fail("Use a password with at least 8 characters.");
+    if((mode === "signup" || mode === "reset") && pw !== $("#au-pw2").value) return fail("Your passwords don't match. Type the same password in both boxes.");
     if(mode === "login" && !pw) return fail("Enter your password.");
     if(mode === "signup" && (!first || !last)) return fail("Enter your first and last name.");
     if(mode === "signup" && !$("#au-age").checked) return fail("Please confirm you're 13 or older and agree to the Terms and Privacy Policy.");
