@@ -1642,6 +1642,8 @@ function buildPath(p){
     steps.push({id:"probation", t:"Get Through Probation", why:"Once you're hired, your first year is usually probation. You'll be learning your department's procedures, where all the equipment is and how to use it, and the streets in your district, while riding with a training officer and finishing any department testing. Keep your licenses current and log your training hours.", items:[]});
     steps.push({id:"cefind", ce:"all", t:"Find Continuing Education Courses", why:"Firefighters take continuing education their whole career, for promotion, specialty teams and recertification. These are the next courses near you, soonest first. Many departments pay for training, so ask your training officer before you pay.", items:pathCE(CE_FOCUS.all), go:"ce"});
   }
+  // Last step: add every license and certification earned along the way, so renewals can be tracked
+  steps.push({id:"certs", t:"Track Your Certifications", why:"Add each license and certification you earned on this roadmap (EMT, Paramedic, CPAT, ladder climb, Basic Operations Firefighter) so you can see when each one is due for renewal.", items:[], go:"certs"});
   return steps;
 }
 /* Interactive roadmap: each recommended step has tasks to check off. Checking one turns it green and
@@ -1672,22 +1674,22 @@ const PTASKS = {
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"emt"}, msg:"You're set. Show up, study and finish the class."},
     {k:"finish", t:"Finish the EMT class", msg:"Class done! Next, schedule your NREMT exam."},
     {k:"nremt", t:"Pass the NREMT exam", do:NREMT, msg:"You passed! Apply for your Illinois EMT license through IDPH."},
-    {k:"license", t:"Get your Illinois EMT license", then:{kind:"certs", v:"emt-il"}, msg:"Licensed EMT! Add it to My Certifications so you can track renewal."}],
+    {k:"license", t:"Get your Illinois EMT license", msg:"Licensed EMT! You'll add it to My Certifications in the last step of your roadmap."}],
   academy: [
     {k:"apply", t:"Pick a fire academy and apply", do:{kind:"classes", type:"academy"}, msg:"Nice work! Now line up the money to pay for it."},
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"fire"}, msg:"You're set. Time to train."},
     {k:"finish", t:"Finish the academy", msg:"Academy done! Your certification comes next."},
-    {k:"cert", t:"Earn your Basic Operations Firefighter certification", then:{kind:"certs", v:"osfm-141.301"}, msg:"Certified! Add it to My Certifications."}],
+    {k:"cert", t:"Earn your Basic Operations Firefighter certification", msg:"Certified! You'll add it to My Certifications in the last step of your roadmap."}],
   cpat: [
     {k:"book", t:"Pick a CPAT test site and book a date", do:{kind:"cpat"}, msg:"Booked! Start training. The CPAT is timed, so practice stair climbs and carries with weight."},
-    {k:"pass", t:"Pass the CPAT", then:{kind:"certs", v:"cpat"}, msg:"You passed! Add your CPAT card so you know when it expires."},
-    {k:"ladder", t:"Pass the ladder climb", only:"ladder", then:{kind:"certs", v:"ladder"}, msg:"Ladder climb done! Add the certificate to My Certifications."}],
+    {k:"pass", t:"Pass the CPAT", msg:"You passed! You'll add your CPAT card to My Certifications in the last step of your roadmap, so you know when it expires."},
+    {k:"ladder", t:"Pass the ladder climb", only:"ladder", msg:"Ladder climb done! You'll add the certificate to My Certifications in the last step of your roadmap."}],
   medic: [
     {k:"apply", t:"Pick a paramedic program and apply", do:{kind:"classes", type:"medic"}, msg:"Nice work! Now line up the money to pay for it."},
     {k:"fund", t:"Apply for scholarships and funding", do:{kind:"funding", f:"medic"}, msg:"You're set. Paramedic school is a big commitment, so plan your schedule."},
     {k:"finish", t:"Finish paramedic school", msg:"School done! Next, schedule your NREMT paramedic exam."},
     {k:"nremt", t:"Pass the NREMT paramedic exam", do:NREMT, msg:"You passed! Apply for your Illinois paramedic license through IDPH."},
-    {k:"license", t:"Get your Illinois paramedic license", then:{kind:"certs", v:"medic-il"}, msg:"Licensed paramedic! Add it to My Certifications."}],
+    {k:"license", t:"Get your Illinois paramedic license", msg:"Licensed paramedic! You'll add it to My Certifications in the last step of your roadmap."}],
   apply: [
     {k:"apply", t:"Pick the departments you'd work for and apply", do:{kind:"jobs"}, msg:"Applied! Most departments test in stages, starting with a written exam."},
     {k:"written", t:"Take the written exam", msg:"Written exam done! The physical test and interview come next."},
@@ -1717,7 +1719,7 @@ const PTASKS = {
   parttime: [
     {k:"apply", t:"Pick part-time departments near you and apply", do:{kind:"parttime"}, msg:"Applied! Many departments test part-time candidates with an interview and a skills or agility test. Some don't post deadlines, so call to ask if they're hiring."},
     {k:"hired", t:"Get hired and start picking up shifts", msg:"Nice work! Part-time experience makes you a stronger candidate for full-time jobs."}],
-  certs: [{k:"add", t:"Add your first certification", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
+  certs: [{k:"add", t:"Add your licenses and certifications", do:{kind:"tab", tab:"certs", label:"Open My Certifications"}, msg:"Added! You'll see what's due for renewal."}]
 };
 /* "Pick" and "apply/book/register" used to be two tasks; an old "pick" check-off still counts for the merged task. */
 const TASK_OLD = {"emt.apply":"emt.pick","academy.apply":"academy.pick","medic.apply":"medic.pick","cpat.book":"cpat.pick","youth.apply":"youth.pick","parttime.apply":"parttime.pick","apply.apply":"apply.pick"};
