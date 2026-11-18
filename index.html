@@ -945,7 +945,7 @@ function miles(lat,lng){ const o = origin(); if(!o || lat==null) return null;
 const distTxt = m => m==null ? "" : `<span class="dist">${m<1?"<1":Math.round(m)} mi</span>`;
 function setZip(z){
   zip = (z||"").replace(/\D/g,"").slice(0,5); store.set("zip", zip);
-  $$("[data-zip]").forEach(i => { if(i.value !== zip) i.value = zip });
+  $$("[data-zip], #hs-zip").forEach(i => { if(i.value !== zip) i.value = zip });
   const o = origin();
   $("#area-note").textContent = o ? `Distances from ${o[2]} (${zip})` : zip.length===5 ? `${zip} is outside the pilot area. Showing everything.` : "Enter a ZIP to sort by distance";
   renderAll();
