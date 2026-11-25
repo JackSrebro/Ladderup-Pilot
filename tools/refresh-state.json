@@ -16,6 +16,17 @@
       ],
       "pending": [],
       "note": "Rotation positions 0-24: 22 data.js departments status-checked (details were filled Nov 9-10); Addison, Algonquin-Lake in the Hills and Alsip given full entries. IFSI: 118 classes (177 sessions)."
+    },
+    {
+      "date": "2026-11-24",
+      "done": [
+        "A",
+        "B",
+        "C",
+        "D"
+      ],
+      "pending": [],
+      "note": "Weekly run only (monthly not due until Dec 15). Jobs: +Carpentersville, +Frankfort; removed Palos Heights, Lansing, Schiller Park, Greater Round Lake (closed) and North Palos, Oak Park (no longer posted). IFSI: 108 classes (154 sessions)."
     }
   ]
 }
