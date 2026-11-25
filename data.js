@@ -2,7 +2,7 @@
    Every row was checked against its source page on the date in `checked`.
    null means the source does not publish that value. */
 window.LADDER_DATA = {
-  updated: "2026-11-17",
+  updated: "2026-11-24",
   region: "Will County + southwest suburbs",
   /* Public sign-up form (Google Form). Leave "" to use the built-in waitlist. */
   signupForm: "https://docs.google.com/forms/d/e/1FAIpQLSdQe1j7_XIkkeYRCO91B2UxG5dtcokpOR0wqA_sxu9343R5eA/viewform",
@@ -12,36 +12,36 @@ window.LADDER_DATA = {
   /* apply: where a student starts an application (null = no online application right now; see applyNote)
      sponsor (academies): "open" = anyone can enroll, "sponsored" = must be on a fire department */
   programs: [
-    {"id":"harper-emt","apply":"https://harpercollege.formstack.com/forms/limited_enrollment_application_emtb_spring_2027","applyNote":"Apply to Harper first if you haven't, then submit the Spring 2027 limited-enrollment EMT form.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"Harper College","city":"Palatine","lat":42.114,"lng":-88.043,"cost":null,"costNote":"Tuition not listed on the program page. Not eligible for financial aid.","length":"9 credit hours in three modules (EMS 111, 112, 113)","schedule":"Limited enrollment. Taught at Northwest Community Hospital.","status":"open","statusNote":"Spring 2027 applications are open until Dec 18, 2026 (8 AM).","reqs":"Age 18, high school diploma or GED, 2.0 Harper GPA, EMS 111 prerequisite and health requirements","contact":"(847) 925-6700","url":"https://www.harpercollege.edu/academics/public-service/emergency-medical-services/emt.php","checked":"2026-11-17"},
-    {"id":"harper-pm","apply":"https://harpercollege.my.site.com/apply/","applyNote":"Apply to Harper, schedule the EMT validation exam, then get the paramedic application after you pass.","type":"medic","name":"Paramedic Certificate","provider":"Harper College + Northwest Community Healthcare EMS","city":"Palatine","lat":42.114,"lng":-88.043,"cost":null,"costNote":"Tuition not listed on the program page.","length":"39 credit hours over two semesters, fall through spring","schedule":"Starts each fall. Classroom, lab, hospital and field clinicals.","status":"check","statusNote":"The fall 2026 window (Mar 2–Jun 8) is closed. The next window isn't posted yet.","reqs":"Age 18, current EMT or AEMT license, AHA CPR card, 75% or higher on the EMT validation exam","contact":"(847) 925-6700","url":"https://www.harpercollege.edu/academics/public-service/emergency-medical-services/paramedic.php","checked":"2026-11-17"},
-    {"id":"cod-emt","apply":"https://cod.elluciancrmrecruit.com/Apply/","applyNote":"Apply to COD ($20 fee), meet placement, finish the background check, then register.","type":"emt","name":"Emergency Medical Technician (FIRE 2271)","provider":"College of DuPage","city":"Glen Ellyn","lat":41.866,"lng":-88.065,"cost":null,"costNote":"Tuition is listed per section in the class schedule. About $200 extra for the access code if not bought at the bookstore.","length":"10 credits, at least 180 hours","schedule":"Offered each semester. Find sections under Fire Science 2271.","status":"open","statusNote":"Register for an upcoming semester after you're accepted to COD.","reqs":"Age 18, high school diploma or equivalent by the exam date, reading/writing placement, background check, health insurance and health requirements","contact":"(630) 942-2107","url":"https://www.cod.edu/academics/programs/fire/emt/","checked":"2026-11-10"},
-    {"id":"cod-pm","apply":null,"applyNote":"Each partner hospital has its own application packet and $25 fee.","type":"medic","name":"Paramedic Program","provider":"College of DuPage + partner hospitals (Advocate Good Samaritan, Edward, Loyola, Northwestern Central DuPage)","city":"Glen Ellyn","lat":41.866,"lng":-88.065,"cost":null,"costNote":"Tuition not listed. $25 fee per partner application.","length":"Set by each partner hospital program","schedule":"Each partner sets its own dates and class times.","status":"check","statusNote":"All four 2027 application windows are closed. Check back for the next cycle.","reqs":"Entrance exam and interview. Anatomy and physiology preferred. In-district applicants get priority.","contact":"(630) 942-2800","url":"https://www.cod.edu/academics/programs/fire/paramedic-program.html","checked":"2026-11-17"},
-    {"id":"triton-emt","apply":"https://triton.elluciancrmrecruit.com/Apply","applyNote":"Apply through Triton's online application, then register for EMS 131.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"Triton College","city":"River Grove","lat":41.928,"lng":-87.839,"cost":null,"costNote":"8 credit hours at Triton's tuition rate.","length":"One semester (EMS 131, 8 credits)","schedule":"See the course schedule.","status":"open","statusNote":"Credit course. Apply to Triton, then register for EMS 131.","reqs":"EMS 131 prerequisite, with a B or better required in the course","contact":"Vince Pesavento · vincentpesavento@triton.edu · (708) 456-0300","url":"https://www.triton.edu/academics/degrees-and-programs/emergency-medicine/emergency-medical-tech-cert.html","checked":"2026-11-10"},
+    {"id":"harper-emt","apply":"https://harpercollege.formstack.com/forms/limited_enrollment_application_emtb_spring_2027","applyNote":"Apply to Harper first if you haven't, then submit the Spring 2027 limited-enrollment EMT form.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"Harper College","city":"Palatine","lat":42.114,"lng":-88.043,"cost":null,"costNote":"Tuition not listed on the program page. Not eligible for financial aid.","length":"9 credit hours in three modules (EMS 111, 112, 113)","schedule":"Limited enrollment. Taught at Northwest Community Hospital.","status":"open","statusNote":"Spring 2027 applications are open until Dec 18, 2026 (8 AM).","reqs":"Age 18, high school diploma or GED, 2.0 Harper GPA, EMS 111 prerequisite and health requirements","contact":"(847) 925-6700","url":"https://www.harpercollege.edu/academics/public-service/emergency-medical-services/emt.php","checked":"2026-11-24"},
+    {"id":"harper-pm","apply":"https://harpercollege.my.site.com/apply/","applyNote":"Apply to Harper, schedule the EMT validation exam, then get the paramedic application after you pass.","type":"medic","name":"Paramedic Certificate","provider":"Harper College + Northwest Community Healthcare EMS","city":"Palatine","lat":42.114,"lng":-88.043,"cost":null,"costNote":"Tuition not listed on the program page.","length":"39 credit hours over two semesters, fall through spring","schedule":"Starts each fall. Classroom, lab, hospital and field clinicals.","status":"check","statusNote":"The fall 2026 window (Mar 2–Jun 8) is closed. The next window isn't posted yet.","reqs":"Age 18, current EMT or AEMT license, AHA CPR card, 75% or higher on the EMT validation exam","contact":"(847) 925-6700","url":"https://www.harpercollege.edu/academics/public-service/emergency-medical-services/paramedic.php","checked":"2026-11-24"},
+    {"id":"cod-emt","apply":"https://cod.elluciancrmrecruit.com/Apply/","applyNote":"Apply to COD ($20 fee), meet placement, finish the background check, then register.","type":"emt","name":"Emergency Medical Technician (FIRE 2271)","provider":"College of DuPage","city":"Glen Ellyn","lat":41.866,"lng":-88.065,"cost":null,"costNote":"Tuition is listed per section in the class schedule. About $200 extra for the access code if not bought at the bookstore.","length":"10 credits, at least 180 hours","schedule":"Offered each semester. Find sections under Fire Science 2271.","status":"open","statusNote":"Register for an upcoming semester after you're accepted to COD.","reqs":"Age 18, high school diploma or equivalent by the exam date, reading/writing placement, background check, health insurance and health requirements","contact":"(630) 942-2107","url":"https://www.cod.edu/academics/programs/fire/emt/","checked":"2026-11-24"},
+    {"id":"cod-pm","apply":null,"applyNote":"Each partner hospital has its own application packet and $25 fee.","type":"medic","name":"Paramedic Program","provider":"College of DuPage + partner hospitals (Advocate Good Samaritan, Edward, Loyola, Northwestern Central DuPage)","city":"Glen Ellyn","lat":41.866,"lng":-88.065,"cost":null,"costNote":"Tuition not listed. $25 fee per partner application.","length":"Set by each partner hospital program","schedule":"Each partner sets its own dates and class times.","status":"check","statusNote":"All four 2027 application windows are closed. Check back for the next cycle.","reqs":"Entrance exam and interview. Anatomy and physiology preferred. In-district applicants get priority.","contact":"(630) 942-2800","url":"https://www.cod.edu/academics/programs/fire/paramedic-program.html","checked":"2026-11-24"},
+    {"id":"triton-emt","apply":"https://triton.elluciancrmrecruit.com/Apply","applyNote":"Apply through Triton's online application, then register for EMS 131.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"Triton College","city":"River Grove","lat":41.928,"lng":-87.839,"cost":null,"costNote":"8 credit hours at Triton's tuition rate.","length":"One semester (EMS 131, 8 credits)","schedule":"See the course schedule.","status":"open","statusNote":"Credit course. Apply to Triton, then register for EMS 131.","reqs":"EMS 131 prerequisite, with a B or better required in the course","contact":"Vince Pesavento · vincentpesavento@triton.edu · (708) 456-0300","url":"https://www.triton.edu/academics/degrees-and-programs/emergency-medicine/emergency-medical-tech-cert.html","checked":"2026-11-24"},
     {"id":"oakton-emt","apply":"https://oakton.my.site.com/OnlineApp/TX_SiteLogin?startURL=%2FOnlineApp%2FTargetX_Portal__PB","applyNote":"Apply to Oakton online, then register for the EMT course.","type":"emt","name":"Emergency Medical Technician - Basic Certificate","provider":"Oakton College","city":"Des Plaines","lat":42.047,"lng":-87.886,"cost":null,"costNote":"8 credit hours at Oakton's tuition rate.","length":"One semester, 8 credit hours","schedule":"See the course schedule.","status":"open","statusNote":"Credit course.","reqs":"Health records for clinicals: physical, TB test, immunizations and flu vaccine","contact":"Aref Abdellatif · aabdellatif@oakton.edu · (847) 376-7890","url":"https://catalog.oakton.edu/career-programs-pathways/fire-science-technology/emergency-medical-technician--basic-certificate/","checked":"2026-11-10"},
-    {"id":"oakton-pm","apply":"https://www.oakton.edu/_pdfs/applications/2026-algh-paramedic-program-application-process-information-packet.pdf","applyNote":"Apply through a partner hospital program. The Lutheran General packet is linked.","type":"medic","name":"Emergency Medical Technician - Paramedic Certificate","provider":"Oakton College + Advocate Lutheran General / Saint Francis","city":"Des Plaines","lat":42.047,"lng":-87.886,"cost":null,"costNote":"24 credit hours at Oakton's tuition rate.","length":"24 credit hours, with clinicals at area hospitals","schedule":"Set by the partner hospital program.","status":"check","statusNote":"Admission runs through the partner hospitals. Confirm the next application window.","reqs":"Set by the partner hospital (EMT license required)","contact":"Michael Doocy · mdoocy@oakton.edu · (847) 376-7887","url":"https://catalog.oakton.edu/career-programs-pathways/fire-science-technology/emergency-medical-technician--paramedic-certificate/","checked":"2026-11-17"},
+    {"id":"oakton-pm","apply":"https://www.oakton.edu/_pdfs/applications/2026-algh-paramedic-program-application-process-information-packet.pdf","applyNote":"Apply through a partner hospital program. The Lutheran General packet is linked.","type":"medic","name":"Emergency Medical Technician - Paramedic Certificate","provider":"Oakton College + Advocate Lutheran General / Saint Francis","city":"Des Plaines","lat":42.047,"lng":-87.886,"cost":null,"costNote":"24 credit hours at Oakton's tuition rate.","length":"24 credit hours, with clinicals at area hospitals","schedule":"Set by the partner hospital program.","status":"check","statusNote":"Admission runs through the partner hospitals. Confirm the next application window.","reqs":"Set by the partner hospital (EMT license required)","contact":"Michael Doocy · mdoocy@oakton.edu · (847) 376-7887","url":"https://catalog.oakton.edu/career-programs-pathways/fire-science-technology/emergency-medical-technician--paramedic-certificate/","checked":"2026-11-24"},
     {"id":"clc-emt","apply":"https://clcadmissions.my.site.com/application/TX_SiteLogin?startURL=%2Fapplication%2FTargetX_Portal__PB","applyNote":"Apply to CLC, then register for EMT 111 through the hosting site.","type":"emt","name":"Emergency Medical Technician - Basic Certificate","provider":"College of Lake County","city":"Grayslake","lat":42.352,"lng":-88.055,"cost":null,"costNote":"Tuition not listed. Not eligible for federal financial aid.","length":"One semester","schedule":"Day and evening classes at area hospitals and fire departments.","status":"open","statusNote":"Registration is handled by the hosting site.","reqs":"EMT 111 prerequisites","contact":"(847) 543-2142","url":"https://clcillinois.coursedog.com/programs/21EM","checked":"2026-11-10"},
-    {"id":"clc-pm","apply":"https://www.advocatehealth.com/-/media/Project/Health-System-Enterprise/AdvocateHealthCom/advocatehealth/documents/education/paramedic_application.pdf","applyNote":"Fill out the Advocate Condell paramedic application and enroll at CLC.","type":"medic","name":"EMT - Paramedic Certificate","provider":"College of Lake County + Advocate Condell","city":"Grayslake","lat":42.352,"lng":-88.055,"cost":null,"costNote":"Tuition not listed. Not eligible for federal financial aid.","length":"Three semesters, 32–36 credit hours","schedule":"Day and evening options. The Advocate Condell paramedic class is dual-enrolled with CLC.","status":"check","statusNote":"Confirm the next class with the Advocate Condell EMS Office at (847) 990-5309.","reqs":"Illinois EMT-B or EMT-I license","contact":"(847) 543-2142","url":"https://clcillinois.coursedog.com/programs/21EP","checked":"2026-11-17"},
-    {"id":"mcc-emt","apply":"https://www.mchenry.edu/apply/","applyNote":"Apply to MCC, then register for the EMT certificate courses.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"McHenry County College","city":"Crystal Lake","lat":42.231,"lng":-88.332,"cost":2303,"costNote":"In-district program total ($1,432.50 tuition plus $870.50 other costs). Out-of-district: $5,239.70.","length":"16 weeks, 10 credit hours","schedule":"See the course schedule.","status":"open","statusNote":"Apply to MCC, then register.","reqs":"Must meet the EMS physical expectations","contact":"(815) 479-7511","url":"https://www.mchenry.edu/emtambulance","checked":"2026-11-17","costOut":5240},
-    {"id":"mcc-pm","apply":null,"applyNote":"Applications open each spring on MCC's EMS page.","type":"medic","name":"Emergency Medical Technician - Paramedic Certificate","provider":"McHenry County College","city":"Crystal Lake","lat":42.231,"lng":-88.332,"cost":6613,"costNote":"In-district program total.","length":"48 weeks, 32 credit hours","schedule":"Cohort program.","status":"check","statusNote":"The 2026–27 window (Mar 1–Apr 3, 2026) is closed. Watch for the next one around March.","reqs":"Must meet the EMS physical expectations","contact":"(815) 479-7511","url":"https://mchenry.edu/emtparamedic","checked":"2026-11-17"},
+    {"id":"clc-pm","apply":"https://www.advocatehealth.com/-/media/Project/Health-System-Enterprise/AdvocateHealthCom/advocatehealth/documents/education/paramedic_application.pdf","applyNote":"Fill out the Advocate Condell paramedic application and enroll at CLC.","type":"medic","name":"EMT - Paramedic Certificate","provider":"College of Lake County + Advocate Condell","city":"Grayslake","lat":42.352,"lng":-88.055,"cost":null,"costNote":"Tuition not listed. Not eligible for federal financial aid.","length":"Three semesters, 32–36 credit hours","schedule":"Day and evening options. The Advocate Condell paramedic class is dual-enrolled with CLC.","status":"check","statusNote":"Confirm the next class with the Advocate Condell EMS Office at (847) 990-5309.","reqs":"Illinois EMT-B or EMT-I license","contact":"(847) 543-2142","url":"https://clcillinois.coursedog.com/programs/21EP","checked":"2026-11-24"},
+    {"id":"mcc-emt","apply":"https://www.mchenry.edu/apply/","applyNote":"Apply to MCC, then register for the EMT certificate courses.","type":"emt","name":"Emergency Medical Technician Certificate","provider":"McHenry County College","city":"Crystal Lake","lat":42.231,"lng":-88.332,"cost":2303,"costNote":"In-district program total ($1,432.50 tuition plus $870.50 other costs). Out-of-district: $5,239.70.","length":"16 weeks, 10 credit hours","schedule":"See the course schedule.","status":"open","statusNote":"Apply to MCC, then register.","reqs":"Must meet the EMS physical expectations","contact":"(815) 479-7511","url":"https://www.mchenry.edu/emtambulance","checked":"2026-11-24","costOut":5240},
+    {"id":"mcc-pm","apply":null,"applyNote":"Applications open each spring on MCC's EMS page.","type":"medic","name":"Emergency Medical Technician - Paramedic Certificate","provider":"McHenry County College","city":"Crystal Lake","lat":42.231,"lng":-88.332,"cost":6613,"costNote":"In-district program total.","length":"48 weeks, 32 credit hours","schedule":"Cohort program.","status":"check","statusNote":"The 2026–27 window (Mar 1–Apr 3, 2026) is closed. Watch for the next one around March.","reqs":"Must meet the EMS physical expectations","contact":"(815) 479-7511","url":"https://mchenry.edu/emtparamedic","checked":"2026-11-24"},
     {"id":"wcc-emt","apply":"https://www.waubonsee.edu/admissions/how-enroll/enrollment-steps/new-student-application","applyNote":"Submit Waubonsee's New Student Application, then register.","type":"emt","name":"Emergency Medical Technician - Basic","provider":"Waubonsee Community College","city":"Sugar Grove","lat":41.774,"lng":-88.44,"cost":null,"costNote":"Tuition not listed. About $255–$320 in extra fees.","length":"One course","schedule":"Strict enrollment caps.","status":"open","statusNote":"Apply to Waubonsee, then register.","reqs":"English placement; 18+ and HS diploma/GED to test; TB test, background check, drug screen and AHA BLS for clinicals","contact":"(630) 870-3910 · HPPS@waubonsee.edu","url":"https://www.waubonsee.edu/node/5696","checked":"2026-11-10"},
-    {"id":"wcc-pm","apply":"https://www.waubonsee.edu/media/9429","applyNote":"Use the EMT-P application packet, available each June.","type":"medic","name":"EMT - Paramedic (Certificate or AAS)","provider":"Waubonsee Community College + Northwestern Medicine Delnor","city":"Sugar Grove","lat":41.774,"lng":-88.44,"cost":null,"costNote":"Tuition not listed.","length":"12 months, starting each January","schedule":"One cohort a year, courses in sequence.","status":"check","statusNote":"Applications open each June for the next January cohort.","reqs":"EMT-B license, transcripts, entrance exam (75% or higher), immunizations, background check, drug screen, BLS","contact":"Kenneth Snow · kenneth.snow@nm.org · (630) 938-8461","url":"https://www.waubonsee.edu/node/23256","checked":"2026-11-17"},
+    {"id":"wcc-pm","apply":"https://www.waubonsee.edu/media/9429","applyNote":"Use the EMT-P application packet, available each June.","type":"medic","name":"EMT - Paramedic (Certificate or AAS)","provider":"Waubonsee Community College + Northwestern Medicine Delnor","city":"Sugar Grove","lat":41.774,"lng":-88.44,"cost":null,"costNote":"Tuition not listed.","length":"12 months, starting each January","schedule":"One cohort a year, courses in sequence.","status":"check","statusNote":"Applications open each June for the next January cohort.","reqs":"EMT-B license, transcripts, entrance exam (75% or higher), immunizations, background check, drug screen, BLS","contact":"Kenneth Snow · kenneth.snow@nm.org · (630) 938-8461","url":"https://www.waubonsee.edu/node/23256","checked":"2026-11-24"},
     {"id":"ecc-emt","apply":"https://elginedu.my.site.com/admissions/s/login/SelfRegister","applyNote":"Apply to ECC online, then register for EMT.","type":"emt","name":"Emergency Medical Technician (Basic Vocational Specialist Certificate)","provider":"Elgin Community College","city":"Elgin","lat":42.038,"lng":-88.261,"cost":null,"costNote":"8 credits at ECC's tuition rate. Use ECC's tuition calculator.","length":"One 8-credit course","schedule":"Fall and spring only, not summer.","status":"open","statusNote":"Apply to ECC, then register.","reqs":"Not listed on the program page","contact":"(847) 214-7385 · admissions@elgin.edu","url":"https://elgin.edu/areas-of-study/emergency-medical-technician/","checked":"2026-11-10"},
-    {"id":"ecc-pm","apply":"https://elginedu.my.site.com/admissions/s/login/SelfRegister","applyNote":"Apply to ECC, then complete the paramedic entrance steps.","type":"medic","name":"EMT - Paramedic (Basic Vocational Specialist Certificate)","provider":"Elgin Community College","city":"Elgin","lat":42.038,"lng":-88.261,"cost":null,"costNote":"Charged per credit hour.","length":"See program page","schedule":"Fall and spring.","status":"check","statusNote":"Confirm the next start with the program coordinator.","reqs":"EMT-B first, 18+, HS diploma or GED, background check, drug test and entrance exams","contact":"(847) 886-5398 · rtwobulls@elgin.edu","url":"https://elgin.edu/areas-of-study/emt-paramedic/","checked":"2026-11-17"},
-    {"id":"loyola-pm","apply":null,"applyNote":"Contact the EMS education office for the application.","type":"medic","name":"Paramedic Academy","provider":"Loyola University Medical Center (with College of DuPage)","city":"Maywood","lat":41.879,"lng":-87.843,"cost":null,"costNote":"Billed at College of DuPage in-district tuition for 32 credits, plus a lab fee.","length":"11 months. The 2027 class runs Jan 5–Dec 3, 2027.","schedule":"Weekday classes plus clinical and field internship hours.","status":"check","statusNote":"About 20% of applicants are accepted. Contact the program about the next class.","reqs":"18+, Illinois EMT license, BLS card, A&P and medical terminology, employer letter, two recommendations, entrance exams and interview","contact":"(888) 584-7888","url":"https://www.loyolamedicine.org/ems/resources/class-descriptions-info/paramedic-academy","checked":"2026-11-17"},
+    {"id":"ecc-pm","apply":"https://elginedu.my.site.com/admissions/s/login/SelfRegister","applyNote":"Apply to ECC, then complete the paramedic entrance steps.","type":"medic","name":"EMT - Paramedic (Basic Vocational Specialist Certificate)","provider":"Elgin Community College","city":"Elgin","lat":42.038,"lng":-88.261,"cost":null,"costNote":"Charged per credit hour.","length":"See program page","schedule":"Fall and spring.","status":"check","statusNote":"Confirm the next start with the program coordinator.","reqs":"EMT-B first, 18+, HS diploma or GED, background check, drug test and entrance exams","contact":"(847) 886-5398 · rtwobulls@elgin.edu","url":"https://elgin.edu/areas-of-study/emt-paramedic/","checked":"2026-11-24"},
+    {"id":"loyola-pm","apply":null,"applyNote":"Contact the EMS education office for the application.","type":"medic","name":"Paramedic Academy","provider":"Loyola University Medical Center (with College of DuPage)","city":"Maywood","lat":41.879,"lng":-87.843,"cost":null,"costNote":"Billed at College of DuPage in-district tuition for 32 credits, plus a lab fee.","length":"11 months. The 2027 class runs Jan 5–Dec 3, 2027.","schedule":"Weekday classes plus clinical and field internship hours.","status":"check","statusNote":"About 20% of applicants are accepted. Contact the program about the next class.","reqs":"18+, Illinois EMT license, BLS card, A&P and medical terminology, employer letter, two recommendations, entrance exams and interview","contact":"(888) 584-7888","url":"https://www.loyolamedicine.org/ems/resources/class-descriptions-info/paramedic-academy","checked":"2026-11-24"},
     {"id":"wcc-fire","apply":"https://www.waubonsee.edu/admissions/how-enroll/enrollment-steps/new-student-application","applyNote":"Apply to Waubonsee, then meet with an advisor to plan the course sequence.","type":"academy","name":"Firefighter Certificate (Basic Operations Firefighter)","provider":"Waubonsee Community College","city":"Sugar Grove","lat":41.774,"lng":-88.44,"cost":null,"costNote":"Charged per credit hour. 16 credit hours.","length":"About 4 months, 16 credit hours","schedule":"Some fire science courses have strict enrollment caps.","status":"open","statusNote":"Covers Basic Operations Firefighter Modules A, B and C plus Hazmat Operations.","reqs":"C or better in each course. Non-rostered students need a physician-signed medical waiver, respirator questionnaire, health insurance and a liability release.","contact":"(630) 870-3900 · HPPS@waubonsee.edu","url":"https://www.waubonsee.edu/programs-courses/programs-subject/public-and-human-services/fire-science/firefighter","checked":"2026-11-10","sponsor":"open"},
     { id:"sc-emt", apply:null, applyNote:"Applications for this class are full.", type:"emt", name:"EMT-Basic", provider:"Silver Cross Hospital EMS System", city:"New Lenox", lat:41.524, lng:-87.94,
       cost:2000, costNote:"Includes books and materials", length:"Oct 27, 2026 – May 4, 2027", schedule:"Tue & Thu, 5–9 PM",
       status:"full", statusNote:"Applications are full for this class.", reqs:"Not listed on the class page.",
-      contact:"(815) 300-1100", url:"https://www.silvercross.org/silver-cross-ems-system/paramedic-and-emt-class/", checked:"2026-11-17" },
+      contact:"(815) 300-1100", url:"https://www.silvercross.org/silver-cross-ems-system/paramedic-and-emt-class/", checked:"2026-11-24" },
     { id:"sc-pm", apply:null, applyNote:"Applications for the 2027 class are full.", type:"medic", name:"Paramedic", provider:"Silver Cross Hospital EMS System", city:"New Lenox", lat:41.524, lng:-87.94,
       cost:null, costNote:"Tuition not published", length:"Jan 11, 2027 – Nov 10, 2027", schedule:"Mon, Wed, Fri, 9 AM–2 PM",
       status:"full", statusNote:"The 2027 class is full.", reqs:"Listed in the 2027 application packet.",
-      contact:"jgray@silvercross.org", url:"https://www.silvercross.org/silver-cross-ems-system/paramedic-and-emt-class/", checked:"2026-11-17" },
+      contact:"jgray@silvercross.org", url:"https://www.silvercross.org/silver-cross-ems-system/paramedic-and-emt-class/", checked:"2026-11-24" },
     { id:"mv-emt", apply:"https://www.morainevalley.edu/admissions/apply-now/", applyNote:"Apply to Moraine Valley, then register for EMS-101", type:"emt", name:"EMT Certificate (EMS-101)", provider:"Moraine Valley Community College", city:"Palos Hills", lat:41.702, lng:-87.83,
       cost:1680, costOut:3710, costNote:"In-district tuition. All-in estimate up to $2,958 (out-of-district $6,668) with books, uniform, background check, drug test and CPR.",
       length:"One semester, 8 credit hours, 50 clinical hours", schedule:"See the semester course schedule",
       status:"open", statusNote:"Apply to the college, then register for the class.", reqs:"Age 18+, HS diploma, drug screen, background check, immunizations, lift 50 lb",
-      contact:null, url:"https://www.morainevalley.edu/program/emergency-medical-technician/", checked:"2026-11-17" },
+      contact:null, url:"https://www.morainevalley.edu/program/emergency-medical-technician/", checked:"2026-11-24" },
     { id:"mv-pm", apply:"https://www.morainevalley.edu/admissions/apply-now/", applyNote:"Apply to Moraine Valley, then follow the paramedic admission steps", type:"medic", name:"Paramedic Certificate / EMS A.A.S.", provider:"Moraine Valley Community College", city:"Palos Hills", lat:41.702, lng:-87.83,
       cost:null, costNote:"Charged per credit hour. The paramedic certificate is 40 credit hours.", length:"The A.A.S. takes about two years", schedule:"See catalog",
       status:"open", statusNote:"The program meets IDPH paramedic licensure requirements.", reqs:"EMS-101 (EMT) first",
@@ -53,7 +53,7 @@ window.LADDER_DATA = {
     { id:"psc-pm", apply:"https://www.prairiestate.edu/apply-and-aid/admissions/default.html", applyNote:"Apply to Prairie State. The program runs with Region VII hospitals.", type:"medic", name:"Paramedic Certificate", provider:"Prairie State College + Region VII EMS", city:"Chicago Heights", lat:41.505, lng:-87.64,
       cost:5952, costNote:"Published total cost if finished on schedule.", length:"18 months, 31 credits", schedule:"See program page",
       status:"open", statusNote:"Run with Region VII resource hospitals.", reqs:"HS diploma, age 18+",
-      contact:"(708) 709-2941", url:"https://www.prairiestate.edu/academics/public-service-and-education/paramedic.html", checked:"2026-11-17" },
+      contact:"(708) 709-2941", url:"https://www.prairiestate.edu/academics/public-service-and-education/paramedic.html", checked:"2026-11-24" },
     { id:"ssc-emt", apply:null, applyNote:"Apply through South Suburban College admissions, or call (708) 596-2000 ext. 2258.", type:"emt", name:"EMT-Basic Certificate", provider:"South Suburban College", city:"South Holland", lat:41.6, lng:-87.62,
       cost:null, costNote:"Not eligible for financial aid, but grants may be available.", length:"One fast-paced course plus 48 clinical hours", schedule:"Starts in spring, summer or fall",
       status:"open", statusNote:"Credit course.", reqs:"Age 18+, HS diploma, placement into RDG 082 / ENG 098, health insurance, immunizations",
@@ -65,11 +65,11 @@ window.LADDER_DATA = {
     { id:"jjc-emt", apply:null, applyNote:"Call JJC EMS at (815) 280-2356.", type:"emt", name:"EMT-Basic (EMS 201 / 209)", provider:"Joliet Junior College", city:"Joliet", lat:41.505, lng:-88.18,
       cost:null, costNote:"Not listed on JJC's EMS page", length:"4.5 months, spring and fall", schedule:"Mon, Wed, Fri: 8:30 AM–noon, 1–4:30 PM or 6–9:30 PM",
       status:"check", statusNote:"JJC's EMS page still shows the 2022–23 program. Confirm current dates and cost.", reqs:"Age 18+, HS diploma/GED, EMS 101 (First Responder), BLS CPR card, placement into English, background check, physical with drug screen",
-      contact:"cdeboer@jjc.edu · (815) 280-2356", url:"https://jjc.edu/choose-your-path/health-public-safety-human-services/emergency-medical-services", checked:"2026-11-17" },
+      contact:"cdeboer@jjc.edu · (815) 280-2356", url:"https://jjc.edu/choose-your-path/health-public-safety-human-services/emergency-medical-services", checked:"2026-11-24" },
     { id:"jjc-pm", apply:null, applyNote:"Applications open each May. Call JJC EMS at (815) 280-2356.", type:"medic", name:"Paramedic (with Morris Hospital)", provider:"Joliet Junior College + Morris Hospital", city:"Joliet", lat:41.505, lng:-88.18,
       cost:null, costNote:"Not listed on JJC's EMS page", length:"About 12 months, starts each August", schedule:"See program page",
       status:"check", statusNote:"Applications open each May. Confirm the 2027 cohort.", reqs:"Illinois EMT-B license",
-      contact:"cdeboer@jjc.edu · (815) 280-2356", url:"https://jjc.edu/choose-your-path/health-public-safety-human-services/emergency-medical-services", checked:"2026-11-17" },
+      contact:"cdeboer@jjc.edu · (815) 280-2356", url:"https://jjc.edu/choose-your-path/health-public-safety-human-services/emergency-medical-services", checked:"2026-11-24" },
     { id:"jjc-fire", apply:null, applyNote:"Call JJC at (815) 280-2356.", type:"academy", sponsor:null, name:"JJC Fire Academy (Basic Operations Firefighter)", provider:"Joliet Junior College", city:"Joliet", lat:41.505, lng:-88.18,
       cost:null, costNote:"Not yet verified. Check with JJC.", length:"Not yet verified", schedule:"Not yet verified",
       status:"check", statusNote:"JJC recently launched this academy. Details not yet verified by Ladder Up.", reqs:"Not yet verified",
@@ -77,15 +77,15 @@ window.LADDER_DATA = {
     { id:"rfa-emt", apply:"https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370", applyNote:"Register on the online form. Questions: (815) 372-4042.", type:"emt", name:"EMT-Basic", provider:"Romeoville Fire Academy", city:"Romeoville", lat:41.655, lng:-88.1,
       cost:2100, costNote:"Published course price. Full payment is due by the first night of class.", length:"About 5 months", schedule:"2027 classes: Jan 4–Jun 7 and Jun 14–Nov 17",
       status:"open", statusNote:"2027 classes meet Mon and Wed, 6–10 PM.", reqs:"Not listed. Ask the academy.",
-      contact:"(815) 372-4042", url:"https://romeoville.org/734/Emergency-Medical-Technician-EMT-B", checked:"2026-11-17" },
+      contact:"(815) 372-4042", url:"https://romeoville.org/734/Emergency-Medical-Technician-EMT-B", checked:"2026-11-24" },
     { id:"rfa-bof", apply:"https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370", applyNote:"Use the online registration form. Self-pay students register by phone at (815) 372-4042.", type:"academy", sponsor:"open", name:"Basic Operations Firefighter Academy", provider:"Romeoville Fire Academy", city:"Romeoville", lat:41.655, lng:-88.1,
       cost:4200, costNote:"Published course price", length:"Full-time: about 9 weeks. Part-time: about 5 months", schedule:"Full-time: Mon–Fri, 8 AM–5 PM. Part-time: Mon and Thu 6–10 PM plus Sat 8 AM–5 PM (at Tinley Park FD), or Tue and Thu 6–10 PM plus Sat 8 AM–5 PM",
       status:"open", statusNote:"2027 sessions start Jan 4, Jan 23 (part-time), Feb 22, Apr 12, Jul 10 (part-time), Aug 2 and Oct 11.", reqs:"Not listed on the course page. Ask the academy.",
-      contact:"(815) 372-4042", url:"https://romeoville.org/697/Basic-Operations-Firefighter-Academy", checked:"2026-11-17" },
+      contact:"(815) 372-4042", url:"https://romeoville.org/697/Basic-Operations-Firefighter-Academy", checked:"2026-11-24" },
     { id:"mv-fire", costEst:true, apply:"https://www.morainevalley.edu/admissions/apply-now/", applyNote:"Apply to Moraine Valley, then turn in the Fire Academy application at office B-150 by noon on Jan 11, 2027.", type:"academy", sponsor:"open", name:"Fire Academy Certificate", provider:"Moraine Valley Community College", city:"Palos Hills", lat:41.702, lng:-87.83,
       cost:3696, costOut:8162, costNote:"Ladder Up estimate: 22 credit hours at $168 each in-district ($371 out-of-district). Books and fees are extra.", length:"10 weeks full-time, then an internship the next semester (16+ hours a week)", schedule:"Mon–Fri, 7:30 AM–4:30 PM. Spring (Feb–May) and fall (Aug–Nov)",
       status:"open", statusNote:"Spring 2027 applications are due by noon on Jan 11, 2027.", reqs:"EMT or Paramedic license (or a passed NREMT), 2.0 GPA, and placement into MTH-095 and COM-101. Paramedics are ranked first, then EMTs; district residents come first in each group.",
-      contact:"(708) 974-4300", url:"https://www.morainevalley.edu/program/fire-academy-certifiate/", checked:"2026-11-17" },
+      contact:"(708) 974-4300", url:"https://www.morainevalley.edu/program/fire-academy-certifiate/", checked:"2026-11-24" },
     { id:"cod-fire", apply:"https://cod.elluciancrmrecruit.com/Apply/", applyNote:"Apply to College of DuPage for credit classes.", type:"academy", sponsor:"open", name:"Basic Operations Fire Academy", provider:"College of DuPage", city:"Glen Ellyn", lat:41.84, lng:-88.07,
       cost:null, costNote:"Charged per credit hour. Part of the 24-credit Fire Fighter Certificate.", length:"16-week semester, 3 modules", schedule:"Fall and spring semesters",
       status:"open", statusNote:"Open to students who aren't on a fire department.", reqs:"Not listed. See the program page.",
@@ -101,19 +101,19 @@ window.LADDER_DATA = {
     { id:"nipsta-bof", apply:"https://secure.rec1.com/IL/nipsta-il/catalog", applyNote:"Your department registers you.", type:"academy", sponsor:"sponsored", name:"Basic Operations Firefighter Academy (320 Hours)", provider:"NIPSTA", city:"Glenview", lat:42.08, lng:-87.82,
       cost:null, costNote:"Billed to the sponsoring department", length:"9 weeks, 320 hours", schedule:"Mon–Fri, 8 AM–5:30 PM",
       status:"open", statusNote:"2027 sessions are Jan 18–Mar 19, Apr 5–Jun 4, Jul 5–Sep 3 and Oct 4–Dec 3. No independent students are being accepted right now.", reqs:"Must be employed or engaged by a fire department. No independent students.",
-      contact:"fireacademy@nipsta.org · (847) 998-8090", url:"https://www.nipsta.org/177/Basic-Firefighter-Academy", checked:"2026-11-17" },
+      contact:"fireacademy@nipsta.org · (847) 998-8090", url:"https://www.nipsta.org/177/Basic-Firefighter-Academy", checked:"2026-11-24" },
     { id:"harper-bof", apply:"https://www.harpercollege.edu/apply/", applyNote:"Apply to Harper, then meet the academy admission requirements.", type:"academy", sponsor:"open", name:"Basic Operations Firefighter Academy", provider:"Harper College", city:"Palatine", lat:42.08, lng:-88.07,
       cost:null, costNote:"Charged per credit hour (FIS 110, 111, 112 and 132).", length:"9 weeks", schedule:"Limited-enrollment cohorts",
       status:"check", statusNote:"Open to sponsored and non-sponsored students. Only Fall 2026 is posted, so ask about the next start.", reqs:"Sponsored students: on a department roster. Others: CPAT card, CPR card and medical clearance.",
-      contact:null, url:"https://www.harpercollege.edu/academics/public-service/fire-science/basic-operations-firefighter-certificate.php", checked:"2026-11-17" },
+      contact:null, url:"https://www.harpercollege.edu/academics/public-service/fire-science/basic-operations-firefighter-certificate.php", checked:"2026-11-24" },
     { id:"ecc-bof", apply:"https://elgin.edu/admissions/apply/", applyNote:"Apply to ECC. Sponsored students also turn in the BOF Sponsorship Form.", type:"academy", sponsor:"open", name:"Basic Operations Firefighter", provider:"Elgin Community College", city:"Burlington", lat:42.05, lng:-88.55,
       cost:null, costNote:"Use ECC's online tuition calculator.", length:"See program page", schedule:"See program page",
       status:"open", statusNote:"Approved by the Office of the State Fire Marshal.", reqs:"Illinois driver's license, background check, drug test, physical, and NFPA-compliant gear and SCBA.",
-      contact:"rtwobulls@elgin.edu", url:"https://elgin.edu/areas-of-study/basic-operations-firefighter/", checked:"2026-11-17" },
+      contact:"rtwobulls@elgin.edu", url:"https://elgin.edu/areas-of-study/basic-operations-firefighter/", checked:"2026-11-24" },
     { id:"ifsi-bof", apply:"https://www.fsi.illinois.edu/academy/enrollment.cfm", applyNote:"Your department enrolls you (Chief's PIN required).", type:"academy", sponsor:"sponsored", name:"Firefighter Academy (7-Week Residential)", provider:"Illinois Fire Service Institute", city:"Champaign", lat:40.09, lng:-88.24,
       cost:null, costNote:"Tuition covers 13 courses, a helmet, textbooks and certification fees. Ask your department for the cost.", length:"7 weeks", schedule:"Residential academy",
       status:"open", statusNote:"Your Fire Chief must approve enrollment.", reqs:"Department sponsorship and OSFM number",
-      contact:null, url:"https://www.fsi.illinois.edu/academy/enrollment.cfm", checked:"2026-11-17" }
+      contact:null, url:"https://www.fsi.illinois.edu/academy/enrollment.cfm", checked:"2026-11-24" }
   ],
 
   /* Departments. status: open | rolling | closed | unknown.
@@ -126,7 +126,7 @@ window.LADDER_DATA = {
     { id:"lockport", name:"Lockport Township FPD", city:"Lockport", lat:41.585, lng:-88.11, address:"19623 W. Renwick Rd, Lockport", site:"https://www.lockportfire.org", jobs:null, runs:{stations:6, calls:{"2023":11532, "2024":11450, "2025":11611}}, about:{"union": "IAFF Local 1544", "timeOff": null, "area": "Lockport, Crest Hill, parts of Romeoville and nearby unincorporated Will County.", "residents": "About 85,000 (district job posting, 2025).", "staff": null, "sources": ["https://www.lockportfire.org/iaff-local-1544", "https://www.lockportfire.org/fire-stations", "https://www.lockportfire.org", "https://theblueline.com/findAJob/view/26074"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2023-03-01", "label": "Applications closed Mar 1, and the written exam was Mar 12.", "source": "https://www.lockportfire.org/post/we-re-hiring"}, note:"Not accepting applications right now." },
     { id:"homer", name:"Homer Township FPD", city:"Homer Glen / Lockport", lat:41.605, lng:-87.99, address:"16050 S. Cedar Rd, Lockport", site:"https://www.homerfire.org", jobs:"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1305", runs:{stations:3, calls:{"2023":2056, "2024":2123, "2025":null}}, about:{"union": "Homer Township Professional Firefighters Local 4223", "timeOff": "Three shifts, each supervised by a Battalion Chief.", "area": null, "residents": null, "staff": "32 full-time Firefighter/Paramedics, plus a Fire Chief, Deputy Chief and 3 Battalion Chiefs.", "sources": ["https://homerfire.specialdistrict.org/district-overview", "https://homerfire.specialdistrict.org/frequently-asked-questions", "https://homerglenil.org/DocumentCenter/View/2790/2017-Homer-Twnshp-Fire-District-Annual-Report"], "checked": "2026-11-09"}, status:"rolling", lastTest:{"date": "2026-06-26", "label": "Applications closed Jun 26. The hiring list was posted Aug 3.", "source": "https://www.homerfire.org/fire-fighter-eligibility-list"}, note:"The agency pays the test fee through Public Safety Testing." },
     { id:"newlenox", name:"New Lenox FPD", city:"New Lenox", lat:41.51, lng:-87.97, address:null, site:null, jobs:"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1345", runs:{stations:4, calls:{"2023":5185, "2024":5611, "2025":6050}}, about:{"union": null, "timeOff": null, "area": "About 36 square miles in and around New Lenox.", "residents": "More than 50,000 (2025).", "staff": "59 on payroll, 56 of them full-time (2018).", "sources": ["https://patch.com/illinois/newlenox/new-lenox-fire-referendum-10-things-know", "https://senatorhastings.com/news/11-latest-news/444-hastings-meets-with-new-lenox-fire-protection-district-on-recruitment-and-emergency-response-needs"], "checked": "2026-11-09"}, status:"open", note:"Testing deadline: Dec 4, 2026." },
-    { id:"frankfort", name:"Frankfort FPD", city:"Frankfort", lat:41.497, lng:-87.855, address:"333 W. Nebraska, Frankfort", site:"https://www.frankfortfire.org", jobs:null, runs:{stations:5, calls:{"2023":5587, "2024":5608, "2025":5846}}, about:{"union": "Frankfort Firefighters Local 4338 (2017 source)", "timeOff": null, "area": "About 42 square miles: Frankfort, Frankfort Square, Green Garden and parts of Mokena.", "residents": "About 43,000.", "staff": "70 members.", "sources": ["https://www.frankfortfire.org/new-page-2", "https://fwrnews.com/2026/06/12/this-is-a-community-fire-district-frankfort-fire-opens-its-doors-to-residents/", "https://patch.com/illinois/frankfort/union-asks-frankfort-fire-trustee-resign"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2025-10-03", "label": "Applications closed Oct 3. The hiring list runs through 2027.", "source": "https://www.frankfortfire.org/employment"}, note:"Tests through National Testing Network." },
+    { id:"frankfort", name:"Frankfort FPD", city:"Frankfort", lat:41.497, lng:-87.855, address:"333 W. Nebraska, Frankfort", site:"https://www.frankfortfire.org", jobs:"https://candidates.nationaltestingnetwork.com/#/jobs/3214", runs:{stations:5, calls:{"2023":5587, "2024":5608, "2025":5846}}, about:{"union": "Frankfort Firefighters Local 4338 (2017 source)", "timeOff": null, "area": "About 42 square miles: Frankfort, Frankfort Square, Green Garden and parts of Mokena.", "residents": "About 43,000.", "staff": "70 members.", "sources": ["https://www.frankfortfire.org/new-page-2", "https://fwrnews.com/2026/06/12/this-is-a-community-fire-district-frankfort-fire-opens-its-doors-to-residents/", "https://patch.com/illinois/frankfort/union-asks-frankfort-fire-trustee-resign"], "checked": "2026-11-09"}, status:"open", lastTest:{"date": "2025-10-03", "label": "Applications closed Oct 3. The hiring list runs through 2027.", "source": "https://www.frankfortfire.org/employment"}, note:"Firefighter/Paramedic testing through National Testing Network. Applications close Jan 8, 2027." },
     { id:"mokena", name:"Mokena FPD", city:"Mokena", lat:41.53, lng:-87.87, address:"19853 S. Wolf Rd, Mokena", site:"https://www.mokenafire.org", jobs:null, runs:{stations:3, calls:{"2023":3042, "2024":3164, "2025":3270}}, about:{"union": null, "timeOff": null, "area": "12.5 square miles: parts of Mokena, Frankfort, Homer Glen and Orland Park.", "residents": "About 20,500.", "staff": "37 members (line and administrative).", "sources": ["https://www.mokenafire.org"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2026-05-29", "label": "Applications closed May 29.", "source": "https://nationaltestingnetwork.com/publicsafetyjobs/fullJobDetails.cfm?agentid=1708&jobid=2&agencyjobid=3384"}, note:"Tests through National Testing Network." },
     { id:"manhattan", name:"Manhattan FPD (Incl. Former Peotone FPD)", city:"Manhattan / Peotone", lat:41.42, lng:-87.99, address:null, site:"https://manhattanfire.org", jobs:"https://manhattanfire.org/employment/", runs:{stations:3, calls:{"2023":2293, "2024":2734, "2025":2733}}, about:{"union": "IAFF Local 4991", "timeOff": "Crews work 12- and 24-hour shifts.", "area": "About 145 square miles: Manhattan, Peotone and Manhattan, Jackson, Peotone, Will, Green Garden and Wilton Townships.", "residents": null, "staff": "28 full-time Firefighter/Paramedics and 25 part-time firefighters.", "sources": ["https://manhattanfire.org/", "https://manhattanfire.org/district-info/", "https://manhattanfire.org/faqs/"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2025-07-15", "label": "Applications closed Jul 15, and the written exam was Aug 6.", "source": "https://manhattanfire.org/news/manhattan-fire-protection-district-accepting-applications/"}, note:"Peotone FPD consolidated into Manhattan FPD after the November 2022 referendum." },
     { id:"plainfield", name:"Plainfield FPD", city:"Plainfield", lat:41.63, lng:-88.2, address:"23748 W. 135th St, Plainfield", site:"https://www.plainfieldfpd.org", jobs:"https://www.plainfieldfpd.org/fire-fighter-paramedic-employment", runs:{stations:4, calls:{"2023":5635, "2024":5680, "2025":6281}}, about:{"union": "Plainfield Firefighters Local 4560", "timeOff": "24 on, 48 off, with 9 Kelly days a year. Vacation starts at 5 days after one year and reaches 15 days at 20 years, plus 96 holiday hours a year and 12 sick hours a month (contract through 2027).", "area": "54 square miles: the Plainfield area and unincorporated parts of Will and Kendall Counties.", "residents": "About 60,000.", "staff": null, "sources": ["https://www.plainfieldfpd.org/fire-fighter-paramedic-employment", "https://www.plainfieldfpd.org/general-faq"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2026-07-31", "label": "The testing deadline was Jul 31. The hiring list was approved Oct 14.", "source": "https://www.plainfieldfpd.org/fire-fighter-paramedic-employment"}, note:"Plans to hire 5 in early 2027. Starting pay is $75,296.79, rising to $109,657.47 by year 7." },
@@ -137,8 +137,8 @@ window.LADDER_DATA = {
     { id:"joliet", name:"Joliet Fire Department", city:"Joliet", lat:41.525, lng:-88.08, address:null, site:"https://fire.joliet.gov/Home", jobs:"https://www.joliet.gov/government/departments/fire-department/about-us/recruitment", runs:{stations:9, calls:{"2023":23082, "2024":23909, "2025":24084}}, about:{"union": "Union department (local number not listed on its website)", "timeOff": "Three rotating 24-hour shifts (A, B and C).", "area": "65 square miles (City of Joliet).", "residents": "150,489 (2023 Census estimate).", "staff": "223 sworn and 4 civilian personnel.", "sources": ["https://fire.joliet.gov/About-Us", "https://fire.joliet.gov/files/sharedassets/fire/v/1/documents/2025-annual-report.pdf"], "checked": "2026-11-09"}, status:"closed", lastTest:null, nextTest:{"date": "2027-09-01", "label": "Fall 2027", "basis": "announced", "source": "https://www.joliet.gov/government/departments/fire-department/about-us/recruitment"}, note:"The current hiring list expires Mar 18, 2028." },
     { id:"orland", name:"Orland FPD", city:"Orland Park", lat:41.61, lng:-87.87, address:"9790 W. 151st St, Orland Park", site:"https://www.orlandfire.org", jobs:"https://www.orlandfire.org/firefighter-testing", runs:{stations:6, calls:{"2023":12739, "2024":12422, "2025":12916}}, about:{"union": "IAFF Local 2754", "timeOff": null, "area": "33 square miles: Orland Park, Orland Hills and unincorporated Orland Township.", "residents": "About 75,000.", "staff": "More than 111 suppression personnel and 50 support staff.", "sources": ["https://www.orlandfire.org/district-unions", "https://www.orlandfire.org/ofpd-history"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2025-10-20", "label": "Applications closed Oct 20.", "source": "https://www.orlandfire.org/firefighter-testing"}, nextTest:{"date": "2028-02-01", "label": "February 2028", "basis": "announced", "source": "https://www.orlandfire.org/firefighter-testing"}, note:"Last posted starting pay: $80,947." },
     { id:"tinley", name:"Tinley Park Fire Department", city:"Tinley Park", lat:41.575, lng:-87.79, address:"17355 S. 68th Ct, Tinley Park", site:"https://www.tinleypark.org/fire", jobs:"https://www.tinleypark.org/government/departments/human_resources/employment_opportunities.php", runs:{stations:4, calls:{"2023":null, "2024":11166, "2025":12610}}, about:{"union": null, "timeOff": null, "area": "The Village of Tinley Park.", "residents": "55,971 in the Village of Tinley Park (2020 Census).", "staff": "More than 125 personnel, with 15 on duty each shift. Ambulance transport is contracted to Kurtz Ambulance Service.", "sources": ["https://www.tinleypark.org/government/departments/fire_department/index.php", "https://en.wikipedia.org/wiki/Tinley_Park,_Illinois"], "checked": "2026-11-09"}, status:"unknown", note:"" },
-    { id:"palosheights", name:"Palos Heights FPD", city:"Palos Heights", lat:41.67, lng:-87.8, address:null, site:null, jobs:"https://www.applytoserve.com/Application.aspx?ID=817", runs:{stations:2, calls:{"2023":2488, "2024":2713, "2025":2745}}, about:{"union": null, "timeOff": "7 shift days of paid time off the first year, up to 26 days at full seniority.", "area": "Palos Heights.", "residents": "11,819.", "staff": "21 sworn personnel.", "sources": ["https://www.applytoserve.com/Application.aspx?ID=817"], "checked": "2026-11-09"}, status:"open", note:"Application deadline: Nov 20, 2026, 4 PM." },
-    { id:"northpalos", name:"North Palos FPD", city:"Palos Hills", lat:41.7, lng:-87.82, address:null, site:null, jobs:"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1285", runs:{stations:3, calls:{"2023":6123, "2024":6636, "2025":6891}}, about:{"union": "IAFF Local 4323", "timeOff": "14 paid days off a year. Each shift staffs 4 members per station, with a Battalion Chief at Station 1.", "area": "14 square miles: Palos Hills, Worth, and parts of Hickory Hills and Palos Heights.", "residents": "About 30,000.", "staff": "27 full-time union members on the district website; its testing posting lists 35 full-time staff.", "sources": ["https://northpalosfpd.org/", "https://www.publicsafetytesting.com/departments/north-palos-FPD/NPFPD-FFPM"], "checked": "2026-11-09"}, status:"rolling", note:"The agency pays the test fee through Public Safety Testing." },
+    { id:"palosheights", name:"Palos Heights FPD", city:"Palos Heights", lat:41.67, lng:-87.8, address:null, site:null, jobs:"https://www.applytoserve.com/Application.aspx?ID=817", runs:{stations:2, calls:{"2023":2488, "2024":2713, "2025":2745}}, about:{"union": null, "timeOff": "7 shift days of paid time off the first year, up to 26 days at full seniority.", "area": "Palos Heights.", "residents": "11,819.", "staff": "21 sworn personnel.", "sources": ["https://www.applytoserve.com/Application.aspx?ID=817"], "checked": "2026-11-09"}, status:"closed", note:"The last Firefighter/Paramedic round closed Nov 20, 2026.", lastTest:{"date":"2026-11-20","label":"Firefighter/Paramedic applications closed Nov 20, 2026, at 4 PM. The written exam is Dec 1–3, 2026.","source":"https://www.applytoserve.com/Application.aspx?ID=817"} },
+    { id:"northpalos", name:"North Palos FPD", city:"Palos Hills", lat:41.7, lng:-87.82, address:null, site:null, jobs:"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1285", runs:{stations:3, calls:{"2023":6123, "2024":6636, "2025":6891}}, about:{"union": "IAFF Local 4323", "timeOff": "14 paid days off a year. Each shift staffs 4 members per station, with a Battalion Chief at Station 1.", "area": "14 square miles: Palos Hills, Worth, and parts of Hickory Hills and Palos Heights.", "residents": "About 30,000.", "staff": "27 full-time union members on the district website; its testing posting lists 35 full-time staff.", "sources": ["https://northpalosfpd.org/", "https://www.publicsafetytesting.com/departments/north-palos-FPD/NPFPD-FFPM"], "checked": "2026-11-09"}, status:"unknown", note:"Its ongoing Public Safety Testing posting was no longer listed on Nov 24, 2026." },
     { id:"manteno", name:"Manteno Community FPD", city:"Manteno", lat:41.25, lng:-87.83, address:null, site:null, jobs:"https://www.applytoserve.com/Application.aspx?ID=826", runs:{stations:2, calls:{"2023":null, "2024":3454, "2025":3452}}, about:{"union": null, "timeOff": null, "area": "The Manteno area.", "residents": "About 12,500 (2015).", "staff": "20 full-time and 10 paid-on-call members (2015).", "sources": ["https://www.theblueline.com/findAJob/view/32524", "https://robinkelly.house.gov/media-center/press-releases/federal-grant-boost-manteno-fire-district-staff"], "checked": "2026-11-09"}, status:"open", note:"Open until filled." },
     { id:"troy", name:"Troy FPD", city:"Shorewood", lat:41.52, lng:-88.2, address:null, site:null, jobs:null, runs:{stations:2, calls:{"2023":3554, "2024":3771, "2025":3534}}, about:{"union": null, "timeOff": null, "area": "18 square miles: Shorewood and Troy Township (2022).", "residents": "About 28,000 (2022).", "staff": "36 full-time employees and 20 part-time positions (2022).", "sources": ["https://www.shawlocal.com/the-herald-news/news/2022/06/01/troy-voters-face-4-million-question"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2024-10-09", "label": "Applications closed Oct 9, and the written exam was the week of Nov 4.", "source": "https://theblueline.com/findAJob/view/24754"}, note:"Website not yet verified." },
     { id:"channahon", name:"Channahon FPD", city:"Channahon", lat:41.43, lng:-88.22, address:null, site:null, jobs:null, runs:{stations:2, calls:{"2023":1672, "2024":1971, "2025":1985}}, about:{"union": null, "timeOff": null, "area": null, "residents": "13,383 in the Village of Channahon (2020 Census).", "staff": null, "sources": ["https://en.wikipedia.org/wiki/Channahon,_Illinois"], "checked": "2026-11-09"}, status:"closed", lastTest:{"date": "2025-04-18", "label": "Applications closed Apr 18, and the written exam was May 14.", "source": "https://iosolutions.com/product/channahon-il-firefighter-paramedic-job-application-2/"}, note:"Tests through I/O Solutions." },
@@ -153,50 +153,46 @@ window.LADDER_DATA = {
   /* Open postings. type: "full" (default) or "part" (part-time / paid-on-call). deadline: ISO date, or null when open until filled.
      needs: certifications required (emt | medic | cpat | ffii), or null when the posting doesn't say. */
   jobs: [
-    {"id":"j-palosheights","deptId":"palosheights","needs":["ffii","cpat","medic"],"needsNote":"Paramedic license needed by date of hire","dept":"Palos Heights FPD","title":"Firefighter/Paramedic","city":"Palos Heights","lat":41.67,"lng":-87.8,"deadline":"2026-11-20","deadlineNote":"Due by 4:00 PM. Written exam Dec 1–3, 2026.","pay":80730,"payNote":"$86,112 after year one; about $120,000 by year five.","reqs":["Illinois paramedic license by date of hire","Firefighter II or Basic Operations Firefighter","CPAT card issued within 12 months of the deadline","Age 21 by Dec 1, 2026"],"apply":"https://www.applytoserve.com/Application.aspx?ID=817","source":"https://www.theblueline.com/findAJob/view/39296","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17"},
-    {"id":"j-newlenox","deptId":"newlenox","needs":["ffii","cpat","emt"],"needsNote":"EMTs must earn paramedic within 18 months of hire","dept":"New Lenox FPD","title":"Firefighter/Paramedic or EMT","city":"New Lenox","lat":41.51,"lng":-87.97,"deadline":"2026-12-04","deadlineNote":"Testing deadline.","pay":79488,"payNote":"2027 starting salary.","reqs":["Firefighter II or Basic Operations Firefighter","Illinois paramedic license, or EMT who earns paramedic within 18 months of hire","CPAT with ladder climb","Generally 21–35 at conditional offer; U.S. citizen or lawful permanent resident"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1345","source":"https://www.publicsafetytesting.com/departments/New-Lenox-FPD/firefighter-paramedic-emt","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-17"},
-    {"id":"j-manteno","deptId":"manteno","needs":["medic"],"needsNote":null,"dept":"Manteno Community FPD","title":"Firefighter/Paramedic","city":"Manteno","lat":41.25,"lng":-87.83,"deadline":null,"deadlineNote":"Open until filled.","pay":73777.03,"payNote":"Effective Jan 1, 2027.","reqs":["Paramedic license at time of application","Under 35 unless previously a full-time Illinois firefighter","$48 non-refundable application processing fee"],"apply":"https://www.applytoserve.com/Application.aspx?ID=826","source":"https://www.theblueline.com/findAJob/view/40244","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17"},
-    {"id":"j-franklinpark","runs":{"stations":2,"calls":{"2023":4004,"2024":4563,"2025":4138}},"applyTip":"On National Testing Network, search the job list for Franklin Park Fire Department.","needs":null,"needsNote":"Requirements not listed in the posting summary","dept":"Franklin Park Fire Department","title":"Firefighter/Paramedic","city":"Franklin Park","lat":41.93,"lng":-87.87,"deadline":"2026-12-18","deadlineNote":"Due by 5:00 PM.","pay":78200.95,"payNote":"Rises to $80,546.98 on May 1, 2027; tops out at $119,014.78.","reqs":["National Testing Network FireTEAM exam, PSSA and PHQ"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2355","source":"https://www.theblueline.com/findAJob/view/40250","sourceName":"The Blue Line","fee":null,"deptId":"a-franklin-park","checked":"2026-11-17"},
-    {"id":"j-eastjoliet","deptId":"eastjoliet","needs":null,"needsNote":"Requirements on the Public Safety Testing posting","dept":"East Joliet FPD","title":"Firefighter/Paramedic","city":"Joliet","lat":41.52,"lng":-88.05,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payNote":null,"reqs":["See posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1315","source":"https://www.publicsafetytesting.com/departments/east-joliet-FPD/firefighter-paramedic-41","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-17"},
-    {"id":"j-homer","deptId":"homer","needs":null,"needsNote":"Requirements on the Public Safety Testing posting","dept":"Homer Township FPD","title":"Firefighter/Paramedic","city":"Homer Glen / Lockport","lat":41.605,"lng":-87.99,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payNote":null,"reqs":["See posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1305","source":"https://www.publicsafetytesting.com/departments/homer-township-FPD/firefighter-paramedic-40","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-17"},
-    {"id":"j-northpalos","deptId":"northpalos","needs":null,"needsNote":"Requirements on the Public Safety Testing posting","dept":"North Palos FPD","title":"Firefighter/Paramedic","city":"Palos Hills","lat":41.7,"lng":-87.82,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payNote":null,"reqs":["See posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1285","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-17"},
-    {"id":"pt-wilmington","deptId":"wilmington","type":"part","needs":["ffii","emt"],"dept":"Wilmington FPD","title":"Part-Time Firefighter/EMT","city":"Wilmington","lat":41.3087,"lng":-88.1468,"deadline":null,"deadlineNote":"Rolling. The district lists part-time positions as available, with no deadline.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois Basic Operations Firefighter (or higher)","Illinois EMT-Basic license (the employment page also lists paramedic, but the application asks for EMT-B)","Age 18 or older","Valid Class B non-CDL (or higher) driver's license","High school diploma or equivalent","Part-time positions are for people who live outside the district"],"applyTip":"Download the part-time application or pick one up at the station. Questions: (815) 476-6675.","apply":"https://www.wilmingtonfire.org/wp-content/uploads/2026/01/Application-Part-Time-CURRENT-6.26.25.pdf","source":"https://www.wilmingtonfire.org/employment/","sourceName":"Wilmington FPD","fee":null,"checked":"2026-11-17"},
-    {"id":"pt-braidwood","runs":{"stations":2,"calls":{"2023":1901,"2024":2028,"2025":2240}},"type":"part","status":"check","needs":["ffii","emt"],"dept":"Braidwood FPD","title":"Part-Time or Paid-On-Call Firefighter/EMT","city":"Braidwood","lat":41.2656,"lng":-88.214,"deadline":null,"deadlineNote":"No application window posted. Applications are dropped off at the station during business hours.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois EMT-B, EMT-I or Paramedic license","Firefighter II (Basic Operations) or Firefighter III (Advanced Technician)","Valid Class B non-CDL driver's license","Age 18 or older","High school diploma","Physical agility test"],"applyTip":"Call (815) 458-2000 to confirm part-time openings, then drop off the part-time or paid-on-call application at Station 1, 275 W. Main St., Braidwood.","apply":"https://braidwoodfire.org/wp-content/uploads/2018/01/parttimeapp.pdf","source":"https://braidwoodfire.org/employment/","sourceName":"Braidwood FPD","fee":null,"checked":"2026-11-17","deptId":"a-braidwood"},
-    {"id":"pt-manhattan","deptId":"manhattan","type":"part","status":"check","needs":["ffii","emt"],"dept":"Manhattan FPD","title":"Part-Time Firefighter/EMT-B or Firefighter/Paramedic","city":"Manhattan","lat":41.4222,"lng":-87.9857,"deadline":null,"deadlineNote":"Posting dated Nov 1, 2023, with no closing date. Call to confirm it's still open.","pay":null,"payHr":19,"payNote":"$19.00/hour for Firefighter/EMT-B; $21.00/hour for Firefighter/Paramedic. 24 hours on, 48 off.","reqs":["Firefighter II or Basic Operations Firefighter (OSFM)","Illinois EMT-B license (paramedic preferred), able to test into the Silver Cross EMS System","Age 18 or older","Valid Illinois Class B non-CDL driver's license","High school diploma or GED"],"applyTip":"Apply in person with Deputy Chief David Piper at Station 81 headquarters, 15151 W. Vander Boegh Ct., Manhattan, Monday–Friday 8:30 AM–4 PM.","apply":"https://manhattanfire.org/wp-content/uploads/2023/11/The-Manhattan-Fire-Protection-District-Fillable-Application1.pdf","source":"https://manhattanfire.org/part-time-employment/part-time-ff-pm-or-ff-emt-b/","sourceName":"Manhattan FPD","fee":null,"checked":"2026-11-17"},
-    {"id":"pt-crete","deptId":"crete","type":"part","status":"check","needs":null,"dept":"Crete Township FPD","title":"Paid-On-Call or Part-Time Firefighter/Paramedic","city":"Crete","lat":41.4445,"lng":-87.6315,"deadline":null,"deadlineNote":"The district posts an application, but no current opening or deadline.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois driver's license with Class B (minimum) endorsement","Copies of your Illinois firefighter, paramedic and CPR certifications, where applicable"],"applyTip":"Call the district to ask whether it's hiring before you apply.","apply":"https://cretetwpfire.com/careers/","source":"https://cretetwpfire.com/careers/","sourceName":"Crete Township FPD","fee":null,"checked":"2026-11-17"},
-    {"id":"pt-montgomery","runs":{"stations":2,"calls":{"2023":1248,"2024":1200,"2025":1262}},"type":"part","needs":["medic"],"needsNote":"Hiring part-time firefighter/paramedics and single-role paramedics","dept":"Montgomery & Countryside FPD","title":"Part-Time Firefighter/Paramedic or Paramedic","city":"Montgomery","lat":41.7276,"lng":-88.346,"deadline":null,"deadlineNote":"Open until filled.","pay":null,"payHr":24,"payNote":"$24.00/hour; $27.13/hour for weekend 24-hour shifts.","reqs":["Illinois paramedic license","See the posting flyers for full requirements"],"applyTip":"Apply in person at 198 S. Railroad St., Montgomery, or contact Chief Thomas Meyers at Chiefmeyers@montgomeryfire.org or (630) 897-0622.","apply":"https://www.theblueline.com/findAJob/view/39814","source":"https://www.theblueline.com/findAJob/view/39814","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","deptId":"a-montgomery-countryside"},
-    {"id":"pt-bensenville","runs":{"stations":2,"calls":{"2023":3625,"2024":3666,"2025":3502}},"type":"part","needs":["medic"],"dept":"Bensenville FPD","title":"Part-Time Firefighter/Paramedic or Single-Role Paramedic","city":"Bensenville","lat":41.948,"lng":-87.9405,"deadline":null,"deadlineNote":"Open until filled.","pay":null,"payHr":25,"payNote":"Starting at $25/hour depending on experience. 24-hour or 12-hour shifts.","reqs":["IDPH-licensed paramedic, able to test into the Good Samaritan EMS System","Age 21 or older","High school diploma or GED","Valid Illinois driver's license","CPAT and ladder climb preferred"],"applyTip":"Single-role paramedics who work 30 24-hour shifts can be sponsored to take the state fire academy exams. Part-timers earn preference points when testing for full-time.","apply":"https://form.jotform.com/70606707257155","source":"https://www.theblueline.com/findAJob/view/33298","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","deptId":"a-bensenville"},
-    {"id":"j-saukvillage","runs":{"stations":1,"calls":{"2023":2205,"2024":2385,"2025":2295}},"type":"full","needs":["emt","ffii","cpat"],"needsNote":"Paramedic preferred","dept":"Sauk Village Fire Department","title":"Firefighter/EMT-Basic or Firefighter/Paramedic","city":"Sauk Village","lat":41.4884,"lng":-87.5676,"deadline":"2026-12-04","deadlineNote":"Due by 4:00 PM in a sealed envelope to Resource Management Associates, Tinley Park. Mandatory orientation and written exam Dec 12, 2026.","pay":50000,"payNote":"$50,000 for an EMT-Basic or $65,000 for a paramedic (pending qualification).","reqs":["Illinois-licensed or nationally certified EMT-Basic at time of hire (paramedic preferred)","Basic Operations Firefighter/Firefighter II at time of hire","CPAT with ladder climb issued within 6 months at the conditional offer","Age 21 at hire; under 35 at the exam unless exempt","High school graduate or equivalent"],"apply":"https://www.theblueline.com/findAJob/view/40109","source":"https://www.theblueline.com/findAJob/view/40109","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","deptId":"a-sauk-village"},
-    {"id":"j-lansing","runs":{"stations":2,"calls":{"2023":5480,"2024":5640,"2025":5727}},"type":"full","needs":["medic","cpat"],"needsNote":"Paramedic license needed by date of hire; EMT-Basics enrolled in paramedic school may apply","dept":"Lansing Fire Department","title":"Firefighter/Paramedic","city":"Lansing","lat":41.5648,"lng":-87.5389,"deadline":"2026-11-18","deadlineNote":"Due by 4:00 PM to COPS and FIRE Testing (postmarks don't count). Orientation and written exam Dec 5, 2026.","pay":82330,"payNote":"$87,460 after one year; tops out at $112,550.","reqs":["Illinois-certified paramedic at time of hire (EMT-Basics enrolled in paramedic school may apply)","CPAT card issued Dec 5, 2025, to Dec 5, 2026","Age 21 by Nov 18, 2026, and under 35 by Dec 5, 2026, unless exempt","U.S. citizen with a valid driver's license and a high school diploma or GED","No residency requirement. $10 application fee"],"apply":"https://www.jobsource.copsandfiretesting.com","source":"https://www.theblueline.com/findAJob/view/40081","sourceName":"The Blue Line","fee":10,"checked":"2026-11-17","deptId":"a-lansing"},
-    {"id":"j-calumetcity","runs":{"stations":2,"calls":{"2023":9727,"2024":9666,"2025":10139}},"type":"full","needs":null,"needsNote":"Requirements not listed in the posting summary","dept":"Calumet City Fire Department","title":"Firefighter/Paramedic","city":"Calumet City","lat":41.6156,"lng":-87.5295,"deadline":"2026-11-30","deadlineNote":"Applications accepted Oct 20 to Nov 30, 2026, through National Testing Network.","pay":81345,"payNote":"$95,366 after three years.","reqs":["Apply through National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2148","source":"https://www.theblueline.com/findAJob/view/40063","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","deptId":"a-calumet-city"},
-    {"id":"j-schillerpark","runs":{"stations":1,"calls":{"2023":2190,"2024":2242,"2025":2234}},"type":"full","needs":null,"needsNote":"Requirements not listed in the posting summary","dept":"Schiller Park Fire Department","title":"Firefighter/Paramedic","city":"Schiller Park","lat":41.9559,"lng":-87.871,"deadline":"2026-11-20","deadlineNote":"Apply through National Testing Network.","pay":83346,"payNote":"$87,558 after the 12-month probation; tops out at $121,783.","reqs":["Apply through National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2964","source":"https://www.theblueline.com/findAJob/view/39974","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","deptId":"a-schiller-park"},
-    {"id":"j-hoffmanestates","deptId":"a-hoffman-estates","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hoffman Estates","title":"Firefighter/Paramedic","city":"Hoffman Estates","lat":42.043,"lng":-88.08,"deadline":"2026-12-15","deadlineNote":"Apply through National Testing Network.","pay":81521.24,"payHr":null,"payNote":"Rises to $124,153.43.","reqs":["Age 21 or older","U.S. citizen","High school diploma or GED","Valid driver's license","Vision correctable to 20/20"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3471","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3471","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-wooddale","deptId":"a-wood-dale","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Wood Dale","title":"Firefighter/Paramedic","city":"Wood Dale","lat":41.96,"lng":-87.981,"deadline":"2026-11-30","deadlineNote":"Apply through National Testing Network.","pay":88406,"payHr":null,"payNote":"Rises to $125,000.","reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2716","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2716","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-oakbrookterrace","deptId":"a-oakbrook-terrace","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Oakbrook Terrace","title":"Firefighter/Paramedic","city":"Oakbrook Terrace","lat":41.88,"lng":-87.978,"deadline":"2026-11-27","deadlineNote":"Apply through National Testing Network.","pay":76143,"payHr":null,"payNote":null,"reqs":["Age 18 or older","U.S. citizen","Fire academy certification required","Prior experience preferred","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2702","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2702","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-itasca","deptId":"a-itasca","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Itasca","title":"Firefighter/Paramedic","city":"Itasca","lat":41.972,"lng":-88.02,"deadline":"2026-12-07","deadlineNote":"Apply through National Testing Network.","pay":84316,"payHr":null,"payNote":"Rises to $114,149.","reqs":["Age 21 or older","U.S. citizen, permanent resident or DACA","Fire academy certification required","Vision correctable to 20/20","Prior experience preferred"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3197","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3197","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-elburn","deptId":"a-elburn-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Elburn & Countryside FPD","title":"Firefighter/Paramedic","city":"Elburn","lat":41.882,"lng":-88.461,"deadline":"2026-12-21","deadlineNote":"Apply through National Testing Network.","pay":null,"payHr":null,"payNote":null,"reqs":["See the full posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/394","source":"https://candidates.nationaltestingnetwork.com/#/jobs/394","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-roundlake","deptId":"a-greater-round-lake-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Greater Round Lake FPD","title":"Firefighter","city":"Round Lake","lat":42.367,"lng":-88.089,"deadline":"2026-11-20","deadlineNote":"Apply through National Testing Network.","pay":79406.65,"payHr":null,"payNote":"Rises to $114,402.66.","reqs":["Age 21 or older","U.S. citizen","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3514","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3514","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-bensenville","deptId":"a-bensenville","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Bensenville","title":"Firefighter/Paramedic","city":"Bensenville","lat":41.95,"lng":-87.945,"deadline":"2026-11-30","deadlineNote":"Apply through National Testing Network.","pay":87638.41,"payHr":null,"payNote":"Rises to $121,600.91.","reqs":["See the full posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2754","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2754","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-marengo","deptId":"a-marengo","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Marengo","title":"Full-Time Firefighter/Paramedic","city":"Marengo","lat":42.244,"lng":-88.607,"deadline":"2026-12-15","deadlineNote":"Apply through National Testing Network.","pay":60000,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2676","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2676","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-pingreegrove","deptId":"a-pingree-grove-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Pingree Grove & Countryside FPD","title":"Firefighter/Paramedic","city":"Pingree Grove","lat":42.081,"lng":-88.517,"deadline":"2026-12-18","deadlineNote":"Applications accepted Nov 16 to Dec 18, 2026, through National Testing Network.","pay":68514.56,"payHr":null,"payNote":"Rises to $91,225.48.","reqs":["Age 21 or older","U.S. citizen, permanent resident or DACA","High school diploma or GED","Fire academy certification required","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3229","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3229","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-riverforest","deptId":"a-river-forest","type":"full","needs":["medic","cpat"],"needsNote":"Paramedic license needed by date of hire","dept":"River Forest","title":"Firefighter/Paramedic","city":"River Forest","lat":41.895,"lng":-87.816,"deadline":null,"deadlineNote":"Ongoing eligibility testing. The posting lists an immediate opening.","pay":79328.75,"payHr":null,"payNote":"Plus $7,232.46 paramedic pay. Base rises to $118,597.73 at 7 years.","reqs":["Illinois paramedic license by date of hire","CPAT with ladder climb within 18 months of the written exam","Age 21 to under 35 at application","High school diploma or equivalent"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1458","source":"https://www.theblueline.com/findAJob/view/39716","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-countryclubhills","deptId":"a-country-club-hills","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Country Club Hills","title":"Firefighter/Paramedic","city":"Country Club Hills","lat":41.564,"lng":-87.725,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":74825,"payHr":null,"payNote":"Rises to $102,500.","reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","Prior experience required","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1801","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1801","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-lakeforest","deptId":"a-lake-forest","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Lake Forest","title":"Firefighter/Paramedic","city":"Lake Forest","lat":42.237,"lng":-87.848,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":81316,"payHr":null,"payNote":"Rises to $117,600.","reqs":["Age 21 or older","High school diploma or GED"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2379","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2379","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-oakbrook","deptId":"a-oak-brook","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Oak Brook","title":"Firefighter/Paramedic","city":"Oak Brook","lat":41.837,"lng":-87.964,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":85610.46,"payHr":null,"payNote":null,"reqs":["Age 19 or older","U.S. citizen","Vision correctable to 20/20","High school diploma or GED"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1482","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1482","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-hazelcrest","deptId":"a-hazel-crest","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hazel Crest","title":"Firefighter/Paramedic","city":"Hazel Crest","lat":41.574,"lng":-87.685,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":73966.61,"payHr":null,"payNote":null,"reqs":["Age 21 or older","Fire academy certification preferred","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2878","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2878","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-leyden","deptId":"a-leyden-twp-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Leyden Township FPD","title":"Firefighter/Paramedic","city":"Franklin Park area","lat":41.934,"lng":-87.873,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":73000,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2918","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2918","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-bartlett","deptId":"a-bartlett","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Bartlett","title":"Firefighter/Paramedic","city":"Bartlett","lat":41.979,"lng":-88.206,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":79496,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2881","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2881","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-hanoverpark","deptId":"a-hanover-park","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hanover Park","title":"Full-Time Firefighter/Paramedic","city":"Hanover Park","lat":41.999,"lng":-88.145,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":79243.48,"payHr":null,"payNote":null,"reqs":["Age 21 or older","Fire academy certification required","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1894","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1894","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list."},
-    {"id":"j-forestpark","deptId":"a-forest-park","type":"full","needs":["medic","cpat"],"needsNote":"Paramedic license (or enrollment) needed","dept":"Forest Park","title":"Firefighter/Paramedic","city":"Forest Park","lat":41.874,"lng":-87.811,"deadline":null,"deadlineNote":"Rolling. Applications are reviewed monthly.","pay":68219.12,"payHr":null,"payNote":"Base pay; $105,030.82 by year 5. Contract in negotiation.","reqs":["Illinois paramedic license (or proof of paramedic enrollment) at conditional offer","CPAT with ladder climb within 12 months of application","Age 21 to under 34 at the written exam","$25 application fee"],"apply":"https://applytoserve.com/Application.aspx?ID=804","source":"https://www.theblueline.com/findAJob/view/39275","sourceName":"The Blue Line","fee":25,"checked":"2026-11-17"},
-    {"id":"j-barringtoncountryside","deptId":"a-barrington-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Barrington Countryside FPD","title":"Firefighter/Paramedic","city":"Barrington","lat":42.161,"lng":-88.138,"deadline":null,"deadlineNote":"No deadline posted. Call (224) 848-4800 to ask about applying.","pay":85000,"payHr":null,"payNote":"Five-step scale to $115,000.","reqs":["See the recruitment flyer on the posting"],"apply":"https://www.theblueline.com/findAJob/view/39750","source":"https://www.theblueline.com/findAJob/view/39750","sourceName":"The Blue Line","fee":null,"checked":"2026-11-17"},
-    {"id":"j-brookfield","deptId":"a-brookfield","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Brookfield","title":"Firefighter/Paramedic","city":"Brookfield","lat":41.822,"lng":-87.849,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing. The test is free for paramedics.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-17","applyTip":"Find Brookfield on the Public Safety Testing firefighter list."},
-    {"id":"j-mortongrove","deptId":"a-morton-grove","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Morton Grove","title":"Entry-Level Firefighter/Paramedic","city":"Morton Grove","lat":42.043,"lng":-87.79,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-17","applyTip":"Find Morton Grove on the Public Safety Testing firefighter list."},
-    {"id":"j-northbrook","deptId":"a-northbrook","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Northbrook","title":"Firefighter/Paramedic","city":"Northbrook","lat":42.125,"lng":-87.847,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-17","applyTip":"Find Northbrook on the Public Safety Testing firefighter list."},
-    {"id":"j-oakpark","deptId":"a-oak-park","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Oak Park","title":"Firefighter/Paramedic","city":"Oak Park","lat":41.889,"lng":-87.799,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-17","applyTip":"Find Oak Park on the Public Safety Testing firefighter list."},
-    {"id":"j-southholland","deptId":"a-south-holland","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"South Holland","title":"Firefighter/Paramedic","city":"South Holland","lat":41.598,"lng":-87.594,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-17","applyTip":"Find South Holland on the Public Safety Testing firefighter list."},
-    {"id":"pt-hanoverpark","deptId":"a-hanover-park","type":"part","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hanover Park","title":"Part-Time Firefighter/EMT","city":"Hanover Park","lat":41.999,"lng":-88.145,"deadline":"2026-12-31","deadlineNote":"Apply through National Testing Network.","pay":null,"payHr":22.84,"payNote":"$22.84–$25.32 an hour.","reqs":["Age 21 or older","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1782","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1782","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"},
-    {"id":"pt-longgrove","deptId":"a-long-grove","type":"part","needs":["medic"],"needsNote":"Paramedic role","dept":"Long Grove","title":"Part-Time Firefighter/Paramedic","city":"Long Grove","lat":42.217,"lng":-88.077,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":null,"payHr":22.66,"payNote":"$22.66–$28.35 an hour.","reqs":["Age 18 or older","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2197","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2197","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"},
-    {"id":"pt-robbins","deptId":"a-robbins","type":"part","needs":["emt"],"needsNote":"EMT-B role","dept":"Robbins","title":"Part-Time Firefighter/EMT-B","city":"Robbins","lat":41.642,"lng":-87.709,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2402","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2402","sourceName":"National Testing Network","fee":null,"checked":"2026-11-17","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"}
+    {"id":"j-newlenox","deptId":"newlenox","needs":["ffii","cpat","emt"],"needsNote":"EMTs must earn paramedic within 18 months of hire","dept":"New Lenox FPD","title":"Firefighter/Paramedic or EMT","city":"New Lenox","lat":41.51,"lng":-87.97,"deadline":"2026-12-04","deadlineNote":"Testing deadline.","pay":79488,"payNote":"2027 starting salary.","reqs":["Firefighter II or Basic Operations Firefighter","Illinois paramedic license, or EMT who earns paramedic within 18 months of hire","CPAT with ladder climb","Generally 21–35 at conditional offer; U.S. citizen or lawful permanent resident"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1345","source":"https://www.publicsafetytesting.com/departments/New-Lenox-FPD/firefighter-paramedic-emt","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-24"},
+    {"id":"j-manteno","deptId":"manteno","needs":["medic"],"needsNote":null,"dept":"Manteno Community FPD","title":"Firefighter/Paramedic","city":"Manteno","lat":41.25,"lng":-87.83,"deadline":null,"deadlineNote":"Open until filled.","pay":73777.03,"payNote":"Effective Jan 1, 2027.","reqs":["Paramedic license at time of application","Under 35 unless previously a full-time Illinois firefighter","$48 non-refundable application processing fee"],"apply":"https://www.applytoserve.com/Application.aspx?ID=826","source":"https://www.theblueline.com/findAJob/view/40244","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24"},
+    {"id":"j-franklinpark","runs":{"stations":2,"calls":{"2023":4004,"2024":4563,"2025":4138}},"applyTip":"On National Testing Network, search the job list for Franklin Park Fire Department.","needs":null,"needsNote":"Requirements not listed in the posting summary","dept":"Franklin Park Fire Department","title":"Firefighter/Paramedic","city":"Franklin Park","lat":41.93,"lng":-87.87,"deadline":"2026-12-18","deadlineNote":"Due by 5:00 PM.","pay":78200.95,"payNote":"Rises to $80,546.98 on May 1, 2027; tops out at $119,014.78.","reqs":["National Testing Network FireTEAM exam, PSSA and PHQ"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2355","source":"https://www.theblueline.com/findAJob/view/40250","sourceName":"The Blue Line","fee":null,"deptId":"a-franklin-park","checked":"2026-11-24"},
+    {"id":"j-eastjoliet","deptId":"eastjoliet","needs":null,"needsNote":"Requirements on the Public Safety Testing posting","dept":"East Joliet FPD","title":"Firefighter/Paramedic","city":"Joliet","lat":41.52,"lng":-88.05,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payNote":null,"reqs":["See posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1315","source":"https://www.publicsafetytesting.com/departments/east-joliet-FPD/firefighter-paramedic-41","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-24"},
+    {"id":"j-homer","deptId":"homer","needs":null,"needsNote":"Requirements on the Public Safety Testing posting","dept":"Homer Township FPD","title":"Firefighter/Paramedic","city":"Homer Glen / Lockport","lat":41.605,"lng":-87.99,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payNote":null,"reqs":["See posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter?preselected_position=1305","source":"https://www.publicsafetytesting.com/departments/homer-township-FPD/firefighter-paramedic-40","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-24"},
+    {"id":"pt-wilmington","deptId":"wilmington","type":"part","needs":["ffii","emt"],"dept":"Wilmington FPD","title":"Part-Time Firefighter/EMT","city":"Wilmington","lat":41.3087,"lng":-88.1468,"deadline":null,"deadlineNote":"Rolling. The district lists part-time positions as available, with no deadline.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois Basic Operations Firefighter (or higher)","Illinois EMT-Basic license (the employment page also lists paramedic, but the application asks for EMT-B)","Age 18 or older","Valid Class B non-CDL (or higher) driver's license","High school diploma or equivalent","Part-time positions are for people who live outside the district"],"applyTip":"Download the part-time application or pick one up at the station. Questions: (815) 476-6675.","apply":"https://www.wilmingtonfire.org/wp-content/uploads/2026/01/Application-Part-Time-CURRENT-6.26.25.pdf","source":"https://www.wilmingtonfire.org/employment/","sourceName":"Wilmington FPD","fee":null,"checked":"2026-11-24"},
+    {"id":"pt-braidwood","runs":{"stations":2,"calls":{"2023":1901,"2024":2028,"2025":2240}},"type":"part","status":"check","needs":["ffii","emt"],"dept":"Braidwood FPD","title":"Part-Time or Paid-On-Call Firefighter/EMT","city":"Braidwood","lat":41.2656,"lng":-88.214,"deadline":null,"deadlineNote":"No application window posted. Applications are dropped off at the station during business hours.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois EMT-B, EMT-I or Paramedic license","Firefighter II (Basic Operations) or Firefighter III (Advanced Technician)","Valid Class B non-CDL driver's license","Age 18 or older","High school diploma","Physical agility test"],"applyTip":"Call (815) 458-2000 to confirm part-time openings, then drop off the part-time or paid-on-call application at Station 1, 275 W. Main St., Braidwood.","apply":"https://braidwoodfire.org/wp-content/uploads/2018/01/parttimeapp.pdf","source":"https://braidwoodfire.org/employment/","sourceName":"Braidwood FPD","fee":null,"checked":"2026-11-24","deptId":"a-braidwood"},
+    {"id":"pt-manhattan","deptId":"manhattan","type":"part","status":"check","needs":["ffii","emt"],"dept":"Manhattan FPD","title":"Part-Time Firefighter/EMT-B or Firefighter/Paramedic","city":"Manhattan","lat":41.4222,"lng":-87.9857,"deadline":null,"deadlineNote":"Posting dated Nov 1, 2023, with no closing date. Call to confirm it's still open.","pay":null,"payHr":19,"payNote":"$19.00/hour for Firefighter/EMT-B; $21.00/hour for Firefighter/Paramedic. 24 hours on, 48 off.","reqs":["Firefighter II or Basic Operations Firefighter (OSFM)","Illinois EMT-B license (paramedic preferred), able to test into the Silver Cross EMS System","Age 18 or older","Valid Illinois Class B non-CDL driver's license","High school diploma or GED"],"applyTip":"Apply in person with Deputy Chief David Piper at Station 81 headquarters, 15151 W. Vander Boegh Ct., Manhattan, Monday–Friday 8:30 AM–4 PM.","apply":"https://manhattanfire.org/wp-content/uploads/2023/11/The-Manhattan-Fire-Protection-District-Fillable-Application1.pdf","source":"https://manhattanfire.org/part-time-employment/part-time-ff-pm-or-ff-emt-b/","sourceName":"Manhattan FPD","fee":null,"checked":"2026-11-24"},
+    {"id":"pt-crete","deptId":"crete","type":"part","status":"check","needs":null,"dept":"Crete Township FPD","title":"Paid-On-Call or Part-Time Firefighter/Paramedic","city":"Crete","lat":41.4445,"lng":-87.6315,"deadline":null,"deadlineNote":"The district posts an application, but no current opening or deadline.","pay":null,"payHr":null,"payNote":null,"reqs":["Illinois driver's license with Class B (minimum) endorsement","Copies of your Illinois firefighter, paramedic and CPR certifications, where applicable"],"applyTip":"Call the district to ask whether it's hiring before you apply.","apply":"https://cretetwpfire.com/careers/","source":"https://cretetwpfire.com/careers/","sourceName":"Crete Township FPD","fee":null,"checked":"2026-11-24"},
+    {"id":"pt-montgomery","runs":{"stations":2,"calls":{"2023":1248,"2024":1200,"2025":1262}},"type":"part","needs":["medic"],"needsNote":"Hiring part-time firefighter/paramedics and single-role paramedics","dept":"Montgomery & Countryside FPD","title":"Part-Time Firefighter/Paramedic or Paramedic","city":"Montgomery","lat":41.7276,"lng":-88.346,"deadline":null,"deadlineNote":"Open until filled.","pay":null,"payHr":24,"payNote":"$24.00/hour; $27.13/hour for weekend 24-hour shifts.","reqs":["Illinois paramedic license","See the posting flyers for full requirements"],"applyTip":"Apply in person at 198 S. Railroad St., Montgomery, or contact Chief Thomas Meyers at Chiefmeyers@montgomeryfire.org or (630) 897-0622.","apply":"https://www.theblueline.com/findAJob/view/39814","source":"https://www.theblueline.com/findAJob/view/39814","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24","deptId":"a-montgomery-countryside"},
+    {"id":"pt-bensenville","runs":{"stations":2,"calls":{"2023":3625,"2024":3666,"2025":3502}},"type":"part","needs":["medic"],"dept":"Bensenville FPD","title":"Part-Time Firefighter/Paramedic or Single-Role Paramedic","city":"Bensenville","lat":41.948,"lng":-87.9405,"deadline":null,"deadlineNote":"Open until filled.","pay":null,"payHr":25,"payNote":"Starting at $25/hour depending on experience. 24-hour or 12-hour shifts.","reqs":["IDPH-licensed paramedic, able to test into the Good Samaritan EMS System","Age 21 or older","High school diploma or GED","Valid Illinois driver's license","CPAT and ladder climb preferred"],"applyTip":"Single-role paramedics who work 30 24-hour shifts can be sponsored to take the state fire academy exams. Part-timers earn preference points when testing for full-time.","apply":"https://form.jotform.com/70606707257155","source":"https://www.theblueline.com/findAJob/view/33298","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24","deptId":"a-bensenville"},
+    {"id":"j-saukvillage","runs":{"stations":1,"calls":{"2023":2205,"2024":2385,"2025":2295}},"type":"full","needs":["emt","ffii","cpat"],"needsNote":"Paramedic preferred","dept":"Sauk Village Fire Department","title":"Firefighter/EMT-Basic or Firefighter/Paramedic","city":"Sauk Village","lat":41.4884,"lng":-87.5676,"deadline":"2026-12-04","deadlineNote":"Due by 4:00 PM in a sealed envelope to Resource Management Associates, Tinley Park. Mandatory orientation and written exam Dec 12, 2026.","pay":50000,"payNote":"$50,000 for an EMT-Basic or $65,000 for a paramedic (pending qualification).","reqs":["Illinois-licensed or nationally certified EMT-Basic at time of hire (paramedic preferred)","Basic Operations Firefighter/Firefighter II at time of hire","CPAT with ladder climb issued within 6 months at the conditional offer","Age 21 at hire; under 35 at the exam unless exempt","High school graduate or equivalent"],"apply":"https://www.theblueline.com/findAJob/view/40109","source":"https://www.theblueline.com/findAJob/view/40109","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24","deptId":"a-sauk-village"},
+    {"id":"j-calumetcity","runs":{"stations":2,"calls":{"2023":9727,"2024":9666,"2025":10139}},"type":"full","needs":null,"needsNote":"Requirements not listed in the posting summary","dept":"Calumet City Fire Department","title":"Firefighter/Paramedic","city":"Calumet City","lat":41.6156,"lng":-87.5295,"deadline":"2026-11-30","deadlineNote":"Applications accepted Oct 20 to Nov 30, 2026, through National Testing Network.","pay":81345,"payNote":"$95,366 after three years.","reqs":["Apply through National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2148","source":"https://www.theblueline.com/findAJob/view/40063","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24","deptId":"a-calumet-city"},
+    {"id":"j-hoffmanestates","deptId":"a-hoffman-estates","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hoffman Estates","title":"Firefighter/Paramedic","city":"Hoffman Estates","lat":42.043,"lng":-88.08,"deadline":"2026-12-15","deadlineNote":"Apply through National Testing Network.","pay":81521.24,"payHr":null,"payNote":"Rises to $124,153.43.","reqs":["Age 21 or older","U.S. citizen","High school diploma or GED","Valid driver's license","Vision correctable to 20/20"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3471","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3471","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-wooddale","deptId":"a-wood-dale","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Wood Dale","title":"Firefighter/Paramedic","city":"Wood Dale","lat":41.96,"lng":-87.981,"deadline":"2026-11-30","deadlineNote":"Apply through National Testing Network.","pay":88406,"payHr":null,"payNote":"Rises to $125,000.","reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2716","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2716","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-oakbrookterrace","deptId":"a-oakbrook-terrace","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Oakbrook Terrace","title":"Firefighter/Paramedic","city":"Oakbrook Terrace","lat":41.88,"lng":-87.978,"deadline":"2026-11-27","deadlineNote":"Apply through National Testing Network.","pay":76143,"payHr":null,"payNote":null,"reqs":["Age 18 or older","U.S. citizen","Fire academy certification required","Prior experience preferred","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2702","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2702","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-itasca","deptId":"a-itasca","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Itasca","title":"Firefighter/Paramedic","city":"Itasca","lat":41.972,"lng":-88.02,"deadline":"2026-12-07","deadlineNote":"Apply through National Testing Network.","pay":84316,"payHr":null,"payNote":"Rises to $114,149.","reqs":["Age 21 or older","U.S. citizen, permanent resident or DACA","Fire academy certification required","Vision correctable to 20/20","Prior experience preferred"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3197","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3197","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-frankfort","deptId":"frankfort","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Frankfort FPD","title":"Firefighter/Paramedic","city":"Frankfort","lat":41.497,"lng":-87.855,"deadline":"2027-01-08","deadlineNote":"Apply through National Testing Network.","pay":null,"payHr":null,"payNote":null,"reqs":["See the full posting on National Testing Network for requirements","Includes the National Testing Network Firefighter exam and PSSA"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3214","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3214","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-carpentersville","deptId":"a-carpentersville","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Carpentersville","title":"Firefighter/Paramedic","city":"Carpentersville","lat":42.123,"lng":-88.261,"deadline":"2026-12-18","deadlineNote":"Due by 4:00 PM. Apply through National Testing Network.","pay":75423,"payHr":null,"payNote":"Rises to $108,866.","reqs":["Age 21 or older","U.S. citizen, permanent resident or DACA","High school diploma or GED","Valid driver's license","Fire academy certification required","Vision correctable to 20/20"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3007","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3007","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-elburn","deptId":"a-elburn-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Elburn & Countryside FPD","title":"Firefighter/Paramedic","city":"Elburn","lat":41.882,"lng":-88.461,"deadline":"2026-12-21","deadlineNote":"Apply through National Testing Network.","pay":null,"payHr":null,"payNote":null,"reqs":["See the full posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/394","source":"https://candidates.nationaltestingnetwork.com/#/jobs/394","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-bensenville","deptId":"a-bensenville","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Bensenville","title":"Firefighter/Paramedic","city":"Bensenville","lat":41.95,"lng":-87.945,"deadline":"2026-11-30","deadlineNote":"Apply through National Testing Network.","pay":87638.41,"payHr":null,"payNote":"Rises to $121,600.91.","reqs":["See the full posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2754","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2754","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-marengo","deptId":"a-marengo","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Marengo","title":"Full-Time Firefighter/Paramedic","city":"Marengo","lat":42.244,"lng":-88.607,"deadline":"2026-12-15","deadlineNote":"Apply through National Testing Network.","pay":60000,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2676","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2676","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-pingreegrove","deptId":"a-pingree-grove-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Pingree Grove & Countryside FPD","title":"Firefighter/Paramedic","city":"Pingree Grove","lat":42.081,"lng":-88.517,"deadline":"2026-12-18","deadlineNote":"Applications accepted Nov 16 to Dec 18, 2026, through National Testing Network.","pay":68514.56,"payHr":null,"payNote":"Rises to $91,225.48.","reqs":["Age 21 or older","U.S. citizen, permanent resident or DACA","High school diploma or GED","Fire academy certification required","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/3229","source":"https://candidates.nationaltestingnetwork.com/#/jobs/3229","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-riverforest","deptId":"a-river-forest","type":"full","needs":["medic","cpat"],"needsNote":"Paramedic license needed by date of hire","dept":"River Forest","title":"Firefighter/Paramedic","city":"River Forest","lat":41.895,"lng":-87.816,"deadline":null,"deadlineNote":"Ongoing eligibility testing. The posting lists an immediate opening.","pay":79328.75,"payHr":null,"payNote":"Plus $7,232.46 paramedic pay. Base rises to $118,597.73 at 7 years.","reqs":["Illinois paramedic license by date of hire","CPAT with ladder climb within 18 months of the written exam","Age 21 to under 35 at application","High school diploma or equivalent"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1458","source":"https://www.theblueline.com/findAJob/view/39716","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-countryclubhills","deptId":"a-country-club-hills","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Country Club Hills","title":"Firefighter/Paramedic","city":"Country Club Hills","lat":41.564,"lng":-87.725,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":74825,"payHr":null,"payNote":"Rises to $102,500.","reqs":["Age 21 or older","U.S. citizen","Fire academy certification required","Prior experience required","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1801","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1801","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-lakeforest","deptId":"a-lake-forest","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Lake Forest","title":"Firefighter/Paramedic","city":"Lake Forest","lat":42.237,"lng":-87.848,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":81316,"payHr":null,"payNote":"Rises to $117,600.","reqs":["Age 21 or older","High school diploma or GED"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2379","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2379","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-oakbrook","deptId":"a-oak-brook","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Oak Brook","title":"Firefighter/Paramedic","city":"Oak Brook","lat":41.837,"lng":-87.964,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":85610.46,"payHr":null,"payNote":null,"reqs":["Age 19 or older","U.S. citizen","Vision correctable to 20/20","High school diploma or GED"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1482","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1482","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-hazelcrest","deptId":"a-hazel-crest","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hazel Crest","title":"Firefighter/Paramedic","city":"Hazel Crest","lat":41.574,"lng":-87.685,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":73966.61,"payHr":null,"payNote":null,"reqs":["Age 21 or older","Fire academy certification preferred","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2878","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2878","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-leyden","deptId":"a-leyden-twp-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Leyden Township FPD","title":"Firefighter/Paramedic","city":"Franklin Park area","lat":41.934,"lng":-87.873,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":73000,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","Vision correctable to 20/20","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2918","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2918","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-bartlett","deptId":"a-bartlett","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Bartlett","title":"Firefighter/Paramedic","city":"Bartlett","lat":41.979,"lng":-88.206,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":79496,"payHr":null,"payNote":null,"reqs":["Age 21 or older","U.S. citizen","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2881","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2881","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-hanoverpark","deptId":"a-hanover-park","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hanover Park","title":"Full-Time Firefighter/Paramedic","city":"Hanover Park","lat":41.999,"lng":-88.145,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":79243.48,"payHr":null,"payNote":null,"reqs":["Age 21 or older","Fire academy certification required","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1894","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1894","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list."},
+    {"id":"j-forestpark","deptId":"a-forest-park","type":"full","needs":["medic","cpat"],"needsNote":"Paramedic license (or enrollment) needed","dept":"Forest Park","title":"Firefighter/Paramedic","city":"Forest Park","lat":41.874,"lng":-87.811,"deadline":null,"deadlineNote":"Rolling. Applications are reviewed monthly.","pay":68219.12,"payHr":null,"payNote":"Base pay; $105,030.82 by year 5. Contract in negotiation.","reqs":["Illinois paramedic license (or proof of paramedic enrollment) at conditional offer","CPAT with ladder climb within 12 months of application","Age 21 to under 34 at the written exam","$25 application fee"],"apply":"https://applytoserve.com/Application.aspx?ID=804","source":"https://www.theblueline.com/findAJob/view/39275","sourceName":"The Blue Line","fee":25,"checked":"2026-11-24"},
+    {"id":"j-barringtoncountryside","deptId":"a-barrington-countryside-fpd","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Barrington Countryside FPD","title":"Firefighter/Paramedic","city":"Barrington","lat":42.161,"lng":-88.138,"deadline":null,"deadlineNote":"No deadline posted. Call (224) 848-4800 to ask about applying.","pay":85000,"payHr":null,"payNote":"Five-step scale to $115,000.","reqs":["See the recruitment flyer on the posting"],"apply":"https://www.theblueline.com/findAJob/view/39750","source":"https://www.theblueline.com/findAJob/view/39750","sourceName":"The Blue Line","fee":null,"checked":"2026-11-24"},
+    {"id":"j-brookfield","deptId":"a-brookfield","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Brookfield","title":"Firefighter/Paramedic","city":"Brookfield","lat":41.822,"lng":-87.849,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing. The test is free for paramedics.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-24","applyTip":"Find Brookfield on the Public Safety Testing firefighter list."},
+    {"id":"j-mortongrove","deptId":"a-morton-grove","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Morton Grove","title":"Entry-Level Firefighter/Paramedic","city":"Morton Grove","lat":42.043,"lng":-87.79,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-24","applyTip":"Find Morton Grove on the Public Safety Testing firefighter list."},
+    {"id":"j-northbrook","deptId":"a-northbrook","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"Northbrook","title":"Firefighter/Paramedic","city":"Northbrook","lat":42.125,"lng":-87.847,"deadline":null,"deadlineNote":"Ongoing testing through Public Safety Testing.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":null,"checked":"2026-11-24","applyTip":"Find Northbrook on the Public Safety Testing firefighter list."},
+    {"id":"j-southholland","deptId":"a-south-holland","type":"full","needs":null,"needsNote":"Check the posting for license requirements","dept":"South Holland","title":"Firefighter/Paramedic","city":"South Holland","lat":41.598,"lng":-87.594,"deadline":null,"deadlineNote":"Ongoing testing. The agency pays the test fee.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on Public Safety Testing"],"apply":"https://www.publicsafetytesting.com/career-path/positions/firefighter","source":"https://www.publicsafetytesting.com/career-path/positions/firefighter","sourceName":"Public Safety Testing","fee":0,"checked":"2026-11-24","applyTip":"Find South Holland on the Public Safety Testing firefighter list."},
+    {"id":"pt-hanoverpark","deptId":"a-hanover-park","type":"part","needs":null,"needsNote":"Check the posting for license requirements","dept":"Hanover Park","title":"Part-Time Firefighter/EMT","city":"Hanover Park","lat":41.999,"lng":-88.145,"deadline":"2026-12-31","deadlineNote":"Apply through National Testing Network.","pay":null,"payHr":22.84,"payNote":"$22.84–$25.32 an hour.","reqs":["Age 21 or older","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/1782","source":"https://candidates.nationaltestingnetwork.com/#/jobs/1782","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"},
+    {"id":"pt-longgrove","deptId":"a-long-grove","type":"part","needs":["medic"],"needsNote":"Paramedic role","dept":"Long Grove","title":"Part-Time Firefighter/Paramedic","city":"Long Grove","lat":42.217,"lng":-88.077,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":null,"payHr":22.66,"payNote":"$22.66–$28.35 an hour.","reqs":["Age 18 or older","High school diploma or GED","Valid driver's license"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2197","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2197","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"},
+    {"id":"pt-robbins","deptId":"a-robbins","type":"part","needs":["emt"],"needsNote":"EMT-B role","dept":"Robbins","title":"Part-Time Firefighter/EMT-B","city":"Robbins","lat":41.642,"lng":-87.709,"deadline":null,"deadlineNote":"Ongoing testing through National Testing Network.","pay":null,"payHr":null,"payNote":null,"reqs":["See the posting on National Testing Network"],"apply":"https://candidates.nationaltestingnetwork.com/#/jobs/2402","source":"https://candidates.nationaltestingnetwork.com/#/jobs/2402","sourceName":"National Testing Network","fee":null,"checked":"2026-11-24","applyTip":"Search the job list for the department name if the link opens the main list.","status":"open"}
   ],
 
   /* Funding. for: emt | medic | fire. needs: college | fafsa | firefighter | workforce | hired */
@@ -269,7 +265,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-engine",
@@ -298,7 +294,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-truck",
@@ -323,7 +319,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-scba",
@@ -348,7 +344,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-ric",
@@ -373,7 +369,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-fsvo",
@@ -414,7 +410,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-fae",
@@ -447,7 +443,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-fae",
@@ -484,7 +480,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog/index/fd5a6df6d57df6c9d7e8088d03e60411?filter=c2VhcmNoPSZjYXRlZ29yeSU1QjEwMDAyJTVEPTE%3D",
    "page": "https://www.nipsta.org/361/Fire-Apparatus-Engineer-FAE",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-rope-ops",
@@ -521,7 +517,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-rope-tech",
@@ -546,7 +542,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-trench-ops",
@@ -571,7 +567,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-trench-tech",
@@ -596,7 +592,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-cs-ops",
@@ -621,7 +617,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-col-ops",
@@ -646,7 +642,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-col-tech",
@@ -671,7 +667,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-cpvr",
@@ -704,7 +700,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-hvr",
@@ -733,7 +729,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-water-ops",
@@ -762,7 +758,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-swift",
@@ -787,7 +783,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-watercraft",
@@ -820,7 +816,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-ice",
@@ -849,7 +845,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-hm-ops",
@@ -886,7 +882,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-hm-tech",
@@ -911,7 +907,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-cfo",
@@ -940,7 +936,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-afo",
@@ -965,7 +961,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-chief",
@@ -990,7 +986,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-iso",
@@ -1019,7 +1015,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-inst1",
@@ -1052,7 +1048,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-inst2",
@@ -1077,7 +1073,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-bootcamp",
@@ -1102,7 +1098,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-fcoa",
@@ -1131,7 +1127,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-coa",
@@ -1160,7 +1156,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-insp1",
@@ -1185,7 +1181,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-insp2",
@@ -1210,7 +1206,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-pfle",
@@ -1235,7 +1231,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-inv",
@@ -1260,7 +1256,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "rfa-uas",
@@ -1289,7 +1285,7 @@ window.LADDER_DATA = {
    "register": "https://romeoville.org/FormCenter/Fire-Academy-13/Fire-Classes-Online-Registration-Fire-Ac-370",
    "page": "https://www.romeoville.org/DocumentCenter/View/15985/RFA-2026-Course-Catalog",
    "contact": "(815) 372-4042",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-atf",
@@ -1326,7 +1322,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/360/Advanced-Technician-Firefighter",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-vm",
@@ -1346,7 +1342,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/374/Vehicle-Machinery-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-cs",
@@ -1366,7 +1362,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/371/Confined-Space-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-rope",
@@ -1386,7 +1382,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/367/Rope-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-trench",
@@ -1406,7 +1402,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/372/Trench-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-col",
@@ -1426,7 +1422,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/373/Collapse-Rescue-Programs",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-off",
@@ -1446,7 +1442,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/394/Fire-Officer-Training",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-inv",
@@ -1475,7 +1471,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/488/Fire-Investigator",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
+   "checked": "2026-11-24"
   },
   {
    "id": "nip-hm",
@@ -1495,739 +1491,7 @@ window.LADDER_DATA = {
    "register": "https://secure.rec1.com/IL/nipsta-il/catalog",
    "page": "https://www.nipsta.org/338/Hazardous-Materials-Training",
    "contact": "(847) 998-8090",
-   "checked": "2026-11-17"
-  },
-  {
-   "id": "ifsi-176-lincolnwoo",
-   "cat": "rescue",
-   "name": "Basic Auto Extrication",
-   "cert": null,
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "Lincolnwood (hosted by Lincolnwood FD)",
-   "address": "6900 Lincoln Ave, Lincolnwood, IL 60712",
-   "gk": "LINCOLNWOOD|60712",
-   "lat": 42.0056,
-   "lng": -87.7356,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-10",
-     "e": "2026-11-10",
-     "t": "Nov 10, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700841&session=134792",
-     "seats": "6 seats left"
-    },
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700842&session=134793",
-     "seats": "7 seats left"
-    },
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700843&session=134794",
-     "seats": "11 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700841&session=134792",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=176",
-   "contact": "(847) 673-1545",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1427-robbins",
-   "cat": "rescue",
-   "name": "Elevator Equipment, Function and Rescue Considerations",
-   "cert": null,
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "Robbins (hosted by Robbins FD)",
-   "address": "3327 W. 137th St., Robbins, IL 60472",
-   "gk": "ROBBINS|60472",
-   "lat": 41.6439,
-   "lng": -87.7037,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-10",
-     "e": "2026-11-10",
-     "t": "Nov 10, 2026, 8 a.m.–noon",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
-     "seats": "12 seats left"
-    },
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 8 a.m.–noon",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700368&session=134215",
-     "seats": "16 seats left"
-    },
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 8 a.m.–noon",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700369&session=134216",
-     "seats": "14 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700367&session=134214",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1427",
-   "contact": "(708) 385-8940",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1423-alton",
-   "cat": "prev",
-   "name": "First Due for Fire Alarms",
-   "cert": null,
-   "aka": "IFSI prevention",
-   "provider": "IFSI",
-   "location": "Alton (hosted by Alton FD)",
-   "address": "333 E. 20th St., Alton, IL 62002",
-   "gk": "ALTON|62002",
-   "lat": 38.8909,
-   "lng": -90.1843,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-10",
-     "e": "2026-11-10",
-     "t": "Nov 10, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
-     "seats": "22 seats left"
-    },
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700886&session=134855",
-     "seats": "22 seats left"
-    },
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 9 a.m.–1 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700887&session=134856",
-     "seats": "23 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700885&session=134854",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1423",
-   "contact": "(618) 463-3565",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-593-polo",
-   "cat": "officer",
-   "name": "Basic Tactics and Strategy",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Polo (hosted by Polo FPD)",
-   "address": "206 S. Franklin, Polo, IL 61064",
-   "gk": "POLO|61064",
-   "lat": 41.9861,
-   "lng": -89.5793,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
-     "seats": "12 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700888&session=134857",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=593",
-   "contact": "(815) 946-2153",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-566-maywood",
-   "cat": "ff",
-   "name": "Ventilation",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Maywood (hosted by Maywood FD)",
-   "address": "700 W St. Charles Rd, Maywood, IL 60153",
-   "gk": "MAYWOOD|60153",
-   "lat": 41.879,
-   "lng": -87.8436,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-11",
-     "e": "2026-11-11",
-     "t": "Nov 11, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
-     "seats": "15 seats left"
-    },
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700899&session=134871",
-     "seats": "15 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700898&session=134870",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
-   "contact": "(708) 681-8860",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-159-carrollton",
-   "cat": "app",
-   "name": "Basic Pumps",
-   "cert": null,
-   "aka": "IFSI engineer driver pump",
-   "provider": "IFSI",
-   "location": "Carrollton (hosted by Carrollton FPD)",
-   "address": "633 S. Main, Carrollton, IL 62016",
-   "gk": "CARROLLTON|62016",
-   "lat": 39.3023,
-   "lng": -90.4071,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-12",
-     "e": "2026-11-12",
-     "t": "Nov 12, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
-     "seats": "6 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701011&session=135056",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=159",
-   "contact": "(217) 942-3618",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-282-elizabeth",
-   "cat": "rescue",
-   "name": "Agriculture Rescue Techniques",
-   "cert": null,
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "Elizabeth (hosted by Elizabeth Community FPD)",
-   "address": "202 W. Madison St., Elizabeth, IL 61028",
-   "gk": "ELIZABETH|61028",
-   "lat": 42.3178,
-   "lng": -90.2215,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
-     "seats": "26 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700570&session=134416",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=282",
-   "contact": "(815) 858-3612",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-210-tilton",
-   "cat": "officer",
-   "name": "Basic Company Officer",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Tilton (hosted by Tilton FD)",
-   "address": "115 W 5th, Tilton, IL 61833",
-   "gk": "TILTON|61833",
-   "lat": 40.0953,
-   "lng": -87.6475,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
-     "seats": "40 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700156&session=133792",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=210",
-   "contact": "(217) 477-0800",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-481-decatur",
-   "cat": "ff",
-   "name": "Basic Truck Company Operations",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Decatur (hosted by Harristown FPD)",
-   "address": "4417 W. Main St., Decatur, IL 62522",
-   "gk": "DECATUR|62522",
-   "lat": 39.8454,
-   "lng": -88.9524,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–4 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
-     "seats": "4 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700983&session=134964",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=481",
-   "contact": "(217) 423-2912",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-3-highland",
-   "cat": "officer",
-   "name": "Instructor I",
-   "cert": "Fire Service Instructor I",
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Highland (hosted by Highland FD)",
-   "address": "12990 Troxler Ave, Highland, IL 62249",
-   "gk": "HIGHLAND|62249",
-   "lat": 38.7396,
-   "lng": -89.6715,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-22",
-     "t": "Nov 14–22, 2026 (2 parts)",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
-     "seats": "14 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700178&session=133841",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
-   "contact": "(618) 654-3827",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-691-champaign",
-   "cat": "ff",
-   "name": "Light and Fight - On Campus",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "IFSI campus, Champaign",
-   "address": "11 Gerty Dr, Champaign, IL 61820",
-   "gk": "CHAMPAIGN|61820",
-   "lat": 40.1165,
-   "lng": -88.2431,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $325.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-14",
-     "e": "2026-11-14",
-     "t": "Nov 14, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
-     "seats": "1 seat left"
-    },
-    {
-     "s": "2027-03-13",
-     "e": "2027-03-13",
-     "t": "Mar 13, 2027, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700814&session=134735",
-     "seats": "50 seats left"
-    },
-    {
-     "s": "2027-03-27",
-     "e": "2027-03-27",
-     "t": "Mar 27, 2027, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700815&session=134736",
-     "seats": "60 seats left"
-    },
-    {
-     "s": "2027-05-08",
-     "e": "2027-05-08",
-     "t": "May 8, 2027, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700816&session=134737",
-     "seats": "60 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700073&session=132841",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=691",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-177-hillsboro",
-   "cat": "rescue",
-   "name": "Advanced Auto Extrication",
-   "cert": null,
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "Hillsboro (hosted by Hillsboro Vol. FD)",
-   "address": "101 S. Broad St., Hillsboro, IL 62049",
-   "gk": "HILLSBORO|62049",
-   "lat": 39.161,
-   "lng": -89.4934,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 6:30 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
-     "seats": "28 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700774&session=134681",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=177",
-   "contact": "(217) 532-2345",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1610-litchfield",
-   "cat": "app",
-   "name": "Fire Apparatus Engineer - NFPA 1010 Driver/Operator - Pumper",
-   "cert": "Fire Apparatus Engineer",
-   "aka": "IFSI engineer driver pump",
-   "provider": "IFSI",
-   "location": "Litchfield (hosted by Litchfield FD)",
-   "address": "201 E. Edwards, Litchfield, IL 62056",
-   "gk": "LITCHFIELD|62056",
-   "lat": 39.1769,
-   "lng": -89.6556,
-   "cost": 850,
-   "costNote": "Illinois rate. Out of state: $1,200.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-20",
-     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
-     "seats": "8 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700258&session=134092",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
-   "contact": "(217) 851-6073",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-560-mountcarro",
-   "cat": "ff",
-   "name": "Fire Behavior and Reading Smoke",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Mount Carroll (hosted by Mount Carroll FPD)",
-   "address": "318 S. Clay St., Mount Carroll, IL 61053",
-   "gk": "MOUNT CARROLL|61053",
-   "lat": 42.0949,
-   "lng": -89.9777,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 5:30 p.m.–9:30 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700710&session=134609",
-     "seats": "22 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700710&session=134609",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
-   "contact": "(815) 244-4502",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-561-eastalton",
-   "cat": "ff",
-   "name": "Fire Ground Ropes and Knots",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "East Alton (hosted by Rosewood Heights FPD)",
-   "address": "45 E. Airline Dr., East Alton, IL 62024",
-   "gk": "EAST ALTON|62024",
-   "lat": 38.8803,
-   "lng": -90.1112,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
-     "seats": "24 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700183&session=133847",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=561",
-   "contact": "(618) 259-3311",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-149-champaign",
-   "cat": "officer",
-   "name": "Fireground Command Officer School",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "IFSI campus, Champaign",
-   "address": "11 Gerty Dr, Champaign, IL 61820",
-   "gk": "CHAMPAIGN|61820",
-   "lat": 40.1165,
-   "lng": -88.2431,
-   "cost": 2075,
-   "costNote": "Illinois rate. Out of state: $2,275.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-20",
-     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786"
-    },
-    {
-     "s": "2027-05-10",
-     "e": "2027-05-14",
-     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762"
-    },
-    {
-     "s": "2027-11-15",
-     "e": "2027-11-19",
-     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800035&session=134766"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700057&session=132786",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-148-champaign",
-   "cat": "officer",
-   "name": "Fireground Company Officer School",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "IFSI campus, Champaign",
-   "address": "11 Gerty Dr, Champaign, IL 61820",
-   "gk": "CHAMPAIGN|61820",
-   "lat": 40.1165,
-   "lng": -88.2431,
-   "cost": 2475,
-   "costNote": "Illinois rate. Out of state: $2,675.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-20",
-     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
-     "seats": "3 seats left"
-    },
-    {
-     "s": "2027-05-10",
-     "e": "2027-05-14",
-     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700828&session=134761",
-     "seats": "36 seats left"
-    },
-    {
-     "s": "2027-11-15",
-     "e": "2027-11-19",
-     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800034&session=134765",
-     "seats": "36 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700058&session=132787",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-476-colchester",
-   "cat": "ff",
-   "name": "Forcible Entry",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Colchester (hosted by Colchester FPD)",
-   "address": "210 E Market St., Colchester, IL 62326",
-   "gk": "COLCHESTER|62326",
-   "lat": 40.4264,
-   "lng": -90.7926,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701055&session=135120",
-     "seats": "27 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701055&session=135120",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=476",
-   "contact": "(309) 776-3233",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-3-joliet",
-   "cat": "officer",
-   "name": "Instructor I",
-   "cert": "Fire Service Instructor I",
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Joliet (hosted by Joliet FD)",
-   "address": "101 E Clinton St., Joliet, IL 60432",
-   "gk": "JOLIET|60432",
-   "lat": 41.5264,
-   "lng": -88.084,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-20",
-     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
-     "seats": "Full"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700755&session=134659",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
-   "contact": "(815) 724-3500",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1393-smithton",
-   "cat": "ff",
-   "name": "Respectful Entry",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Smithton (hosted by Smithton Vol. F. Co. Inc.)",
-   "address": "711 N. Main St., Smithton, IL 62285",
-   "gk": "SMITHTON|62285",
-   "lat": 38.4087,
-   "lng": -89.9921,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
-     "seats": "23 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700773&session=134680",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
-   "contact": "(618) 234-7373",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1016-champaign",
-   "cat": "rescue",
-   "name": "Structural Collapse Rescue Awareness and Operations",
-   "cert": "Structural Collapse Operations",
-   "aka": "IFSI technical rescue",
-   "provider": "IFSI",
-   "location": "IFSI campus, Champaign",
-   "address": "11 Gerty Dr, Champaign, IL 61820",
-   "gk": "CHAMPAIGN|61820",
-   "lat": 40.1165,
-   "lng": -88.2431,
-   "cost": 2875,
-   "costNote": "Illinois rate. Out of state: $3,275.",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-16",
-     "e": "2026-11-20",
-     "t": "Nov 16–20, 2026, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
-     "seats": "19 seats left"
-    },
-    {
-     "s": "2027-03-15",
-     "e": "2027-03-19",
-     "t": "Mar 15–19, 2027, 8 a.m.–5 p.m. daily",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700823&session=134748",
-     "seats": "6 seats left"
-    }
-   ],
-   "note": "Online registration asks for your Fire Chief's PIN.",
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700064&session=132793",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
-   "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-566-stickney",
@@ -2246,122 +1510,18 @@ window.LADDER_DATA = {
    "length": null,
    "sessions": [
     {
-     "s": "2026-11-16",
-     "e": "2026-11-16",
-     "t": "Nov 16, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
-     "seats": "7 seats left"
-    },
-    {
-     "s": "2026-11-17",
-     "e": "2026-11-17",
-     "t": "Nov 17, 2026, 8 a.m.–5 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700901&session=134873",
-     "seats": "20 seats left"
-    },
-    {
      "s": "2026-11-18",
      "e": "2026-11-18",
      "t": "Nov 18, 2026, 8 a.m.–5 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700902&session=134874",
-     "seats": "22 seats left"
+     "seats": "10 seats left"
     }
    ],
    "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700900&session=134872",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700902&session=134874",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
    "contact": "(708) 795-6333",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-155-coffeen",
-   "cat": "officer",
-   "name": "Fireground Management for Small Career and Volunteer Departments",
-   "cert": null,
-   "aka": "IFSI officer leadership",
-   "provider": "IFSI",
-   "location": "Coffeen (hosted by Coffeen FPD)",
-   "address": "113 W. Main St., Coffeen, IL 62017",
-   "gk": "COFFEEN|62017",
-   "lat": 39.0892,
-   "lng": -89.3906,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-17",
-     "e": "2026-11-17",
-     "t": "Nov 17, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
-     "seats": "27 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700153&session=133767",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=155",
-   "contact": "(217) 534-2410",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-476-waynecity",
-   "cat": "ff",
-   "name": "Forcible Entry",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Wayne City (hosted by Wayne FPD #1)",
-   "address": "302 North Main Street, Wayne City, IL 62895",
-   "gk": "WAYNE CITY|62895",
-   "lat": 38.3453,
-   "lng": -88.5878,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-17",
-     "e": "2026-11-17",
-     "t": "Nov 17, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
-     "seats": "8 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700349&session=134195",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=476",
-   "contact": "(618) 895-2134",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-1541-pinckneyvi",
-   "cat": "app",
-   "name": "iPUMPS",
-   "cert": null,
-   "aka": "IFSI engineer driver pump",
-   "provider": "IFSI",
-   "location": "Pinckneyville (hosted by Pinckneyville FD)",
-   "address": "110 South Walnut Street, Pinckneyville, IL 62274",
-   "gk": "PINCKNEYVILLE|62274",
-   "lat": 38.0803,
-   "lng": -89.382,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-11-18",
-     "e": "2026-11-18",
-     "t": "Nov 18, 2026, 6 p.m.–10 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700805&session=134720",
-     "seats": "5 seats left"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700805&session=134720",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1541",
-   "contact": "(618) 357-2281",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-568-elmwood",
@@ -2390,7 +1550,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700286&session=134125",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
    "contact": "(309) 742-3811",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-235-chandlervi",
@@ -2420,7 +1580,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700706&session=134604",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=235",
    "contact": "(217) 491-6346",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-560-hebron",
@@ -2443,14 +1603,14 @@ window.LADDER_DATA = {
      "e": "2026-11-23",
      "t": "Nov 23, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
-     "seats": "23 seats left"
+     "seats": "20 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700575&session=134421",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(815) 648-2218",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-238-champaign",
@@ -2480,7 +1640,7 @@ window.LADDER_DATA = {
      "e": "2027-03-19",
      "t": "Mar 17–19, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700834&session=134772",
-     "seats": "27 seats left"
+     "seats": "20 seats left"
     },
     {
      "s": "2027-09-01",
@@ -2494,7 +1654,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700059&session=132788",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=238",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-571-staunton",
@@ -2517,14 +1677,14 @@ window.LADDER_DATA = {
      "e": "2026-11-23",
      "t": "Nov 23, 2026, 6:30 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
-     "seats": "30 seats left"
+     "seats": "14 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700190&session=133861",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=571",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-566-trenton",
@@ -2547,14 +1707,14 @@ window.LADDER_DATA = {
      "e": "2026-11-24",
      "t": "Nov 24, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700265&session=134103",
-     "seats": "29 seats left"
+     "seats": "21 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700265&session=134103",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=566",
    "contact": "(618) 224-9009",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1648-champaign-online",
@@ -2577,14 +1737,14 @@ window.LADDER_DATA = {
      "e": "2027-01-01",
      "t": "Nov 28, 2026–Jan 1, 2027",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
-     "seats": "73 seats left"
+     "seats": "69 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700140&session=133622",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1648",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-568-cortland",
@@ -2607,14 +1767,14 @@ window.LADDER_DATA = {
      "e": "2026-11-30",
      "t": "Nov 30, 2026, 6 p.m.–10 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
-     "seats": "37 seats left"
+     "seats": "24 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700889&session=134858",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=568",
    "contact": "(815) 756-2545",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1061-toluca",
@@ -2643,7 +1803,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700225&session=134037",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
    "contact": "(815) 452-2422",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-482-eastdubuqu",
@@ -2666,14 +1826,14 @@ window.LADDER_DATA = {
      "e": "2026-12-05",
      "t": "Dec 5, 2026, 8 a.m.–4 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
-     "seats": "32 seats left"
+     "seats": "26 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700890&session=134859",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=482",
    "contact": "(815) 747-6619",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1528-galesburg",
@@ -2696,42 +1856,42 @@ window.LADDER_DATA = {
      "e": "2026-12-07",
      "t": "Dec 7, 2026, 9 a.m.–1 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701014&session=135059",
-     "seats": "30 seats left"
+     "seats": "27 seats left"
     },
     {
      "s": "2026-12-08",
      "e": "2026-12-08",
      "t": "Dec 8, 2026, 9 a.m.–1 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701015&session=135060",
-     "seats": "30 seats left"
+     "seats": "24 seats left"
     },
     {
      "s": "2026-12-09",
      "e": "2026-12-09",
      "t": "Dec 9, 2026, 9 a.m.–1 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701016&session=135061",
-     "seats": "30 seats left"
+     "seats": "24 seats left"
     },
     {
      "s": "2026-12-10",
      "e": "2026-12-10",
      "t": "Dec 10, 2026, 9 a.m.–1 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701017&session=135062",
-     "seats": "30 seats left"
+     "seats": "22 seats left"
     },
     {
      "s": "2026-12-11",
      "e": "2026-12-11",
      "t": "Dec 11, 2026, 9 a.m.–1 p.m.",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701018&session=135063",
-     "seats": "30 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701014&session=135059",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1528",
    "contact": "(309) 345-3756",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1650-champaign",
@@ -2754,7 +1914,7 @@ window.LADDER_DATA = {
      "e": "2026-12-11",
      "t": "Dec 7–11, 2026, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
-     "seats": "14 seats left"
+     "seats": "15 seats left"
     },
     {
      "s": "2027-02-01",
@@ -2775,7 +1935,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700063&session=132792",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1520-belleville",
@@ -2805,7 +1965,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700724&session=134626",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
    "contact": "(618) 234-2236",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1225-staunton",
@@ -2835,36 +1995,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700191&session=133862",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1225",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-16"
-  },
-  {
-   "id": "ifsi-559-auburn",
-   "cat": "ff",
-   "name": "Building Construction",
-   "cert": null,
-   "aka": "IFSI firefighter",
-   "provider": "IFSI",
-   "location": "Auburn (hosted by Auburn FPD)",
-   "address": "117 W. Jackson, Auburn, IL 62615",
-   "gk": "AUBURN|62615",
-   "lat": 39.5917,
-   "lng": -89.7465,
-   "cost": 0,
-   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
-   "length": null,
-   "sessions": [
-    {
-     "s": "2026-12-09",
-     "e": "2026-12-09",
-     "t": "Dec 9, 2026, 6:30 p.m.–10:30 p.m.",
-     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124"
-    }
-   ],
-   "note": null,
-   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124",
-   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=559",
-   "contact": "(217) 438-3223",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-560-norriscity",
@@ -2887,14 +2018,14 @@ window.LADDER_DATA = {
      "e": "2026-12-12",
      "t": "Dec 12, 2026, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700287&session=134126",
-     "seats": "11 seats left"
+     "seats": "7 seats left"
     }
    ],
    "note": null,
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700287&session=134126",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(618) 378-3927",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1609-mountzion",
@@ -2924,7 +2055,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700754&session=134658",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1609",
    "contact": "(217) 864-2081",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-22-crevecoeur",
@@ -2953,7 +2084,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700972&session=134947",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=22",
    "contact": "(309) 694-2521",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1439-rockford",
@@ -2983,7 +2114,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700207&session=133890",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1439-bloomingto",
@@ -3013,7 +2144,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700208&session=133892",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(309) 434-2500",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1439-swansea",
@@ -3043,7 +2174,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700209&session=133894",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1439",
    "contact": "(618) 234-3291",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-3-eureka",
@@ -3073,7 +2204,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700880&session=134846",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 467-6181",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1061-westunion",
@@ -3103,7 +2234,36 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701024&session=135069",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1061",
    "contact": "(618) 279-3614",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-559-auburn",
+   "cat": "ff",
+   "name": "Building Construction",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Auburn (hosted by Auburn FPD)",
+   "address": "117 W. Jackson, Auburn, IL 62615",
+   "gk": "AUBURN|62615",
+   "lat": 39.5917,
+   "lng": -89.7465,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2026-12-14",
+     "e": "2026-12-14",
+     "t": "Dec 14, 2026, 6:30 p.m.–10:30 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700285&session=134124",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=559",
+   "contact": "(217) 438-3223",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1353-breese",
@@ -3133,7 +2293,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700732&session=134634",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1353",
    "contact": "(618) 526-4721",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-723-huntley",
@@ -3177,7 +2337,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700528&session=134374",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=723",
    "contact": "(847) 669-5066",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1348-golconda",
@@ -3207,7 +2367,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700969&session=134944",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1348",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-789-saintjacob",
@@ -3237,7 +2397,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700151&session=133765",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=789",
    "contact": "(618) 644-4636",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-560-greenville",
@@ -3267,7 +2427,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700904&session=134876",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
    "contact": "(618) 664-4265",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1604-rockford",
@@ -3290,14 +2450,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
-     "seats": "Full"
+     "seats": "1 seat left"
     }
    ],
-   "note": "Online registration asks for your Fire Chief's PIN. Full right now. Call to ask about a waitlist.",
+   "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700984&session=134966",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1604-sherman",
@@ -3320,14 +2480,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
-     "seats": "35 seats left"
+     "seats": "29 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700986&session=134988",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(319) 572-3289",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1604-swansea",
@@ -3350,14 +2510,14 @@ window.LADDER_DATA = {
      "e": "2027-05-16",
      "t": "Jan 9–May 16, 2027 (11 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
-     "seats": "16 seats left"
+     "seats": "15 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700988&session=135010",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1604",
    "contact": "(618) 234-3291",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1415-staunton",
@@ -3387,7 +2547,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701026&session=135071",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1415",
    "contact": "(618) 780-4491",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-3-westchicag",
@@ -3410,7 +2570,7 @@ window.LADDER_DATA = {
      "e": "2027-01-15",
      "t": "Jan 11–15, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
-     "seats": "24 seats left"
+     "seats": "23 seats left"
     },
     {
      "s": "2027-10-25",
@@ -3423,7 +2583,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700838&session=134781",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1045-golconda",
@@ -3453,7 +2613,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700922&session=134896",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1045",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-4-westchicag",
@@ -3476,7 +2636,7 @@ window.LADDER_DATA = {
      "e": "2027-01-22",
      "t": "Jan 18–22, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
-     "seats": "24 seats left"
+     "seats": "22 seats left"
     },
     {
      "s": "2027-11-01",
@@ -3489,7 +2649,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700839&session=134782",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-326-roodhouse",
@@ -3519,7 +2679,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701027&session=135072",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=326",
    "contact": "(217) 589-4141",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-3-gibsoncity",
@@ -3542,14 +2702,44 @@ window.LADDER_DATA = {
      "e": "2027-01-31",
      "t": "Jan 23–31, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
-     "seats": "24 seats left"
+     "seats": "22 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700759&session=134664",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(217) 784-5533",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-560-alhambra",
+   "cat": "ff",
+   "name": "Fire Behavior and Reading Smoke",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Alhambra (hosted by Alhambra Community FPD)",
+   "address": "Alhambra Fireman & Legion Park & Hall, Alhambra, IL 62001",
+   "gk": "ALHAMBRA|62001",
+   "lat": 38.8884,
+   "lng": -89.7315,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-01-25",
+     "e": "2027-01-25",
+     "t": "Jan 25, 2027, 6 p.m.–10 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701061&session=135139",
+     "seats": "28 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701061&session=135139",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=560",
+   "contact": "(618) 560-3553",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1436-chicagohei",
@@ -3593,7 +2783,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701007&session=135052",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
    "contact": "(309) 303-4579",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1650-marengo",
@@ -3623,7 +2813,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700717&session=134616",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
    "contact": "(815) 568-8912",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-5-westchicag",
@@ -3646,14 +2836,14 @@ window.LADDER_DATA = {
      "e": "2027-03-05",
      "t": "Feb 1–Mar 5, 2027 (3 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
-     "seats": "22 seats left"
+     "seats": "21 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700840&session=134783",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=5",
    "contact": "(630) 231-2123",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1171-crystallak",
@@ -3683,7 +2873,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700527&session=134373",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1171",
    "contact": "(815) 356-3643",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1090-addison",
@@ -3713,7 +2903,36 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700525&session=134371",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1090",
    "contact": "(630) 628-3100",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-1393-staunton",
+   "cat": "ff",
+   "name": "Respectful Entry",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Staunton (hosted by Staunton FPD)",
+   "address": "215 S. Wood St., Staunton, IL 62088",
+   "gk": "STAUNTON|62088",
+   "lat": 39.0122,
+   "lng": -89.7885,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-08",
+     "e": "2027-02-08",
+     "t": "Feb 8, 2027, 6:30 p.m.–10 p.m.",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN. Register by phone with the host department.",
+   "register": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1393",
+   "contact": "(618) 780-4491",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1702-champaign",
@@ -3736,7 +2955,7 @@ window.LADDER_DATA = {
      "e": "2027-02-11",
      "t": "Feb 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701035&session=135097",
-     "seats": "14 seats left"
+     "seats": "13 seats left"
     },
     {
      "s": "2027-05-03",
@@ -3750,14 +2969,14 @@ window.LADDER_DATA = {
      "e": "2027-05-20",
      "t": "May 17–20, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701037&session=135099",
-     "seats": "11 seats left"
+     "seats": "9 seats left"
     },
     {
      "s": "2027-11-08",
      "e": "2027-11-11",
      "t": "Nov 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800069&session=135101",
-     "seats": "12 seats left"
+     "seats": "11 seats left"
     },
     {
      "s": "2027-11-29",
@@ -3778,7 +2997,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701035&session=135097",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1702",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1701-champaign",
@@ -3801,49 +3020,79 @@ window.LADDER_DATA = {
      "e": "2027-02-11",
      "t": "Feb 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701032&session=135091",
-     "seats": "18 seats left"
+     "seats": "8 seats left"
     },
     {
      "s": "2027-05-03",
      "e": "2027-05-06",
      "t": "May 3–6, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701033&session=135092",
-     "seats": "1 seat left"
+     "seats": "Full"
     },
     {
      "s": "2027-05-17",
      "e": "2027-05-20",
      "t": "May 17–20, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701034&session=135093",
-     "seats": "31 seats left"
+     "seats": "22 seats left"
     },
     {
      "s": "2027-11-08",
      "e": "2027-11-11",
      "t": "Nov 8–11, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800066&session=135095",
-     "seats": "20 seats left"
+     "seats": "13 seats left"
     },
     {
      "s": "2027-11-29",
      "e": "2027-12-02",
      "t": "Nov 29–Dec 2, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800065&session=135094",
-     "seats": "4 seats left"
+     "seats": "2 seats left"
     },
     {
      "s": "2027-12-13",
      "e": "2027-12-16",
      "t": "Dec 13–16, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800067&session=135096",
-     "seats": "40 seats left"
+     "seats": "37 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701032&session=135091",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1701",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-1603-champaign",
+   "cat": "ff",
+   "name": "Firefighter I / NFPA 1010 - Academy",
+   "cert": "Basic Operations Firefighter",
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 8500,
+   "costNote": null,
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-15",
+     "e": "2027-04-09",
+     "t": "Feb 15–Apr 9, 2027",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700742&session=134645",
+     "seats": "33 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700742&session=134645",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1603",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1438-champaign",
@@ -3873,7 +3122,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700845&session=134796",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-917-mountcarme",
@@ -3896,14 +3145,44 @@ window.LADDER_DATA = {
      "e": "2027-03-07",
      "t": "Feb 19–Mar 7, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
-     "seats": "15 seats left"
+     "seats": "14 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700762&session=134668",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=917",
    "contact": "(618) 262-4311",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-538-bethany",
+   "cat": "other",
+   "name": "ICS 300 - Intermediate ICS (O0465)",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Bethany (hosted by Bethany FPD)",
+   "address": "Bethany FPD, Bethany, IL 61914",
+   "gk": "BETHANY|61914",
+   "lat": 39.6456,
+   "lng": -88.7381,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $750.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-19",
+     "e": "2027-02-21",
+     "t": "Feb 19–21, 2027, 6 p.m.–7 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701042&session=135107",
+     "seats": "1 seat left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701042&session=135107",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=538",
+   "contact": "(217) 665-3726",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-4-oregon",
@@ -3926,14 +3205,44 @@ window.LADDER_DATA = {
      "e": "2027-02-28",
      "t": "Feb 20–28, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
-     "seats": "6 seats left"
+     "seats": "1 seat left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700702&session=134597",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
    "contact": "(815) 732-7214",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-1650-maywood",
+   "cat": "officer",
+   "name": "Fire Department Incident Safety Officer / NFPA 1550",
+   "cert": "Fire Department Incident Safety Officer",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Maywood (hosted by Maywood FD)",
+   "address": "Economic Empowerment Center, Maywood, IL 60153",
+   "gk": "MAYWOOD|60153",
+   "lat": 41.879,
+   "lng": -87.8436,
+   "cost": 650,
+   "costNote": "Illinois rate. Out of state: $850.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-22",
+     "e": "2027-02-26",
+     "t": "Feb 22–26, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701048&session=135113",
+     "seats": "19 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701048&session=135113",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1650",
+   "contact": "(708) 681-8860",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1015-orlandpark",
@@ -3963,7 +3272,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700806&session=134721",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1436-cicero",
@@ -3993,7 +3302,7 @@ window.LADDER_DATA = {
      "e": "2027-02-24",
      "t": "Feb 24, 2027, 8 a.m.–noon",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700873&session=134837",
-     "seats": "24 seats left"
+     "seats": "23 seats left"
     },
     {
      "s": "2027-02-25",
@@ -4007,7 +3316,37 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700872&session=134836",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1436",
    "contact": "(708) 268-0616",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-482-decatur",
+   "cat": "ff",
+   "name": "Basic Engine Company Operations",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "Decatur (hosted by Harristown FPD)",
+   "address": "4417 W. Main St., Decatur, IL 62522",
+   "gk": "DECATUR|62522",
+   "lat": 39.8454,
+   "lng": -88.9524,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-02-27",
+     "e": "2027-02-27",
+     "t": "Feb 27, 2027, 8 a.m.–4 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701069&session=135149",
+     "seats": "35 seats left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701069&session=135149",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=482",
+   "contact": "(217) 423-2912",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1607-champaign",
@@ -4030,14 +3369,14 @@ window.LADDER_DATA = {
      "e": "2027-03-07",
      "t": "Feb 27–Mar 7, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
-     "seats": "27 seats left"
+     "seats": "24 seats left"
     },
     {
      "s": "2027-04-19",
      "e": "2027-04-23",
      "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700837&session=134779",
-     "seats": "32 seats left"
+     "seats": "31 seats left"
     },
     {
      "s": "2027-10-11",
@@ -4051,7 +3390,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700836&session=134777",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1607",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1507-champaign",
@@ -4074,14 +3413,14 @@ window.LADDER_DATA = {
      "e": "2027-03-05",
      "t": "Mar 1–5, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
-     "seats": "27 seats left"
+     "seats": "26 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700844&session=134795",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-149-plainfield",
@@ -4116,7 +3455,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700827&session=134760",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
    "contact": "(815) 436-5335",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-148-plainfield",
@@ -4153,7 +3492,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700826&session=134759",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
    "contact": "(815) 436-5335",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-538-freeport",
@@ -4183,7 +3522,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701044&session=135109",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=538",
    "contact": "(815) 235-8217",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1100-champaign",
@@ -4227,7 +3566,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700860&session=134820",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1100",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1003-orlandpark",
@@ -4250,14 +3589,14 @@ window.LADDER_DATA = {
      "e": "2027-03-12",
      "t": "Mar 8–12, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
-     "seats": "18 seats left"
+     "seats": "14 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700808&session=134724",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-570-golconda",
@@ -4287,7 +3626,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700923&session=134897",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=570",
    "contact": "(618) 949-3789",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-539-freeport",
@@ -4317,7 +3656,81 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701045&session=135110",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=539",
    "contact": "(815) 235-8217",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-3-flossmoor",
+   "cat": "officer",
+   "name": "Instructor I",
+   "cert": "Fire Service Instructor I",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Flossmoor (hosted by Flossmoor FD)",
+   "address": "2828 Flossmoor Rd, Flossmoor, IL 60422",
+   "gk": "FLOSSMOOR|60422",
+   "lat": 41.5428,
+   "lng": -87.6848,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-13",
+     "e": "2027-03-21",
+     "t": "Mar 13–21, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700877&session=134841",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700877&session=134841",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
+   "contact": "(708) 798-3885",
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-691-champaign",
+   "cat": "ff",
+   "name": "Light and Fight - On Campus",
+   "cert": null,
+   "aka": "IFSI firefighter",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $325.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-13",
+     "e": "2027-03-13",
+     "t": "Mar 13, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700814&session=134735",
+     "seats": "50 seats left"
+    },
+    {
+     "s": "2027-03-27",
+     "e": "2027-03-27",
+     "t": "Mar 27, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700815&session=134736",
+     "seats": "60 seats left"
+    },
+    {
+     "s": "2027-05-08",
+     "e": "2027-05-08",
+     "t": "May 8, 2027, 8 a.m.–5 p.m.",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700816&session=134737",
+     "seats": "60 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700814&session=134735",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=691",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-41-champaign",
@@ -4340,7 +3753,7 @@ window.LADDER_DATA = {
      "e": "2027-03-17",
      "t": "Mar 15–17, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
-     "seats": "29 seats left"
+     "seats": "28 seats left"
     },
     {
      "s": "2027-08-30",
@@ -4354,7 +3767,67 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700832&session=134770",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=41",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-1016-champaign",
+   "cat": "rescue",
+   "name": "Structural Collapse Rescue Awareness and Operations",
+   "cert": "Structural Collapse Operations",
+   "aka": "IFSI technical rescue",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr., Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $3,275.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-15",
+     "e": "2027-03-19",
+     "t": "Mar 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700823&session=134748",
+     "seats": "3 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700823&session=134748",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-539-bethany",
+   "cat": "other",
+   "name": "ICS 400 - Advanced ICS for Complex Incidents (O0467)",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Bethany (hosted by Bethany FPD)",
+   "address": "Bethany FPD, Bethany, IL 61914",
+   "gk": "BETHANY|61914",
+   "lat": 39.6456,
+   "lng": -88.7381,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $650.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-03-20",
+     "e": "2027-03-21",
+     "t": "Mar 20–21, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701043&session=135108",
+     "seats": "1 seat left"
+    }
+   ],
+   "note": null,
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202701043&session=135108",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=539",
+   "contact": "(217) 665-3726",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-869-glenview",
@@ -4377,14 +3850,14 @@ window.LADDER_DATA = {
      "e": "2027-03-26",
      "t": "Mar 22–26, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
-     "seats": "6 seats left"
+     "seats": "4 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700795&session=134706",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-871-glenview",
@@ -4414,7 +3887,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700794&session=134705",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-870-glenview",
@@ -4444,7 +3917,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700793&session=134704",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1015-champaign",
@@ -4474,7 +3947,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700819&session=134740",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1015",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1520-champaign",
@@ -4504,7 +3977,37 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700846&session=134797",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-4-flossmoor",
+   "cat": "officer",
+   "name": "Instructor II",
+   "cert": "Fire Service Instructor II",
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "Flossmoor (hosted by Flossmoor FD)",
+   "address": "2828 Flossmoor Rd, Flossmoor, IL 60422",
+   "gk": "FLOSSMOOR|60422",
+   "lat": 41.5428,
+   "lng": -87.6848,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD). Out of state: $800.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-03",
+     "e": "2027-04-11",
+     "t": "Apr 3–11, 2027 (2 parts)",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700878&session=134843",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700878&session=134843",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=4",
+   "contact": "(708) 798-3885",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1610-champaign",
@@ -4527,7 +4030,7 @@ window.LADDER_DATA = {
      "e": "2027-04-16",
      "t": "Apr 12–16, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
-     "seats": "8 seats left"
+     "seats": "4 seats left"
     },
     {
      "s": "2027-11-08",
@@ -4541,7 +4044,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700811&session=134727",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1317-elkgrovevi",
@@ -4571,7 +4074,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700718&session=134617",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1317",
    "contact": "(847) 734-8000",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1533-champaign",
@@ -4608,7 +4111,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700825&session=134756",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1533",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1016-frankfort",
@@ -4631,14 +4134,14 @@ window.LADDER_DATA = {
      "e": "2027-04-23",
      "t": "Apr 19–23, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
-     "seats": "11 seats left"
+     "seats": "5 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700810&session=134726",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1016",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-692-rockford",
@@ -4668,7 +4171,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700908&session=134882",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=692",
    "contact": "(815) 332-5382",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1003-champaign",
@@ -4691,14 +4194,14 @@ window.LADDER_DATA = {
      "e": "2027-04-30",
      "t": "Apr 26–30, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
-     "seats": "13 seats left"
+     "seats": "6 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700820&session=134743",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1003",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-133-champaign",
@@ -4728,14 +4231,43 @@ window.LADDER_DATA = {
      "e": "2027-09-10",
      "t": "Sep 8–10, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800036&session=134768",
-     "seats": "26 seats left"
+     "seats": "25 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700830&session=134767",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=133",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-1007-roxana",
+   "cat": "other",
+   "name": "State of Illinois Traffic Incident Management",
+   "cert": null,
+   "aka": "IFSI ",
+   "provider": "IFSI",
+   "location": "Roxana (hosted by Roxana FD)",
+   "address": "310 N. Central Ave., Roxana, IL 62084",
+   "gk": "ROXANA|62084",
+   "lat": 38.8483,
+   "lng": -90.0769,
+   "cost": 0,
+   "costNote": "Tuition-free for members of Illinois fire departments (except Chicago FD).",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-04-27",
+     "e": "2027-04-27",
+     "t": "Apr 27, 2027, 6 p.m.–10 p.m.",
+     "seats": "30 seats left"
+    }
+   ],
+   "note": "Register by phone with the host department.",
+   "register": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1007",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1007",
+   "contact": "(618) 254-8293",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-869-urbana",
@@ -4772,7 +4304,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700798&session=134709",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=869",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-871-urbana",
@@ -4809,7 +4341,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700797&session=134708",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=871",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-870-urbana",
@@ -4839,14 +4371,14 @@ window.LADDER_DATA = {
      "e": "2027-10-29",
      "t": "Oct 25–29, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800013&session=134710",
-     "seats": "20 seats left"
+     "seats": "19 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700796&session=134707",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=870",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1673-elkgrovevi",
@@ -4876,7 +4408,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700719&session=134618",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1673",
    "contact": "(847) 734-8000",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1660-elgin",
@@ -4906,7 +4438,79 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700526&session=134372",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1660",
    "contact": "(847) 741-3151",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-149-champaign",
+   "cat": "officer",
+   "name": "Fireground Command Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1975,
+   "costNote": "Illinois rate. Out of state: $2,175.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-10",
+     "e": "2027-05-14",
+     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762"
+    },
+    {
+     "s": "2027-11-15",
+     "e": "2027-11-19",
+     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800035&session=134766"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700829&session=134762",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=149",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-24"
+  },
+  {
+   "id": "ifsi-148-champaign",
+   "cat": "officer",
+   "name": "Fireground Company Officer School",
+   "cert": null,
+   "aka": "IFSI officer leadership",
+   "provider": "IFSI",
+   "location": "IFSI campus, Champaign",
+   "address": "11 Gerty Dr, Champaign, IL 61820",
+   "gk": "CHAMPAIGN|61820",
+   "lat": 40.1165,
+   "lng": -88.2431,
+   "cost": 1975,
+   "costNote": "Illinois rate. Out of state: $2,175.",
+   "length": null,
+   "sessions": [
+    {
+     "s": "2027-05-10",
+     "e": "2027-05-14",
+     "t": "May 10–14, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700828&session=134761",
+     "seats": "36 seats left"
+    },
+    {
+     "s": "2027-11-15",
+     "e": "2027-11-19",
+     "t": "Nov 15–19, 2027, 8 a.m.–5 p.m. daily",
+     "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800034&session=134765",
+     "seats": "36 seats left"
+    }
+   ],
+   "note": "Online registration asks for your Fire Chief's PIN.",
+   "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700828&session=134761",
+   "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=148",
+   "contact": "(217) 333-3800",
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1518-orlandpark",
@@ -4929,14 +4533,14 @@ window.LADDER_DATA = {
      "e": "2027-05-21",
      "t": "May 10–21, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
-     "seats": "31 seats left"
+     "seats": "27 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700807&session=134722",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1017-wilmington",
@@ -4959,21 +4563,21 @@ window.LADDER_DATA = {
      "e": "2027-05-14",
      "t": "May 11–14, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
-     "seats": "16 seats left"
+     "seats": "12 seats left"
     },
     {
      "s": "2027-05-24",
      "e": "2027-05-27",
      "t": "May 24–27, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700822&session=134747",
-     "seats": "29 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700821&session=134746",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1017",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-3-canton",
@@ -4996,14 +4600,14 @@ window.LADDER_DATA = {
      "e": "2027-05-23",
      "t": "May 15–23, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
-     "seats": "26 seats left"
+     "seats": "25 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700881&session=134848",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=3",
    "contact": "(309) 647-0040",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1515-wilmington",
@@ -5026,14 +4630,14 @@ window.LADDER_DATA = {
      "e": "2027-06-25",
      "t": "Jun 21–25, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
-     "seats": "15 seats left"
+     "seats": "7 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202700809&session=134725",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1029-champaign",
@@ -5063,7 +4667,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800044&session=134798",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1324-orlandpark",
@@ -5093,7 +4697,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800029&session=134755",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1324",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1610-orlandpark",
@@ -5123,7 +4727,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800031&session=134758",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1610",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-420-champaign",
@@ -5146,21 +4750,21 @@ window.LADDER_DATA = {
      "e": "2027-09-03",
      "t": "Aug 30–Sep 3, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
-     "seats": "18 seats left"
+     "seats": "12 seats left"
     },
     {
      "s": "2027-10-11",
      "e": "2027-10-15",
      "t": "Oct 11–15, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800024&session=134745",
-     "seats": "34 seats left"
+     "seats": "32 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800023&session=134744",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=420",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1518-utica",
@@ -5183,14 +4787,14 @@ window.LADDER_DATA = {
      "e": "2027-09-24",
      "t": "Sep 13–24, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
-     "seats": "9 seats left"
+     "seats": "4 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800022&session=134741",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1518",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1029-frankfort",
@@ -5220,7 +4824,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800052&session=134823",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1029",
    "contact": "(815) 469-1700",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1509-champaign",
@@ -5243,14 +4847,14 @@ window.LADDER_DATA = {
      "e": "2027-10-01",
      "t": "Sep 20–Oct 1, 2027 (2 parts)",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
-     "seats": "32 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800028&session=134753",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1509",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1441-champaign",
@@ -5273,21 +4877,21 @@ window.LADDER_DATA = {
      "e": "2027-10-01",
      "t": "Sep 27–Oct 1, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
-     "seats": "23 seats left"
+     "seats": "17 seats left"
     },
     {
      "s": "2027-10-18",
      "e": "2027-10-22",
      "t": "Oct 18–22, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800026&session=134750",
-     "seats": "25 seats left"
+     "seats": "23 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800025&session=134749",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1441",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1515-marion",
@@ -5317,7 +4921,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800039&session=134776",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1515",
    "contact": "(618) 997-5730",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1520-orlandpark",
@@ -5347,7 +4951,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800045&session=134801",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1520",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-951-champaign",
@@ -5377,7 +4981,7 @@ window.LADDER_DATA = {
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800043&session=134788",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=951",
    "contact": "(217) 333-3800",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1438-orlandpark",
@@ -5400,14 +5004,14 @@ window.LADDER_DATA = {
      "e": "2027-11-09",
      "t": "Nov 8–9, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800046&session=134802",
-     "seats": "30 seats left"
+     "seats": "29 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800046&session=134802",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1438",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   },
   {
    "id": "ifsi-1507-orlandpark",
@@ -5430,14 +5034,14 @@ window.LADDER_DATA = {
      "e": "2027-12-03",
      "t": "Nov 29–Dec 3, 2027, 8 a.m.–5 p.m. daily",
      "u": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800047&session=134803",
-     "seats": "29 seats left"
+     "seats": "28 seats left"
     }
    ],
    "note": "Online registration asks for your Fire Chief's PIN.",
    "register": "https://www.fsi.illinois.edu/content/courses/register/step1.cfm?activity=202800047&session=134803",
    "page": "https://www.fsi.illinois.edu/content/courses/programs/description.cfm?course_id=1507",
    "contact": "(708) 349-0074",
-   "checked": "2026-11-16"
+   "checked": "2026-11-24"
   }
  ],
  "categories": {
@@ -5491,15 +5095,15 @@ window.LADDER_DATA = {
         ladder:"The Illinois ladder climb is offered on site on testing days for $10.",
         schedule:"Book a test date through National Testing Network. You need a free account to see dates and register.",
         sessions:[], register:"https://candidates.nationaltestingnetwork.com/#/cpat-info", url:"http://cpat.mabas24.org/",
-        contact:"info@mabas24cpat.org · 708-607-2728", checked:"2026-11-17" },
+        contact:"info@mabas24cpat.org · 708-607-2728", checked:"2026-11-24" },
       { id:"cpat-naperville", name:"Naperville Fire Department CPAT", provider:"Naperville Fire Department", city:"Naperville",
         address:"1200 W. Ogden Ave., Naperville, IL 60563", lat:41.7816, lng:-88.1725,
-        cost:160, costNote:"The fee covers the orientation, up to two practice tests and the final test. A one-time challenge (test only) costs the same. Non-refundable.",
+        cost:165, costNote:"The registration calendar lists $165 for a full session (orientation, up to two practice tests and the final test) or a one-time challenge. Non-refundable. The city's CPAT page still says $160.",
         ladder:"The state ladder climb is included in the fee.",
-        schedule:"Full session: orientation Dec. 4, 2026, practices Jan. 2 and Jan. 15, 2027, final test Jan. 30, 2027. One-time challenges are offered on each of those dates and on Nov. 14, 2026.",
-        sessions:[{d:"2026-12-04",t:"Orientation and one-time challenge"},{d:"2027-01-02",t:"Practice 1 and one-time challenge"},{d:"2027-01-15",t:"Practice 2 and one-time challenge"},{d:"2027-01-30",t:"Final test and one-time challenge"}],
+        schedule:"Full session: orientation Dec. 4, 2026, practices Jan. 2 and Jan. 15, 2027, final test Jan. 30, 2027. One-time challenges are offered on each of those dates and on Dec. 16, 2026.",
+        sessions:[{"d":"2026-12-04","t":"Orientation and one-time challenge"},{"d":"2026-12-16","t":"One-time challenge"},{"d":"2027-01-02","t":"Practice 1 and one-time challenge"},{"d":"2027-01-15","t":"Practice 2 and one-time challenge"},{"d":"2027-01-30","t":"Final test and one-time challenge"}],
         register:"https://www.trumba.com/calendars/fire-department-cpat", url:"https://www.naperville.il.us/cpat",
-        contact:"cpat@naperville.il.us", checked:"2026-11-17" },
+        contact:"cpat@naperville.il.us", checked:"2026-11-24" },
       { id:"cpat-nipsta", name:"NIPSTA CPAT", provider:"Northeastern Illinois Public Safety Training Academy", city:"Glenview",
         address:"2300 Patriot Blvd., Glenview, IL 60026", lat:42.0969, lng:-87.8257,
         cost:170, costNote:"$170 per candidate plus a 2.5% transaction fee, non-refundable.",
@@ -5507,29 +5111,29 @@ window.LADDER_DATA = {
         schedule:"One test date a month. Both orientations fall within the eight weeks before your test, and practice runs are about 30 days before it.",
         sessions:[{d:"2026-12-05",t:"Test date"},{d:"2027-01-09",t:"Test date"},{d:"2027-02-06",t:"Test date"},{d:"2027-03-06",t:"Test date"},{d:"2027-04-03",t:"Test date"},{d:"2027-05-01",t:"Test date"},{d:"2027-06-05",t:"Test date"},{d:"2027-07-10",t:"Test date"},{d:"2027-08-07",t:"Test date"},{d:"2027-09-11",t:"Test date"},{d:"2027-10-02",t:"Test date"},{d:"2027-11-06",t:"Test date"},{d:"2027-12-04",t:"Test date"}],
         register:"https://secure.rec1.com/IL/nipsta-il/catalog", url:"https://www.nipsta.org/240/CPAT-Schedule",
-        contact:"CanTest@nipsta.org · 847-998-8090", checked:"2026-11-17" },
+        contact:"CanTest@nipsta.org · 847-998-8090", checked:"2026-11-24" },
       { id:"cpat-huntley", name:"Huntley Fire Protection District CPAT", provider:"Huntley Fire Protection District", city:"Huntley",
         address:"Station 1, 11118 Main St., Huntley, IL 60142", lat:42.1684, lng:-88.4179,
         cost:150, costNote:"$150 by check or $155 by credit card. No cash. Payment is due at the first practice and is non-refundable.",
         ladder:"The ladder climb is offered with the test.",
         schedule:"Tests are on the Wednesday and Saturday of the first full week and the third week of each month. Practices are the two Wednesdays before your test, starting at 5 p.m. at Station 1.",
         sessions:[], register:"https://www.signupgenius.com/go/10C0544AAAC2AAAF5C34-59669015-cpat", url:"https://www.huntleyfpd.org/cpat-testing",
-        contact:"See the Huntley FPD CPAT page.", checked:"2026-11-17" },
+        contact:"See the Huntley FPD CPAT page.", checked:"2026-11-24" },
       { id:"cpat-cifca", name:"Central Illinois Fire Chiefs CPAT", provider:"Central Illinois Fire Chiefs Association", city:"Decatur",
         address:"2121 S. Imboden Ct., Decatur, IL 62521", lat:39.8175, lng:-88.9666,
         cost:165, costNote:"$35 registration paid online, plus $130 due at check-in. The CPAT card is valid for two years from its issue date, though hiring departments may set their own rules.",
         ladder:"The required Illinois ladder climb is included.",
         schedule:"Two options: an open test challenge (one official attempt, 8 a.m. start, no practice), or a full session with orientation, station practice and up to three official attempts. Session 1 of 2027 starts with orientation Jan. 5 or Jan. 19, with attempts Feb. 2, Feb. 16 and Mar. 2. Session 2 starts with orientation Mar. 16 or Mar. 30.",
-        sessions:[{d:"2026-11-17",t:"Open test challenge"},{d:"2026-12-01",t:"Open test challenge"},{d:"2026-12-15",t:"Open test challenge"},{d:"2027-01-05",t:"Session 1 orientation"},{d:"2027-01-12",t:"Open test challenge"},{d:"2027-01-19",t:"Session 1 orientation"},{d:"2027-01-26",t:"Open test challenge"},{d:"2027-02-02",t:"Session 1 test attempt"},{d:"2027-02-09",t:"Open test challenge"},{d:"2027-02-16",t:"Session 1 test attempt"},{d:"2027-02-23",t:"Open test challenge"},{d:"2027-03-02",t:"Session 1 test attempt"},{d:"2027-03-09",t:"Open test challenge"},{d:"2027-03-16",t:"Session 2 orientation"},{d:"2027-03-23",t:"Open test challenge"},{d:"2027-03-30",t:"Session 2 orientation"},{d:"2027-04-06",t:"Open test challenge"},{d:"2027-04-13",t:"Session 2 test attempt"},{d:"2027-04-27",t:"Session 2 test attempt"},{d:"2027-05-11",t:"Session 2 test attempt"}],
+        sessions:[{"d":"2026-12-01","t":"Open test challenge"},{"d":"2026-12-15","t":"Open test challenge"},{"d":"2027-01-05","t":"Session 1 orientation"},{"d":"2027-01-12","t":"Open test challenge"},{"d":"2027-01-19","t":"Session 1 orientation"},{"d":"2027-01-26","t":"Open test challenge"},{"d":"2027-02-02","t":"Session 1 test attempt"},{"d":"2027-02-09","t":"Open test challenge"},{"d":"2027-02-16","t":"Session 1 test attempt"},{"d":"2027-02-23","t":"Open test challenge"},{"d":"2027-03-02","t":"Session 1 test attempt"},{"d":"2027-03-09","t":"Open test challenge"},{"d":"2027-03-16","t":"Session 2 orientation"},{"d":"2027-03-23","t":"Open test challenge"},{"d":"2027-03-30","t":"Session 2 orientation"},{"d":"2027-04-06","t":"Open test challenge"},{"d":"2027-04-13","t":"Session 2 test attempt"},{"d":"2027-04-20","t":"Open test challenge"},{"d":"2027-04-27","t":"Session 2 test attempt"},{"d":"2027-05-04","t":"Open test challenge"},{"d":"2027-05-11","t":"Session 2 test attempt"},{"d":"2027-05-18","t":"Open test challenge"}],
         register:"https://cpat.centralillinoisfirechiefs.com/", url:"https://cpat.centralillinoisfirechiefs.com/candidate-guide",
-        contact:"IllinoisCPAT@gmail.com", checked:"2026-11-17" },
+        contact:"IllinoisCPAT@gmail.com", checked:"2026-11-24" },
       { id:"cpat-maac", name:"MAAC Foundation CPAT", provider:"MAAC Foundation First Responder Training Campus", city:"Valparaiso, Ind.", outOfState:true,
         address:"4203 Montdale Park Dr., Valparaiso, IN 46383", lat:41.4451, lng:-87.0111,
         cost:null, costNote:"The price is shown when you book through National Testing Network.",
         ladder:"An optional 24-foot ladder climb is offered separately. Check that your Illinois department accepts it.",
         schedule:"Test days start with a 9 a.m. orientation, followed by practices and tests at 9:45, 10:30 and 11:15 a.m. Book through National Testing Network and choose the MAAC location to see open dates.",
         sessions:[], register:"https://candidates.nationaltestingnetwork.com/#/cpat-info", url:"https://maacfoundation.org/cpat/",
-        contact:"Mike Wirtes, CPAT manager · 219-508-7579", checked:"2026-11-17" }
+        contact:"Mike Wirtes, CPAT manager · 219-508-7579", checked:"2026-11-24" }
     ]
   },
 
