@@ -4,8 +4,8 @@
    status: testing status found on a check, [status, note, hiring/testing URL, last round's deadline (optional)].
    Departments with no entry had no open posting on the job boards listed in boardsNote when last checked. */
 window.LADDER_AREA = {
-  checked: "2026-11-17",
-  boardsNote: "No open posting found on Public Safety Testing, National Testing Network, The Blue Line or the Illinois Fire Chiefs job board (checked Nov 17, 2026). Some departments only post on their own website.",
+  checked: "2026-11-24",
+  boardsNote: "No open posting found on Public Safety Testing, National Testing Network, The Blue Line or the Illinois Fire Chiefs job board (checked Nov 24, 2026). Some departments only post on their own website.",
   county: {"lockport":"Will","homer":"Will","newlenox":"Will","frankfort":"Will","mokena":"Will","manhattan":"Will","plainfield":"Will","bolingbrook":"Will","romeoville":"Will","lemont":"Cook","eastjoliet":"Will","joliet":"Will","orland":"Cook","tinley":"Cook","palosheights":"Cook","northpalos":"Cook","manteno":"Kankakee","troy":"Will","channahon":"Will","crete":"Will","monee":"Will","wilmington":"Will"},
   status: {
     "a-hoffman-estates":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 15, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3471"],
@@ -14,14 +14,15 @@ window.LADDER_AREA = {
     "a-itasca":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 7, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3197"],
     "a-elburn-countryside-fpd":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 21, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/394"],
     "a-calumet-city":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 30, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2148"],
-    "a-greater-round-lake-fpd":["open","Firefighter testing through National Testing Network. Applications close Nov 20, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3514"],
+    "a-greater-round-lake-fpd":["closed","The last Firefighter testing round closed Nov 20, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3514","2026-11-20"],
     "a-bensenville":["open","Full-time Firefighter/Paramedic testing through National Testing Network until Nov 30, 2026. Also hiring part-time.","https://candidates.nationaltestingnetwork.com/#/jobs/2754"],
     "a-marengo":["open","Full-time Firefighter/Paramedic testing through National Testing Network. Applications close Dec 15, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2676"],
-    "a-schiller-park":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Nov 20, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2964"],
+    "a-schiller-park":["closed","The last Firefighter/Paramedic round closed Nov 20, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2964","2026-11-20"],
     "a-franklin-park":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 18, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/2355"],
+    "a-carpentersville":["open","Firefighter/Paramedic testing through National Testing Network. Applications close Dec 18, 2026.","https://candidates.nationaltestingnetwork.com/#/jobs/3007"],
     "a-arlington-heights":["closed","The last Firefighter testing round closed Nov 12, 2026.","https://www.publicsafetytesting.com/career-path/positions/firefighter","2026-11-12"],
     "a-sauk-village":["open","Firefighter/EMT or Firefighter/Paramedic applications are due Dec 4, 2026.","https://www.theblueline.com/findAJob/view/40109"],
-    "a-lansing":["open","Firefighter/Paramedic applications are due Nov 18, 2026, through COPS and FIRE Testing.","https://www.theblueline.com/findAJob/view/40081"],
+    "a-lansing":["closed","The last Firefighter/Paramedic round closed Nov 18, 2026.","https://www.theblueline.com/findAJob/view/40081","2026-11-18"],
     "a-braidwood":["closed","The last Firefighter/EMT or Paramedic round closed Nov 16, 2026. Still takes part-time applications.","https://braidwoodfire.org/employment/","2026-11-16"],
     "a-hanover-park":["rolling","Ongoing full-time Firefighter/Paramedic and part-time Firefighter/EMT testing through National Testing Network.","https://candidates.nationaltestingnetwork.com/#/jobs/1894"],
     "a-river-forest":["rolling","Ongoing Firefighter/Paramedic eligibility testing through National Testing Network. The posting lists an immediate opening.","https://candidates.nationaltestingnetwork.com/#/jobs/1458"],
@@ -35,7 +36,6 @@ window.LADDER_AREA = {
     "a-brookfield":["rolling","Ongoing Firefighter/Paramedic testing through Public Safety Testing. The test is free for paramedics.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
     "a-morton-grove":["rolling","Ongoing entry-level Firefighter/Paramedic testing through Public Safety Testing.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
     "a-northbrook":["rolling","Ongoing Firefighter/Paramedic testing through Public Safety Testing.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
-    "a-oak-park":["rolling","Ongoing Firefighter/Paramedic testing through Public Safety Testing. The agency pays the test fee.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
     "a-south-holland":["rolling","Ongoing Firefighter/Paramedic testing through Public Safety Testing. The agency pays the test fee.","https://www.publicsafetytesting.com/career-path/positions/firefighter"],
     "a-barrington-countryside-fpd":["rolling","Hiring Firefighter/Paramedics with no deadline posted. Starting pay is $85,000 on a five-step scale to $115,000.","https://www.theblueline.com/findAJob/view/39750"],
     "a-robbins":["rolling","Hiring part-time Firefighter/EMT-B and part-time EMT-Basic through National Testing Network.","https://candidates.nationaltestingnetwork.com/#/jobs/2402"],
